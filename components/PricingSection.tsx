@@ -12,6 +12,7 @@ export default function PricingSection() {
       nameKey: 'pricing.starter.name',
       price: language === 'es' ? '€750' : '$750',
       descriptionKey: 'pricing.starter.desc',
+      ctaKey: 'pricing.cta.starter',
       features: language === 'es' ? [
         '1 página responsive',
         'Formulario de contacto',
@@ -29,6 +30,7 @@ export default function PricingSection() {
       nameKey: 'pricing.business.name',
       price: language === 'es' ? '€1,800' : '$1,800',
       descriptionKey: 'pricing.business.desc',
+      ctaKey: 'pricing.cta.business',
       features: language === 'es' ? [
         '5-7 páginas',
         'Diseño y marca personalizada',
@@ -50,13 +52,14 @@ export default function PricingSection() {
       nameKey: 'pricing.enterprise.name',
       price: language === 'es' ? '€3,000+' : '$3,000+',
       descriptionKey: 'pricing.enterprise.desc',
+      ctaKey: 'pricing.cta.enterprise',
       features: language === 'es' ? [
         'Páginas ilimitadas',
         'Autenticación de usuarios',
         'E-commerce completo',
         'APIs personalizadas',
-        'Chatbots AI',
-        'Integraciones AI avanzadas incluidas',
+        'Chatbots con IA',
+        'Integraciones avanzadas con IA incluidas',
         '6 meses de soporte'
       ] : [
         'Unlimited pages',
@@ -139,7 +142,7 @@ export default function PricingSection() {
                     : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-gray-100'
                 }`}
               >
-                <span>{t('pricing.getstarted')}</span>
+                <span>{t(plan.ctaKey)}</span>
                 <FiArrowRight className="w-4 h-4" />
               </a>
             </motion.div>

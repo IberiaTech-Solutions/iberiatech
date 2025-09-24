@@ -11,13 +11,13 @@ export default function TrustedBySection() {
     {
       name: 'Querri',
       logo: 'https://querri.com/favicon.svg',
-      description: 'AI-powered data analytics platform',
+      description: 'Data analytics & business intelligence',
       url: 'https://querri.com'
     },
     {
       name: 'GDNA',
       logo: 'https://gdna.io/favicon.ico',
-      description: 'AWS cloud services & digital transformation',
+      description: 'Cloud services & digital transformation',
       url: 'https://gdna.io'
     }
   ]
@@ -36,8 +36,11 @@ export default function TrustedBySection() {
             <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2 uppercase tracking-wide">
               {language === 'es' ? 'Confían en nosotros' : 'Trusted by'}
             </p>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 italic">
+              {language === 'es' ? 'Nos respaldan startups y agencias digitales en Charleston y más allá' : 'Trusted by startups and digital agencies in Charleston and beyond'}
+            </p>
             <p className="text-base text-gray-600 dark:text-gray-300 mb-6">
-              {language === 'es' ? 'Nuestra tecnología es confiada por empresas de diferentes industrias:' : 'Our technology is trusted by companies across industries:'}
+              {language === 'es' ? 'Empresas que han crecido con nuestros sitios web:' : 'Companies that have grown with our websites:'}
             </p>
             
             <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">

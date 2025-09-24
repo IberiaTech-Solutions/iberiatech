@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi'
 
 export default function ContactSection() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -90,10 +90,10 @@ This message was sent from your IberiaTech Solutions contact form.
           >
             <div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                Get in Touch
+                {language === 'es' ? 'Información de Contacto' : 'Contact Information'}
               </h3>
               <p className="text-gray-600 dark:text-gray-300 mb-8">
-                Ready to start your next project? I'd love to hear from you. Send me a message and I'll respond within 24 hours.
+                {language === 'es' ? 'Comunícate con nosotros a través de cualquiera de estos canales.' : 'Get in touch with us directly through any of these channels.'}
               </p>
             </div>
 
@@ -136,25 +136,6 @@ This message was sent from your IberiaTech Solutions contact form.
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">{t('contact.location')}</h4>
                   <p className="text-gray-600 dark:text-gray-300">Charleston, SC</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Business Hours */}
-            <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-              <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Business Hours</h4>
-              <div className="space-y-2 text-gray-600 dark:text-gray-300">
-                <div className="flex justify-between">
-                  <span>Monday - Friday</span>
-                  <span>9:00 AM - 6:00 PM EST</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Saturday</span>
-                  <span>10:00 AM - 4:00 PM EST</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Sunday</span>
-                  <span>Closed</span>
                 </div>
               </div>
             </div>

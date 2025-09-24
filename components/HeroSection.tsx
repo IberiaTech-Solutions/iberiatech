@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import { FiArrowRight, FiCode, FiSmartphone, FiGlobe } from 'react-icons/fi'
 
 export default function HeroSection() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
 
   return (
     <section id="home" className="bg-gradient-to-br from-brand-800 to-brand-900 section-padding">
@@ -22,6 +22,9 @@ export default function HeroSection() {
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                     {t('hero.title')}
                   </h1>
+                  <p className="text-xl md:text-2xl text-blue-100 font-medium">
+                    {t('hero.promise')}
+                  </p>
                   <h2 className="text-2xl md:text-3xl font-semibold text-blue-200">
                     {t('hero.subtitle2')}
                   </h2>
@@ -88,23 +91,23 @@ export default function HeroSection() {
                   </div>
                 </div>
 
-                {/* Tech Stack */}
+                {/* Benefits Preview */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 text-center">
-                    <div className="text-2xl font-bold text-blue-600">React</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">Frontend</div>
+                    <div className="text-2xl font-bold text-blue-600">{language === 'es' ? 'Móvil' : 'Mobile'}</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">{language === 'es' ? 'Perfecto en teléfonos' : 'Perfect on phones'}</div>
                   </div>
                   <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-4 text-center">
-                    <div className="text-2xl font-bold text-green-600">Next.js</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">Framework</div>
+                    <div className="text-2xl font-bold text-green-600">SEO</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">{language === 'es' ? 'Listo para Google' : 'Google ready'}</div>
                   </div>
                   <div className="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-4 text-center">
-                    <div className="text-2xl font-bold text-purple-600">Supabase</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">Backend</div>
+                    <div className="text-2xl font-bold text-purple-600">{language === 'es' ? 'Seguro' : 'Secure'}</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">{language === 'es' ? 'Datos protegidos' : 'Data protected'}</div>
                   </div>
                   <div className="bg-orange-50 dark:bg-orange-900/20 rounded-lg p-4 text-center">
-                    <div className="text-2xl font-bold text-orange-600">AWS</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">Cloud</div>
+                    <div className="text-2xl font-bold text-orange-600">{language === 'es' ? 'Rápido' : 'Fast'}</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">{language === 'es' ? 'Velocidad ultrarrápida' : 'Lightning speed'}</div>
                   </div>
                 </div>
               </div>

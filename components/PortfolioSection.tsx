@@ -6,15 +6,15 @@ import { FiExternalLink, FiGithub } from 'react-icons/fi'
 import Image from 'next/image'
 
 export default function PortfolioSection() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
 
   const projects = [
     {
       title: 'Cursor Rules Hub',
-      description: 'A community-driven platform for sharing and discovering Cursor AI rules.',
-      businessBenefit: 'Boosts developer productivity with AI-powered coding patterns',
+      description: language === 'es' ? 'Una plataforma profesional que ayuda a los desarrolladores a trabajar de forma más rápida y eficiente.' : 'A professional platform that helps developers work faster and more efficiently.',
+      businessBenefit: language === 'es' ? 'Ayuda a los equipos a ahorrar tiempo y aumentar la productividad con automatización inteligente' : 'Helps teams save time and increase productivity with smart automation',
       image: '/images/portfolio/cursor-rules-hub.svg',
-      technologies: ['Next.js', 'React', 'Tailwind CSS', 'Vercel'],
+      technologies: language === 'es' ? ['Diseño Web Moderno', 'Carga Rápida', 'Compatible con dispositivos móviles', 'Hosting en la Nube'] : ['Modern Web Design', 'Fast Loading', 'Mobile-Friendly', 'Cloud Hosting'],
       liveUrl: 'https://cursor-rules-virid.vercel.app/',
       githubUrl: 'https://github.com/Javierlozo/cursor_rules',
       featured: true
@@ -92,7 +92,7 @@ export default function PortfolioSection() {
                 {/* Business Benefit */}
                 <div className="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 p-3 mb-4 rounded-r-lg">
                   <p className="text-green-800 dark:text-green-200 text-sm font-medium">
-                    <span className="font-semibold">Business Benefit:</span> {project.businessBenefit}
+                    <span className="font-semibold">{language === 'es' ? 'Beneficio Empresarial:' : 'Business Benefit:'}</span> {project.businessBenefit}
                   </p>
                 </div>
 
@@ -110,19 +110,19 @@ export default function PortfolioSection() {
 
                 {/* Project Links */}
                 <div className="flex space-x-4">
-                  <a
-                    href={project.liveUrl}
-                    className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors duration-200"
-                  >
-                    <FiExternalLink className="w-4 h-4" />
-                    <span className="text-sm font-medium">Live Demo</span>
-                  </a>
+                      <a
+                        href={project.liveUrl}
+                        className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors duration-200"
+                      >
+                        <FiExternalLink className="w-4 h-4" />
+                        <span className="text-sm font-medium">{language === 'es' ? 'Demo en Vivo' : 'Live Demo'}</span>
+                      </a>
                   <a
                     href={project.githubUrl}
                     className="flex items-center space-x-2 text-gray-600 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 transition-colors duration-200"
                   >
                     <FiGithub className="w-4 h-4" />
-                    <span className="text-sm font-medium">Code</span>
+                    <span className="text-sm font-medium">{language === 'es' ? 'Código' : 'Code'}</span>
                   </a>
                 </div>
               </div>
@@ -142,46 +142,6 @@ export default function PortfolioSection() {
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
                   {t('portfolio.coming.title')}
                 </h3>
-            <p className="text-gray-600 dark:text-gray-300 text-lg">
-              Currently developing business websites and e-commerce platforms for small businesses in the US and Spain.
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                  {t('portfolio.cta.title')}
-                </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-              Let's discuss your business needs and create a website that drives growth. 
-              <a href="https://luislozoya.com" target="_blank" rel="noopener noreferrer" className="text-brand-800 hover:text-brand-900 dark:text-brand-400 dark:hover:text-brand-300 font-medium">
-                See more personal projects →
-              </a>
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a
-                    href="#contact"
-                    className="btn-primary inline-flex items-center space-x-2"
-                  >
-                    <span>{t('portfolio.cta.start')}</span>
-                    <FiExternalLink className="w-4 h-4" />
-                  </a>
-                  <a
-                    href="#contact"
-                    className="btn-secondary inline-flex items-center space-x-2"
-                  >
-                    <span>{t('portfolio.cta.contact')}</span>
-                    <FiExternalLink className="w-4 h-4" />
-                  </a>
-            </div>
           </div>
         </motion.div>
       </div>

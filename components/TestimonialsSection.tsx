@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import { FiMessageCircle } from 'react-icons/fi'
 
 export default function TestimonialsSection() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
 
   const testimonials = [
     {
@@ -27,10 +27,10 @@ export default function TestimonialsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Client Testimonials
+            {language === 'es' ? 'Testimonios de Clientes' : 'Client Testimonials'}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            What clients say about working with IberiaTech Solutions
+            {language === 'es' ? 'Lo que dicen nuestros clientes sobre trabajar con IberiaTech Solutions' : 'What clients say about working with IberiaTech Solutions'}
           </p>
         </motion.div>
 

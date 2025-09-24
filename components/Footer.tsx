@@ -89,12 +89,12 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">{t('footer.services')}</h3>
             <ul className="space-y-2 text-gray-300">
-              <li>{t('footer.services.webdev')}</li>
-              <li>{t('footer.services.react')}</li>
-              <li>{t('footer.services.supabase')}</li>
               <li>{t('footer.services.bilingual')}</li>
+              <li>{t('footer.services.translation')}</li>
+              <li>{t('footer.services.webdev')}</li>
               <li>{t('footer.services.seo')}</li>
               <li>{t('footer.services.mobile')}</li>
+              <li>{t('footer.services.supabase')}</li>
             </ul>
           </div>
         </div>
