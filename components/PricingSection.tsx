@@ -10,25 +10,25 @@ export default function PricingSection() {
   const pricingPlans = [
     {
       nameKey: 'pricing.starter.name',
-      price: language === 'es' ? '€750' : '$750',
+      price: language === 'es' ? '€950' : '$950',
       descriptionKey: 'pricing.starter.desc',
       ctaKey: 'pricing.cta.starter',
       features: language === 'es' ? [
         '1 página responsive',
         'Formulario de contacto',
         'SEO básico',
-        '2 semanas de soporte'
+        '1 mes de soporte'
       ] : [
         '1-page responsive site',
         'Contact form',
         'Basic SEO',
-        '2 weeks support'
+        '1 month support'
       ],
       popular: false
     },
     {
       nameKey: 'pricing.business.name',
-      price: language === 'es' ? '€1,800' : '$1,800',
+      price: language === 'es' ? '€2,400' : '$2,400',
       descriptionKey: 'pricing.business.desc',
       ctaKey: 'pricing.cta.business',
       features: language === 'es' ? [
@@ -36,21 +36,21 @@ export default function PricingSection() {
         'Diseño y marca personalizada',
         'Bilingüe (EN/ES)',
         'SEO y analíticas',
-        '2 meses de soporte',
-        'Características AI básicas'
+        '3 meses de soporte',
+        'Características AI opcionales: Agrega un chatbot simple para responder preguntas de clientes 24/7 o una búsqueda inteligente para mejorar la experiencia del usuario',
       ] : [
         '5-7 pages',
         'Custom branding',
         'Bilingual (EN/ES)',
         'SEO & analytics',
-        '2 months support',
-        'Optional basic AI features'
+        '3 months support',
+        'Optional AI features: Add a simple chatbot to answer customer questions 24/7 or a smart search to improve user experience',
       ],
       popular: true
     },
     {
       nameKey: 'pricing.enterprise.name',
-      price: language === 'es' ? '€3,000+' : '$3,000+',
+      price: language === 'es' ? '€4,800+' : '$4,800+',
       descriptionKey: 'pricing.enterprise.desc',
       ctaKey: 'pricing.cta.enterprise',
       features: language === 'es' ? [
@@ -58,17 +58,15 @@ export default function PricingSection() {
         'Autenticación de usuarios',
         'E-commerce completo',
         'APIs personalizadas',
-        'Chatbots con IA',
-        'Integraciones avanzadas con IA incluidas',
-        '6 meses de soporte'
+        'Características AI avanzadas incluidas: chatbots inteligentes, recomendaciones automatizadas e insights impulsados por IA adaptados a su negocio',
+        '6 meses de soporte (extensible a 12 meses)',
       ] : [
         'Unlimited pages',
         'User authentication',
         'Full e-commerce',
         'Custom APIs',
-        'AI chatbots',
-        'Advanced AI integrations included',
-        '6 months support'
+        'Advanced AI features included: intelligent chatbots, automated recommendations, and AI-driven insights tailored to your business',
+        '6 months support (extendable to 12 months)',
       ],
       popular: false
     }
