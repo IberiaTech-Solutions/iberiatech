@@ -1,0 +1,39 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#1a1a1a"/>
+  
+  <!-- Header -->
+  <rect width="800" height="80" fill="#2a2a2a"/>
+  
+  <!-- Main Content Area -->
+  <rect x="40" y="120" width="720" height="400" fill="#333333" rx="8"/>
+  
+  <!-- Search Bar -->
+  <rect x="60" y="150" width="680" height="40" fill="#444444" rx="4"/>
+  <text x="80" y="175" font-family="Arial, sans-serif" font-size="16" fill="#888888">Search cursor rules...</text>
+  
+  <!-- Rule Cards -->
+  <rect x="60" y="220" width="320" height="120" fill="#444444" rx="6"/>
+  <text x="80" y="250" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">React Component Rules</text>
+  <text x="80" y="280" font-family="Arial, sans-serif" font-size="14" fill="#cccccc">Best practices for React components</text>
+  <text x="80" y="310" font-family="Arial, sans-serif" font-size="12" fill="#888888">⭐ 45 downloads</text>
+  
+  <rect x="400" y="220" width="320" height="120" fill="#444444" rx="6"/>
+  <text x="420" y="250" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">TypeScript Patterns</text>
+  <text x="420" y="280" font-family="Arial, sans-serif" font-size="14" fill="#cccccc">Advanced TypeScript configurations</text>
+  <text x="420" y="310" font-family="Arial, sans-serif" font-size="12" fill="#888888">⭐ 32 downloads</text>
+  
+  <rect x="60" y="360" width="320" height="120" fill="#444444" rx="6"/>
+  <text x="80" y="390" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">API Development</text>
+  <text x="80" y="420" font-family="Arial, sans-serif" font-size="14" fill="#cccccc">RESTful API best practices</text>
+  <text x="80" y="450" font-family="Arial, sans-serif" font-size="12" fill="#888888">⭐ 28 downloads</text>
+  
+  <rect x="400" y="360" width="320" height="120" fill="#444444" rx="6"/>
+  <text x="420" y="390" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">Testing Rules</text>
+  <text x="420" y="420" font-family="Arial, sans-serif" font-size="14" fill="#cccccc">Unit and integration testing</text>
+  <text x="420" y="450" font-family="Arial, sans-serif" font-size="12" fill="#888888">⭐ 19 downloads</text>
+  
+  <!-- Footer -->
+  <rect x="40" y="540" width="720" height="40" fill="#2a2a2a" rx="4"/>
+  <text x="60" y="565" font-family="Arial, sans-serif" font-size="14" fill="#888888">Community-driven platform for sharing Cursor AI rules</text>
+</svg>
