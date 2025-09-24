@@ -72,10 +72,10 @@ This message was sent from your IberiaTech Solutions contact form.
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Let's Talk About Your Project
+            {t('contact.title2')}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            {t('contact.subtitle')}
+            {t('contact.subtitle2')}
           </p>
         </motion.div>
 
@@ -194,7 +194,7 @@ This message was sent from your IberiaTech Solutions contact form.
                     onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-brand-800 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                    placeholder="Your full name"
+                      placeholder={t('contact.form.name')}
                   />
                 </div>
 
@@ -225,7 +225,7 @@ This message was sent from your IberiaTech Solutions contact form.
                     value={formData.company}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-brand-800 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                    placeholder="Your company name"
+                      placeholder={t('contact.form.company')}
                   />
                 </div>
 
@@ -241,7 +241,7 @@ This message was sent from your IberiaTech Solutions contact form.
                     required
                     rows={5}
                     className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-brand-800 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white resize-none"
-                    placeholder="Tell me about your project..."
+                      placeholder={t('contact.form.message')}
                   />
                 </div>
 
@@ -252,7 +252,7 @@ This message was sent from your IberiaTech Solutions contact form.
                 >
                   {isSubmitting ? (
                     <>
-                      <span>Sending...</span>
+                        <span>{t('contact.form.sending')}</span>
                     </>
                   ) : (
                     <>

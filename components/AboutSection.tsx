@@ -8,10 +8,10 @@ export default function AboutSection() {
   const { t } = useLanguage()
 
   const stats = [
-    { icon: FiUsers, number: '10+', label: 'Projects Completed' },
-    { icon: FiGlobe, number: '2', label: 'Countries Served' },
-    { icon: FiAward, number: '100%', label: 'Client Satisfaction' },
-    { icon: FiTarget, number: 'Dedicated', label: 'Ongoing Support' }
+    { icon: FiUsers, number: '10+', label: t('about.stats.portfolio') },
+    { icon: FiGlobe, number: '2', label: t('about.stats.countries') },
+    { icon: FiAward, number: '100%', label: t('about.stats.satisfaction') },
+    { icon: FiTarget, number: 'Dedicated', label: t('about.stats.support') }
   ]
 
   return (
@@ -100,19 +100,19 @@ export default function AboutSection() {
           className="mt-16"
         >
           <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
-              What Our Clients Say
-            </h3>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+                  {t('about.testimonials.title')}
+                </h3>
             <div className="grid grid-cols-1 md:grid-cols-1 gap-8 max-w-2xl mx-auto">
               <div className="text-center">
                 <div className="w-16 h-16 bg-brand-800 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-white font-bold text-xl">D</span>
                 </div>
                 <blockquote className="text-lg italic text-gray-700 dark:text-gray-300 mb-4">
-                  "Luis at IberiaTech does amazing work. He is a skilled developer and really great to work with."
+                  "{t('about.testimonials.quote')}"
                 </blockquote>
-                <div className="font-semibold text-gray-900 dark:text-white">Dave Ingram</div>
-                <div className="text-sm text-brand-800 dark:text-brand-400">Querri</div>
+                <div className="font-semibold text-gray-900 dark:text-white">{t('about.testimonials.author')}</div>
+                <div className="text-sm text-brand-800 dark:text-brand-400">{t('about.testimonials.company')}</div>
               </div>
             </div>
           </div>

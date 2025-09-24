@@ -2,7 +2,7 @@
 
 import { useLanguage } from './LanguageProvider'
 import { motion } from 'framer-motion'
-import { FiQuote } from 'react-icons/fi'
+import { FiMessageCircle } from 'react-icons/fi'
 
 export default function TestimonialsSection() {
   const { t } = useLanguage()
@@ -45,7 +45,7 @@ export default function TestimonialsSection() {
               className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 text-center"
             >
               <div className="w-16 h-16 bg-brand-800 rounded-full flex items-center justify-center mx-auto mb-6">
-                <FiQuote className="w-8 h-8 text-white" />
+                <FiMessageCircle className="w-8 h-8 text-white" />
               </div>
               <blockquote className="text-xl text-gray-700 dark:text-gray-300 mb-6 italic">
                 "{testimonial.quote}"

@@ -19,30 +19,30 @@ export default function HeroSection() {
             className="space-y-8"
           >
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                Empowering Businesses with Innovative Tech Solutions
-              </h1>
-              <h2 className="text-2xl md:text-3xl font-semibold text-blue-200">
-                Fast, modern, AI-powered, bilingual websites.
-              </h2>
-              <p className="text-lg text-blue-300 italic">
-                Sitios web modernos y bilingües con inteligencia artificial.
-              </p>
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                    {t('hero.title')}
+                  </h1>
+                  <h2 className="text-2xl md:text-3xl font-semibold text-blue-200">
+                    {t('hero.subtitle2')}
+                  </h2>
+                  <p className="text-lg text-blue-300 italic">
+                    {t('hero.tagline')}
+                  </p>
             </div>
 
             {/* Key Features */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="flex items-center space-x-3">
                 <FiCode className="w-6 h-6 text-blue-200" />
-                <span className="text-blue-100">AI-Powered</span>
+                <span className="text-blue-100">{t('hero.features.ai')}</span>
               </div>
               <div className="flex items-center space-x-3">
                 <FiSmartphone className="w-6 h-6 text-blue-200" />
-                <span className="text-blue-100">Mobile-First</span>
+                <span className="text-blue-100">{t('hero.features.mobile')}</span>
               </div>
               <div className="flex items-center space-x-3">
                 <FiGlobe className="w-6 h-6 text-blue-200" />
-                <span className="text-blue-100">Bilingual</span>
+                <span className="text-blue-100">{t('hero.features.bilingual')}</span>
               </div>
             </div>
 
@@ -53,14 +53,14 @@ export default function HeroSection() {
                     href="#contact"
                     className="bg-white text-brand-800 hover:bg-blue-50 font-semibold py-3 px-6 rounded-lg transition-colors duration-200 inline-flex items-center justify-center space-x-2"
                   >
-                    <span>Start Your Project</span>
+                    <span>{t('hero.cta.start')}</span>
                     <FiArrowRight className="w-5 h-5" />
                   </a>
                   <a
                     href="#contact"
                     className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand-800 font-semibold py-3 px-6 rounded-lg transition-colors duration-200 inline-flex items-center justify-center"
                   >
-                    Get in Touch
+                    {t('hero.cta.contact')}
                   </a>
             </div>
           </motion.div>

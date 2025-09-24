@@ -31,15 +31,15 @@ export default function PortfolioSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Client Work Portfolio
-            </h2>
-            <h3 className="text-xl md:text-2xl font-semibold text-brand-800 dark:text-brand-400 mb-4">
-              Web Development & AI-Powered Solutions
-            </h3>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Professional websites and applications delivered for businesses
-            </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                {t('portfolio.title2')}
+              </h2>
+              <h3 className="text-xl md:text-2xl font-semibold text-brand-800 dark:text-brand-400 mb-4">
+                {t('portfolio.subtitle2')}
+              </h3>
+              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                {t('portfolio.subtitle3')}
+              </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -82,9 +82,9 @@ export default function PortfolioSection() {
 
               {/* Project Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                  Featured Project: Cursor Rules Hub
-                </h3>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                      {t('portfolio.project.title')}
+                    </h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed">
                   {project.description}
                 </p>
@@ -139,9 +139,9 @@ export default function PortfolioSection() {
           className="text-center mt-16"
         >
           <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-              More Projects Coming Soon
-            </h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+                  {t('portfolio.coming.title')}
+                </h3>
             <p className="text-gray-600 dark:text-gray-300 text-lg">
               Currently developing business websites and e-commerce platforms for small businesses in the US and Spain.
             </p>
@@ -157,9 +157,9 @@ export default function PortfolioSection() {
           className="text-center mt-16"
         >
           <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              Ready to Start Your Project?
-            </h3>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                  {t('portfolio.cta.title')}
+                </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
               Let's discuss your business needs and create a website that drives growth. 
               <a href="https://luislozoya.com" target="_blank" rel="noopener noreferrer" className="text-brand-800 hover:text-brand-900 dark:text-brand-400 dark:hover:text-brand-300 font-medium">
@@ -171,14 +171,14 @@ export default function PortfolioSection() {
                     href="#contact"
                     className="btn-primary inline-flex items-center space-x-2"
                   >
-                    <span>Start Your Project</span>
+                    <span>{t('portfolio.cta.start')}</span>
                     <FiExternalLink className="w-4 h-4" />
                   </a>
                   <a
                     href="#contact"
                     className="btn-secondary inline-flex items-center space-x-2"
                   >
-                    <span>Get in Touch</span>
+                    <span>{t('portfolio.cta.contact')}</span>
                     <FiExternalLink className="w-4 h-4" />
                   </a>
             </div>

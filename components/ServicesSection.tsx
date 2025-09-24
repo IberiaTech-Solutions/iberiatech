@@ -10,43 +10,43 @@ export default function ServicesSection() {
   const services = [
     {
       icon: FiCode,
-      title: 'Web Development',
+      title: t('services.webdev.title'),
       description: 'Fast, secure, and scalable websites built with modern technologies.',
       features: language === 'es' ? ['React & Next.js - Sitios rápidos y seguros', 'TypeScript - Código confiable', 'Diseño Responsive - Perfecto en todos los dispositivos', 'Arquitectura Escalable - Crecimiento futuro'] : ['React & Next.js - Fast and secure sites', 'TypeScript - Reliable code', 'Responsive Design - Perfect on all devices', 'Scalable Architecture - Future growth']
     },
     {
       icon: FiSmartphone,
-      title: 'Mobile-First Design',
+      title: t('services.mobile.title'),
       description: 'Great user experience across all devices with touch-friendly interfaces.',
       features: language === 'es' ? ['Optimización Móvil - Experiencia perfecta en móviles', 'Touch-Friendly - Fácil de usar con los dedos', 'Carga Rápida - Velocidad optimizada', 'Soporte Multi-Navegador - Funciona en todos lados'] : ['Mobile Optimization - Perfect mobile experience', 'Touch-Friendly - Easy finger navigation', 'Fast Loading - Optimized speed', 'Cross-Browser Support - Works everywhere']
     },
     {
       icon: FiGlobe,
-      title: 'Bilingual Websites',
+      title: t('services.bilingual.title'),
       description: 'Reach wider audiences in both US and Spanish markets with cultural adaptation.',
       features: language === 'es' ? ['Inglés y Español - Alcance global', 'Adaptación Cultural - Entendimiento local', 'SEO para Ambos Idiomas - Visibilidad completa', 'Cambio Fácil de Idioma - Experiencia fluida'] : ['English & Spanish - Global reach', 'Cultural Adaptation - Local understanding', 'SEO for Both Languages - Complete visibility', 'Easy Language Switching - Seamless experience']
     },
     {
       icon: FiShield,
-      title: 'Security & Authentication',
+      title: t('services.security.title'),
       description: 'Protect your business and users with enterprise-grade security measures.',
       features: language === 'es' ? ['Autenticación de Usuarios - Acceso seguro', 'Encriptación de Datos - Información protegida', 'Auditorías de Seguridad - Verificación continua', 'Cumplimiento GDPR - Regulaciones cumplidas'] : ['User Authentication - Secure access', 'Data Encryption - Protected information', 'Security Audits - Continuous verification', 'GDPR Compliance - Regulations met']
     },
     {
       icon: FiZap,
-      title: 'SEO & Performance',
+      title: t('services.performance.title'),
       description: 'Rank higher in search results and load faster for better user experience.',
       features: language === 'es' ? ['Optimización SEO - Mejor posicionamiento', 'Optimización de Velocidad - Carga ultrarrápida', 'Integración de Analíticas - Datos valiosos', 'Monitoreo de Rendimiento - Control continuo'] : ['SEO Optimization - Better rankings', 'Speed Optimization - Lightning-fast loading', 'Analytics Integration - Valuable insights', 'Performance Monitoring - Continuous control']
     },
     {
       icon: FiUsers,
-      title: 'Ongoing Support',
+      title: t('services.support.title'),
       description: 'Long-term peace of mind with proactive maintenance and technical support.',
       features: language === 'es' ? ['Respaldos Regulares - Datos seguros', 'Actualizaciones de Seguridad - Protección actualizada', 'Monitoreo de Rendimiento - Control preventivo', 'Soporte Técnico - Ayuda cuando la necesites'] : ['Regular Backups - Safe data', 'Security Updates - Current protection', 'Performance Monitoring - Preventive control', 'Technical Support - Help when you need it']
     },
     {
       icon: FiCpu,
-      title: 'AI-Powered Features',
+      title: t('services.ai.title'),
       description: 'Intelligent automation and AI-driven solutions to enhance user experience and business efficiency.',
       features: language === 'es' ? ['Chatbots & Asistentes Virtuales - Atención 24/7', 'Recomendaciones de Contenido AI - Personalización inteligente', 'Búsqueda Inteligente - Encuentra lo que necesitas', 'Análisis de Datos AI - Insights valiosos'] : ['Chatbots & Virtual Assistants - 24/7 support', 'AI-driven Content Recommendations - Smart personalization', 'Intelligent Search - Find what you need', 'AI Data Insights - Valuable business intelligence']
     }
@@ -62,15 +62,15 @@ export default function ServicesSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Charleston SC Web Development Services
-          </h2>
-          <h3 className="text-xl md:text-2xl font-semibold text-brand-800 dark:text-brand-400 mb-4">
-            Next.js & Supabase Development for Small Businesses
-          </h3>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            {t('services.subtitle')}
-          </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                {t('services.title2')}
+              </h2>
+              <h3 className="text-xl md:text-2xl font-semibold text-brand-800 dark:text-brand-400 mb-4">
+                {t('services.subtitle2')}
+              </h3>
+              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                {t('services.subtitle3')}
+              </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
