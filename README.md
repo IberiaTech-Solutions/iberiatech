@@ -158,7 +158,7 @@ iberiatech/
 
 ## 💼 Business Information
 
-### IberiaTech Solutions
+### IberiaTech Solutions LLC
 
 - **Email**: luis.lozoya.tech@gmail.com
 - **Phone**: (864) 365-7897
@@ -198,14 +198,14 @@ Visit the live website: [iberiatech.com](https://iberiatech.com) (when deployed)
 
 ## 🤝 Contributing
 
-This is a proprietary project owned by IberiaTech Solutions. For business inquiries or collaboration opportunities, please contact:
+This is a proprietary project owned by IberiaTech Solutions LLC. For business inquiries or collaboration opportunities, please contact:
 
 - **Email**: luis.lozoya.tech@gmail.com
 - **Phone**: (864) 365-7897
 
 ## 📄 License
 
-This project is proprietary software owned by IberiaTech Solutions. All rights reserved.
+This project is proprietary software owned by IberiaTech Solutions LLC. All rights reserved.
 
 ## 🆘 Support
 

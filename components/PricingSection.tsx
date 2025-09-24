@@ -14,12 +14,12 @@ export default function PricingSection() {
       descriptionKey: 'pricing.starter.desc',
       ctaKey: 'pricing.cta.starter',
       features: language === 'es' ? [
-        '1 página responsive',
+        'Sitio profesional de 1 página',
         'Formulario de contacto',
         'SEO básico',
         '1 mes de soporte'
       ] : [
-        '1-page responsive site',
+        'Professional 1-page site',
         'Contact form',
         'Basic SEO',
         '1 month support'
@@ -37,14 +37,14 @@ export default function PricingSection() {
         'Bilingüe (EN/ES)',
         'SEO y analíticas',
         '3 meses de soporte',
-        'Características AI opcionales: Agrega un chatbot simple para responder preguntas de clientes 24/7 o una búsqueda inteligente para mejorar la experiencia del usuario',
+        'Opcional: chatbot o búsqueda inteligente'
       ] : [
         '5-7 pages',
         'Custom branding',
         'Bilingual (EN/ES)',
         'SEO & analytics',
         '3 months support',
-        'Optional AI features: Add a simple chatbot to answer customer questions 24/7 or a smart search to improve user experience',
+        'Optional: chatbot or smart search'
       ],
       popular: true
     },
@@ -55,18 +55,16 @@ export default function PricingSection() {
       ctaKey: 'pricing.cta.enterprise',
       features: language === 'es' ? [
         'Páginas ilimitadas',
-        'Autenticación de usuarios',
         'E-commerce completo',
         'APIs personalizadas',
-        'Características AI avanzadas incluidas: chatbots inteligentes, recomendaciones automatizadas e insights impulsados por IA adaptados a su negocio',
-        '6 meses de soporte (extensible a 12 meses)',
+        'Chatbots AI, recomendaciones automatizadas, insights AI',
+        '6-12 meses de soporte'
       ] : [
         'Unlimited pages',
-        'User authentication',
         'Full e-commerce',
         'Custom APIs',
-        'Advanced AI features included: intelligent chatbots, automated recommendations, and AI-driven insights tailored to your business',
-        '6 months support (extendable to 12 months)',
+        'AI chatbots, automated recommendations, AI insights',
+        '6-12 months support'
       ],
       popular: false
     }

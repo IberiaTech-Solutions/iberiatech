@@ -40,7 +40,7 @@ Message:
 ${formData.message}
 
 ---
-This message was sent from your IberiaTech Solutions contact form.
+This message was sent from your IberiaTech Solutions LLC contact form.
       `)
       
       // Open email client

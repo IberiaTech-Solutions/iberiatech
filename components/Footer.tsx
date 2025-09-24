@@ -100,7 +100,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {currentYear} IberiaTech Solutions. All rights reserved.</p>
+          <p>&copy; {currentYear} IberiaTech Solutions LLC. All rights reserved.</p>
         </div>
       </div>
     </footer>
