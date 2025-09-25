@@ -6,6 +6,8 @@ import { LanguageProvider } from '@/components/LanguageProvider'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import WhatsAppChat from '@/components/WhatsAppChat'
+import AIChatbot from '@/components/AIChatbot'
+import HtmlLangUpdater from '@/components/HtmlLangUpdater'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -53,6 +55,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <LanguageProvider>
+            <HtmlLangUpdater />
             <div className="min-h-screen flex flex-col" suppressHydrationWarning>
               <Header />
               <main className="flex-1">
@@ -60,6 +63,7 @@ export default function RootLayout({
               </main>
               <Footer />
               <WhatsAppChat phoneNumber="18643657897" />
+              <AIChatbot />
             </div>
           </LanguageProvider>
         </ThemeProvider>

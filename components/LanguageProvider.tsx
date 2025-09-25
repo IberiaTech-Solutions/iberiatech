@@ -21,8 +21,8 @@ const translations = {
     'nav.portfolio': 'Portfolio',
     'nav.contact': 'Contact',
     'hero.title': 'We build modern websites that bring you more customers',
-    'hero.promise': 'Helping small businesses grow online in English and Spanish with modern, secure websites.',
-    'hero.subtitle': 'We build fast, modern websites that help small businesses grow. From quick landing pages to full business platforms, we deliver clarity, speed, and results.',
+    'hero.promise': 'Helping small and medium businesses grow online in English and Spanish with modern, secure websites.',
+    'hero.subtitle': 'We build fast, modern websites that help small and medium businesses grow. From quick landing pages to full business platforms, we deliver clarity, speed, and results.',
     'hero.cta': 'Get Started',
     'hero.learn': 'Learn More',
     'about.title': 'About IberiaTech Solutions',
@@ -91,7 +91,7 @@ const translations = {
     'hero.cta.start': 'Start Your Project',
     'hero.cta.contact': 'Get in Touch',
     'about.title2': 'About IberiaTech Solutions',
-    'about.description2': 'Founded in 2024, IberiaTech Solutions specializes in modern web technologies and smart features. We help businesses in the US and Spain grow with secure, bilingual websites that convert visitors into customers. By combining modern technology with business expertise, we deliver websites that drive growth and results.',
+    'about.description2': 'Founded in 2024, IberiaTech Solutions specializes in modern web technologies and smart features. We help small and medium businesses in the US and Spain grow with secure, bilingual websites that convert visitors into customers. By combining modern technology with business expertise, we deliver websites that drive growth and results.',
     'about.stats.portfolio': 'Growing Portfolio',
     'about.stats.countries': 'Countries Served',
     'about.stats.satisfaction': 'Client Satisfaction',
@@ -101,7 +101,7 @@ const translations = {
     'about.testimonials.author': 'Dave Ingram',
     'about.testimonials.company': 'Querri',
     'services.title2': 'Charleston SC Web Development Services',
-    'services.subtitle2': 'Modern Web Development for Small Businesses',
+    'services.subtitle2': 'Modern Web Development for Small & Medium Businesses',
     'services.subtitle3': 'Professional websites and applications delivered for businesses',
     'portfolio.title2': 'Website Projects & Case Studies',
     'portfolio.subtitle2': 'Web Development & AI-Powered Solutions',
@@ -131,6 +131,7 @@ const translations = {
     'why.support.desc': 'Lasting relationships with continuous support, proactive maintenance, and comprehensive care plans.',
     'trusted.title': 'Trusted by',
     'trusted.coming': 'More clients coming soon...',
+    'portfolio.disclaimer': 'Note: IberiaTech Solutions showcases both independent projects and select contract contributions completed in collaboration with partner agencies.',
     'pricing.month': 'project',
     'pricing.cta': 'Get Started',
   },
@@ -141,8 +142,8 @@ const translations = {
     'nav.portfolio': 'Portafolio',
     'nav.contact': 'Contacto',
     'hero.title': 'Construimos sitios web modernos que te traen más clientes',
-    'hero.promise': 'Ayudamos a pequeñas empresas a crecer en línea con sitios web modernos, seguros y bilingües (inglés y español).',
-    'hero.subtitle': 'Construimos sitios web rápidos y modernos que ayudan a las pequeñas empresas a crecer. Desde páginas de aterrizaje rápidas hasta plataformas comerciales completas, entregamos claridad, velocidad y resultados.',
+    'hero.promise': 'Ayudamos a pequeñas y medianas empresas a crecer en línea con sitios web modernos, seguros y bilingües (inglés y español).',
+    'hero.subtitle': 'Construimos sitios web rápidos y modernos que ayudan a las pequeñas y medianas empresas a crecer. Desde páginas de aterrizaje rápidas hasta plataformas comerciales completas, entregamos claridad, velocidad y resultados.',
     'hero.subtitle2': 'En inglés, español, o ambos',
     'hero.tagline': 'Sitios web modernos y bilingües con inteligencia artificial.',
     'hero.features.ai': 'Con IA',
@@ -155,14 +156,14 @@ const translations = {
     'about.title': 'Acerca de IberiaTech Solutions',
     'about.subtitle': 'Su socio de confianza en transformación digital',
     'about.description': 'Fundada en 2024, IberiaTech Solutions se especializa en crear aplicaciones web modernas, seguras y escalables. Combinamos tecnología de vanguardia con experiencia empresarial para entregar soluciones que impulsan el crecimiento.',
-    'about.description2': 'Fundada en 2024, IberiaTech Solutions se especializa en tecnologías web modernas y características inteligentes. Ayudamos a empresas en Estados Unidos y España a crecer con sitios web seguros y bilingües que convierten visitantes en clientes. Al combinar tecnología moderna con experiencia empresarial, entregamos sitios web que impulsan el crecimiento y resultados.',
+    'about.description2': 'Fundada en 2024, IberiaTech Solutions se especializa en tecnologías web modernas y características inteligentes. Ayudamos a pequeñas y medianas empresas en Estados Unidos y España a crecer con sitios web seguros y bilingües que convierten visitantes en clientes. Al combinar tecnología moderna con experiencia empresarial, entregamos sitios web que impulsan el crecimiento y resultados.',
     'about.mission': 'Nuestra Misión',
     'about.mission.text': 'Empoderar empresas tanto en Estados Unidos como en España proporcionando soluciones digitales personalizadas que impulsen el crecimiento, la eficiencia y el rendimiento.',
     'about.expertise': 'Nuestra Experiencia',
     'about.expertise.text': 'Con amplia experiencia en tecnologías web modernas, entregamos sitios web que crecen con su negocio.',
     'services.title': 'Nuestros Servicios',
     'services.title2': 'Servicios de Desarrollo Web en Charleston SC',
-    'services.subtitle2': 'Desarrollo Web Moderno para Pequeñas Empresas',
+    'services.subtitle2': 'Desarrollo Web Moderno para Pequeñas y Medianas Empresas',
     'services.subtitle3': 'Sitios web y aplicaciones profesionales entregadas para empresas',
     'services.webdev.title': 'Desarrollo Web',
     'services.mobile.title': 'Diseño Mobile-First',
@@ -221,6 +222,7 @@ const translations = {
     'footer.services.translation': 'Traducción de Sitios Web',
     'footer.services.seo': 'Optimización SEO',
     'footer.services.mobile': 'Diseño Mobile-Friendly',
+    'portfolio.disclaimer': 'Nota: IberiaTech Solutions muestra tanto proyectos independientes como contribuciones contractuales selectas completadas en colaboración con agencias socias.',
   }
 }
 
@@ -229,15 +231,47 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    // Detect browser language
+    const detectBrowserLanguage = (): Language => {
+      if (typeof window === 'undefined') return 'en'
+      
+      // Check localStorage first for user preference
+      const savedLanguage = localStorage.getItem('preferred-language') as Language
+      if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'es')) {
+        return savedLanguage
+      }
+      
+      // Detect browser language
+      const browserLang = navigator.language || navigator.languages?.[0] || 'en'
+      
+      // Check if browser language is Spanish
+      if (browserLang.startsWith('es')) {
+        return 'es'
+      }
+      
+      // Default to English for all other languages
+      return 'en'
+    }
+
+    const detectedLanguage = detectBrowserLanguage()
+    setLanguage(detectedLanguage)
     setMounted(true)
   }, [])
+
+  const handleLanguageChange = (newLanguage: Language) => {
+    setLanguage(newLanguage)
+    // Persist user's language choice
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('preferred-language', newLanguage)
+    }
+  }
 
   const t = (key: string): string => {
     return translations[language][key as keyof typeof translations[typeof language]] || key
   }
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t, mounted }}>
+    <LanguageContext.Provider value={{ language, setLanguage: handleLanguageChange, t, mounted }}>
       {children}
     </LanguageContext.Provider>
   )

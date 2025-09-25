@@ -40,6 +40,13 @@ export default function PortfolioSection() {
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
                 {t('portfolio.subtitle3')}
               </p>
+              
+              {/* Disclaimer */}
+              <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 rounded-r-lg max-w-4xl mx-auto">
+                <p className="text-sm text-blue-800 dark:text-blue-200 italic">
+                  {t('portfolio.disclaimer')}
+                </p>
+              </div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -122,7 +129,7 @@ export default function PortfolioSection() {
                     className="flex items-center space-x-2 text-gray-600 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 transition-colors duration-200"
                   >
                     <FiGithub className="w-4 h-4" />
-                    <span className="text-sm font-medium">{language === 'es' ? 'Código' : 'Code'}</span>
+                    <span className="text-sm font-medium">{language === 'es' ? 'Ver Código' : 'View Code'}</span>
                   </a>
                 </div>
               </div>
