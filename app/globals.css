@@ -1,6 +1,17 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  --color-primary-800: #002F71;
+  --color-primary-900: #001F4A;
+  --color-secondary-white: #FFFFFF;
+  --color-secondary-light: #F5F7FA;
+  --color-accent-500: #00C389;
+  --color-accent-600: #16a34a;
+  --color-support-dark: #333333;
+  --color-support-medium: #6B7280;
+}
 
 @layer base {
   html {
@@ -8,25 +19,90 @@
   }
   
   body {
-    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+    background-color: var(--color-secondary-white);
+    color: var(--color-support-dark);
+  }
+  
+  .dark body {
+    background-color: #111827;
+    color: #f9fafb;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-brand-800 hover:bg-brand-900 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+    background-color: var(--color-primary-800);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--color-primary-900);
   }
   
   .btn-secondary {
-    @apply bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-gray-100 font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+    background-color: var(--color-secondary-light);
+    color: var(--color-support-dark);
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #d1d5db;
+  }
+  
+  .dark .btn-secondary {
+    background-color: #374151;
+    color: #f9fafb;
+  }
+  
+  .dark .btn-secondary:hover {
+    background-color: #4b5563;
+  }
+  
+  .btn-accent {
+    background-color: var(--color-accent-500);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+  }
+  
+  .btn-accent:hover {
+    background-color: var(--color-accent-600);
   }
   
   .section-padding {
-    @apply py-16 px-4 sm:px-6 lg:px-8;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  @media (min-width: 640px) {
+    .section-padding {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .section-padding {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
   }
   
   .container-max {
-    @apply max-w-7xl mx-auto;
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

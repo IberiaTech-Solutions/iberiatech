@@ -8,7 +8,7 @@ export default function HeroSection() {
   const { t, language } = useLanguage()
 
   return (
-    <section id="home" className="bg-gradient-to-br from-brand-800 to-brand-900 section-padding">
+    <section id="home" className="bg-gradient-to-br from-primary-800 to-primary-900 section-padding">
       <div className="container-max">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
@@ -54,14 +54,14 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4">
                   <a
                     href="#contact"
-                    className="bg-white text-brand-800 hover:bg-blue-50 font-semibold py-3 px-6 rounded-lg transition-colors duration-200 inline-flex items-center justify-center space-x-2"
+                    className="bg-white text-primary-800 hover:bg-blue-50 font-semibold py-3 px-6 rounded-lg transition-colors duration-200 inline-flex items-center justify-center space-x-2"
                   >
                     <span>{t('hero.cta.start')}</span>
                     <FiArrowRight className="w-5 h-5" />
                   </a>
                   <a
                     href="#contact"
-                    className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand-800 font-semibold py-3 px-6 rounded-lg transition-colors duration-200 inline-flex items-center justify-center"
+                    className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary-800 font-semibold py-3 px-6 rounded-lg transition-colors duration-200 inline-flex items-center justify-center"
                   >
                     {t('hero.cta.contact')}
                   </a>
@@ -97,9 +97,9 @@ export default function HeroSection() {
                     <div className="text-2xl font-bold text-blue-600">{language === 'es' ? 'Móvil' : 'Mobile'}</div>
                     <div className="text-sm text-gray-600 dark:text-gray-400">{language === 'es' ? 'Perfecto en teléfonos' : 'Perfect on phones'}</div>
                   </div>
-                  <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-4 text-center">
-                    <div className="text-2xl font-bold text-green-600">SEO</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">{language === 'es' ? 'Listo para Google' : 'Google ready'}</div>
+                  <div className="bg-accent-50 dark:bg-accent-900/20 rounded-lg p-4 text-center">
+                    <div className="text-2xl font-bold text-accent-500">SEO</div>
+                    <div className="text-sm text-support-medium dark:text-gray-400">{language === 'es' ? 'Listo para Google' : 'Google ready'}</div>
                   </div>
                   <div className="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-4 text-center">
                     <div className="text-2xl font-bold text-purple-600">{language === 'es' ? 'Seguro' : 'Secure'}</div>
@@ -115,7 +115,7 @@ export default function HeroSection() {
 
             {/* Floating Elements */}
             <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-500 rounded-full animate-bounce-slow"></div>
-            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-green-500 rounded-full animate-bounce-slow" style={{ animationDelay: '0.5s' }}></div>
+            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-accent-500 rounded-full animate-bounce-slow" style={{ animationDelay: '0.5s' }}></div>
           </motion.div>
         </div>
       </div>

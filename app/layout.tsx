@@ -20,9 +20,9 @@ export const metadata: Metadata = {
   publisher: 'IberiaTech Solutions',
   robots: 'index, follow',
   icons: {
-    icon: '/favicon.svg',
-    shortcut: '/favicon.svg',
-    apple: '/favicon.svg',
+    icon: '/favicon.png',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.png',
   },
   openGraph: {
     type: 'website',

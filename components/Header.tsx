@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useTheme } from 'next-themes'
 import { useLanguage } from './LanguageProvider'
 import { FiMenu, FiX, FiSun, FiMoon, FiGlobe } from 'react-icons/fi'
@@ -29,8 +30,15 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-brand-800 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">IT</span>
+            <div className="w-10 h-10 relative">
+              <Image
+                src="/images/logos/Logo1.png"
+                alt="IberiaTech Solutions"
+                fill
+                sizes="40px"
+                className="object-contain"
+                priority
+              />
             </div>
             <span className="text-xl font-bold text-gray-900 dark:text-white">
               IberiaTech Solutions
@@ -43,7 +51,7 @@ export default function Header() {
               <Link
                 key={item.key}
                 href={item.href}
-                className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+                className="text-support-medium dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
               >
                 {t(item.key)}
               </Link>
@@ -89,7 +97,7 @@ export default function Header() {
               href="https://wa.me/18643657897"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:block p-2 text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200"
+              className="hidden md:block p-2 text-support-medium dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 transition-colors duration-200"
               aria-label={language === 'es' ? 'Abrir WhatsApp' : 'Open WhatsApp'}
               title={language === 'es' ? 'Chat por WhatsApp' : 'WhatsApp Chat'}
             >
@@ -149,10 +157,10 @@ export default function Header() {
                   href="https://wa.me/18643657897"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-3 w-full py-3 px-3 text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/20 transition-all duration-200 rounded-lg"
+                  className="flex items-center space-x-3 w-full py-3 px-3 text-support-medium dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 hover:bg-accent-50 dark:hover:bg-accent-900/20 transition-all duration-200 rounded-lg"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <div className="w-8 h-8 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-accent-100 dark:bg-accent-900/30 rounded-full flex items-center justify-center">
                     <span className="text-lg">💬</span>
                   </div>
                   <div className="flex-1 text-left">

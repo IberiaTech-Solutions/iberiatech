@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useLanguage } from './LanguageProvider'
 import { FiMail, FiPhone, FiMapPin, FiLinkedin, FiGithub } from 'react-icons/fi'
 
@@ -17,8 +18,14 @@ export default function Footer() {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-brand-800 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">IT</span>
+              <div className="w-10 h-10 relative">
+                <Image
+                  src="/images/logos/Logo1.png"
+                  alt="IberiaTech Solutions"
+                  fill
+                  sizes="40px"
+                  className="object-contain"
+                />
               </div>
               <span className="text-xl font-bold">IberiaTech Solutions</span>
             </div>

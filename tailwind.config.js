@@ -2,12 +2,13 @@ module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx,css}',
   ],
   darkMode: 'class',
   theme: {
     extend: {
       colors: {
+        // Primary (Brand Base) - Navy Blue
         primary: {
           50: '#f0f4ff',
           100: '#e0e7ff',
@@ -17,9 +18,11 @@ module.exports = {
           500: '#6366f1',
           600: '#4f46e5',
           700: '#4338ca',
-          800: '#3730a3',
-          900: '#312e81',
+          800: '#002F71',
+          900: '#001F4A',
+          950: '#001122',
         },
+        // Brand colors (keeping for backward compatibility)
         brand: {
           50: '#f0f4ff',
           100: '#e0e7ff',
@@ -32,6 +35,29 @@ module.exports = {
           800: '#002F71',
           900: '#001F4A',
           950: '#001122',
+        },
+        // Secondary (Background/Contrast)
+        secondary: {
+          white: '#FFFFFF',
+          light: '#F5F7FA',
+        },
+        // Accent (Highlights) - Green
+        accent: {
+          50: '#f0fdf4',
+          100: '#dcfce7',
+          200: '#bbf7d0',
+          300: '#86efac',
+          400: '#4ade80',
+          500: '#00C389',
+          600: '#16a34a',
+          700: '#15803d',
+          800: '#166534',
+          900: '#14532d',
+        },
+        // Support (Text & Neutral)
+        support: {
+          dark: '#333333',
+          medium: '#6B7280',
         },
       },
       fontFamily: {

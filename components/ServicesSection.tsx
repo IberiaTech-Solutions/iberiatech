@@ -91,7 +91,7 @@ export default function ServicesSection() {
   }, []);
 
   return (
-    <section id="services" className="section-padding bg-white dark:bg-gray-900">
+    <section id="services" className="section-padding bg-secondary-white dark:bg-gray-900">
       <div className="container-max">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -100,19 +100,19 @@ export default function ServicesSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-support-dark dark:text-white mb-4">
             {t('services.title2')}
           </h2>
-          <h3 className="text-xl md:text-2xl font-semibold text-brand-800 dark:text-brand-400 mb-2">
+          <h3 className="text-xl md:text-2xl font-semibold text-primary-800 dark:text-primary-400 mb-2">
             {t('services.subtitle2')}
           </h3>
-          <h3 className="text-lg md:text-xl font-semibold text-gray-700 dark:text-gray-300 mb-2">
+          <h3 className="text-lg md:text-xl font-semibold text-support-medium dark:text-gray-300 mb-2">
             {language === 'es' ? 'Servicios de Traducción de Sitios Web Bilingües' : 'Bilingual Website Translation Services'}
           </h3>
-          <h3 className="text-lg md:text-xl font-semibold text-gray-700 dark:text-gray-300 mb-4">
+          <h3 className="text-lg md:text-xl font-semibold text-support-medium dark:text-gray-300 mb-4">
             {language === 'es' ? 'Diseño de Sitios Web para Pequeñas Empresas y SEO' : 'Small Business Website Design & SEO'}
           </h3>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-support-medium dark:text-gray-300 max-w-3xl mx-auto">
             {t('services.subtitle3')}
           </p>
         </motion.div>
@@ -121,7 +121,7 @@ export default function ServicesSection() {
       {/* Full width horizontal scrolling section with navigation buttons */}
       <div className="relative">
         {/* Fade effect on the right edge */}
-        <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white dark:from-gray-900 to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-secondary-white dark:from-gray-900 to-transparent z-10 pointer-events-none"></div>
 
         {/* Navigation Buttons */}
         {canScrollLeft && (
@@ -151,25 +151,25 @@ export default function ServicesSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="flex-shrink-0 w-80 bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300"
+                className="flex-shrink-0 w-80 bg-secondary-light dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300"
               >
                 <div className="flex items-center space-x-4 mb-4">
                   <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex items-center justify-center">
                     <service.icon className="w-6 h-6 text-blue-600" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  <h3 className="text-xl font-semibold text-support-dark dark:text-white">
                     {service.title}
                   </h3>
                 </div>
 
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                <p className="text-support-medium dark:text-gray-300 mb-4">
                   {service.description}
                 </p>
 
                 <ul className="space-y-2">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                    <li key={featureIndex} className="flex items-center space-x-2 text-sm text-support-medium dark:text-gray-400">
+                      <div className="w-1.5 h-1.5 bg-accent-500 rounded-full"></div>
                       <span>{feature}</span>
                     </li>
                   ))}
