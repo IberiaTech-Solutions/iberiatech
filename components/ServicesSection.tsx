@@ -143,7 +143,7 @@ export default function ServicesSection() {
         </button>
 
         <div className="overflow-x-hidden pb-4" ref={scrollContainerRef} onScroll={handleScroll}>
-          <div className="flex space-x-6 min-w-max px-4 ml-[20vw]">
+          <div className="flex space-x-6 min-w-max px-4 md:ml-[20vw] justify-center md:justify-start">
             {services.map((service, index) => (
               <motion.div
                 key={service.title}

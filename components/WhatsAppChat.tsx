@@ -20,10 +20,10 @@ export default function WhatsAppChat({ phoneNumber, message = "Hello! I'm intere
 
   return (
     <>
-      {/* Floating WhatsApp Button */}
+      {/* Floating WhatsApp Button - Desktop Only */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-colors duration-200"
+        className="hidden md:block fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-colors duration-200"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         initial={{ scale: 0 }}
@@ -43,7 +43,7 @@ export default function WhatsAppChat({ phoneNumber, message = "Hello! I'm intere
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.8 }}
             transition={{ duration: 0.2 }}
-            className="fixed bottom-24 right-6 z-50 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-80 max-w-sm"
+            className="hidden md:block fixed bottom-24 right-6 z-50 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-80 max-w-sm"
           >
             {/* Header */}
             <div className="bg-green-500 text-white p-4 rounded-t-2xl flex items-center justify-between">

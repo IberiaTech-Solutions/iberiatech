@@ -70,26 +70,26 @@ export default function Header() {
               {mounted && theme === 'dark' ? <FiSun className="w-5 h-5" /> : <FiMoon className="w-5 h-5" />}
             </button>
 
-            {/* AI Chat Button */}
+            {/* AI Chat Button - Desktop Only */}
             <button
               onClick={() => {
                 // Trigger AI chatbot open
                 const event = new CustomEvent('openAIChat')
                 window.dispatchEvent(event)
               }}
-              className="p-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+              className="hidden md:block p-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
               aria-label={language === 'es' ? 'Abrir chat IA' : 'Open AI chat'}
               title={language === 'es' ? 'Chat con IA' : 'AI Chat'}
             >
               🤖
             </button>
 
-            {/* WhatsApp Chat Button */}
+            {/* WhatsApp Chat Button - Desktop Only */}
             <a
               href="https://wa.me/18643657897"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200"
+              className="hidden md:block p-2 text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200"
               aria-label={language === 'es' ? 'Abrir WhatsApp' : 'Open WhatsApp'}
               title={language === 'es' ? 'Chat por WhatsApp' : 'WhatsApp Chat'}
             >
@@ -123,27 +123,44 @@ export default function Header() {
               ))}
               
               {/* Mobile Chat Options */}
-              <div className="border-t border-gray-200 dark:border-gray-700 pt-2 mt-2">
+              <div className="border-t border-gray-200 dark:border-gray-700 pt-3 mt-3">
+                <div className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-2 px-2">
+                  {language === 'es' ? 'Contacto Rápido' : 'Quick Contact'}
+                </div>
                 <button
                   onClick={() => {
                     setIsMenuOpen(false)
                     const event = new CustomEvent('openAIChat')
                     window.dispatchEvent(event)
                   }}
-                  className="flex items-center space-x-2 w-full py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+                  className="flex items-center space-x-3 w-full py-3 px-3 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200 rounded-lg"
                 >
-                  <span>🤖</span>
-                  <span>{language === 'es' ? 'Chat con IA' : 'AI Chat'}</span>
+                  <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                    <span className="text-lg">🤖</span>
+                  </div>
+                  <div className="flex-1 text-left">
+                    <div className="font-medium">{language === 'es' ? 'Chat con IA' : 'AI Chat'}</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400">
+                      {language === 'es' ? 'Asistente inteligente' : 'Smart assistant'}
+                    </div>
+                  </div>
                 </button>
                 <a
                   href="https://wa.me/18643657897"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-2 w-full py-2 text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200"
+                  className="flex items-center space-x-3 w-full py-3 px-3 text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/20 transition-all duration-200 rounded-lg"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <span>💬</span>
-                  <span>{language === 'es' ? 'WhatsApp' : 'WhatsApp'}</span>
+                  <div className="w-8 h-8 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <span className="text-lg">💬</span>
+                  </div>
+                  <div className="flex-1 text-left">
+                    <div className="font-medium">{language === 'es' ? 'WhatsApp' : 'WhatsApp'}</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400">
+                      {language === 'es' ? 'Chat directo' : 'Direct chat'}
+                    </div>
+                  </div>
                 </a>
               </div>
             </nav>
