@@ -127,7 +127,7 @@ export default function ServicesSection() {
         {canScrollLeft && (
           <button
             onClick={() => scroll('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-16 h-16 bg-gray-800 dark:bg-gray-200 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 ml-4 flex items-center justify-center"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-16 h-16 bg-gray-800/30 dark:bg-gray-200/30 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 ml-4 flex items-center justify-center"
             aria-label="Scroll left"
           >
             <FiArrowLeft className="w-8 h-8 text-white dark:text-gray-800" />
@@ -136,7 +136,7 @@ export default function ServicesSection() {
         <button
           onClick={() => scroll('right')}
           disabled={!canScrollRight}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-16 h-16 bg-gray-800 dark:bg-gray-200 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed mr-4 flex items-center justify-center"
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-16 h-16 bg-gray-800/30 dark:bg-gray-200/30 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed mr-4 flex items-center justify-center"
           aria-label="Scroll right"
         >
           <FiArrowRight className="w-8 h-8 text-white dark:text-gray-800" />
