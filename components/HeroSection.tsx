@@ -54,7 +54,7 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4">
                   <a
                     href="#contact"
-                    className="bg-white text-primary-800 hover:bg-blue-50 font-semibold py-3 px-6 rounded-lg transition-colors duration-200 inline-flex items-center justify-center space-x-2"
+                    className="bg-accent-500 hover:bg-accent-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 inline-flex items-center justify-center space-x-2"
                   >
                     <span>{t('hero.cta.start')}</span>
                     <FiArrowRight className="w-5 h-5" />

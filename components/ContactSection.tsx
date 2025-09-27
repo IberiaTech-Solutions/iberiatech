@@ -100,14 +100,14 @@ This message was sent from your IberiaTech Solutions LLC contact form.
             {/* Contact Details */}
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex items-center justify-center">
-                  <FiMail className="w-6 h-6 text-blue-600" />
+                <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/20 rounded-lg flex items-center justify-center">
+                  <FiMail className="w-6 h-6 text-primary-800" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">{t('contact.email')}</h4>
                   <a
                     href="mailto:luis.lozoya.tech@gmail.com"
-                    className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+                    className="text-gray-600 dark:text-gray-300 hover:text-primary-800 dark:hover:text-primary-400 transition-colors duration-200"
                   >
                     luis.lozoya.tech@gmail.com
                   </a>
@@ -115,14 +115,14 @@ This message was sent from your IberiaTech Solutions LLC contact form.
               </div>
 
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex items-center justify-center">
-                  <FiPhone className="w-6 h-6 text-blue-600" />
+                <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/20 rounded-lg flex items-center justify-center">
+                  <FiPhone className="w-6 h-6 text-primary-800" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">{t('contact.phone')}</h4>
                   <a
                     href="tel:+18643657897"
-                    className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+                    className="text-gray-600 dark:text-gray-300 hover:text-primary-800 dark:hover:text-primary-400 transition-colors duration-200"
                   >
                     (864) 365-7897
                   </a>
@@ -130,8 +130,8 @@ This message was sent from your IberiaTech Solutions LLC contact form.
               </div>
 
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex items-center justify-center">
-                  <FiMapPin className="w-6 h-6 text-blue-600" />
+                <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/20 rounded-lg flex items-center justify-center">
+                  <FiMapPin className="w-6 h-6 text-primary-800" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">{t('contact.location')}</h4>

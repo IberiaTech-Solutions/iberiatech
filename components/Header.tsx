@@ -30,12 +30,12 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 relative">
+            <div className="w-16 h-16 relative">
               <Image
-                src="/images/logos/Logo1.png"
+                src="/images/logos/IberiaTechLogo5.png"
                 alt="IberiaTech Solutions"
                 fill
-                sizes="40px"
+                sizes="64px"
                 className="object-contain"
                 priority
               />

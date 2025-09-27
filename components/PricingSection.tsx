@@ -97,12 +97,12 @@ export default function PricingSection() {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
               className={`relative bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg ${
-                plan.popular ? 'ring-2 ring-blue-500 scale-105' : ''
+                plan.popular ? 'ring-2 ring-primary-800 scale-105' : ''
               }`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center space-x-1">
+                  <div className="bg-primary-800 text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center space-x-1">
                     <FiStar className="w-4 h-4" />
                     <span>{t('pricing.popular')}</span>
                   </div>
@@ -113,7 +113,7 @@ export default function PricingSection() {
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                   {t(plan.nameKey)}
                 </h3>
-                <div className="text-4xl font-bold text-blue-600 mb-2">
+                <div className="text-4xl font-bold text-primary-800 mb-2">
                   {plan.price}
                 </div>
                 <p className="text-gray-600 dark:text-gray-300">
@@ -134,7 +134,7 @@ export default function PricingSection() {
                 href="#contact"
                 className={`w-full py-3 px-6 rounded-lg font-semibold text-center transition-colors duration-200 flex items-center justify-center space-x-2 ${
                   plan.popular
-                    ? 'bg-blue-600 hover:bg-blue-700 text-white'
+                    ? 'bg-accent-500 hover:bg-accent-600 text-white'
                     : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-gray-100'
                 }`}
               >

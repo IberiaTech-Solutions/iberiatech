@@ -44,7 +44,7 @@ export default function AboutSection() {
             <div className="space-y-6">
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 flex items-center space-x-2">
-                  <FiTarget className="w-6 h-6 text-blue-600" />
+                  <FiTarget className="w-6 h-6 text-primary-800" />
                   <span>{t('about.mission')}</span>
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300">
@@ -54,7 +54,7 @@ export default function AboutSection() {
 
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 flex items-center space-x-2">
-                  <FiAward className="w-6 h-6 text-blue-600" />
+                  <FiAward className="w-6 h-6 text-primary-800" />
                   <span>{t('about.expertise')}</span>
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300">
@@ -77,8 +77,8 @@ export default function AboutSection() {
                 key={stat.label}
                 className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 text-center"
               >
-                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <stat.icon className="w-6 h-6 text-blue-600" />
+                <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <stat.icon className="w-6 h-6 text-primary-800" />
                 </div>
                 <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
                   {stat.number}

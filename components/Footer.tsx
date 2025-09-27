@@ -18,12 +18,12 @@ export default function Footer() {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 relative">
+              <div className="w-16 h-16 relative">
                 <Image
-                  src="/images/logos/Logo1.png"
+                  src="/images/logos/IberiaTechLogo5.png"
                   alt="IberiaTech Solutions"
                   fill
-                  sizes="40px"
+                  sizes="64px"
                   className="object-contain"
                 />
               </div>

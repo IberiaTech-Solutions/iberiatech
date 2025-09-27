@@ -205,7 +205,7 @@ export default function AIChatbot() {
       {/* Chat Button - Desktop Only */}
       <button
         onClick={() => setIsOpen(true)}
-        className="hidden md:block fixed bottom-28 right-6 z-50 bg-brand-600 hover:bg-brand-700 text-white p-4 rounded-full shadow-lg transition-colors duration-200 hover:scale-105"
+        className="hidden md:block fixed bottom-28 right-6 z-50 bg-accent-500 hover:bg-accent-600 text-white p-4 rounded-full shadow-lg transition-colors duration-200 hover:scale-105"
         aria-label={language === 'es' ? 'Abrir chat' : 'Open chat'}
       >
         🤖
@@ -217,7 +217,7 @@ export default function AIChatbot() {
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-brand-600 rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 bg-accent-500 rounded-full flex items-center justify-center">
                 🤖
               </div>
               <div>

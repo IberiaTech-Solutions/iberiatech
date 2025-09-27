@@ -20,9 +20,15 @@ export const metadata: Metadata = {
   publisher: 'IberiaTech Solutions',
   robots: 'index, follow',
   icons: {
-    icon: '/favicon.png',
-    shortcut: '/favicon.ico',
-    apple: '/favicon.png',
+    icon: [
+      { url: '/images/logos/IberiaTechLogo5.png', sizes: '32x32', type: 'image/png' },
+      { url: '/images/logos/IberiaTechLogo5.png', sizes: '64x64', type: 'image/png' },
+      { url: '/images/logos/IberiaTechLogo5.png', sizes: '128x128', type: 'image/png' },
+    ],
+    shortcut: '/images/logos/IberiaTechLogo5.png',
+    apple: [
+      { url: '/images/logos/IberiaTechLogo5.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
   openGraph: {
     type: 'website',
@@ -51,7 +57,7 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
-          enableSystem
+          enableSystem={false}
           disableTransitionOnChange
         >
           <LanguageProvider>
