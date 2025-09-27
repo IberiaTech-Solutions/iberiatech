@@ -16,13 +16,13 @@ export default function ServicesSection() {
     {
       icon: FiMessageCircle,
       title: language === 'es' ? 'Expande tu Negocio a Nuevos Mercados' : 'Expand Your Business to New Markets',
-      description: language === 'es' ? '¿Ya tienes un sitio web? Lo traducimos y optimizamos para audiencias en inglés y español, ayudándote a llegar a más clientes y mejorar tu posicionamiento en motores de búsqueda.' : 'Already have a website? We translate and optimize it for English and Spanish audiences, helping you reach more customers and improve your search engine rankings.',
-      features: language === 'es' ? ['Traducción profesional por un equipo bilingüe', 'SEO optimizado para ambos idiomas', 'Adaptación cultural para comunicación auténtica'] : ['Professional translation by a bilingual team', 'SEO optimized for both languages', 'Cultural adaptation for authentic communication']
+      description: language === 'es' ? '¿Ya tienes un sitio web? Lo traducimos y optimizamos para audiencias en inglés y español en Estados Unidos y España, ayudándote a llegar a más clientes y mejorar tu posicionamiento en motores de búsqueda.' : 'Already have a website? We translate and optimize it for English and Spanish audiences in the US and Spain, helping you reach more customers and improve your search engine rankings.',
+      features: language === 'es' ? ['Traducción profesional por un equipo bilingüe', 'SEO optimizado para mercados de Estados Unidos y España', 'Adaptación cultural para comunicación auténtica'] : ['Professional translation by a bilingual team', 'SEO optimized for both US and Spanish markets', 'Cultural adaptation for authentic communication']
     },
     {
       icon: FiCode,
-      title: language === 'es' ? 'Sitios Web que Te Traen Más Clientes' : 'Websites that Bring You More Customers',
-      description: language === 'es' ? 'Sitios web personalizados que crecen con tu negocio y convierten visitantes en clientes.' : 'Custom websites that grow with your business and convert visitors into customers.',
+      title: language === 'es' ? 'Sitios Web para Empresas de Charleston y España' : 'Websites for Charleston and Spanish Businesses',
+      description: language === 'es' ? 'Sitios web personalizados para empresas de Charleston y España que crecen con tu negocio y convierten visitantes en clientes.' : 'Custom websites for Charleston and Spanish businesses that grow with your business and convert visitors into customers.',
       features: language === 'es' ? ['Sitios Web Personalizados - Diseñados para su negocio', 'Conversión de Visitantes - Más clientes potenciales', 'Crecimiento Automático - Se adapta a su empresa', 'Carga Rápida - Visitantes satisfechos'] : ['Custom Websites - Designed for your business', 'Visitor Conversion - More leads and customers', 'Automatic Growth - Adapts to your business', 'Fast Loading - Happy visitors']
     },
         {
@@ -33,8 +33,8 @@ export default function ServicesSection() {
         },
     {
       icon: FiGlobe,
-      title: language === 'es' ? 'Alcanza Mercados de EE.UU. y España con Un Solo Sitio' : 'Reach Both US and Spanish Markets with One Website',
-      description: 'Bilingual websites that reach audiences in both US and Spanish markets.',
+      title: language === 'es' ? 'Diseño de Sitios Web Bilingües de Charleston y España' : 'Charleston and Spain Bilingual Website Design',
+      description: 'Bilingual websites for Charleston and Spanish businesses that reach audiences in both US and Spanish markets.',
       features: language === 'es' ? ['Inglés y español con adaptación cultural'] : ['English and Spanish with cultural adaptation']
     },
     {
@@ -179,6 +179,45 @@ export default function ServicesSection() {
           </div>
         </div>
       </div>
+
+      {/* AI Chatbot Showcase */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        viewport={{ once: true }}
+        className="mt-16 text-center"
+      >
+        <div className="bg-gradient-to-r from-accent-50 to-primary-50 dark:from-accent-900/20 dark:to-primary-900/20 rounded-2xl p-8 max-w-4xl mx-auto border border-accent-200 dark:border-accent-700">
+          <div className="flex items-center justify-center space-x-3 mb-4">
+            <div className="w-12 h-12 bg-accent-500 rounded-full flex items-center justify-center">
+              <span className="text-white text-xl">🤖</span>
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+              {language === 'es' ? '¡Prueba Nuestro Chatbot IA!' : 'Try Our AI Chatbot!'}
+            </h3>
+          </div>
+          <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+            {language === 'es' 
+              ? 'Experimenta con nuestro asistente inteligente. Puede responder preguntas sobre nuestros servicios, precios, políticas y más. ¡Haz clic en el botón verde en la esquina inferior derecha para comenzar!' 
+              : 'Experience our intelligent assistant. It can answer questions about our services, pricing, policies, and more. Click the green button in the bottom right corner to get started!'}
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+            <span className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
+              <span>{language === 'es' ? 'Respuestas instantáneas' : 'Instant responses'}</span>
+            </span>
+            <span className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-primary-800 rounded-full"></div>
+              <span>{language === 'es' ? 'Soporte bilingüe' : 'Bilingual support'}</span>
+            </span>
+            <span className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+              <span>{language === 'es' ? 'Disponible 24/7' : 'Available 24/7'}</span>
+            </span>
+          </div>
+        </div>
+      </motion.div>
     </section>
   )
 }

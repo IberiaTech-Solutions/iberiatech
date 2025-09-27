@@ -25,7 +25,7 @@ export default function HeroSection() {
                   <p className="text-xl md:text-2xl text-blue-100 font-medium">
                     {t('hero.promise')}
                   </p>
-                  <h2 className="text-2xl md:text-3xl font-semibold text-blue-200">
+                  <h2 className="text-2xl md:text-3xl font-semibold text-accent-400">
                     {t('hero.subtitle2')}
                   </h2>
                   <p className="text-lg text-blue-300 italic">

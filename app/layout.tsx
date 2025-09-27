@@ -12,9 +12,9 @@ import HtmlLangUpdater from '@/components/HtmlLangUpdater'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'IberiaTech Solutions - Web Development & Digital Solutions',
-  description: 'Empowering businesses with innovative tech solutions. Specializing in React, Next.js, and modern web development with bilingual support.',
-  keywords: 'web development, React, Next.js, Supabase, AWS, bilingual websites, Charleston SC',
+  title: 'Charleston Web Development | IberiaTech Solutions - Bilingual Websites',
+  description: 'Charleston bilingual website design for construction companies, law firms, and small businesses. Professional web development with English and Spanish support.',
+  keywords: 'Charleston web development, Charleston bilingual website design, Charleston law firm websites, Charleston construction company web development, bilingual websites, React, Next.js, Supabase, AWS',
   authors: [{ name: 'Luis Lozoya' }],
   creator: 'IberiaTech Solutions',
   publisher: 'IberiaTech Solutions',

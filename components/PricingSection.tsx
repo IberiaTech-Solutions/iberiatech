@@ -14,14 +14,16 @@ export default function PricingSection() {
       descriptionKey: 'pricing.starter.desc',
       ctaKey: 'pricing.cta.starter',
       features: language === 'es' ? [
-        'Sitio profesional de 1 página',
+        'Sitio profesional de 1 página (Inicio, Acerca de, Contacto todo en uno)',
+        'Soporte bilingüe completo (Inglés + Español) sin costo adicional.',
         'Formulario de contacto',
-        'SEO básico',
+        'SEO básico para ambos idiomas',
         '1 mes de soporte'
       ] : [
-        'Professional 1-page site',
+        '1-page professional site (Home, About, Contact all in one)',
+        'Full bilingual support (English + Spanish) at no extra cost.',
         'Contact form',
-        'Basic SEO',
+        'Basic SEO for both languages',
         '1 month support'
       ],
       popular: false
@@ -32,19 +34,19 @@ export default function PricingSection() {
       descriptionKey: 'pricing.business.desc',
       ctaKey: 'pricing.cta.business',
       features: language === 'es' ? [
-        '5-7 páginas',
-        'Diseño y marca personalizada',
-        'Bilingüe (EN/ES)',
-        'SEO y analíticas',
+        '5-7 páginas personalizadas (Inicio, Acerca de, Servicios, Portafolio, Contacto, etc.)',
+        'Marca personalizada (colores, tipografía, integración de logo)',
+        'Inglés + Español con adaptación cultural',
+        'SEO + configuración de Google Analytics',
         '3 meses de soporte',
         'Opcional: chatbot o búsqueda inteligente'
       ] : [
-        '5-7 pages',
-        'Custom branding',
-        'Bilingual (EN/ES)',
-        'SEO & analytics',
+        '5-7 custom pages (Home, About, Services, Portfolio, Contact, etc.)',
+        'Custom branding (colors, typography, logo integration)',
+        'English + Spanish with cultural adaptation',
+        'SEO + Google Analytics setup',
         '3 months support',
-        'Optional: chatbot or smart search'
+        'Optional chatbot or smart search'
       ],
       popular: true
     },
@@ -55,15 +57,15 @@ export default function PricingSection() {
       ctaKey: 'pricing.cta.enterprise',
       features: language === 'es' ? [
         'Páginas ilimitadas',
-        'E-commerce completo',
-        'APIs personalizadas',
-        'Chatbots AI, recomendaciones automatizadas, insights AI',
+        'Comercio electrónico completo (tienda, pagos, productos)',
+        'APIs personalizadas (integraciones con CRMs, sistemas de reservas, etc.)',
+        'Chatbots de IA y recomendaciones',
         '6-12 meses de soporte'
       ] : [
         'Unlimited pages',
-        'Full e-commerce',
-        'Custom APIs',
-        'AI chatbots, automated recommendations, AI insights',
+        'Full e-commerce (shop, payments, products)',
+        'Custom APIs (integrations with CRMs, booking systems, etc.)',
+        'AI chatbots & recommendations',
         '6-12 months support'
       ],
       popular: false

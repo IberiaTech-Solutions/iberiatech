@@ -13,6 +13,7 @@ interface Message {
 export default function AIChatbot() {
   const { language } = useLanguage()
   const [isOpen, setIsOpen] = useState(false)
+  const [isExpanded, setIsExpanded] = useState(false)
   const [messages, setMessages] = useState<Message[]>([])
   const [inputValue, setInputValue] = useState('')
   const [isTyping, setIsTyping] = useState(false)
@@ -202,18 +203,27 @@ export default function AIChatbot() {
 
   return (
     <>
-      {/* Chat Button - Desktop Only */}
+      {/* Chat Button - Now visible on all devices */}
       <button
         onClick={() => setIsOpen(true)}
-        className="hidden md:block fixed bottom-28 right-6 z-50 bg-accent-500 hover:bg-accent-600 text-white p-4 rounded-full shadow-lg transition-colors duration-200 hover:scale-105"
+        className="fixed bottom-28 right-4 md:right-6 z-50 bg-accent-500 hover:bg-accent-600 text-white p-3 md:p-4 rounded-full shadow-lg transition-all duration-200 hover:scale-105 animate-pulse"
         aria-label={language === 'es' ? 'Abrir chat' : 'Open chat'}
       >
-        🤖
+        <div className="flex items-center space-x-2">
+          <span className="text-lg md:text-xl">🤖</span>
+          <span className="hidden sm:block text-sm font-medium">
+            {language === 'es' ? 'Chat IA' : 'AI Chat'}
+          </span>
+        </div>
       </button>
 
-      {/* Chat Window */}
+      {/* Chat Window - Now responsive for all devices */}
       {isOpen && (
-        <div className="hidden md:block fixed bottom-40 right-6 z-50 w-80 h-96 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 flex flex-col">
+        <div className={`fixed z-50 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 flex flex-col transition-all duration-300 ${
+          isExpanded 
+            ? 'inset-4 md:inset-8' 
+            : 'inset-4 md:bottom-40 md:right-6 md:inset-auto md:w-80 md:h-96'
+        }`}>
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
             <div className="flex items-center space-x-2">
@@ -229,12 +239,21 @@ export default function AIChatbot() {
                 </p>
               </div>
             </div>
-            <button
-              onClick={() => setIsOpen(false)}
-              className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
-            >
-              ✕
-            </button>
+            <div className="flex items-center space-x-2">
+              <button
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 px-2 py-1 text-xs font-medium border border-gray-300 dark:border-gray-600 rounded"
+                title={isExpanded ? (language === 'es' ? 'Contraer' : 'Collapse') : (language === 'es' ? 'Expandir' : 'Expand')}
+              >
+                {isExpanded ? (language === 'es' ? 'Pequeño' : 'Small') : (language === 'es' ? 'Grande' : 'Large')}
+              </button>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+              >
+                ✕
+              </button>
+            </div>
           </div>
 
           {/* Messages */}
@@ -245,7 +264,7 @@ export default function AIChatbot() {
                 className={`flex ${message.isUser ? 'justify-end' : 'justify-start'}`}
               >
                 <div
-                  className={`max-w-xs px-3 py-2 rounded-lg ${
+                  className={`max-w-sm px-4 py-3 rounded-lg ${
                     message.isUser
                       ? 'bg-brand-600 text-white'
                       : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white'
@@ -255,11 +274,76 @@ export default function AIChatbot() {
                     {!message.isUser && (
                       <span className="text-brand-600 dark:text-brand-400">🤖</span>
                     )}
-                    <p className="text-sm">{message.text}</p>
+                    <div className="text-sm whitespace-pre-wrap leading-relaxed">
+                      {message.text.split('**').map((part, index) => {
+                        if (index % 2 === 1) {
+                          return <strong key={index} className="font-semibold text-brand-600 dark:text-brand-400">{part}</strong>
+                        }
+                        return part
+                      })}
+                    </div>
                   </div>
                 </div>
               </div>
             ))}
+            
+            {/* Example Questions - Show when no messages or only welcome message */}
+            {messages.length <= 1 && (
+              <div className="space-y-3">
+                <p className="text-xs text-gray-500 dark:text-gray-400 text-center font-medium">
+                  {language === 'es' ? 'Preguntas de ejemplo:' : 'Example questions:'}
+                </p>
+                <div className="grid grid-cols-1 gap-2">
+                  {[
+                    language === 'es' ? '¿Cuáles son sus precios?' : 'What are your prices?',
+                    language === 'es' ? '¿Qué servicios ofrecen?' : 'What services do you offer?',
+                    language === 'es' ? '¿Cómo puedo contactarlos?' : 'How can I contact you?',
+                    language === 'es' ? '¿Hacen sitios bilingües?' : 'Do you make bilingual websites?'
+                  ].map((question, index) => (
+                    <button
+                      key={index}
+                      onClick={async () => {
+                        const userMessage: Message = {
+                          id: Date.now().toString(),
+                          text: question,
+                          isUser: true,
+                          timestamp: new Date()
+                        }
+                        setMessages(prev => [...prev, userMessage])
+                        setIsTyping(true)
+
+                        try {
+                          const aiResponseText = await getAIResponse(question)
+                          const aiResponse: Message = {
+                            id: (Date.now() + 1).toString(),
+                            text: aiResponseText,
+                            isUser: false,
+                            timestamp: new Date()
+                          }
+                          setMessages(prev => [...prev, aiResponse])
+                        } catch (error) {
+                          console.error('Error getting AI response:', error)
+                          const errorResponse: Message = {
+                            id: (Date.now() + 1).toString(),
+                            text: language === 'es' 
+                              ? 'Lo siento, hubo un error. Por favor contacta directamente a luis.lozoya.tech@gmail.com o llama al (864) 365-7897.'
+                              : 'Sorry, there was an error. Please contact us directly at luis.lozoya.tech@gmail.com or call (864) 365-7897.',
+                            isUser: false,
+                            timestamp: new Date()
+                          }
+                          setMessages(prev => [...prev, errorResponse])
+                        } finally {
+                          setIsTyping(false)
+                        }
+                      }}
+                      className="text-left p-2 bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg text-xs text-gray-700 dark:text-gray-300 transition-colors duration-200"
+                    >
+                      {question}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
             
             {isTyping && (
               <div className="flex justify-start">

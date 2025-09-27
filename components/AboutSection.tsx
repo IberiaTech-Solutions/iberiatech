@@ -2,7 +2,7 @@
 
 import { useLanguage } from './LanguageProvider'
 import { motion } from 'framer-motion'
-import { FiTarget, FiAward, FiUsers, FiGlobe } from 'react-icons/fi'
+import { FiTarget, FiAward, FiUsers, FiGlobe, FiUser, FiCode, FiMail } from 'react-icons/fi'
 
 export default function AboutSection() {
   const { t } = useLanguage()
@@ -90,6 +90,72 @@ export default function AboutSection() {
             ))}
           </motion.div>
         </div>
+
+        {/* Personal Section - About Luis */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 rounded-2xl p-8 mb-16"
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+            {/* Left - Profile Info */}
+            <div className="lg:col-span-1 text-center lg:text-left">
+              <div className="w-24 h-24 bg-gradient-to-br from-primary-800 to-accent-500 rounded-full flex items-center justify-center mx-auto lg:mx-0 mb-4">
+                <FiUser className="w-12 h-12 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                Luis Lozoya
+              </h3>
+              <p className="text-lg text-primary-800 dark:text-primary-400 font-medium mb-4">
+                {t('about.founder.title')}
+              </p>
+              <div className="flex flex-col space-y-2">
+                <a
+                  href="mailto:luis.lozoya.tech@gmail.com"
+                  className="flex items-center justify-center lg:justify-start space-x-2 text-gray-600 dark:text-gray-300 hover:text-primary-800 dark:hover:text-primary-400 transition-colors duration-200"
+                >
+                  <FiMail className="w-4 h-4" />
+                  <span className="text-sm">luis.lozoya.tech@gmail.com</span>
+                </a>
+                <a
+                  href="https://luislozoya.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center lg:justify-start space-x-2 text-gray-600 dark:text-gray-300 hover:text-primary-800 dark:hover:text-primary-400 transition-colors duration-200"
+                >
+                  <FiCode className="w-4 h-4" />
+                  <span className="text-sm">luislozoya.com</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Right - Personal Story */}
+            <div className="lg:col-span-2">
+              <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+                {t('about.founder.story.title')}
+              </h4>
+              <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                {t('about.founder.story.text')}
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-accent-500 rounded-full flex items-center justify-center">
+                    <span className="text-white text-sm font-bold">🇺🇸</span>
+                  </div>
+                  <span className="text-sm text-gray-600 dark:text-gray-300">{t('about.founder.experience.us')}</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-accent-500 rounded-full flex items-center justify-center">
+                    <span className="text-white text-sm font-bold">🇪🇸</span>
+                  </div>
+                  <span className="text-sm text-gray-600 dark:text-gray-300">{t('about.founder.experience.spain')}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Testimonials */}
         <motion.div
