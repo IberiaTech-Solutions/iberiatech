@@ -14,6 +14,12 @@ export default function ServicesSection() {
 
   const services = [
     {
+      icon: FiCode,
+      title: language === 'es' ? 'Sitio Web con Plantilla Profesional - $500 + $97/mes' : 'Professional Template Website - $500 + $97/month',
+      description: language === 'es' ? 'Sitio web profesional basado en plantilla probada con mantenimiento mensual incluido. Perfecto para pequeñas empresas que quieren un sitio web profesional sin la inversión inicial alta.' : 'Professional website based on proven template with monthly maintenance included. Perfect for small businesses that want a professional website without the high initial investment.',
+      features: language === 'es' ? ['Sitio web profesional basado en plantilla', 'Mantenimiento mensual incluido', 'Soporte bilingüe completo', 'SEO básico y optimización móvil', 'Hosting y dominio incluidos'] : ['Professional website based on template', 'Monthly maintenance included', 'Full bilingual support', 'Basic SEO and mobile optimization', 'Hosting and domain included']
+    },
+    {
       icon: FiMessageCircle,
       title: language === 'es' ? 'Expande tu Negocio a Nuevos Mercados' : 'Expand Your Business to New Markets',
       description: language === 'es' ? '¿Ya tienes un sitio web? Lo traducimos y optimizamos para audiencias en inglés y español en Estados Unidos y España, ayudándote a llegar a más clientes y mejorar tu posicionamiento en motores de búsqueda.' : 'Already have a website? We translate and optimize it for English and Spanish audiences in the US and Spain, helping you reach more customers and improve your search engine rankings.',

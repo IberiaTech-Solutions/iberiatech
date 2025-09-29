@@ -9,6 +9,34 @@ export default function PricingSection() {
 
   const pricingPlans = [
     {
+      nameKey: 'pricing.template.name',
+      price: language === 'es' ? '€500' : '$500',
+      monthlyPrice: language === 'es' ? '€97/mes' : '$97/month',
+      descriptionKey: 'pricing.template.desc',
+      ctaKey: 'pricing.cta.template',
+      features: language === 'es' ? [
+        'Sitio web profesional basado en plantilla personalizada',
+        'Soporte bilingüe completo (Inglés + Español)',
+        'Formulario de contacto y optimización móvil',
+        'SEO básico para ambos idiomas',
+        'Configuración de hosting y dominio',
+        'Certificado SSL incluido',
+        '1 mes de soporte inicial',
+        'Mantenimiento mensual incluido'
+      ] : [
+        'Professional website based on custom template',
+        'Full bilingual support (English + Spanish)',
+        'Contact form and mobile optimization',
+        'Basic SEO for both languages',
+        'Hosting and domain setup',
+        'SSL certificate included',
+        '1 month initial support',
+        'Monthly maintenance included'
+      ],
+      popular: false,
+      isTemplate: true
+    },
+    {
       nameKey: 'pricing.starter.name',
       price: language === 'es' ? '€950' : '$950',
       descriptionKey: 'pricing.starter.desc',
@@ -90,7 +118,7 @@ export default function PricingSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {pricingPlans.map((plan, index) => (
             <motion.div
               key={`pricing-plan-${index}`}
@@ -118,6 +146,11 @@ export default function PricingSection() {
                 <div className="text-4xl font-bold text-primary-800 mb-2">
                   {plan.price}
                 </div>
+                {plan.monthlyPrice && (
+                  <div className="text-lg font-semibold text-accent-600 dark:text-accent-400 mb-2">
+                    + {plan.monthlyPrice}
+                  </div>
+                )}
                 <p className="text-gray-600 dark:text-gray-300">
                   {t(plan.descriptionKey)}
                 </p>
