@@ -12,20 +12,60 @@ export default function PortfolioSection() {
 
   const projects = [
     {
-      title: 'Cursor Rules Hub',
-      description: language === 'es' ? 'Una plataforma profesional que ayuda a los desarrolladores a trabajar de forma más rápida y eficiente.' : 'A professional platform that helps developers work faster and more efficiently.',
-      businessBenefit: language === 'es' ? 'Ayuda a los equipos a ahorrar tiempo y aumentar la productividad con automatización inteligente' : 'Helps teams save time and increase productivity with smart automation',
-      image: '/images/portfolio/cursor-rules-hub.svg',
-      technologies: language === 'es' ? ['Diseño Web Moderno', 'Carga Rápida', 'Compatible con dispositivos móviles', 'Hosting en la Nube'] : ['Modern Web Design', 'Fast Loading', 'Mobile-Friendly', 'Cloud Hosting'],
-      liveUrl: 'https://cursor-rules-virid.vercel.app/',
-      githubUrl: 'https://github.com/Javierlozo/cursor_rules',
-      featured: true,
-      category: 'Web Development',
-      metrics: {
-        performance: '95%',
-        loadTime: '<2s',
-        mobileScore: '100%'
-      }
+      id: 1,
+      title: 'Querri',
+      description: language === 'es' 
+        ? 'Un sitio web para una startup de análisis de datos con sede en Charleston que muestra su plataforma de IA y servicios. Destaca características como tableros, limpieza de datos e integraciones de manera clara que ayuda a los clientes potenciales a entender el valor de sus soluciones.' 
+        : 'A website for a Charleston-based data analytics startup that showcases their AI platform and services. It highlights features like dashboards, data cleansing, and integrations in a clear way that helps potential clients understand the value of their solutions.',
+      image: '/images/portfolio/querri1.png',
+      category: 'Business Services',
+      technologies: ['Custom CMS', 'Client Access', 'Data Visualization'],
+      impact: language === 'es' 
+        ? 'Gestión de clientes más ágil y mejor rendimiento' 
+        : 'Streamlined client management and improved performance',
+      link: 'https://querri.com/',
+      ownership: 'direct',
+      role: language === 'es'
+        ? 'Entregado como contratista para Querri.'
+        : 'Delivered as a contractor for Querri.'
+    },
+    {
+      id: 2,
+      title: 'GSeay Construction',
+      description: language === 'es' 
+        ? 'Un sitio web profesional para una empresa de construcción de Florida especializada en proyectos de hospitalidad, salud, industrial y renovación. El sitio destaca sus servicios, incluye un portafolio de proyectos, testimonios y un mapa de proyectos para demostrar credibilidad y atraer nuevos clientes.' 
+        : 'A professional website for a Florida construction company specializing in hospitality, healthcare, industrial, and renovation projects. The site highlights their services, includes a project portfolio, testimonials, and a project map to demonstrate credibility and attract new clients.',
+      image: '/images/portfolio/gseay.png',
+      category: 'Construction',
+      technologies: ['Project Portfolio', 'Services', 'Client Testimonials'],
+      impact: language === 'es' 
+        ? 'Mayor visibilidad en línea y más consultas de clientes' 
+        : 'Improved online visibility and more client inquiries',
+      link: 'https://www.gseayinc.com/',
+      ownership: 'collaboration',
+      collaboration: 'GDNA',
+      role: language === 'es' 
+        ? 'Entregado como contratista para GDNA.' 
+        : 'Delivered as a contractor for GDNA.'
+    },
+    {
+      id: 3,
+      title: 'LESS USA',
+      description: language === 'es' 
+        ? 'Una plataforma digital para una asociación de aplicación de la ley de EE. UU. para gestionar programas de entrenamiento. El sitio soporta documentar el rendimiento de reclutas, dar visibilidad a entrenadores y proporcionar a los miembros acceso a herramientas y recursos clave.' 
+        : 'A digital platform for a U.S. law enforcement association to manage training programs. The site supports documenting recruit performance, giving trainers visibility, and providing members with access to key tools and resources.',
+      image: '/images/portfolio/Less1.png',
+      category: 'Digital Platform',
+      technologies: ['Training Platform', 'Documentation', 'Member Access'],
+      impact: language === 'es' 
+        ? '30% más rendimiento y UX optimizada' 
+        : '30% performance improvement and optimized UX',
+      link: 'https://www.less-usa.com/',
+      ownership: 'collaboration',
+      collaboration: 'GDNA',
+      role: language === 'es' 
+        ? 'Entregado como contratista para GDNA.' 
+        : 'Delivered as a contractor for GDNA.'
     }
   ]
 
@@ -48,21 +88,13 @@ export default function PortfolioSection() {
           className="text-center mb-16"
         >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                {t('portfolio.title2')}
+                {language === 'es' ? 'Proyectos que Ayudan a las Pequeñas Empresas a Crecer' : 'Projects That Help Small Businesses Grow'}
               </h2>
-              <h3 className="text-xl md:text-2xl font-semibold text-primary-800 dark:text-primary-400 mb-4">
-                {t('portfolio.subtitle2')}
-              </h3>
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                {t('portfolio.subtitle3')}
+                {language === 'es' 
+                  ? 'Estos incluyen tanto proyectos de IberiaTech Solutions como trabajo profesional que Luis Lozoya entregó como contratista para agencias socias.' 
+                  : 'These include both IberiaTech Solutions projects and professional work Luis Lozoya delivered as a contractor for partner agencies.'}
               </p>
-              
-              {/* Disclaimer */}
-              <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 rounded-r-lg max-w-4xl mx-auto">
-                <p className="text-sm text-blue-800 dark:text-blue-200 italic">
-                  {t('portfolio.disclaimer')}
-                </p>
-              </div>
         </motion.div>
 
         {/* Category Filter */}
@@ -88,126 +120,86 @@ export default function PortfolioSection() {
           ))}
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* SMB Case Studies */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
+        >
           {filteredProjects.map((project, index) => (
             <motion.div
-              key={project.title}
+              key={project.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 ${
-                project.featured ? 'lg:col-span-2' : ''
-              }`}
+              className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
               {/* Project Image */}
-              <div className={`relative ${project.featured ? 'h-64' : 'h-48'} overflow-hidden`}>
+              <div className="h-64 md:h-72 relative overflow-hidden">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover transition-transform duration-300 hover:scale-105"
-                  onError={(e) => {
-                    // Fallback to placeholder if image doesn't exist
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                    const fallback = target.nextElementSibling as HTMLElement;
-                    if (fallback) fallback.style.display = 'flex';
-                  }}
+                  className="object-cover object-top"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
-                {/* Fallback placeholder */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-gray-700 dark:to-gray-600 flex items-center justify-center" style={{ display: 'none' }}>
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mx-auto mb-4">
-                      <span className="text-white font-bold text-xl">IT</span>
-                    </div>
-                    <p className="text-gray-600 dark:text-gray-300 font-medium">Project Preview</p>
-                  </div>
-                </div>
               </div>
-
-              {/* Project Content */}
+              
               <div className="p-6">
-                {/* Project Header */}
-                <div className="flex items-start justify-between mb-3">
-                  <div>
-                    <span className="inline-block px-3 py-1 bg-primary-100 dark:bg-primary-900/20 text-primary-800 dark:text-primary-400 text-xs font-semibold rounded-full mb-2">
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                    {project.title}
+                  </h3>
+                  <div className="flex flex-col items-end space-y-1">
+                    <span className="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-400 text-xs font-medium rounded-full">
                       {project.category}
                     </span>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                      {project.title}
-                    </h3>
                   </div>
-                  {project.featured && (
-                    <span className="bg-accent-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                      {language === 'es' ? 'Destacado' : 'Featured'}
-                    </span>
-                  )}
                 </div>
-
-                <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed">
+                
+                <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">
                   {project.description}
                 </p>
                 
-                {/* Performance Metrics */}
-                <div className="grid grid-cols-3 gap-3 mb-4">
-                  <div className="text-center p-2 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                    <FiTrendingUp className="w-4 h-4 text-accent-500 mx-auto mb-1" />
-                    <div className="text-xs font-semibold text-gray-900 dark:text-white">{project.metrics.performance}</div>
-                    <div className="text-xs text-gray-500 dark:text-gray-400">{language === 'es' ? 'Rendimiento' : 'Performance'}</div>
-                  </div>
-                  <div className="text-center p-2 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                    <FiClock className="w-4 h-4 text-primary-800 mx-auto mb-1" />
-                    <div className="text-xs font-semibold text-gray-900 dark:text-white">{project.metrics.loadTime}</div>
-                    <div className="text-xs text-gray-500 dark:text-gray-400">{language === 'es' ? 'Carga' : 'Load Time'}</div>
-                  </div>
-                  <div className="text-center p-2 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                    <FiSmartphone className="w-4 h-4 text-green-500 mx-auto mb-1" />
-                    <div className="text-xs font-semibold text-gray-900 dark:text-white">{project.metrics.mobileScore}</div>
-                    <div className="text-xs text-gray-500 dark:text-gray-400">{language === 'es' ? 'Móvil' : 'Mobile'}</div>
-                  </div>
-                </div>
                 
-                {/* Business Benefit */}
-                <div className="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 p-3 mb-4 rounded-r-lg">
-                  <p className="text-green-800 dark:text-green-200 text-sm font-medium">
-                    <span className="font-semibold">{language === 'es' ? 'Beneficio Empresarial:' : 'Business Benefit:'}</span> {project.businessBenefit}
-                  </p>
-                </div>
-
-                {/* Technologies */}
+                {project.role && (
+                  <div className="mb-4">
+                    <p className="text-xs text-gray-500 dark:text-gray-400 mb-2 font-medium">
+                      {language === 'es' ? 'ROL:' : 'ROLE:'}
+                    </p>
+                    <p className="text-sm text-blue-600 dark:text-blue-400 font-medium">
+                      {project.role}
+                    </p>
+                  </div>
+                )}
+                
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs font-medium"
+                      className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-
-                {/* Project Links */}
-                <div className="flex space-x-4">
-                  <a
-                    href={project.liveUrl}
-                    className="flex items-center space-x-2 text-primary-800 hover:text-primary-900 dark:text-primary-400 dark:hover:text-primary-300 transition-colors duration-200"
-                  >
-                    <FiExternalLink className="w-4 h-4" />
-                    <span className="text-sm font-medium">{language === 'es' ? 'Demo en Vivo' : 'Live Demo'}</span>
-                  </a>
-                  <a
-                    href={project.githubUrl}
-                    className="flex items-center space-x-2 text-gray-600 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 transition-colors duration-200"
-                  >
-                    <FiGithub className="w-4 h-4" />
-                    <span className="text-sm font-medium">{language === 'es' ? 'Ver Código' : 'View Code'}</span>
-                  </a>
-                </div>
+                
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 text-sm font-medium transition-colors duration-200"
+                >
+                  {language === 'es' ? 'Ver proyecto' : 'View Project'}
+                  <FiExternalLink className="ml-1 h-3 w-3" />
+                </a>
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Coming Soon Note */}
         <motion.div
@@ -219,14 +211,14 @@ export default function PortfolioSection() {
         >
           <div className="bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 rounded-2xl p-8 max-w-4xl mx-auto border border-primary-200 dark:border-primary-700">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              {language === 'es' ? 'Más Proyectos en Desarrollo' : 'More Projects in Development'}
+              {language === 'es' ? 'Mi Experiencia' : 'My Experience'}
             </h3>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
               {language === 'es' 
-                ? 'Actualmente estoy trabajando en varios proyectos emocionantes que incluyen aplicaciones web modernas, soluciones de IA y plataformas de comercio electrónico. ¡Mantente atento para ver más proyectos pronto!' 
-                : 'I\'m currently working on several exciting projects including modern web applications, AI solutions, and e-commerce platforms. Stay tuned for more projects coming soon!'}
+                ? 'Soy Luis Lozoya, fundador de IberiaTech Solutions. Ayudo a pequeñas empresas en Charleston y España a crecer en línea con sitios web modernos y bilingües. Durante los últimos 3 años, he ayudado a bufetes de abogados, empresas de nutrición y empresas de construcción a conseguir más clientes en línea con sitios web modernos y bilingües.' 
+                : 'I\'m Luis Lozoya, founder of IberiaTech Solutions. I help small businesses in Charleston and Spain grow online with modern, bilingual websites. For the past 3 years, I\'ve helped law firms, nutrition companies, and construction businesses get more clients online with modern, bilingual websites.'}
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-4 mb-6">
               <div className="flex items-center space-x-2 text-primary-800 dark:text-primary-400">
                 <div className="w-2 h-2 bg-accent-500 rounded-full animate-pulse"></div>
                 <span className="text-sm font-medium">{language === 'es' ? 'En Desarrollo' : 'In Development'}</span>
@@ -236,6 +228,15 @@ export default function PortfolioSection() {
                 <span className="text-sm font-medium">{language === 'es' ? 'Próximamente' : 'Coming Soon'}</span>
               </div>
             </div>
+            <a
+              href="https://luislozoya.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-800 hover:bg-primary-900 dark:bg-primary-600 dark:hover:bg-primary-700 transition-colors duration-200 shadow-lg"
+            >
+              <span>{language === 'es' ? 'Ver más de mi trabajo' : 'See more of my work'}</span>
+              <FiExternalLink className="ml-2 h-4 w-4" />
+            </a>
           </div>
         </motion.div>
       </div>

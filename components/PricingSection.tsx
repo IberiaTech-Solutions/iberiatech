@@ -9,32 +9,25 @@ export default function PricingSection() {
 
   const pricingPlans = [
     {
-      nameKey: 'pricing.template.name',
-      price: language === 'es' ? '€500' : '$500',
-      monthlyPrice: language === 'es' ? '€97/mes' : '$97/month',
-      descriptionKey: 'pricing.template.desc',
-      ctaKey: 'pricing.cta.template',
+      nameKey: 'pricing.custom.name',
+      price: language === 'es' ? 'Cotizar' : 'Quote',
+      descriptionKey: 'pricing.custom.desc',
+      ctaKey: 'pricing.cta.custom',
       features: language === 'es' ? [
-        'Sitio web profesional basado en plantilla personalizada',
-        'Soporte bilingüe completo (Inglés + Español)',
-        'Formulario de contacto y optimización móvil',
-        'SEO básico para ambos idiomas',
-        'Configuración de hosting y dominio',
-        'Certificado SSL incluido',
-        '1 mes de soporte inicial',
-        'Mantenimiento mensual incluido'
+        'Consulta personalizada',
+        'Diseño adaptado a tu negocio',
+        'Plan de crecimiento incluido',
+        'Solución perfecta para tu presupuesto',
+        'Soporte completo'
       ] : [
-        'Professional website based on custom template',
-        'Full bilingual support (English + Spanish)',
-        'Contact form and mobile optimization',
-        'Basic SEO for both languages',
-        'Hosting and domain setup',
-        'SSL certificate included',
-        '1 month initial support',
-        'Monthly maintenance included'
+        'Personal consultation',
+        'Design tailored to your business',
+        'Growth plan included',
+        'Perfect solution for your budget',
+        'Complete support'
       ],
       popular: false,
-      isTemplate: true
+      isCustom: true
     },
     {
       nameKey: 'pricing.starter.name',
@@ -42,61 +35,41 @@ export default function PricingSection() {
       descriptionKey: 'pricing.starter.desc',
       ctaKey: 'pricing.cta.starter',
       features: language === 'es' ? [
-        'Sitio profesional de 1 página (Inicio, Acerca de, Contacto todo en uno)',
-        'Soporte bilingüe completo (Inglés + Español) sin costo adicional.',
+        'Sitio web de 3-4 páginas',
+        'Móvil + Google listo',
         'Formulario de contacto',
-        'SEO básico para ambos idiomas',
+        'Inglés y Español incluido',
         '1 mes de soporte'
       ] : [
-        '1-page professional site (Home, About, Contact all in one)',
-        'Full bilingual support (English + Spanish) at no extra cost.',
+        '3-4 page website',
+        'Mobile + Google ready',
         'Contact form',
-        'Basic SEO for both languages',
+        'English & Spanish included',
         '1 month support'
       ],
       popular: false
     },
     {
       nameKey: 'pricing.business.name',
-      price: language === 'es' ? '€2,400' : '$2,400',
+      price: language === 'es' ? '€2,500' : '$2,500',
       descriptionKey: 'pricing.business.desc',
       ctaKey: 'pricing.cta.business',
       features: language === 'es' ? [
-        '5-7 páginas personalizadas (Inicio, Acerca de, Servicios, Portafolio, Contacto, etc.)',
-        'Marca personalizada (colores, tipografía, integración de logo)',
+        '5-7 páginas personalizadas',
+        'Marca personalizada incluida',
         'Inglés + Español con adaptación cultural',
-        'SEO + configuración de Google Analytics',
-        '3 meses de soporte',
-        'Opcional: chatbot o búsqueda inteligente'
+        'SEO avanzado + Google Analytics',
+        'Optimización de conversión',
+        '3 meses de soporte'
       ] : [
-        '5-7 custom pages (Home, About, Services, Portfolio, Contact, etc.)',
-        'Custom branding (colors, typography, logo integration)',
+        '5-7 custom pages',
+        'Custom branding included',
         'English + Spanish with cultural adaptation',
-        'SEO + Google Analytics setup',
-        '3 months support',
-        'Optional chatbot or smart search'
+        'Advanced SEO + Google Analytics',
+        'Conversion optimization',
+        '3 months support'
       ],
       popular: true
-    },
-    {
-      nameKey: 'pricing.enterprise.name',
-      price: language === 'es' ? '€4,800+' : '$4,800+',
-      descriptionKey: 'pricing.enterprise.desc',
-      ctaKey: 'pricing.cta.enterprise',
-      features: language === 'es' ? [
-        'Páginas ilimitadas',
-        'Comercio electrónico completo (tienda, pagos, productos)',
-        'APIs personalizadas (integraciones con CRMs, sistemas de reservas, etc.)',
-        'Chatbots de IA y recomendaciones',
-        '6-12 meses de soporte'
-      ] : [
-        'Unlimited pages',
-        'Full e-commerce (shop, payments, products)',
-        'Custom APIs (integrations with CRMs, booking systems, etc.)',
-        'AI chatbots & recommendations',
-        '6-12 months support'
-      ],
-      popular: false
     }
   ]
 
@@ -118,7 +91,7 @@ export default function PricingSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {pricingPlans.map((plan, index) => (
             <motion.div
               key={`pricing-plan-${index}`}
@@ -128,6 +101,8 @@ export default function PricingSection() {
               viewport={{ once: true }}
               className={`relative bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg ${
                 plan.popular ? 'ring-2 ring-primary-800 scale-105' : ''
+              } ${
+                plan.isCustom ? 'ring-2 ring-accent-500 scale-105' : ''
               }`}
             >
               {plan.popular && (
@@ -138,19 +113,22 @@ export default function PricingSection() {
                   </div>
                 </div>
               )}
+              {plan.isCustom && (
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <div className="bg-accent-500 text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center space-x-1">
+                    <span>⭐</span>
+                    <span>{language === 'es' ? 'Recomendado' : 'Recommended'}</span>
+                  </div>
+                </div>
+              )}
 
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                   {t(plan.nameKey)}
                 </h3>
-                <div className="text-4xl font-bold text-primary-800 mb-2">
+                <div className={`text-4xl font-bold mb-2 ${plan.isCustom ? 'text-accent-600 dark:text-accent-400' : 'text-primary-800'}`}>
                   {plan.price}
                 </div>
-                {plan.monthlyPrice && (
-                  <div className="text-lg font-semibold text-accent-600 dark:text-accent-400 mb-2">
-                    + {plan.monthlyPrice}
-                  </div>
-                )}
                 <p className="text-gray-600 dark:text-gray-300">
                   {t(plan.descriptionKey)}
                 </p>
@@ -170,6 +148,8 @@ export default function PricingSection() {
                 className={`w-full py-3 px-6 rounded-lg font-semibold text-center transition-colors duration-200 flex items-center justify-center space-x-2 ${
                   plan.popular
                     ? 'bg-accent-500 hover:bg-accent-600 text-white'
+                    : plan.isCustom
+                    ? 'bg-primary-800 hover:bg-primary-900 text-white'
                     : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-gray-100'
                 }`}
               >
@@ -180,10 +160,62 @@ export default function PricingSection() {
           ))}
         </div>
 
+        {/* What's Always Included */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="mt-12"
+        >
+          <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg border border-primary-200 dark:border-primary-700 max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+              {language === 'es' ? 'Lo que siempre está incluido' : 'What\'s always included'}
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="flex items-center space-x-3">
+                <FiCheck className="w-5 h-5 text-green-500 flex-shrink-0" />
+                <span className="text-gray-700 dark:text-gray-300">
+                  {language === 'es' ? 'Diseño móvil-friendly' : 'Mobile-friendly design'}
+                </span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <FiCheck className="w-5 h-5 text-green-500 flex-shrink-0" />
+                <span className="text-gray-700 dark:text-gray-300">
+                  {language === 'es' ? 'SEO básico' : 'SEO basics'}
+                </span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <FiCheck className="w-5 h-5 text-green-500 flex-shrink-0" />
+                <span className="text-gray-700 dark:text-gray-300">
+                  {language === 'es' ? 'Configuración de formulario de contacto' : 'Contact form setup'}
+                </span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <FiCheck className="w-5 h-5 text-green-500 flex-shrink-0" />
+                <span className="text-gray-700 dark:text-gray-300">
+                  {language === 'es' ? 'Inglés + Español (sin costo extra)' : 'English + Spanish (no extra fee)'}
+                </span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <FiCheck className="w-5 h-5 text-green-500 flex-shrink-0" />
+                <span className="text-gray-700 dark:text-gray-300">
+                  {language === 'es' ? 'Soporte 1-a-1 después del lanzamiento' : '1-on-1 support after launch'}
+                </span>
+              </div>
+            </div>
+            <p className="text-center text-gray-600 dark:text-gray-400 text-sm mt-6">
+              {language === 'es' 
+                ? 'No ocultamos lo esencial detrás de costos adicionales' 
+                : 'We don\'t hide essentials behind upsells'}
+            </p>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
           className="text-center mt-12"
         >

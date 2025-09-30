@@ -30,9 +30,7 @@ export default function Footer() {
               <span className="text-xl font-bold">IberiaTech Solutions</span>
             </div>
               <p className="text-gray-300 mb-6 max-w-md">
-                {language === 'es' 
-                  ? 'Empoderando empresas en Charleston, España y más allá con soluciones tecnológicas innovadoras para un futuro digital.' 
-                  : 'Empowering businesses in Charleston, Spain, and beyond with innovative tech solutions for a digital future.'}
+                {t('footer.description')}
               </p>
             <div className="flex space-x-4">
               <a
