@@ -72,51 +72,11 @@ export default function ProblemsSection() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Problems Section */}
+          {/* Solutions Section */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="space-y-6"
-          >
-            <div className="text-center mb-8 min-h-[80px] flex items-center justify-center">
-              <h3 className="text-2xl font-bold text-red-600 dark:text-red-400 mb-2">
-                {t('problems.without.title')}
-              </h3>
-            </div>
-
-            <div className="space-y-4">
-              {problems.map((problem, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex items-start space-x-4 p-4 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-200 dark:border-red-800 min-h-[100px]"
-                >
-                  <div className="w-10 h-10 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center flex-shrink-0">
-                    <FiX className="w-5 h-5 text-red-600 dark:text-red-400" />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1">
-                      {problem.title}
-                    </h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">
-                      {problem.description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Solutions Section */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
             className="space-y-6"
           >
@@ -132,7 +92,7 @@ export default function ProblemsSection() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+                  transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                   viewport={{ once: true }}
                   className="flex items-start space-x-4 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800 min-h-[100px]"
                 >
@@ -145,6 +105,46 @@ export default function ProblemsSection() {
                     </h4>
                     <p className="text-sm text-gray-600 dark:text-gray-300">
                       {solution.description}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Problems Section */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <div className="text-center mb-8 min-h-[80px] flex items-center justify-center">
+              <h3 className="text-2xl font-bold text-red-600 dark:text-red-400 mb-2">
+                {t('problems.without.title')}
+              </h3>
+            </div>
+
+            <div className="space-y-4">
+              {problems.map((problem, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex items-start space-x-4 p-4 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-200 dark:border-red-800 min-h-[100px]"
+                >
+                  <div className="w-10 h-10 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center flex-shrink-0">
+                    <FiX className="w-5 h-5 text-red-600 dark:text-red-400" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1">
+                      {problem.title}
+                    </h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                      {problem.description}
                     </p>
                   </div>
                 </motion.div>

@@ -13,7 +13,28 @@ export default function PortfolioSection() {
   const projects = [
     {
       id: 1,
+      title: 'PortfolioHub',
+      logo: '/images/logos/Logo Icon.png',
+      description: language === 'es' 
+        ? 'Una plataforma personal para conectar con profesionales talentosos y explorar sus portafolios existentes. Permite a los usuarios navegar por el trabajo de otros profesionales, descubrir talento y facilitar colaboraciones. Diseñado para ayudar a encontrar y conectar con los mejores profesionales en sus campos.' 
+        : 'A personal platform for connecting with talented professionals and exploring their existing portfolios. Allows users to browse other professionals\' work, discover talent, and facilitate collaborations. Designed to help find and connect with the best professionals in their fields.',
+      image: '/images/portfolio/portfoliohub.png',
+      category: 'Personal Project',
+      technologies: ['Portfolio Platform', 'Professional Networking', 'Collaboration Tools'],
+      impact: language === 'es' 
+        ? 'Plataforma para conectar profesionales y mostrar talento' 
+        : 'Platform for connecting professionals and showcasing talent',
+      link: 'https://portfolio-hub-tawny.vercel.app/',
+      ownership: 'personal',
+      role: language === 'es'
+        ? 'Proyecto personal desarrollado por Luis Lozoya.'
+        : 'Personal project developed by Luis Lozoya.'
+    },
+    {
+      id: 2,
       title: 'Querri',
+      logo: 'https://querri.com/favicon.svg',
+      tagline: 'Data analytics & business intelligence',
       description: language === 'es' 
         ? 'Un sitio web para una startup de análisis de datos con sede en Charleston que muestra su plataforma de IA y servicios. Destaca características como tableros, limpieza de datos e integraciones de manera clara que ayuda a los clientes potenciales a entender el valor de sus soluciones.' 
         : 'A website for a Charleston-based data analytics startup that showcases their AI platform and services. It highlights features like dashboards, data cleansing, and integrations in a clear way that helps potential clients understand the value of their solutions.',
@@ -30,8 +51,9 @@ export default function PortfolioSection() {
         : 'Delivered as a contractor for Querri.'
     },
     {
-      id: 2,
+      id: 3,
       title: 'GSeay Construction',
+      logo: '/images/logos/image.png',
       description: language === 'es' 
         ? 'Un sitio web profesional para una empresa de construcción de Florida especializada en proyectos de hospitalidad, salud, industrial y renovación. El sitio destaca sus servicios, incluye un portafolio de proyectos, testimonios y un mapa de proyectos para demostrar credibilidad y atraer nuevos clientes.' 
         : 'A professional website for a Florida construction company specializing in hospitality, healthcare, industrial, and renovation projects. The site highlights their services, includes a project portfolio, testimonials, and a project map to demonstrate credibility and attract new clients.',
@@ -49,8 +71,9 @@ export default function PortfolioSection() {
         : 'Delivered as a contractor for GDNA.'
     },
     {
-      id: 3,
+      id: 4,
       title: 'LESS USA',
+      logo: '/images/logos/InfinityLogo.png',
       description: language === 'es' 
         ? 'Una plataforma digital para una asociación de aplicación de la ley de EE. UU. para gestionar programas de entrenamiento. El sitio soporta documentar el rendimiento de reclutas, dar visibilidad a entrenadores y proporcionar a los miembros acceso a herramientas y recursos clave.' 
         : 'A digital platform for a U.S. law enforcement association to manage training programs. The site supports documenting recruit performance, giving trainers visibility, and providing members with access to key tools and resources.',
@@ -150,9 +173,22 @@ export default function PortfolioSection() {
               
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                    {project.title}
-                  </h3>
+                  <div className="flex items-center space-x-3">
+                    {project.logo && (
+                      <div className={`w-8 h-8 relative ${project.title === 'PortfolioHub' ? 'bg-blue-600 rounded-full p-1' : ''}`}>
+                        <Image
+                          src={project.logo}
+                          alt={`${project.title} logo`}
+                          fill
+                          className="object-contain"
+                          sizes="32px"
+                        />
+                      </div>
+                    )}
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                      {project.title}
+                    </h3>
+                  </div>
                   <div className="flex flex-col items-end space-y-1">
                     <span className="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-400 text-xs font-medium rounded-full">
                       {project.category}
