@@ -13,6 +13,25 @@ export default function PortfolioSection() {
   const projects = [
     {
       id: 1,
+      title: 'ShopEssentialsHub',
+      logo: '/images/logos/logo-SEH.png',
+      description: language === 'es' 
+        ? 'Una plataforma de recomendación de productos de Amazon cuidadosamente seleccionados por Luis Lozoya. Presenta productos probados y revisados personalmente, desde máquinas de café y tecnología hasta artículos para el hogar. Cada producto es recomendado porque realmente funciona, con reseñas honestas y sin promociones pagadas.' 
+        : 'A curated Amazon products recommendation platform hand-picked by Luis Lozoya. Features personally tested and reviewed products, from coffee makers and tech gadgets to home essentials. Every product is recommended because it actually works, with honest reviews and no paid promotions.',
+      image: '/images/portfolio/www.shopessentialshub.com_.png',
+      category: 'Personal Project',
+      technologies: ['Product Curation', 'E-commerce', 'Content Platform'],
+      impact: language === 'es' 
+        ? 'Plataforma para descubrir productos de calidad que realmente funcionan' 
+        : 'Platform for discovering quality products that actually work',
+      link: 'https://www.shopessentialshub.com/',
+      ownership: 'personal',
+      role: language === 'es'
+        ? 'Proyecto personal desarrollado por Luis Lozoya.'
+        : 'Personal project developed by Luis Lozoya.'
+    },
+    {
+      id: 2,
       title: 'PortfolioHub',
       logo: '/images/logos/Logo Icon.png',
       description: language === 'es' 
@@ -31,7 +50,7 @@ export default function PortfolioSection() {
         : 'Personal project developed by Luis Lozoya.'
     },
     {
-      id: 2,
+      id: 3,
       title: 'Querri',
       logo: 'https://querri.com/favicon.svg',
       tagline: 'Data analytics & business intelligence',
@@ -51,7 +70,7 @@ export default function PortfolioSection() {
         : 'Delivered as a contractor for Querri.'
     },
     {
-      id: 3,
+      id: 4,
       title: 'GSeay Construction',
       logo: '/images/logos/image.png',
       description: language === 'es' 
@@ -71,7 +90,7 @@ export default function PortfolioSection() {
         : 'Delivered as a contractor for GDNA.'
     },
     {
-      id: 4,
+      id: 5,
       title: 'LESS USA',
       logo: '/images/logos/InfinityLogo.png',
       description: language === 'es' 
