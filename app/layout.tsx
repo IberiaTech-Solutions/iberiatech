@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { LanguageProvider } from '@/components/LanguageProvider'
@@ -9,7 +9,10 @@ import WhatsAppChat from '@/components/WhatsAppChat'
 import AIChatbot from '@/components/AIChatbot'
 import HtmlLangUpdater from '@/components/HtmlLangUpdater'
 
-const inter = Inter({ subsets: ['latin'] })
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  variable: '--font-plus-jakarta',
+})
 
 export const metadata: Metadata = {
   title: 'Charleston Web Development | IberiaTech Solutions - Bilingual Websites',
@@ -53,7 +56,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className} suppressHydrationWarning>
+      <body className={plusJakarta.className} suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

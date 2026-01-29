@@ -86,7 +86,7 @@ export default function ProblemsSection() {
               </h3>
             </div>
 
-            <div className="space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch">
               {solutions.map((solution, index) => (
                 <motion.div
                   key={index}
@@ -94,19 +94,17 @@ export default function ProblemsSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-start space-x-4 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800 min-h-[100px]"
+                  className="bg-green-50 dark:bg-green-900/20 rounded-xl p-4 border border-green-200 dark:border-green-800 flex flex-col items-start space-y-2 h-full min-h-[200px]"
                 >
-                  <div className="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-9 h-9 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-1">
                     <FiCheck className="w-5 h-5 text-green-600 dark:text-green-400" />
                   </div>
-                  <div className="flex-1">
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1">
-                      {solution.title}
-                    </h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">
-                      {solution.description}
-                    </p>
-                  </div>
+                  <h4 className="font-semibold text-gray-900 dark:text-white">
+                    {solution.title}
+                  </h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">
+                    {solution.description}
+                  </p>
                 </motion.div>
               ))}
             </div>
@@ -126,7 +124,7 @@ export default function ProblemsSection() {
               </h3>
             </div>
 
-            <div className="space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch">
               {problems.map((problem, index) => (
                 <motion.div
                   key={index}
@@ -134,41 +132,22 @@ export default function ProblemsSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-start space-x-4 p-4 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-200 dark:border-red-800 min-h-[100px]"
+                  className="bg-red-50 dark:bg-red-900/20 rounded-xl p-4 border border-red-200 dark:border-red-800 flex flex-col items-start space-y-2 h-full min-h-[200px]"
                 >
-                  <div className="w-10 h-10 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-9 h-9 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mb-1">
                     <FiX className="w-5 h-5 text-red-600 dark:text-red-400" />
                   </div>
-                  <div className="flex-1">
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1">
-                      {problem.title}
-                    </h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">
-                      {problem.description}
-                    </p>
-                  </div>
+                  <h4 className="font-semibold text-gray-900 dark:text-white">
+                    {problem.title}
+                  </h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">
+                    {problem.description}
+                  </p>
                 </motion.div>
               ))}
             </div>
           </motion.div>
         </div>
-
-        {/* Bottom Line Statement */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: true }}
-          className="text-center mt-12 mb-8"
-        >
-          <div className="bg-gradient-to-r from-accent-50 to-primary-50 dark:from-accent-900/20 dark:to-primary-900/20 rounded-2xl p-6 max-w-4xl mx-auto border border-accent-200 dark:border-accent-700">
-            <p className="text-lg font-semibold text-gray-900 dark:text-white">
-              {language === 'es' 
-                ? '✨ En resumen: Un sitio web profesional ya no es opcional. Es cómo los clientes te encuentran, confían en ti y te eligen.' 
-                : '✨ Bottom line: A professional website is no longer optional. It\'s how customers find you, trust you, and choose you.'}
-            </p>
-          </div>
-        </motion.div>
 
         {/* CTA Section */}
         <motion.div
@@ -178,13 +157,16 @@ export default function ProblemsSection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 rounded-2xl p-8 max-w-4xl mx-auto border border-primary-200 dark:border-primary-700">
+          <div className="bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 rounded-2xl p-8 max-w-4xl mx-auto border border-primary-200 dark:border-primary-700 mt-10">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
               {t('problems.cta.title')}
             </h3>
             <div className="text-lg text-gray-600 dark:text-gray-300 mb-6 space-y-2">
-              <p>👉 Let's build your website today.</p>
-              <p>👉 Construyamos tu sitio web hoy.</p>
+              <p>
+                {language === 'es'
+                  ? 'Un sitio web profesional es cómo tus clientes te encuentran, confían en ti y te eligen.'
+                  : 'A professional website is how your customers find you, trust you, and choose you.'}
+              </p>
             </div>
             <a
               href="#contact"

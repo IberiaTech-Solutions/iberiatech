@@ -270,8 +270,8 @@ export default function PortfolioSection() {
             </h3>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
               {language === 'es' 
-                ? 'Soy Luis Lozoya, fundador de IberiaTech Solutions. Ayudo a pequeñas empresas en Charleston y España a crecer en línea con sitios web modernos y bilingües. Durante los últimos 3 años, he ayudado a bufetes de abogados, empresas de nutrición y empresas de construcción a conseguir más clientes en línea con sitios web modernos y bilingües.' 
-                : 'I\'m Luis Lozoya, founder of IberiaTech Solutions. I help small businesses in Charleston and Spain grow online with modern, bilingual websites. For the past 3 years, I\'ve helped law firms, nutrition companies, and construction businesses get more clients online with modern, bilingual websites.'}
+                ? 'Soy Luis Lozoya, fundador de IberiaTech Solutions. Ayudo a pequeñas empresas en Charleston y España a crecer en línea con sitios web modernos y bilingües que convierten visitas en clientes.' 
+                : 'I\'m Luis Lozoya, founder of IberiaTech Solutions. I help small businesses in Charleston and Spain grow online with modern, bilingual websites that turn visitors into customers.'}
             </p>
             <div className="flex flex-wrap justify-center gap-4 mb-6">
               <div className="flex items-center space-x-2 text-primary-800 dark:text-primary-400">

@@ -67,8 +67,15 @@ export default function WhyChooseUsSection() {
   }, []);
 
   return (
-    <section id="why-choose-us" className="section-padding bg-gray-50 dark:bg-gray-800">
-      <div className="container-max">
+    <section
+      id="why-choose-us"
+      className="section-padding bg-gray-50 dark:bg-gray-800 relative overflow-hidden"
+    >
+      {/* Soft decorative background blobs */}
+      <div className="pointer-events-none absolute -top-32 -right-24 h-72 w-72 rounded-full bg-primary-200/40 blur-3xl dark:bg-primary-700/40" />
+      <div className="pointer-events-none absolute -bottom-40 -left-16 h-80 w-80 rounded-full bg-accent-200/40 blur-3xl dark:bg-accent-700/40" />
+
+      <div className="container-max relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

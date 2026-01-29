@@ -17,10 +17,10 @@ export default function HomePage() {
   return (
     <div className="min-h-screen" suppressHydrationWarning>
       <HeroSection />
+      <TrustedBySection />
       <ServicesSection />
       <ProblemsSection />
       <PricingSection />
-      <TrustedBySection />
       <TestimonialsSection />
       <PortfolioSection />
       <ContactSection />

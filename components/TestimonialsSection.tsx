@@ -17,8 +17,12 @@ export default function TestimonialsSection() {
   ]
 
   return (
-    <section className="section-padding bg-white dark:bg-gray-900">
-      <div className="container-max">
+    <section className="section-padding relative overflow-hidden bg-gradient-to-r from-primary-900 via-primary-800 to-primary-900 dark:from-gray-900 dark:via-gray-900 dark:to-black">
+      {/* Subtle background accent */}
+      <div className="pointer-events-none absolute -top-24 right-0 h-64 w-64 rounded-full bg-accent-400/20 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-[-6rem] left-[-4rem] h-72 w-72 rounded-full bg-blue-500/10 blur-3xl" />
+
+      <div className="container-max relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -26,10 +30,10 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {language === 'es' ? 'Testimonios de Clientes' : 'Client Testimonials'}
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-blue-100/90 max-w-3xl mx-auto">
             {language === 'es' ? 'Lo que dicen nuestros clientes sobre trabajar con IberiaTech Solutions' : 'What clients say about working with IberiaTech Solutions'}
           </p>
         </motion.div>
@@ -42,7 +46,7 @@ export default function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 text-center"
+              className="bg-white/95 dark:bg-gray-900/95 rounded-2xl p-8 text-center shadow-xl"
             >
               <div className="w-16 h-16 bg-brand-800 rounded-full flex items-center justify-center mx-auto mb-6">
                 <FiMessageCircle className="w-8 h-8 text-white" />

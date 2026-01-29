@@ -2,7 +2,7 @@
 
 import { useLanguage } from './LanguageProvider'
 import { motion } from 'framer-motion'
-import { FiCheck, FiStar, FiArrowRight } from 'react-icons/fi'
+import { FiCheck, FiStar, FiArrowRight, FiSmartphone, FiSearch, FiMail, FiGlobe, FiUser } from 'react-icons/fi'
 
 export default function PricingSection() {
   const { t, language } = useLanguage()
@@ -10,7 +10,7 @@ export default function PricingSection() {
   const pricingPlans = [
     {
       nameKey: 'pricing.custom.name',
-      price: language === 'es' ? 'Cotizar' : 'Quote',
+      price: language === 'es' ? 'Personalizado' : 'Custom',
       descriptionKey: 'pricing.custom.desc',
       ctaKey: 'pricing.cta.custom',
       features: language === 'es' ? [
@@ -31,7 +31,7 @@ export default function PricingSection() {
     },
     {
       nameKey: 'pricing.starter.name',
-      price: language === 'es' ? '€950' : '$950',
+      price: language === 'es' ? 'Por proyecto' : 'Project-based',
       descriptionKey: 'pricing.starter.desc',
       ctaKey: 'pricing.cta.starter',
       features: language === 'es' ? [
@@ -51,7 +51,7 @@ export default function PricingSection() {
     },
     {
       nameKey: 'pricing.business.name',
-      price: language === 'es' ? '€2,500' : '$2,500',
+      price: language === 'es' ? 'Por proyecto' : 'Project-based',
       descriptionKey: 'pricing.business.desc',
       ctaKey: 'pricing.cta.business',
       features: language === 'es' ? [
@@ -99,7 +99,7 @@ export default function PricingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`relative bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg ${
+              className={`relative bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg flex flex-col h-full ${
                 plan.popular ? 'ring-2 ring-primary-800 scale-105' : ''
               } ${
                 plan.isCustom ? 'ring-2 ring-accent-500 scale-105' : ''
@@ -126,7 +126,7 @@ export default function PricingSection() {
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                   {t(plan.nameKey)}
                 </h3>
-                <div className={`text-4xl font-bold mb-2 ${plan.isCustom ? 'text-accent-600 dark:text-accent-400' : 'text-primary-800'}`}>
+                <div className={`text-3xl font-bold mb-2 ${plan.isCustom ? 'text-accent-600 dark:text-accent-400' : 'text-primary-800'}`}>
                   {plan.price}
                 </div>
                 <p className="text-gray-600 dark:text-gray-300">
@@ -143,19 +143,21 @@ export default function PricingSection() {
                 ))}
               </ul>
 
-              <a
-                href="#contact"
-                className={`w-full py-3 px-6 rounded-lg font-semibold text-center transition-colors duration-200 flex items-center justify-center space-x-2 ${
-                  plan.popular
-                    ? 'bg-accent-500 hover:bg-accent-600 text-white'
-                    : plan.isCustom
-                    ? 'bg-primary-800 hover:bg-primary-900 text-white'
-                    : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-gray-100'
-                }`}
-              >
-                <span>{t(plan.ctaKey)}</span>
-                <FiArrowRight className="w-4 h-4" />
-              </a>
+              <div className="mt-auto">
+                <a
+                  href="#contact"
+                  className={`w-full py-3 px-6 rounded-lg font-semibold text-center transition-colors duration-200 flex items-center justify-center space-x-2 ${
+                    plan.popular
+                      ? 'bg-accent-500 hover:bg-accent-600 text-white'
+                      : plan.isCustom
+                      ? 'bg-primary-800 hover:bg-primary-900 text-white'
+                      : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-gray-100'
+                  }`}
+                >
+                  <span>{t(plan.ctaKey)}</span>
+                  <FiArrowRight className="w-4 h-4" />
+                </a>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -172,34 +174,44 @@ export default function PricingSection() {
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
               {language === 'es' ? 'Lo que siempre está incluido' : 'What\'s always included'}
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <div className="flex items-center space-x-3">
-                <FiCheck className="w-5 h-5 text-green-500 flex-shrink-0" />
-                <span className="text-gray-700 dark:text-gray-300">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+              <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 flex flex-col items-center text-center space-y-2">
+                <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/40 flex items-center justify-center mb-1">
+                  <FiSmartphone className="w-4 h-4 text-green-600 dark:text-green-400" />
+                </div>
+                <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">
                   {language === 'es' ? 'Diseño móvil-friendly' : 'Mobile-friendly design'}
                 </span>
               </div>
-              <div className="flex items-center space-x-3">
-                <FiCheck className="w-5 h-5 text-green-500 flex-shrink-0" />
-                <span className="text-gray-700 dark:text-gray-300">
+              <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 flex flex-col items-center text-center space-y-2">
+                <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/40 flex items-center justify-center mb-1">
+                  <FiSearch className="w-4 h-4 text-green-600 dark:text-green-400" />
+                </div>
+                <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">
                   {language === 'es' ? 'SEO básico' : 'SEO basics'}
                 </span>
               </div>
-              <div className="flex items-center space-x-3">
-                <FiCheck className="w-5 h-5 text-green-500 flex-shrink-0" />
-                <span className="text-gray-700 dark:text-gray-300">
+              <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 flex flex-col items-center text-center space-y-2">
+                <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/40 flex items-center justify-center mb-1">
+                  <FiMail className="w-4 h-4 text-green-600 dark:text-green-400" />
+                </div>
+                <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">
                   {language === 'es' ? 'Configuración de formulario de contacto' : 'Contact form setup'}
                 </span>
               </div>
-              <div className="flex items-center space-x-3">
-                <FiCheck className="w-5 h-5 text-green-500 flex-shrink-0" />
-                <span className="text-gray-700 dark:text-gray-300">
+              <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 flex flex-col items-center text-center space-y-2">
+                <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/40 flex items-center justify-center mb-1">
+                  <FiGlobe className="w-4 h-4 text-green-600 dark:text-green-400" />
+                </div>
+                <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">
                   {language === 'es' ? 'Inglés + Español (sin costo extra)' : 'English + Spanish (no extra fee)'}
                 </span>
               </div>
-              <div className="flex items-center space-x-3">
-                <FiCheck className="w-5 h-5 text-green-500 flex-shrink-0" />
-                <span className="text-gray-700 dark:text-gray-300">
+              <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 flex flex-col items-center text-center space-y-2">
+                <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/40 flex items-center justify-center mb-1">
+                  <FiUser className="w-4 h-4 text-green-600 dark:text-green-400" />
+                </div>
+                <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">
                   {language === 'es' ? 'Soporte 1-a-1 después del lanzamiento' : '1-on-1 support after launch'}
                 </span>
               </div>
@@ -212,23 +224,6 @@ export default function PricingSection() {
           </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
-          <p className="text-gray-600 dark:text-gray-300 mb-4">
-            {t('pricing.consultation')}
-          </p>
-          <a
-            href="#contact"
-            className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-semibold"
-          >
-            {t('pricing.custom')}
-          </a>
-        </motion.div>
       </div>
     </section>
   )

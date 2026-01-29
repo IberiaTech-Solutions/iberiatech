@@ -76,12 +76,6 @@ export default function ServicesSection() {
           <h3 className="text-xl md:text-2xl font-semibold text-primary-800 dark:text-primary-400 mb-2">
             {t('services.subtitle2')}
           </h3>
-          <h3 className="text-lg md:text-xl font-semibold text-support-medium dark:text-gray-300 mb-2">
-            {language === 'es' ? 'Servicios de Traducción de Sitios Web Bilingües' : 'Bilingual Website Translation Services'}
-          </h3>
-          <h3 className="text-lg md:text-xl font-semibold text-support-medium dark:text-gray-300 mb-4">
-            {language === 'es' ? 'Diseño de Sitios Web para Pequeñas Empresas y SEO' : 'Small Business Website Design & SEO'}
-          </h3>
           <p className="text-xl text-support-medium dark:text-gray-300 max-w-3xl mx-auto">
             {t('services.subtitle3')}
           </p>

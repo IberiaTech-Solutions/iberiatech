@@ -62,8 +62,15 @@ This message was sent from your IberiaTech Solutions LLC contact form.
   }
 
   return (
-    <section id="contact" className="section-padding bg-white dark:bg-gray-900">
-      <div className="container-max">
+    <section
+      id="contact"
+      className="section-padding bg-gradient-to-b from-gray-50 via-white to-white dark:from-gray-900 dark:via-gray-900 dark:to-black relative overflow-hidden"
+    >
+      {/* Soft background accent */}
+      <div className="pointer-events-none absolute -top-24 right-[-3rem] h-56 w-56 rounded-full bg-primary-200/40 blur-3xl dark:bg-primary-700/40" />
+      <div className="pointer-events-none absolute bottom-[-4rem] left-[-3rem] h-64 w-64 rounded-full bg-accent-200/40 blur-3xl dark:bg-accent-700/40" />
+
+      <div className="container-max relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -76,6 +83,11 @@ This message was sent from your IberiaTech Solutions LLC contact form.
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             {t('contact.subtitle2')}
+          </p>
+          <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
+            {language === 'es'
+              ? 'Sin presión, sin spam — solo una conversación honesta sobre tu proyecto.'
+              : 'No pressure, no spam — just an honest conversation about your project.'}
           </p>
         </motion.div>
 
