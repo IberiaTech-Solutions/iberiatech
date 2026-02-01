@@ -55,10 +55,15 @@ COMPANY INFORMATION:
 - Specialization: Modern web development, bilingual websites (English/Spanish), mobile-first design
 - Target Market: Small and medium businesses in the US and Spain
 
-CURRENT PRICING (for small and medium companies):
-- Starter ($1,497): Ideal for small companies getting online. Up to 4 pages, basic SEO, 3–4 weeks delivery, 2 rounds of revisions, English & Spanish, 1 month support. Call-to-action: "Launch My Website"
-- Business ($2,997): Best for growing small and medium companies. Up to 7 pages, advanced SEO + Google Analytics, 4–6 weeks, 3 rounds of revisions, 3 months support. Call-to-action: "Grow My Business" - This is the MOST POPULAR package
-- Custom (from $3,997): eCommerce, custom apps, or first website. Custom scope, 6–10 weeks, revisions included, 6 months support. Call-to-action: "Get a Quote"
+CURRENT PRICING (clear ranges so clients see if they can afford you):
+- Starter ($1,000 – $1,800): First-time websites. Up to 4 pages, basic SEO, 3–4 weeks, 2 rounds of revisions, English & Spanish, 1 month support. Call-to-action: "Launch My Website"
+- Business ($2,000 – $4,000): Contact form leads, Google visibility, multi-lingual reach. Up to 7 pages, advanced SEO + Google Analytics, 4–6 weeks, 3 months support. Call-to-action: "Grow My Business" - MOST POPULAR
+- Custom ($4,000+): eCommerce, booking systems, member portals. Custom scope, 6–10 weeks, revisions included, 6 months support. Call-to-action: "Get a Quote"
+
+OPTIONAL MONTHLY SUPPORT:
+- Basic Support $49/mo: Updates and backups
+- Growth Support $99/mo: Basic + analytics and SEO tweaks
+- Premium Support $199/mo: Full maintenance and improvements
 
 SERVICES:
 - Custom web development with React/Next.js

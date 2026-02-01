@@ -2,7 +2,7 @@
 
 import { useLanguage } from './LanguageProvider'
 import { motion } from 'framer-motion'
-import { FiCheck, FiStar, FiArrowRight, FiSmartphone, FiSearch, FiMail, FiGlobe, FiUser, FiFileText, FiClock, FiRefreshCw, FiHeadphones, FiTrendingUp, FiSettings, FiCreditCard } from 'react-icons/fi'
+import { FiCheck, FiStar, FiArrowRight, FiSmartphone, FiSearch, FiMail, FiGlobe, FiUser, FiFileText, FiClock, FiRefreshCw, FiHeadphones, FiTrendingUp, FiSettings, FiCreditCard, FiPlusCircle, FiMessageCircle } from 'react-icons/fi'
 
 export default function PricingSection() {
   const { t, language } = useLanguage()
@@ -58,15 +58,15 @@ export default function PricingSection() {
       descriptionKey: 'pricing.custom.desc',
       ctaKey: 'pricing.cta.custom',
       features: language === 'es' ? [
-        'Páginas a medida (eCommerce, reservas, formularios, etc.)',
-        'eCommerce o apps personalizadas',
+        'eCommerce, reservas, portales de socios o formularios a medida',
+        'Apps o sitios complejos según necesidad',
         'Entrega en 6–10 semanas',
         'Revisiones incluidas',
         'Inglés + Español incluido',
         '6 meses de soporte'
       ] : [
-        'Custom pages (eCommerce, booking, forms, etc.)',
-        'eCommerce or custom apps',
+        'eCommerce, booking systems, member portals, or custom forms',
+        'Custom apps or complex sites as needed',
         'Delivery in 6–10 weeks',
         'Revisions included',
         'English & Spanish included',
@@ -90,11 +90,17 @@ export default function PricingSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             {t('pricing.title')}
           </h2>
+          <p className="text-lg font-semibold text-primary-800 dark:text-primary-300 max-w-2xl mx-auto mb-2">
+            {t('pricing.anchor')}
+          </p>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             {t('pricing.subtitle')}
           </p>
           <p className="text-sm text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mt-2">
             {t('pricing.subtitle.charleston')}
+          </p>
+          <p className="text-sm text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mt-1">
+            {t('pricing.value')}
           </p>
         </motion.div>
 
@@ -167,9 +173,15 @@ export default function PricingSection() {
           viewport={{ once: true }}
           className="mt-12"
         >
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 text-center">
+          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 text-center">
             {t('pricing.compare.title')}
           </h3>
+          <p className="text-base font-medium text-primary-800 dark:text-primary-300 mb-1 text-center">
+            {t('pricing.compare.why')}
+          </p>
+          <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 text-center">
+            {t('pricing.compare.whySub')}
+          </p>
           <div className="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-xl ring-1 ring-black/5">
             <table className="w-full min-w-[320px] text-left text-sm">
               <thead>
@@ -274,16 +286,66 @@ export default function PricingSection() {
           <p className="text-center text-gray-600 dark:text-gray-400 text-sm mb-6 max-w-2xl mx-auto">
             {t('pricing.maintenance.subtitle')}
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             <div className="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-md">
-              <div className="font-semibold text-gray-900 dark:text-white mb-1">{t('pricing.maintenance.care.name')}</div>
-              <div className="text-lg font-bold text-primary-800 dark:text-primary-400 mb-2">{t('pricing.maintenance.care.price')}</div>
-              <p className="text-sm text-gray-600 dark:text-gray-400">{t('pricing.maintenance.care.desc')}</p>
+              <div className="font-semibold text-gray-900 dark:text-white mb-1">{t('pricing.maintenance.basic.name')}</div>
+              <div className="text-lg font-bold text-primary-800 dark:text-primary-400 mb-2">{t('pricing.maintenance.basic.price')}</div>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{t('pricing.maintenance.basic.desc')}</p>
             </div>
             <div className="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-md">
               <div className="font-semibold text-gray-900 dark:text-white mb-1">{t('pricing.maintenance.growth.name')}</div>
               <div className="text-lg font-bold text-primary-800 dark:text-primary-400 mb-2">{t('pricing.maintenance.growth.price')}</div>
               <p className="text-sm text-gray-600 dark:text-gray-400">{t('pricing.maintenance.growth.desc')}</p>
+            </div>
+            <div className="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-md">
+              <div className="font-semibold text-gray-900 dark:text-white mb-1">{t('pricing.maintenance.premium.name')}</div>
+              <div className="text-lg font-bold text-primary-800 dark:text-primary-400 mb-2">{t('pricing.maintenance.premium.price')}</div>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{t('pricing.maintenance.premium.desc')}</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Optional add-ons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.28 }}
+          viewport={{ once: true }}
+          className="mt-12"
+        >
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <FiPlusCircle className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+              {t('pricing.addons.title')}
+            </h3>
+          </div>
+          <p className="text-center text-gray-600 dark:text-gray-400 text-sm mb-6 max-w-2xl mx-auto">
+            {t('pricing.addons.subtitle')}
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-md flex flex-col">
+              <div className="flex items-center gap-2 mb-2">
+                <FiMessageCircle className="w-5 h-5 text-accent-600 dark:text-accent-400" />
+                <span className="font-semibold text-gray-900 dark:text-white">{t('pricing.addons.chatbot.name')}</span>
+              </div>
+              <div className="text-xl font-bold text-primary-800 dark:text-primary-400 mb-2">{t('pricing.addons.chatbot.price')}</div>
+              <p className="text-sm text-gray-600 dark:text-gray-400 flex-1">{t('pricing.addons.chatbot.desc')}</p>
+            </div>
+            <div className="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-md flex flex-col">
+              <div className="flex items-center gap-2 mb-2">
+                <FiSearch className="w-5 h-5 text-accent-600 dark:text-accent-400" />
+                <span className="font-semibold text-gray-900 dark:text-white">{t('pricing.addons.seo.name')}</span>
+              </div>
+              <div className="text-xl font-bold text-primary-800 dark:text-primary-400 mb-2">{t('pricing.addons.seo.price')}</div>
+              <p className="text-sm text-gray-600 dark:text-gray-400 flex-1">{t('pricing.addons.seo.desc')}</p>
+            </div>
+            <div className="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-md flex flex-col">
+              <div className="flex items-center gap-2 mb-2">
+                <FiTrendingUp className="w-5 h-5 text-accent-600 dark:text-accent-400" />
+                <span className="font-semibold text-gray-900 dark:text-white">{t('pricing.addons.analytics.name')}</span>
+              </div>
+              <div className="text-xl font-bold text-primary-800 dark:text-primary-400 mb-2">{t('pricing.addons.analytics.price')}</div>
+              <p className="text-sm text-gray-600 dark:text-gray-400 flex-1">{t('pricing.addons.analytics.desc')}</p>
             </div>
           </div>
         </motion.div>
