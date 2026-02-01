@@ -16,7 +16,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: 'Charleston Web Development | IberiaTech Solutions - Bilingual Websites',
-  description: 'Charleston bilingual website design for construction companies, law firms, and small businesses. Professional web development with English and Spanish support.',
+  description: 'Charleston bilingual website design for small and medium companies: construction, law firms, local businesses. Professional web development with English and Spanish support.',
   keywords: 'Charleston web development, Charleston bilingual website design, Charleston law firm websites, Charleston construction company web development, bilingual websites, React, Next.js, Supabase, AWS',
   authors: [{ name: 'Luis Lozoya' }],
   creator: 'IberiaTech Solutions',

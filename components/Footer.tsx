@@ -9,7 +9,7 @@ export default function Footer() {
   const { language, t } = useLanguage()
 
   // Use a static year to avoid hydration issues
-  const currentYear = 2025
+  const currentYear = 2026
 
   return (
     <footer className="bg-gray-900 text-white">
@@ -77,17 +77,6 @@ export default function Footer() {
               <div className="flex items-center space-x-3">
                 <FiMapPin className="w-5 h-5 text-blue-400" />
                 <span className="text-gray-300">Charleston, SC</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <FiLinkedin className="w-5 h-5 text-blue-400" />
-                <a
-                  href="https://linkedin.com/company/iberiatech"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                >
-                  linkedin.com/company/iberiatech
-                </a>
               </div>
             </div>
           </div>

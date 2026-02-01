@@ -86,8 +86,8 @@ This message was sent from your IberiaTech Solutions LLC contact form.
           </p>
           <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
             {language === 'es'
-              ? 'Sin presión, sin spam — solo una conversación honesta sobre tu proyecto.'
-              : 'No pressure, no spam — just an honest conversation about your project.'}
+              ? 'Sin presión, sin spam. Solo una conversación honesta sobre tu proyecto.'
+              : 'No pressure, no spam. Just an honest conversation about your project.'}
           </p>
         </motion.div>
 

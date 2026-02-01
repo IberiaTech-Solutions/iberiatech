@@ -31,7 +31,7 @@ export default function TrustedBySection() {
               {language === 'es' ? 'Confían en nosotros' : 'Trusted by'}
             </p>
             <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 italic">
-              {language === 'es' ? 'Confían en nosotros startups y pequeñas empresas en Charleston y más allá' : 'Trusted by startups and small businesses in Charleston and beyond'}
+              {language === 'es' ? 'Confían en nosotros pequeñas y medianas empresas en Charleston y más allá' : 'Trusted by small and medium companies in Charleston and beyond'}
             </p>
             <p className="text-base text-gray-600 dark:text-gray-300 mb-6">
               {language === 'es' ? 'Empresas que han crecido con nuestros sitios web:' : 'Companies that have grown with our websites:'}

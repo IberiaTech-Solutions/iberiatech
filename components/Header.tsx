@@ -17,15 +17,16 @@ export default function Header() {
   }
 
   const navItems = [
-    { key: 'nav.services', href: '#services' },
-    { key: 'nav.problems', href: '#problems' },
-    { key: 'nav.pricing', href: '#pricing' },
-    { key: 'nav.portfolio', href: '#portfolio' },
-    { key: 'nav.contact', href: '#contact' },
+    { key: 'nav.services', href: '/#services' },
+    { key: 'nav.problems', href: '/#problems' },
+    { key: 'nav.pricing', href: '/#pricing' },
+    { key: 'nav.faq', href: '/#faq' },
+    { key: 'nav.portfolio', href: '/#portfolio' },
+    { key: 'nav.contact', href: '/#contact' },
   ]
 
   return (
-    <header className="bg-white dark:bg-gray-900 shadow-sm sticky top-0 z-50">
+    <header className="bg-white dark:bg-gray-900 shadow-sm border-b border-primary-800/10 dark:border-gray-800 sticky top-0 z-50">
       <div className="container-max">
         <div className="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
           {/* Logo */}
@@ -63,7 +64,7 @@ export default function Header() {
             {/* Language Toggle */}
             <button
               onClick={toggleLanguage}
-              className="p-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+              className="p-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
               aria-label="Toggle language"
             >
               <FiGlobe className="w-5 h-5" />
@@ -72,7 +73,7 @@ export default function Header() {
             {/* Theme Toggle */}
             <button
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="p-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+              className="p-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
               aria-label="Toggle theme"
             >
               {mounted && theme === 'dark' ? <FiSun className="w-5 h-5" /> : <FiMoon className="w-5 h-5" />}
@@ -85,7 +86,7 @@ export default function Header() {
                 const event = new CustomEvent('openAIChat')
                 window.dispatchEvent(event)
               }}
-              className="hidden md:block p-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+              className="hidden md:block p-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
               aria-label={language === 'es' ? 'Abrir chat IA' : 'Open AI chat'}
               title={language === 'es' ? 'Chat con IA' : 'AI Chat'}
             >
@@ -107,7 +108,7 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+              className="md:hidden p-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <FiX className="w-6 h-6" /> : <FiMenu className="w-6 h-6" />}
@@ -117,13 +118,13 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+          <div className="md:hidden bg-white dark:bg-gray-900 border-t border-primary-800/10 dark:border-gray-700">
             <nav className="px-4 py-2 space-y-2">
               {navItems.map((item) => (
                 <Link
                   key={item.key}
                   href={item.href}
-                  className="block py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+                  className="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {t(item.key)}
@@ -141,9 +142,9 @@ export default function Header() {
                     const event = new CustomEvent('openAIChat')
                     window.dispatchEvent(event)
                   }}
-                  className="flex items-center space-x-3 w-full py-3 px-3 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200 rounded-lg"
+                  className="flex items-center space-x-3 w-full py-3 px-3 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-all duration-200 rounded-lg"
                 >
-                  <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center">
                     <span className="text-lg">🤖</span>
                   </div>
                   <div className="flex-1 text-left">

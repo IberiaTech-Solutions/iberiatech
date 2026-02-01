@@ -130,7 +130,7 @@ export default function PortfolioSection() {
           className="text-center mb-16"
         >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                {language === 'es' ? 'Proyectos que Ayudan a las Pequeñas Empresas a Crecer' : 'Projects That Help Small Businesses Grow'}
+                {language === 'es' ? 'Proyectos que Ayudan a Pequeñas y Medianas Empresas a Crecer' : 'Projects That Help Small & Medium Companies Grow'}
               </h2>
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
                 {language === 'es' 
@@ -270,8 +270,8 @@ export default function PortfolioSection() {
             </h3>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
               {language === 'es' 
-                ? 'Soy Luis Lozoya, fundador de IberiaTech Solutions. Ayudo a pequeñas empresas en Charleston y España a crecer en línea con sitios web modernos y bilingües que convierten visitas en clientes.' 
-                : 'I\'m Luis Lozoya, founder of IberiaTech Solutions. I help small businesses in Charleston and Spain grow online with modern, bilingual websites that turn visitors into customers.'}
+                ? 'Soy Luis Lozoya, fundador de IberiaTech Solutions. Ayudo a pequeñas y medianas empresas en Charleston y España a crecer en línea con sitios web modernos y bilingües que convierten visitas en clientes.' 
+                : 'I\'m Luis Lozoya, founder of IberiaTech Solutions. I help small and medium companies in Charleston and Spain grow online with modern, bilingual websites that turn visitors into customers.'}
             </p>
             <div className="flex flex-wrap justify-center gap-4 mb-6">
               <div className="flex items-center space-x-2 text-primary-800 dark:text-primary-400">

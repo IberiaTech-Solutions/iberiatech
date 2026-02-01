@@ -103,8 +103,8 @@ export default function HeroSection() {
             {/* Trust microcopy */}
             <p className="text-sm text-blue-200/80">
               {language === 'es'
-                ? 'Sitios web para pequeñas empresas en Charleston y España, listos para crecer contigo.'
-                : 'Websites for small businesses in Charleston and Spain, built to grow with you.'}
+                ? 'Sitios web para pequeñas y medianas empresas en Charleston y España, listos para crecer contigo.'
+                : 'Websites for small and medium companies in Charleston and Spain, built to grow with you.'}
             </p>
           </motion.div>
 
