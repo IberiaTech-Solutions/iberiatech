@@ -2,7 +2,7 @@
 
 import { useLanguage } from './LanguageProvider'
 import { motion } from 'framer-motion'
-import { FiCheck, FiStar, FiArrowRight, FiSmartphone, FiSearch, FiMail, FiGlobe, FiUser, FiFileText, FiClock, FiRefreshCw, FiHeadphones, FiTrendingUp, FiSettings, FiCreditCard, FiPlusCircle, FiMessageCircle } from 'react-icons/fi'
+import { FiCheck, FiStar, FiArrowRight, FiSmartphone, FiSearch, FiMail, FiGlobe, FiUser, FiFileText, FiClock, FiRefreshCw, FiHeadphones, FiTrendingUp, FiSettings, FiPlusCircle, FiMessageCircle } from 'react-icons/fi'
 
 export default function PricingSection() {
   const { t, language } = useLanguage()
@@ -90,17 +90,8 @@ export default function PricingSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             {t('pricing.title')}
           </h2>
-          <p className="text-lg font-semibold text-primary-800 dark:text-primary-300 max-w-2xl mx-auto mb-2">
+          <p className="text-lg font-semibold text-primary-800 dark:text-primary-300 max-w-2xl mx-auto">
             {t('pricing.anchor')}
-          </p>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            {t('pricing.subtitle')}
-          </p>
-          <p className="text-sm text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mt-2">
-            {t('pricing.subtitle.charleston')}
-          </p>
-          <p className="text-sm text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mt-1">
-            {t('pricing.value')}
           </p>
         </motion.div>
 
@@ -350,35 +341,6 @@ export default function PricingSection() {
               <p className="text-sm text-gray-600 dark:text-gray-400 flex-1">{t('pricing.addons.analytics.desc')}</p>
             </div>
           </div>
-        </motion.div>
-
-        {/* Payment options */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="mt-12"
-        >
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <FiCreditCard className="w-6 h-6 text-primary-600 dark:text-primary-400" />
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-              {t('pricing.payment.title')}
-            </h3>
-          </div>
-          <p className="text-center text-gray-600 dark:text-gray-400 text-sm mb-4 max-w-2xl mx-auto">
-            {t('pricing.payment.subtitle')}
-          </p>
-          <ul className="flex flex-col sm:flex-row sm:justify-center gap-4 sm:gap-8 max-w-2xl mx-auto text-sm text-gray-700 dark:text-gray-300">
-            <li className="flex items-center gap-2">
-              <FiCheck className="w-4 h-4 text-green-500 flex-shrink-0" />
-              {t('pricing.payment.option1')}
-            </li>
-            <li className="flex items-center gap-2">
-              <FiCheck className="w-4 h-4 text-green-500 flex-shrink-0" />
-              {t('pricing.payment.option2')}
-            </li>
-          </ul>
         </motion.div>
 
         {/* What's Always Included */}
