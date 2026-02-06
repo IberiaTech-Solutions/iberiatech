@@ -12,7 +12,6 @@ import TrustedBySection from '@/components/TrustedBySection'
 import ScreenshotStrip from '@/components/ScreenshotStrip'
 import TestimonialsSection from '@/components/TestimonialsSection'
 import ResultsStrip from '@/components/ResultsStrip'
-import GuaranteesStrip from '@/components/GuaranteesStrip'
 
 export default function HomePage() {
   const { t } = useLanguage()
@@ -25,7 +24,6 @@ export default function HomePage() {
       <ServicesSection />
       <ProblemsSection />
       <PricingSection />
-      <GuaranteesStrip />
       <FaqSection />
       <TestimonialsSection />
       <ResultsStrip />
