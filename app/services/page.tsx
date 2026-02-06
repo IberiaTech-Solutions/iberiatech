@@ -15,8 +15,8 @@ export default function ServicesPage() {
       titleKey: 'services.webdev.title',
       descKey: 'services.webdev.desc',
       extra: language === 'es'
-        ? 'Incluimos plazos claros (3–4 semanas Básico, 4–6 Empresarial), revisiones incluidas y opción de que gestionemos dominio y hosting.'
-        : 'We include clear timelines (3–4 weeks Starter, 4–6 Business), revisions included, and optional domain + hosting setup.',
+        ? 'Incluimos plazos claros (1 semana Básico, 2–4 Empresarial), revisiones incluidas y opción de que gestionemos dominio y hosting.'
+        : 'We include clear timelines (1 week Starter, 2–4 Business), revisions included, and optional domain + hosting setup.',
     },
     {
       id: 'seo',

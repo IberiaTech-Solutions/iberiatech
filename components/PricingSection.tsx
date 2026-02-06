@@ -16,14 +16,14 @@ export default function PricingSection() {
       features: language === 'es' ? [
         'Hasta 4 páginas (ej. Inicio, Nosotros, Servicios, Contacto)',
         'SEO básico (meta, mapa del sitio)',
-        'Entrega en 3–4 semanas',
+        'Entrega en 1 semana',
         '2 rondas de revisiones',
         'Inglés + Español incluido',
         '1 mes de soporte'
       ] : [
         'Up to 4 pages (e.g. Home, About, Services, Contact)',
         'Basic SEO (meta, sitemap)',
-        'Delivery in 3–4 weeks',
+        'Delivery in 1 week',
         '2 rounds of revisions',
         'English & Spanish included',
         '1 month support'
@@ -38,14 +38,14 @@ export default function PricingSection() {
       features: language === 'es' ? [
         'Hasta 7 páginas (ej. Inicio, Nosotros, Servicios, Portafolio, Testimonios, FAQ, Contacto)',
         'SEO avanzado + Google Analytics',
-        'Entrega en 4–6 semanas',
+        'Entrega en 2–4 semanas',
         '3 rondas de revisiones',
         'Inglés + Español (adaptación cultural)',
         '3 meses de soporte'
       ] : [
         'Up to 7 pages (e.g. Home, About, Services, Portfolio, Testimonials, FAQ, Contact)',
         'Advanced SEO + Google Analytics',
-        'Delivery in 4–6 weeks',
+        'Delivery in 2–4 weeks',
         '3 rounds of revisions',
         'English & Spanish (cultural adaptation)',
         '3 months support'
@@ -60,14 +60,14 @@ export default function PricingSection() {
       features: language === 'es' ? [
         'eCommerce, reservas, portales de socios o formularios a medida',
         'Apps o sitios complejos según necesidad',
-        'Entrega en 6–10 semanas',
+        'Entrega en 5–7 semanas',
         'Revisiones incluidas',
         'Inglés + Español incluido',
         '6 meses de soporte'
       ] : [
         'eCommerce, booking systems, member portals, or custom forms',
         'Custom apps or complex sites as needed',
-        'Delivery in 6–10 weeks',
+        'Delivery in 5–7 weeks',
         'Revisions included',
         'English & Spanish included',
         '6 months support'
@@ -132,9 +132,11 @@ export default function PricingSection() {
                 <div className={`text-3xl font-bold mb-2 ${plan.isCustom ? 'text-accent-600 dark:text-accent-400' : 'text-primary-800 dark:text-primary-300'}`}>
                   {t(plan.priceKey)}
                 </div>
-                <p className="text-gray-600 dark:text-gray-300">
-                  {t(plan.descriptionKey)}
-                </p>
+                {t(plan.descriptionKey) && (
+                  <p className="text-gray-600 dark:text-gray-300">
+                    {t(plan.descriptionKey)}
+                  </p>
+                )}
               </div>
 
               <ul className="space-y-4 mb-8">

@@ -56,9 +56,9 @@ COMPANY INFORMATION:
 - Target Market: Small and medium businesses in the US and Spain
 
 CURRENT PRICING (clear ranges so clients see if they can afford you):
-- Starter ($1,000 – $1,800): First-time websites. Up to 4 pages, basic SEO, 3–4 weeks, 2 rounds of revisions, English & Spanish, 1 month support. Call-to-action: "Launch My Website"
-- Business ($2,000 – $4,000): Contact form leads, Google visibility, multi-lingual reach. Up to 7 pages, advanced SEO + Google Analytics, 4–6 weeks, 3 months support. Call-to-action: "Grow My Business" - MOST POPULAR
-- Custom ($4,000+): eCommerce, booking systems, member portals. Custom scope, 6–10 weeks, revisions included, 6 months support. Call-to-action: "Get a Quote"
+- Starter ($1,000 – $1,800): First-time websites. Up to 4 pages, basic SEO, 1 week delivery, 2 rounds of revisions, English & Spanish, 1 month support. Call-to-action: "Launch My Website"
+- Business ($2,000 – $4,000): Contact form leads, Google visibility, multi-lingual reach. Up to 7 pages, advanced SEO + Google Analytics, 2–4 weeks, 3 months support. Call-to-action: "Grow My Business" - MOST POPULAR
+- Custom ($4,000+): eCommerce, booking systems, member portals. Custom scope, 5–7 weeks, revisions included, 6 months support. Call-to-action: "Get a Quote"
 
 OPTIONAL MONTHLY SUPPORT:
 - Basic Support $49/mo: Updates and backups
