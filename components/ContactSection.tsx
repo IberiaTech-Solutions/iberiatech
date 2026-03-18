@@ -86,8 +86,8 @@ This message was sent from your IberiaTech Solutions LLC contact form.
           </p>
           <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
             {language === 'es'
-              ? 'Sin presión, sin spam. Solo una conversación honesta sobre tu proyecto.'
-              : 'No pressure, no spam. Just an honest conversation about your project.'}
+              ? 'Sin presion, sin spam. Solo una conversacion sobre lo que necesitas.'
+              : 'No pressure, no spam. Just a conversation about what you need.'}
           </p>
         </motion.div>
 
@@ -102,10 +102,10 @@ This message was sent from your IberiaTech Solutions LLC contact form.
           >
             <div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                {language === 'es' ? 'Información de Contacto' : 'Contact Information'}
+                {language === 'es' ? 'Como contactarnos' : 'How to reach us'}
               </h3>
               <p className="text-gray-600 dark:text-gray-300 mb-8">
-                {language === 'es' ? 'Comunícate con nosotros a través de cualquiera de estos canales.' : 'Get in touch with us directly through any of these channels.'}
+                {language === 'es' ? 'Escribenos o llamanos. Respondemos rapido.' : 'Email or call us. We respond fast.'}
               </p>
             </div>
 
@@ -186,7 +186,7 @@ This message was sent from your IberiaTech Solutions LLC contact form.
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-brand-800 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-800 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                       placeholder={t('contact.form.name')}
                   />
                 </div>
@@ -202,7 +202,7 @@ This message was sent from your IberiaTech Solutions LLC contact form.
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-brand-800 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-800 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -217,7 +217,7 @@ This message was sent from your IberiaTech Solutions LLC contact form.
                     name="company"
                     value={formData.company}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-brand-800 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-800 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                       placeholder={t('contact.form.company')}
                   />
                 </div>
@@ -233,7 +233,7 @@ This message was sent from your IberiaTech Solutions LLC contact form.
                     onChange={handleInputChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-brand-800 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-800 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white resize-none"
                       placeholder={t('contact.form.message')}
                   />
                 </div>

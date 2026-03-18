@@ -2,7 +2,8 @@
 
 import { useLanguage } from './LanguageProvider'
 import { motion } from 'framer-motion'
-import { FiTarget, FiAward, FiUsers, FiGlobe, FiUser, FiCode, FiMail } from 'react-icons/fi'
+import { FiTarget, FiAward, FiUsers, FiGlobe, FiCode, FiMail } from 'react-icons/fi'
+import Image from 'next/image'
 
 export default function AboutSection() {
   const { t } = useLanguage()
@@ -102,8 +103,14 @@ export default function AboutSection() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
             {/* Left - Profile Info */}
             <div className="lg:col-span-1 text-center lg:text-left">
-              <div className="w-24 h-24 bg-gradient-to-br from-primary-800 to-accent-500 rounded-full flex items-center justify-center mx-auto lg:mx-0 mb-4">
-                <FiUser className="w-12 h-12 text-white" />
+              <div className="w-24 h-24 rounded-full overflow-hidden mx-auto lg:mx-0 mb-4">
+                <Image
+                  src="/Photo.jpg"
+                  alt="Luis Lozoya"
+                  width={96}
+                  height={96}
+                  className="object-cover w-full h-full"
+                />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                 Luis Lozoya
@@ -157,32 +164,6 @@ export default function AboutSection() {
           </div>
         </motion.div>
 
-        {/* Testimonials */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mt-16"
-        >
-          <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
-                  {t('about.testimonials.title')}
-                </h3>
-            <div className="grid grid-cols-1 md:grid-cols-1 gap-8 max-w-2xl mx-auto">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-brand-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-xl">D</span>
-                </div>
-                <blockquote className="text-lg italic text-gray-700 dark:text-gray-300 mb-4">
-                  "{t('about.testimonials.quote')}"
-                </blockquote>
-                <div className="font-semibold text-gray-900 dark:text-white">{t('about.testimonials.author')}</div>
-                <div className="text-sm text-brand-800 dark:text-brand-400">{t('about.testimonials.company')}</div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

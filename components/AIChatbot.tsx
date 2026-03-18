@@ -266,18 +266,18 @@ export default function AIChatbot() {
                 <div
                   className={`max-w-sm px-4 py-3 rounded-lg ${
                     message.isUser
-                      ? 'bg-brand-600 text-white'
+                      ? 'bg-primary-600 text-white'
                       : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white'
                   }`}
                 >
                   <div className="flex items-start space-x-2">
                     {!message.isUser && (
-                      <span className="text-brand-600 dark:text-brand-400">🤖</span>
+                      <span className="text-primary-600 dark:text-primary-400">🤖</span>
                     )}
                     <div className="text-sm whitespace-pre-wrap leading-relaxed">
                       {message.text.split('**').map((part, index) => {
                         if (index % 2 === 1) {
-                          return <strong key={index} className="font-semibold text-brand-600 dark:text-brand-400">{part}</strong>
+                          return <strong key={index} className="font-semibold text-primary-600 dark:text-primary-400">{part}</strong>
                         }
                         return part
                       })}
@@ -368,12 +368,12 @@ export default function AIChatbot() {
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder={language === 'es' ? 'Escribe tu mensaje...' : 'Type your message...'}
-                className="flex-1 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 dark:bg-gray-700 dark:text-white"
+                className="flex-1 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-700 dark:text-white"
               />
               <button
                 onClick={handleSendMessage}
                 disabled={!inputValue.trim()}
-                className="p-2 bg-brand-600 hover:bg-brand-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white rounded-lg transition-colors duration-200"
+                className="p-2 bg-primary-600 hover:bg-primary-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white rounded-lg transition-colors duration-200"
               >
                 ➤
               </button>

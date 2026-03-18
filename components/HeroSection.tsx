@@ -8,11 +8,16 @@ import Image from 'next/image'
 export default function HeroSection() {
   const { t, language } = useLanguage()
 
-  const projectLabel = (type: 'seh' | 'querri') => {
-    if (type === 'seh') {
+  const projectLabel = (type: 'neva' | 'coastal' | 'querri') => {
+    if (type === 'neva') {
       return language === 'es'
-        ? 'E‑commerce · Charleston, SC'
-        : 'E‑commerce · Charleston, SC'
+        ? 'Arquitectura · Gijón, España'
+        : 'Architecture · Gijón, Spain'
+    }
+    if (type === 'coastal') {
+      return language === 'es'
+        ? 'Construcción · Summerville, SC'
+        : 'Construction · Summerville, SC'
     }
     return language === 'es'
       ? 'Análisis de datos · Charleston, SC'
@@ -27,7 +32,7 @@ export default function HeroSection() {
       {/* Background: real project with gradient overlay */}
       <div className="absolute inset-0 -z-20">
         <Image
-          src="/images/portfolio/www.shopessentialshub.com_.png"
+          src="/neva.jpg"
           alt="Background preview of a real IberiaTech project"
           fill
           priority
@@ -103,8 +108,8 @@ export default function HeroSection() {
             {/* Trust microcopy */}
             <p className="text-sm text-blue-200/80">
               {language === 'es'
-                ? 'Sitios web para pequeñas y medianas empresas en Charleston y España, listos para crecer contigo.'
-                : 'Websites for small and medium companies in Charleston and Spain, built to grow with you.'}
+                ? 'Garantía de satisfacción · Respuesta en 24h · Sin costos ocultos'
+                : 'Satisfaction guarantee · 24h response · No hidden fees'}
             </p>
           </motion.div>
 
@@ -119,8 +124,8 @@ export default function HeroSection() {
             <div className="absolute inset-y-4 right-0 left-6 md:left-10">
               <div className="relative h-full rounded-3xl overflow-hidden bg-gray-900/80 border border-white/10 shadow-2xl">
                 <Image
-                  src="/images/portfolio/www.shopessentialshub.com_.png"
-                  alt="ShopEssentialsHub project preview"
+                  src="/neva.jpg"
+                  alt="NEVA Estudio project preview"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover object-top opacity-60"
@@ -131,10 +136,10 @@ export default function HeroSection() {
                     {language === 'es' ? 'Trabajo real de clientes' : 'Real client project'}
                   </p>
                   <h3 className="text-xl md:text-2xl font-semibold text-white">
-                    ShopEssentialsHub
+                    NEVA Estudio
                   </h3>
                   <p className="text-sm text-blue-100">
-                    {projectLabel('seh')}
+                    {projectLabel('neva')}
                   </p>
                 </div>
               </div>
@@ -145,8 +150,8 @@ export default function HeroSection() {
               <div className="relative rounded-2xl overflow-hidden bg-gray-900/90 border border-white/10 shadow-xl">
                 <div className="h-28 md:h-32 relative">
                   <Image
-                    src="/images/portfolio/querri1.png"
-                    alt="Querri project preview"
+                    src="/coastal.jpg"
+                    alt="Coastal Millwork project preview"
                     fill
                     sizes="200px"
                     className="object-cover object-top opacity-80"
@@ -155,10 +160,10 @@ export default function HeroSection() {
                 </div>
                 <div className="p-3">
                   <p className="text-xs font-medium text-blue-100">
-                    Querri
+                    Coastal Millwork
                   </p>
                   <p className="text-[11px] text-blue-200/80">
-                    {projectLabel('querri')}
+                    {projectLabel('coastal')}
                   </p>
                 </div>
               </div>

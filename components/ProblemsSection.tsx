@@ -10,46 +10,46 @@ export default function ProblemsSection() {
   const problems = [
     {
       icon: FiSearch,
-      title: language === 'es' ? 'No aparecer en Google' : 'Not found on Google',
-      description: language === 'es' ? 'Los clientes buscan en línea pero no te ven.' : 'Customers search online but don\'t see you.'
+      title: language === 'es' ? 'Nadie te encuentra en Google' : 'People cannot find you on Google',
+      description: language === 'es' ? 'Tus clientes buscan online. Si no apareces, llaman a otro.' : 'Your customers are searching online. If you are not there, they call someone else.'
     },
     {
       icon: FiUsers,
-      title: language === 'es' ? 'Perdiendo clientes ante competidores' : 'Losing clients to competitors',
-      description: language === 'es' ? 'Los competidores con sitios web reciben la llamada en su lugar.' : 'Competitors with websites get the call instead.'
+      title: language === 'es' ? 'Tu competencia te gana' : 'Your competition is winning',
+      description: language === 'es' ? 'El que tiene sitio web se lleva la llamada.' : 'The one with a website gets the call.'
     },
     {
       icon: FiAward,
-      title: language === 'es' ? 'Parecer menos profesional' : 'Looking less professional',
-      description: language === 'es' ? 'Sin una presencia web sólida, tu negocio puede parecer desactualizado.' : 'Without a strong web presence, your business can feel outdated.'
+      title: language === 'es' ? 'Tu negocio no se ve profesional' : 'Your business looks outdated',
+      description: language === 'es' ? 'Sin presencia web, la gente no confia igual.' : 'Without a web presence, people do not trust you the same way.'
     },
     {
       icon: FiDollarSign,
-      title: language === 'es' ? 'Perdiendo crecimiento' : 'Missing growth',
-      description: language === 'es' ? 'Sin sitio web significa no hay lugar para capturar leads o mostrar tus servicios.' : 'No website means no place to capture leads or showcase your services.'
+      title: language === 'es' ? 'Estas perdiendo dinero' : 'You are leaving money on the table',
+      description: language === 'es' ? 'Sin sitio web no tienes donde capturar clientes nuevos.' : 'No website means nowhere to capture new customers.'
     }
   ]
 
   const solutions = [
     {
       icon: FiAward,
-      title: language === 'es' ? 'Un sitio web moderno que genera confianza' : 'A modern website that builds trust',
-      description: language === 'es' ? 'Incluso nuestro paquete Básico incluye un diseño profesional que hace que tu negocio se vea creíble.' : 'Even our Starter package includes a professional design that makes your business look credible.'
+      title: language === 'es' ? 'Un sitio que da confianza' : 'A site that builds trust',
+      description: language === 'es' ? 'Hasta el paquete basico incluye un diseño profesional que te hace ver serio.' : 'Even the Starter package gives you a professional look that makes your business credible.'
     },
     {
       icon: FiUsers,
-      title: language === 'es' ? 'Un sitio que gana clientes' : 'A site that wins customers',
-      description: language === 'es' ? 'El paquete Empresarial está construido para convertir visitantes en clientes que pagan.' : 'The Business package is built to convert visitors into paying clients.'
+      title: language === 'es' ? 'Un sitio que trae clientes' : 'A site that brings in customers',
+      description: language === 'es' ? 'Construido para que los visitantes te contacten.' : 'Built so visitors actually reach out to you.'
     },
     {
       icon: FiGlobe,
-      title: language === 'es' ? 'Alcance bilingüe (Inglés y Español)' : 'Bilingual reach (English & Spanish)',
-      description: language === 'es' ? 'Incluido sin costo adicional en cada paquete.' : 'Included at no extra cost in every package.'
+      title: language === 'es' ? 'Ingles y español incluido' : 'English and Spanish included',
+      description: language === 'es' ? 'Sin costo extra. Cada paquete viene bilingue.' : 'At no extra cost. Every package comes bilingual.'
     },
     {
       icon: FiDollarSign,
-      title: language === 'es' ? 'Precios claros, pago único' : 'Clear, one-time pricing',
-      description: language === 'es' ? 'Sin suscripciones, sin tarifas ocultas.' : 'No subscriptions, no hidden fees.'
+      title: language === 'es' ? 'Precio unico y claro' : 'One price, no surprises',
+      description: language === 'es' ? 'Sin suscripciones. Sin costos ocultos.' : 'No subscriptions. No hidden fees.'
     }
   ]
 
@@ -164,8 +164,8 @@ export default function ProblemsSection() {
             <div className="text-lg text-gray-600 dark:text-gray-300 mb-6 space-y-2">
               <p>
                 {language === 'es'
-                  ? 'Un sitio web profesional es cómo tus clientes te encuentran, confían en ti y te eligen.'
-                  : 'A professional website is how your customers find you, trust you, and choose you.'}
+                  ? 'Tu sitio web es como tus clientes te encuentran y deciden llamarte.'
+                  : 'Your website is how customers find you and decide to call you.'}
               </p>
             </div>
             <a

@@ -11,103 +11,144 @@ export default function PortfolioSection() {
   const [selectedCategory, setSelectedCategory] = useState('All')
 
   const projects = [
+    // IberiaTech Solutions projects
     {
       id: 1,
-      title: 'ShopEssentialsHub',
-      logo: '/images/logos/logo-SEH.png',
-      description: language === 'es' 
-        ? 'Una plataforma de recomendación de productos de Amazon cuidadosamente seleccionados por Luis Lozoya. Presenta productos probados y revisados personalmente, desde máquinas de café y tecnología hasta artículos para el hogar. Cada producto es recomendado porque realmente funciona, con reseñas honestas y sin promociones pagadas.' 
-        : 'A curated Amazon products recommendation platform hand-picked by Luis Lozoya. Features personally tested and reviewed products, from coffee makers and tech gadgets to home essentials. Every product is recommended because it actually works, with honest reviews and no paid promotions.',
-      image: '/images/portfolio/www.shopessentialshub.com_.png',
-      category: 'Personal Project',
-      technologies: ['Product Curation', 'E-commerce', 'Content Platform'],
-      impact: language === 'es' 
-        ? 'Plataforma para descubrir productos de calidad que realmente funcionan' 
-        : 'Platform for discovering quality products that actually work',
-      link: 'https://www.shopessentialshub.com/',
-      ownership: 'personal',
+      title: 'NEVA Estudio',
+      logo: 'https://neva-estudio.vercel.app/neva-logo.svg',
+      description: language === 'es'
+        ? 'Sitio web para un estudio de arquitectura en Gijón, Asturias, con más de una década de experiencia en arquitectura cercana y humanista. Presenta sus servicios de obra residencial, comercial, urbanismo, eficiencia energética, diseño de interiores y gestión integral de proyectos llave en mano.'
+        : 'Website for an architecture firm in Gijón, Asturias, with over a decade of experience in close, humanistic architecture. Showcases their residential, commercial, urban planning, energy efficiency, interior design, and full turnkey project management services.',
+      image: '/neva.jpg',
+      category: 'Architecture',
+      technologies: ['Bilingual Site', 'Portfolio Showcase', 'Services Platform'],
+      impact: language === 'es'
+        ? 'Presencia digital profesional para atraer nuevos clientes'
+        : 'Professional digital presence to attract new clients',
+      link: 'https://neva-estudio.vercel.app/es',
+      ownership: 'direct',
       role: language === 'es'
-        ? 'Proyecto personal desarrollado por Luis Lozoya.'
-        : 'Personal project developed by Luis Lozoya.'
+        ? 'Proyecto de IberiaTech Solutions.'
+        : 'IberiaTech Solutions project.'
     },
     {
       id: 2,
-      title: 'PortfolioHub',
-      logo: '/images/logos/Logo Icon.png',
-      description: language === 'es' 
-        ? 'Una plataforma personal para conectar con profesionales talentosos y explorar sus portafolios existentes. Permite a los usuarios navegar por el trabajo de otros profesionales, descubrir talento y facilitar colaboraciones. Diseñado para ayudar a encontrar y conectar con los mejores profesionales en sus campos.' 
-        : 'A personal platform for connecting with talented professionals and exploring their existing portfolios. Allows users to browse other professionals\' work, discover talent, and facilitate collaborations. Designed to help find and connect with the best professionals in their fields.',
-      image: '/images/portfolio/portfoliohub.png',
-      category: 'Personal Project',
-      technologies: ['Portfolio Platform', 'Professional Networking', 'Collaboration Tools'],
-      impact: language === 'es' 
-        ? 'Plataforma para conectar profesionales y mostrar talento' 
-        : 'Platform for connecting professionals and showcasing talent',
-      link: 'https://portfolio-hub-tawny.vercel.app/',
-      ownership: 'personal',
+      title: 'Coastal Millwork & Supply',
+      logo: 'https://coastal-millwork.vercel.app/favicon.png',
+      description: language === 'es'
+        ? 'Sitio web para un contratista de interiores arquitectónicos comerciales galardonado en Summerville, SC. Destaca sus servicios de diseño, fabricación e instalación de productos de madera y especialidades interiores premium, con certificación AWI-QCP y más de 800 proyectos completados.'
+        : 'Website for an award-winning commercial interior architectural contractor in Summerville, SC. Highlights their design, fabrication, and installation services for premium architectural wood and interior specialty products, with AWI-QCP certification and 800+ completed projects.',
+      image: '/coastal.jpg',
+      category: 'Construction',
+      technologies: ['Project Showcase', 'Services Platform', 'Client Portal'],
+      impact: language === 'es'
+        ? 'Mayor credibilidad profesional y generación de leads'
+        : 'Enhanced professional credibility and lead generation',
+      link: 'https://coastal-millwork.vercel.app/',
+      ownership: 'direct',
       role: language === 'es'
-        ? 'Proyecto personal desarrollado por Luis Lozoya.'
-        : 'Personal project developed by Luis Lozoya.'
+        ? 'Proyecto de IberiaTech Solutions.'
+        : 'IberiaTech Solutions project.'
     },
     {
       id: 3,
+      title: 'ShopEssentialsHub',
+      logo: '/images/logos/logo-SEH.png',
+      description: language === 'es'
+        ? 'Plataforma de recomendacion de productos de Amazon seleccionados a mano. Productos probados y revisados personalmente, desde cafeteras y tecnologia hasta articulos para el hogar. Cada producto se recomienda porque realmente funciona, con reseñas honestas y sin promociones pagadas.'
+        : 'A curated Amazon products recommendation platform. Features personally tested and reviewed products, from coffee makers and tech gadgets to home essentials. Every product is recommended because it actually works, with honest reviews and no paid promotions.',
+      image: '/images/portfolio/www.shopessentialshub.com_.jpg',
+      category: 'E-commerce',
+      technologies: ['Product Curation', 'E-commerce', 'Content Platform'],
+      impact: language === 'es'
+        ? 'Plataforma para descubrir productos de calidad que realmente funcionan'
+        : 'Platform for discovering quality products that actually work',
+      link: 'https://www.shopessentialshub.com/',
+      ownership: 'direct',
+      role: language === 'es'
+        ? 'Proyecto de IberiaTech Solutions.'
+        : 'IberiaTech Solutions project.'
+    },
+    {
+      id: 4,
+      title: 'TalentAgent',
+      logo: 'https://portfolio-hub-tawny.vercel.app/favicon.svg',
+      description: language === 'es'
+        ? 'Plataforma de empleo con IA que evalua la compatibilidad real entre candidatos y puestos. Puntuacion de ajuste 0-100, deteccion de ofertas fantasma, preparacion para entrevistas y portafolios inteligentes.'
+        : 'AI-powered job-matching platform that evaluates real fit between candidates and roles. Features 0-100 fit scoring, ghost job detection, interview preparation, and smart portfolios.',
+      image: '/talentagent.jpg',
+      category: 'AI Platform',
+      technologies: ['AI Platform', 'Job Matching', 'Chrome Extension'],
+      impact: language === 'es'
+        ? 'Plataforma inteligente para buscar empleo de forma estrategica'
+        : 'Smart platform for strategic job hunting',
+      link: 'https://portfolio-hub-tawny.vercel.app/',
+      ownership: 'direct',
+      role: language === 'es'
+        ? 'Proyecto de IberiaTech Solutions.'
+        : 'IberiaTech Solutions project.'
+    },
+    // g/d/n/a collaboration projects
+    {
+      id: 5,
+      title: 'GSeay Construction',
+      logo: '/images/logos/image.png',
+      description: language === 'es'
+        ? 'Un sitio web profesional para una empresa de construcción de Florida especializada en proyectos de hospitalidad, salud, industrial y renovación. El sitio destaca sus servicios, incluye un portafolio de proyectos, testimonios y un mapa de proyectos para demostrar credibilidad y atraer nuevos clientes.'
+        : 'A professional website for a Florida construction company specializing in hospitality, healthcare, industrial, and renovation projects. The site highlights their services, includes a project portfolio, testimonials, and a project map to demonstrate credibility and attract new clients.',
+      image: '/images/portfolio/gseay.jpg',
+      category: 'Construction',
+      technologies: ['Project Portfolio', 'Services', 'Client Testimonials'],
+      impact: language === 'es'
+        ? 'Mayor visibilidad en línea y más consultas de clientes'
+        : 'Improved online visibility and more client inquiries',
+      link: 'https://www.gseayinc.com/',
+      ownership: 'collaboration',
+      collaboration: 'g/d/n/a',
+      role: language === 'es'
+        ? 'Entregado como contratista para g/d/n/a.'
+        : 'Delivered as a contractor for g/d/n/a.'
+    },
+    {
+      id: 6,
+      title: 'LESS USA',
+      logo: '/images/logos/InfinityLogo.png',
+      description: language === 'es'
+        ? 'Una plataforma digital para una asociación de aplicación de la ley de EE. UU. para gestionar programas de entrenamiento. El sitio soporta documentar el rendimiento de reclutas, dar visibilidad a entrenadores y proporcionar a los miembros acceso a herramientas y recursos clave.'
+        : 'A digital platform for a U.S. law enforcement association to manage training programs. The site supports documenting recruit performance, giving trainers visibility, and providing members with access to key tools and resources.',
+      image: '/images/portfolio/Less1.jpg',
+      category: 'Digital Platform',
+      technologies: ['Training Platform', 'Documentation', 'Member Access'],
+      impact: language === 'es'
+        ? '30% más rendimiento y UX optimizada'
+        : '30% performance improvement and optimized UX',
+      link: 'https://www.less-usa.com/',
+      ownership: 'collaboration',
+      collaboration: 'g/d/n/a',
+      role: language === 'es'
+        ? 'Entregado como contratista para g/d/n/a.'
+        : 'Delivered as a contractor for g/d/n/a.'
+    },
+    // Contractor project
+    {
+      id: 7,
       title: 'Querri',
       logo: 'https://querri.com/favicon.svg',
       tagline: 'Data analytics & business intelligence',
-      description: language === 'es' 
-        ? 'Un sitio web para una startup de análisis de datos con sede en Charleston que muestra su plataforma de IA y servicios. Destaca características como tableros, limpieza de datos e integraciones de manera clara que ayuda a los clientes potenciales a entender el valor de sus soluciones.' 
+      description: language === 'es'
+        ? 'Un sitio web para una startup de análisis de datos con sede en Charleston que muestra su plataforma de IA y servicios. Destaca características como tableros, limpieza de datos e integraciones de manera clara que ayuda a los clientes potenciales a entender el valor de sus soluciones.'
         : 'A website for a Charleston-based data analytics startup that showcases their AI platform and services. It highlights features like dashboards, data cleansing, and integrations in a clear way that helps potential clients understand the value of their solutions.',
-      image: '/images/portfolio/querri1.png',
+      image: '/images/portfolio/querri1.jpg',
       category: 'Business Services',
       technologies: ['Custom CMS', 'Client Access', 'Data Visualization'],
-      impact: language === 'es' 
-        ? 'Gestión de clientes más ágil y mejor rendimiento' 
+      impact: language === 'es'
+        ? 'Gestión de clientes más ágil y mejor rendimiento'
         : 'Streamlined client management and improved performance',
       link: 'https://querri.com/',
       ownership: 'direct',
       role: language === 'es'
         ? 'Entregado como contratista para Querri.'
         : 'Delivered as a contractor for Querri.'
-    },
-    {
-      id: 4,
-      title: 'GSeay Construction',
-      logo: '/images/logos/image.png',
-      description: language === 'es' 
-        ? 'Un sitio web profesional para una empresa de construcción de Florida especializada en proyectos de hospitalidad, salud, industrial y renovación. El sitio destaca sus servicios, incluye un portafolio de proyectos, testimonios y un mapa de proyectos para demostrar credibilidad y atraer nuevos clientes.' 
-        : 'A professional website for a Florida construction company specializing in hospitality, healthcare, industrial, and renovation projects. The site highlights their services, includes a project portfolio, testimonials, and a project map to demonstrate credibility and attract new clients.',
-      image: '/images/portfolio/gseay.png',
-      category: 'Construction',
-      technologies: ['Project Portfolio', 'Services', 'Client Testimonials'],
-      impact: language === 'es' 
-        ? 'Mayor visibilidad en línea y más consultas de clientes' 
-        : 'Improved online visibility and more client inquiries',
-      link: 'https://www.gseayinc.com/',
-      ownership: 'collaboration',
-      collaboration: 'GDNA',
-      role: language === 'es' 
-        ? 'Entregado como contratista para GDNA.' 
-        : 'Delivered as a contractor for GDNA.'
-    },
-    {
-      id: 5,
-      title: 'LESS USA',
-      logo: '/images/logos/InfinityLogo.png',
-      description: language === 'es' 
-        ? 'Una plataforma digital para una asociación de aplicación de la ley de EE. UU. para gestionar programas de entrenamiento. El sitio soporta documentar el rendimiento de reclutas, dar visibilidad a entrenadores y proporcionar a los miembros acceso a herramientas y recursos clave.' 
-        : 'A digital platform for a U.S. law enforcement association to manage training programs. The site supports documenting recruit performance, giving trainers visibility, and providing members with access to key tools and resources.',
-      image: '/images/portfolio/Less1.png',
-      category: 'Digital Platform',
-      technologies: ['Training Platform', 'Documentation', 'Member Access'],
-      impact: language === 'es' 
-        ? '30% más rendimiento y UX optimizada' 
-        : '30% performance improvement and optimized UX',
-      link: 'https://www.less-usa.com/',
-      ownership: 'collaboration',
-      collaboration: 'GDNA',
-      role: language === 'es' 
-        ? 'Entregado como contratista para GDNA.' 
-        : 'Delivered as a contractor for GDNA.'
     }
   ]
 
@@ -133,9 +174,9 @@ export default function PortfolioSection() {
                 {language === 'es' ? 'Proyectos que Ayudan a Pequeñas y Medianas Empresas a Crecer' : 'Projects That Help Small & Medium Companies Grow'}
               </h2>
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                {language === 'es' 
-                  ? 'Estos incluyen tanto proyectos de IberiaTech Solutions como trabajo profesional que Luis Lozoya entregó como contratista para agencias socias.' 
-                  : 'These include both IberiaTech Solutions projects and professional work Luis Lozoya delivered as a contractor for partner agencies.'}
+                {language === 'es'
+                  ? 'Sitios web reales para empresas reales. Cada proyecto fue diseñado para atraer clientes y hacer crecer el negocio.'
+                  : 'Real websites for real businesses. Every project was designed to attract customers and grow the business.'}
               </p>
         </motion.div>
 
@@ -194,7 +235,7 @@ export default function PortfolioSection() {
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center space-x-3">
                     {project.logo && (
-                      <div className={`w-8 h-8 relative ${project.title === 'PortfolioHub' ? 'bg-blue-600 rounded-full p-1' : ''}`}>
+                      <div className="w-8 h-8 relative">
                         <Image
                           src={project.logo}
                           alt={`${project.title} logo`}
@@ -256,7 +297,7 @@ export default function PortfolioSection() {
           ))}
         </motion.div>
 
-        {/* Coming Soon Note */}
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -266,31 +307,18 @@ export default function PortfolioSection() {
         >
           <div className="bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 rounded-2xl p-8 max-w-4xl mx-auto border border-primary-200 dark:border-primary-700">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              {language === 'es' ? 'Mi Experiencia' : 'My Experience'}
+              {language === 'es' ? '¿Quieres resultados como estos?' : 'Want results like these?'}
             </h3>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-              {language === 'es' 
-                ? 'Soy Luis Lozoya, fundador de IberiaTech Solutions. Ayudo a pequeñas y medianas empresas en Charleston y España a crecer en línea con sitios web modernos y bilingües que convierten visitas en clientes.' 
-                : 'I\'m Luis Lozoya, founder of IberiaTech Solutions. I help small and medium companies in Charleston and Spain grow online with modern, bilingual websites that turn visitors into customers.'}
+              {language === 'es'
+                ? 'Cuéntame sobre tu negocio y te mostraré exactamente cómo un sitio web puede ayudarte a crecer.'
+                : 'Tell me about your business and I\'ll show you exactly how a website can help you grow.'}
             </p>
-            <div className="flex flex-wrap justify-center gap-4 mb-6">
-              <div className="flex items-center space-x-2 text-primary-800 dark:text-primary-400">
-                <div className="w-2 h-2 bg-accent-500 rounded-full animate-pulse"></div>
-                <span className="text-sm font-medium">{language === 'es' ? 'En Desarrollo' : 'In Development'}</span>
-              </div>
-              <div className="flex items-center space-x-2 text-primary-800 dark:text-primary-400">
-                <div className="w-2 h-2 bg-accent-500 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-                <span className="text-sm font-medium">{language === 'es' ? 'Próximamente' : 'Coming Soon'}</span>
-              </div>
-            </div>
             <a
-              href="https://luislozoya.com"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contact"
               className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-800 hover:bg-primary-900 dark:bg-primary-600 dark:hover:bg-primary-700 transition-colors duration-200 shadow-lg"
             >
-              <span>{language === 'es' ? 'Ver más de mi trabajo' : 'See more of my work'}</span>
-              <FiExternalLink className="ml-2 h-4 w-4" />
+              <span>{language === 'es' ? 'Hablemos de tu proyecto' : 'Let\'s talk about your project'}</span>
             </a>
           </div>
         </motion.div>

@@ -8,8 +8,7 @@ import { FiMail, FiPhone, FiMapPin, FiLinkedin, FiGithub } from 'react-icons/fi'
 export default function Footer() {
   const { language, t } = useLanguage()
 
-  // Use a static year to avoid hydration issues
-  const currentYear = 2026
+  const currentYear = new Date().getFullYear()
 
   return (
     <footer className="bg-gray-900 text-white">

@@ -18,6 +18,18 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'gdna.io',
       },
+      {
+        protocol: 'https',
+        hostname: 'neva-estudio.vercel.app',
+      },
+      {
+        protocol: 'https',
+        hostname: 'coastal-millwork.vercel.app',
+      },
+      {
+        protocol: 'https',
+        hostname: 'portfolio-hub-tawny.vercel.app',
+      },
     ],
   },
 }

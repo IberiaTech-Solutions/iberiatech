@@ -1,6 +1,5 @@
 'use client'
 
-import { useLanguage } from '@/components/LanguageProvider'
 import HeroSection from '@/components/HeroSection'
 import ServicesSection from '@/components/ServicesSection'
 import ProblemsSection from '@/components/ProblemsSection'
@@ -14,8 +13,6 @@ import TestimonialsSection from '@/components/TestimonialsSection'
 import ResultsStrip from '@/components/ResultsStrip'
 
 export default function HomePage() {
-  const { t } = useLanguage()
-
   return (
     <div className="min-h-screen" suppressHydrationWarning>
       <HeroSection />

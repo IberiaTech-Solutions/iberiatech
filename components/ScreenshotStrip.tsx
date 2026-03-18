@@ -6,9 +6,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const screenshots = [
-  { src: '/images/portfolio/www.shopessentialshub.com_.png', label: 'ShopEssentialsHub', href: 'https://www.shopessentialshub.com/' },
-  { src: '/images/portfolio/querri1.png', label: 'Querri', href: 'https://querri.com/' },
-  { src: '/images/portfolio/gseay.png', label: 'GSeay Construction', href: 'https://www.gseayinc.com/' },
+  { src: '/neva.jpg', label: 'NEVA Estudio', href: 'https://neva-estudio.vercel.app/es' },
+  { src: '/coastal.jpg', label: 'Coastal Millwork & Supply', href: 'https://coastal-millwork.vercel.app/' },
+  { src: '/images/portfolio/querri1.jpg', label: 'Querri', href: 'https://querri.com/' },
 ]
 
 export default function ScreenshotStrip() {

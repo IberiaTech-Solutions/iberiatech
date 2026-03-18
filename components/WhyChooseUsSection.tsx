@@ -14,28 +14,28 @@ export default function WhyChooseUsSection() {
   const reasons = [
     {
       icon: FiGlobe,
-      title: language === 'es' ? 'Experiencia Bilingüe Completa' : 'Complete Bilingual Expertise',
-      description: language === 'es' ? 'Comprensión profunda de los mercados estadounidense y español, asegurando que su sitio web se comunique naturalmente en ambos idiomas.' : 'Deep understanding of US and Spanish markets, ensuring your site speaks both languages naturally.'
+      title: language === 'es' ? 'Bilingue de verdad' : 'Actually bilingual',
+      description: language === 'es' ? 'Hablamos los dos idiomas y conocemos los dos mercados. Tu sitio suena natural en ingles y en español.' : 'We speak both languages and know both markets. Your site sounds natural in English and in Spanish.'
     },
     {
       icon: FiCode,
-      title: language === 'es' ? 'Tecnología Moderna' : 'Modern Technology',
-      description: language === 'es' ? 'Utilizamos las tecnologías más avanzadas del mercado para crear sitios web rápidos, seguros y que crecen con su negocio.' : 'We use the most advanced technologies in the market to create fast, secure websites that grow with your business.'
+      title: language === 'es' ? 'Tecnologia actual' : 'Modern tech',
+      description: language === 'es' ? 'Nada de WordPress ni plantillas. Usamos tecnologia actual para que tu sitio cargue rapido y funcione bien.' : 'No WordPress, no templates. We use modern tech so your site loads fast and works right.'
     },
     {
       icon: FiCpu,
-      title: language === 'es' ? 'Características Inteligentes' : 'Smart Features',
-      description: language === 'es' ? 'Chatbots que responden preguntas de clientes automáticamente y mejoran la experiencia del usuario.' : 'Chatbots that answer customer questions automatically and improve user experience.'
+      title: language === 'es' ? 'Funciones inteligentes' : 'Smart features',
+      description: language === 'es' ? 'Chatbots que contestan preguntas, formularios que funcionan, y todo lo que necesites para atender a tus clientes online.' : 'Chatbots that answer questions, forms that work, and whatever you need to serve your customers online.'
     },
     {
       icon: FiUser,
-      title: language === 'es' ? 'Enfoque Personal Directo' : 'Direct Personal Approach',
-      description: language === 'es' ? 'Comunicación directa con el fundador - sin intermediarios ni equipos grandes, solo atención personalizada.' : 'Direct communication with the founder - no middlemen or large teams, just personalized attention.'
+      title: language === 'es' ? 'Trato directo' : 'You talk to the founder',
+      description: language === 'es' ? 'Hablas directamente con el fundador. Sin intermediarios, sin equipos grandes. Solo atencion real.' : 'You talk directly to the founder. No middlemen, no big teams. Just real attention.'
     },
     {
       icon: FiHeadphones,
-      title: language === 'es' ? 'Soporte a Largo Plazo' : 'Long-term Support',
-      description: language === 'es' ? 'Relaciones duraderas con soporte continuo, mantenimiento proactivo y planes de cuidado integrales.' : 'Lasting relationships with continuous support, proactive maintenance, and comprehensive care plans.'
+      title: language === 'es' ? 'No desaparecemos' : 'We do not disappear',
+      description: language === 'es' ? 'Despues del lanzamiento seguimos aqui. Actualizaciones, soporte, lo que necesites.' : 'After launch we are still here. Updates, support, whatever you need.'
     }
   ]
 
@@ -84,10 +84,10 @@ export default function WhyChooseUsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            {language === 'es' ? '¿Por Qué Elegir IberiaTech Solutions?' : 'Why Choose IberiaTech Solutions?'}
+            {language === 'es' ? '¿Por que nosotros?' : 'Why us?'}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            {language === 'es' ? 'Somos más que una agencia de desarrollo web - somos su socio tecnológico estratégico con experiencia bilingüe, soluciones de IA y soporte a largo plazo.' : 'We\'re more than a web development agency - we\'re your strategic technology partner with bilingual expertise, AI solutions, and long-term support.'}
+            {language === 'es' ? 'Hay muchas opciones. Esto es lo que nos hace diferentes.' : 'There are a lot of options out there. Here is what makes us different.'}
           </p>
         </motion.div>
       </div>
@@ -127,7 +127,7 @@ export default function WhyChooseUsSection() {
                 viewport={{ once: true }}
                 className="flex-shrink-0 w-80 bg-white dark:bg-gray-900 rounded-xl p-6 text-center hover:shadow-lg transition-shadow duration-300"
               >
-                <div className="w-16 h-16 bg-brand-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-primary-800 rounded-full flex items-center justify-center mx-auto mb-4">
                   <reason.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
