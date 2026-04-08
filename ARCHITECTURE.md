@@ -162,18 +162,47 @@ Second goal: 10 clients by end of Q3 2026.
 
 ---
 
-## TODOs (priority order)
+## Done (April 8, 2026)
+
+- [x] Subscription pricing model live on site ($149/$249/$449)
+- [x] Solo operator positioning (I not we) across entire site
+- [x] Professional email (luis@iberiatechsolutions.com)
+- [x] Calendly set up (Free Strategy Call, 30 min)
+- [x] All CTA buttons on site link to Calendly
+- [x] LinkedIn company page updated (tagline, about, specialties)
+- [x] Alignable profile updated (about, ideal customers, partnerships)
+- [x] First LinkedIn post published
+
+---
+
+## This week (April 8-14, 2026)
 
 1. Set up Stripe with 3 subscription products ($149, $249, $449)
-2. Set up Calendly or Cal.com for booking calls
-3. Update all CTAs on site to point to Calendly instead of email form
-4. Set up Google Business Profile for Charleston
-5. Publish LinkedIn posts (3x/week)
-6. Pick 3 Charleston businesses with bad sites and build one for free
-7. Walk into 5 businesses per week with a card
-8. Reach out to 5 Spanish businesses on LinkedIn per week
-9. Write first blog post targeting "web design charleston sc"
-10. Ask Dave Ingram for a Google review
+2. Set up Google Business Profile for IberiaTech Solutions in Charleston
+3. Publish 2 more LinkedIn posts (goal: 3x/week)
+4. Pick 3 Charleston businesses with bad sites and build one for free
+5. Walk into 5 businesses with a card
+6. Ask Dave Ingram for a Google review
+
+---
+
+## Next week (April 15-21, 2026)
+
+1. Reach out to 5 Spanish businesses on LinkedIn
+2. Publish 3 LinkedIn posts
+3. Walk into 5 more businesses
+4. Write first blog post targeting "web design charleston sc"
+5. Follow up with anyone who showed interest
+
+---
+
+## Ongoing
+
+- LinkedIn posts: 3x/week minimum
+- Walk-ins: 5-10/week in Charleston
+- LinkedIn outreach: 5 Spanish businesses/week
+- Blog: 1 post/month minimum
+- Ask every client for a Google review and testimonial
 
 ---
 
