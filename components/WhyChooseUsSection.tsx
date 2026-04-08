@@ -15,12 +15,12 @@ export default function WhyChooseUsSection() {
     {
       icon: FiGlobe,
       title: language === 'es' ? 'Bilingue de verdad' : 'Actually bilingual',
-      description: language === 'es' ? 'Hablamos los dos idiomas y conocemos los dos mercados. Tu sitio suena natural en ingles y en español.' : 'We speak both languages and know both markets. Your site sounds natural in English and in Spanish.'
+      description: language === 'es' ? 'Hablo los dos idiomas y conozco los dos mercados. Tu sitio suena natural en ingles y en español.' : 'I speak both languages and know both markets. Your site sounds natural in English and in Spanish.'
     },
     {
       icon: FiCode,
       title: language === 'es' ? 'Tecnologia actual' : 'Modern tech',
-      description: language === 'es' ? 'Nada de WordPress ni plantillas. Usamos tecnologia actual para que tu sitio cargue rapido y funcione bien.' : 'No WordPress, no templates. We use modern tech so your site loads fast and works right.'
+      description: language === 'es' ? 'Nada de WordPress ni plantillas. Uso tecnologia actual para que tu sitio cargue rapido y funcione bien.' : 'No WordPress, no templates. I use modern tech so your site loads fast and works right.'
     },
     {
       icon: FiCpu,
@@ -29,13 +29,13 @@ export default function WhyChooseUsSection() {
     },
     {
       icon: FiUser,
-      title: language === 'es' ? 'Trato directo' : 'You talk to the founder',
-      description: language === 'es' ? 'Hablas directamente con el fundador. Sin intermediarios, sin equipos grandes. Solo atencion real.' : 'You talk directly to the founder. No middlemen, no big teams. Just real attention.'
+      title: language === 'es' ? 'Trato directo' : 'You talk to me directly',
+      description: language === 'es' ? 'Hablas directamente conmigo. Sin intermediarios, sin equipos grandes. Solo atencion real.' : 'You talk directly to me, Luis. No middlemen, no big teams. Just real attention.'
     },
     {
       icon: FiHeadphones,
-      title: language === 'es' ? 'No desaparecemos' : 'We do not disappear',
-      description: language === 'es' ? 'Despues del lanzamiento seguimos aqui. Actualizaciones, soporte, lo que necesites.' : 'After launch we are still here. Updates, support, whatever you need.'
+      title: language === 'es' ? 'No desaparezco' : 'I do not disappear',
+      description: language === 'es' ? 'Despues del lanzamiento sigo aqui. Actualizaciones, soporte, lo que necesites. Es parte de tu plan mensual.' : 'After launch I am still here. Updates, support, whatever you need. It is part of your monthly plan.'
     }
   ]
 
@@ -84,10 +84,10 @@ export default function WhyChooseUsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            {language === 'es' ? '¿Por que nosotros?' : 'Why us?'}
+            {language === 'es' ? '¿Por que IberiaTech?' : 'Why IberiaTech?'}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            {language === 'es' ? 'Hay muchas opciones. Esto es lo que nos hace diferentes.' : 'There are a lot of options out there. Here is what makes us different.'}
+            {language === 'es' ? 'Hay muchas opciones. Esto es lo que me hace diferente.' : 'There are a lot of options out there. Here is what makes me different.'}
           </p>
         </motion.div>
       </div>

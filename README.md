@@ -160,7 +160,7 @@ iberiatech/
 
 ### IberiaTech Solutions LLC
 
-- **Email**: luis.lozoya.tech@gmail.com
+- **Email**: luis@iberiatechsolutions.com
 - **Phone**: (864) 365-7897
 - **Location**: Charleston, SC, USA
 - **Founded**: 2024
@@ -176,13 +176,15 @@ iberiatech/
 - **AI-Powered Features**: Chatbots, virtual assistants, intelligent search
 - **Ongoing Support**: Long-term maintenance and technical support
 
-### Pricing Packages
+### Monthly Plans (no big upfront cost)
 
-| Package | Price | Description |
-|---------|-------|-------------|
-| **Starter** | $750 | 1-page responsive site, contact form, basic SEO, 2 weeks support |
-| **Business** | $1,800 | 5-7 pages, custom branding, bilingual (EN/ES), SEO & analytics, optional AI features, 2 months support |
-| **Enterprise** | $3,000+ | Unlimited pages, user authentication, full e-commerce, custom APIs, AI chatbots, advanced AI integrations, 6 months support |
+| Plan | Price | Description |
+|------|-------|-------------|
+| **Starter** | $149/mo | Up to 4 pages, basic SEO, hosting & domain included, monthly maintenance, English & Spanish |
+| **Business** | $249/mo | Up to 7 pages + blog, advanced SEO + Analytics, monthly content updates, priority support |
+| **Custom** | $449/mo+ | eCommerce, booking, portals, apps. Full SEO, ongoing development, same-day support |
+
+All plans include design, development, hosting, domain, and maintenance. 12-month commitment.
 
 ## 🌐 Live Demo
 
@@ -200,7 +202,7 @@ Visit the live website: [iberiatech.com](https://iberiatech.com) (when deployed)
 
 This is a proprietary project owned by IberiaTech Solutions LLC. For business inquiries or collaboration opportunities, please contact:
 
-- **Email**: luis.lozoya.tech@gmail.com
+- **Email**: luis@iberiatechsolutions.com
 - **Phone**: (864) 365-7897
 
 ## 📄 License
@@ -211,7 +213,7 @@ This project is proprietary software owned by IberiaTech Solutions LLC. All righ
 
 For technical support or business inquiries:
 
-- **Email**: luis.lozoya.tech@gmail.com
+- **Email**: luis@iberiatechsolutions.com
 - **Phone**: (864) 365-7897
 - **Business Hours**: Monday - Friday, 9 AM - 6 PM EST
 

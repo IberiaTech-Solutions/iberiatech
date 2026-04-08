@@ -44,7 +44,7 @@ This message was sent from your IberiaTech Solutions LLC contact form.
       `)
       
       // Open email client
-      window.open(`mailto:luis.lozoya.tech@gmail.com?subject=${subject}&body=${body}`)
+      window.open(`mailto:luis@iberiatechsolutions.com?subject=${subject}&body=${body}`)
       
       setIsSubmitting(false)
       setIsSubmitted(true)
@@ -57,7 +57,7 @@ This message was sent from your IberiaTech Solutions LLC contact form.
     } catch (error) {
       console.error('Error opening email client:', error)
       setIsSubmitting(false)
-      alert('Please email us directly at luis.lozoya.tech@gmail.com')
+      alert('Please email us directly at luis@iberiatechsolutions.com')
     }
   }
 
@@ -118,10 +118,10 @@ This message was sent from your IberiaTech Solutions LLC contact form.
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">{t('contact.email')}</h4>
                   <a
-                    href="mailto:luis.lozoya.tech@gmail.com"
+                    href="mailto:luis@iberiatechsolutions.com"
                     className="text-gray-600 dark:text-gray-300 hover:text-primary-800 dark:hover:text-primary-400 transition-colors duration-200"
                   >
-                    luis.lozoya.tech@gmail.com
+                    luis@iberiatechsolutions.com
                   </a>
                 </div>
               </div>
@@ -170,7 +170,7 @@ This message was sent from your IberiaTech Solutions LLC contact form.
                     Email Client Opened!
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Your email client should have opened with a pre-filled message. If not, please email us directly at luis.lozoya.tech@gmail.com
+                    Your email client should have opened with a pre-filled message. If not, please email us directly at luis@iberiatechsolutions.com
                   </p>
               </div>
             ) : (

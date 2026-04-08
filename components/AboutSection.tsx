@@ -120,11 +120,11 @@ export default function AboutSection() {
               </p>
               <div className="flex flex-col space-y-2">
                 <a
-                  href="mailto:luis.lozoya.tech@gmail.com"
+                  href="mailto:luis@iberiatechsolutions.com"
                   className="flex items-center justify-center lg:justify-start space-x-2 text-gray-600 dark:text-gray-300 hover:text-primary-800 dark:hover:text-primary-400 transition-colors duration-200"
                 >
                   <FiMail className="w-4 h-4" />
-                  <span className="text-sm">luis.lozoya.tech@gmail.com</span>
+                  <span className="text-sm">luis@iberiatechsolutions.com</span>
                 </a>
                 <a
                   href="https://luislozoya.com"

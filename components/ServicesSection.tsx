@@ -10,32 +10,32 @@ export default function ServicesSection() {
   const services = [
     {
       icon: FiCode,
-      title: language === 'es' ? 'Diseño de Sitios Web' : 'Website Design',
-      description: language === 'es' ? 'Obtén un sitio profesional que gane clientes.' : 'Get a professional site that wins customers.',
+      title: language === 'es' ? 'Diseño y Desarrollo' : 'Design & Development',
+      description: language === 'es' ? 'Tu sitio, diseñado y construido desde cero.' : 'Your site, designed and built from scratch.',
       features: [
-        { text: language === 'es' ? 'Starter - Sitio simple de 3-4 páginas' : 'Starter - Simple 3-4 page website', icon: FiFileText },
-        { text: language === 'es' ? 'Business - Sitio personalizado de 5-7 páginas' : 'Business - Custom 5-7 page website', icon: FiLayers },
-        { text: language === 'es' ? 'Custom - Soluciones especiales con comercio electrónico' : 'Custom - Special solutions with e-commerce', icon: FiShoppingCart },
+        { text: language === 'es' ? 'Diseño personalizado, nada de plantillas' : 'Custom design, no templates', icon: FiFileText },
+        { text: language === 'es' ? 'Rápido, seguro y mobile-first' : 'Fast, secure, and mobile-first', icon: FiLayers },
+        { text: language === 'es' ? 'eCommerce, reservas o lo que necesites' : 'eCommerce, booking, or whatever you need', icon: FiShoppingCart },
       ],
     },
     {
       icon: FiGlobe,
-      title: language === 'es' ? 'Sitios Web Bilingües' : 'Bilingual Websites',
-      description: language === 'es' ? 'Inglés + Español con adaptación cultural.' : 'English + Spanish with cultural adaptation.',
+      title: language === 'es' ? 'Bilingue de Verdad' : 'Truly Bilingual',
+      description: language === 'es' ? 'No es un plugin. Hablo los dos idiomas.' : 'Not a plugin. I speak both languages.',
       features: [
-        { text: language === 'es' ? 'Traducción profesional por equipo bilingüe' : 'Professional translation by bilingual team', icon: FiGlobe },
+        { text: language === 'es' ? 'Crecí en España, vivo en Charleston' : 'Grew up in Spain, live in Charleston', icon: FiGlobe },
         { text: language === 'es' ? 'SEO optimizado para ambos mercados' : 'SEO optimized for both markets', icon: FiSearch },
-        { text: language === 'es' ? 'Adaptación cultural para comunicación auténtica' : 'Cultural adaptation for authentic communication', icon: FiMessageCircle },
+        { text: language === 'es' ? 'Adaptación cultural, no solo traducción' : 'Cultural adaptation, not just translation', icon: FiMessageCircle },
       ],
     },
     {
       icon: FiCpu,
-      title: language === 'es' ? 'Servicios Adicionales' : 'Add-Ons',
-      description: language === 'es' ? 'Chatbots, analytics y soporte continuo.' : 'Chatbots, analytics, and ongoing support.',
+      title: language === 'es' ? 'Mantenimiento Continuo' : 'Ongoing Maintenance',
+      description: language === 'es' ? 'Tu sitio sigue creciendo después del lanzamiento.' : 'Your site keeps growing after launch.',
       features: [
-        { text: language === 'es' ? 'Chatbots que responden a visitantes' : 'Chatbots that answer visitor questions', icon: FiMessageCircle },
-        { text: language === 'es' ? 'Actualizaciones y mantenimiento' : 'Updates and maintenance', icon: FiCpu },
-        { text: language === 'es' ? 'Insights de rendimiento y analytics' : 'Performance insights and analytics', icon: FiTrendingUp },
+        { text: language === 'es' ? 'Actualizaciones de contenido y diseño' : 'Content and design updates', icon: FiCpu },
+        { text: language === 'es' ? 'SEO y rendimiento monitoreados' : 'SEO and performance monitored', icon: FiTrendingUp },
+        { text: language === 'es' ? 'Soporte directo conmigo' : 'Direct support from me', icon: FiMessageCircle },
       ],
     },
   ]

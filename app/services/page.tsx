@@ -15,8 +15,8 @@ export default function ServicesPage() {
       titleKey: 'services.webdev.title',
       descKey: 'services.webdev.desc',
       extra: language === 'es'
-        ? 'Incluimos plazos claros (1 semana Básico, 2–4 Empresarial), revisiones incluidas y opción de que gestionemos dominio y hosting.'
-        : 'We include clear timelines (1 week Starter, 2–4 Business), revisions included, and optional domain + hosting setup.',
+        ? 'Plazos claros: 1–2 semanas Inicio, 2–4 semanas Empresarial, 4–7 semanas Personalizado. Hosting y dominio .com incluidos en tu plan mensual.'
+        : 'Clear timelines: 1–2 weeks Starter, 2–4 weeks Business, 4–7 weeks Custom. Hosting and .com domain included in your monthly plan.',
     },
     {
       id: 'seo',
@@ -42,8 +42,8 @@ export default function ServicesPage() {
       titleKey: 'services.ai.title',
       descKey: 'services.support.desc',
       extra: language === 'es'
-        ? 'Chatbots opcionales, analytics y planes de mantenimiento mensual (Care y Growth) para actualizaciones, copias de seguridad y soporte continuo.'
-        : 'Optional chatbots, analytics, and monthly maintenance plans (Care and Growth) for updates, backups, and ongoing support.',
+        ? 'Chatbots opcionales, analytics y mantenimiento continuo incluido en cada plan mensual.'
+        : 'Optional chatbots, analytics, and ongoing maintenance included in every monthly plan.',
     },
   ]
 

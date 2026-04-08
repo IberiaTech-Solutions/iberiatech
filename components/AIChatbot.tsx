@@ -84,8 +84,8 @@ export default function AIChatbot() {
     } catch (error) {
       console.error('AI API error:', error)
       return language === 'es' 
-        ? 'Lo siento, no pude procesar tu solicitud. Por favor contacta directamente a luis.lozoya.tech@gmail.com o llama al (864) 365-7897.'
-        : 'Sorry, I could not process your request. Please contact us directly at luis.lozoya.tech@gmail.com or call (864) 365-7897.'
+        ? 'Lo siento, no pude procesar tu solicitud. Por favor contacta directamente a luis@iberiatechsolutions.com o llama al (864) 365-7897.'
+        : 'Sorry, I could not process your request. Please contact us directly at luis@iberiatechsolutions.com or call (864) 365-7897.'
     }
   }
 
@@ -93,28 +93,28 @@ export default function AIChatbot() {
     // Common questions and responses
     const responses = {
       en: {
-        greeting: "Hello! I'm here to help you with IberiaTech Solutions. What would you like to know?",
-        pricing: "We offer three packages with clear price ranges so you know if we fit your budget: **Starter ($1,000 – $1,800)** – Ideal for first-time websites. Up to 4 pages, basic SEO, 1 week delivery, 2 rounds of revisions, English & Spanish, 1 month support. **Business ($2,000 – $4,000)** – Contact form leads, Google visibility, multi-lingual reach. Up to 7 pages, advanced SEO + Analytics, 2–4 weeks, 3 months support. **Custom ($4,000+)** – eCommerce, booking systems, member portals. Custom scope, 5–7 weeks, revisions included, 6 months support. We also offer optional monthly support: Basic $49/mo, Growth $99/mo, Premium $199/mo. All packages include free consultation. Would you like details on a specific tier?",
-        services: "We specialize in: **Custom Web Development** - Modern websites built with React/Next.js. **Mobile-First Design** - Optimized for all devices. **Bilingual Websites** - English and Spanish for US/Spanish markets. **Security & Authentication** - Secure user data and login systems. **Performance Optimization** - Fast loading and SEO optimization. **Ongoing Support** - Comprehensive care plans with backups and updates. Which service interests you most?",
-        contact: "You can reach us at **luis.lozoya.tech@gmail.com** or call **(864) 365-7897**. We're located in Charleston, SC and respond within 24 hours. You can also use WhatsApp for quick questions!",
-        portfolio: "Check out our featured project: **Cursor Rules Hub** - A professional platform that helps developers work faster and more efficiently. You can see the live demo at cursor-rules-virid.vercel.app and view the code on GitHub. We're building more projects for small and medium companies.",
-        bilingual: "Yes! We create **bilingual websites in English and Spanish**, perfect for reaching both US and Spanish markets. We handle professional translation by our bilingual team, SEO optimization for both languages, and cultural adaptation for authentic communication. This helps you expand your business internationally.",
-        timeline: "Project timelines vary by complexity: **Simple websites** (2-4 weeks), **Business websites** (2-4 weeks), **Complex projects** (6-8 weeks). We provide a detailed timeline during our free consultation. We also offer ongoing support and maintenance after launch.",
-        policy: "Our policies: **Free consultation** for all projects. **Transparent pricing** with no hidden fees. **24-hour response time** for all inquiries. **Ongoing support** available with comprehensive care plans. **Secure hosting** and regular backups included. **Bilingual support** in English and Spanish. **Mobile-first** approach for all projects.",
-        support: "We offer comprehensive ongoing support including: **Regular backups**, **Security monitoring**, **Performance optimization**, **Content updates**, **Technical support**, **Hosting management**, and **SEO maintenance**. Support plans are available for all our packages.",
-        default: "I'd be happy to help! You can ask me about our services, pricing, portfolio, policies, support, or how to get started. You can also contact us directly at luis.lozoya.tech@gmail.com or call (864) 365-7897."
+        greeting: "Hello! I'm Luis from IberiaTech Solutions. What can I help you with?",
+        pricing: "No big upfront cost. I design, build, and maintain your site for a flat monthly fee. Starter is $149/mo for a simple site (up to 4 pages). Business is $249/mo for a full site with blog, SEO, and analytics. Custom is $449/mo+ for eCommerce, apps, or anything complex. Hosting and a standard .com domain are included. 12-month commitment, then you keep it at a lower rate or own the site. Want details on a specific plan?",
+        services: "I build custom websites with React and Next.js, optimized for mobile, with English and Spanish built in from day one. I also handle SEO, performance, and ongoing maintenance after launch. What does your business need?",
+        contact: "Email me at luis@iberiatechsolutions.com or call (864) 365-7897. I'm in Charleston, SC and I respond within 24 hours. WhatsApp works too for quick questions.",
+        portfolio: "Check out Cursor Rules Hub, a platform I built for developers. You can see it live at cursor-rules-virid.vercel.app. I'm taking on more projects for small and medium businesses right now.",
+        bilingual: "Yes, every site I build comes in English and Spanish. I grew up in Spain and live in Charleston, so both languages are native to me. It's not a plugin or translation tool. SEO for both languages and cultural adaptation are included in every plan.",
+        timeline: "Starter plans are live in 1 to 2 weeks. Business plans take 2 to 4 weeks. Custom projects take 4 to 7 weeks. I'll give you a detailed timeline on a free strategy call. After launch, maintenance and updates are ongoing as part of your plan.",
+        policy: "Free strategy call before we start. Transparent monthly pricing with no hidden fees. I respond within 24 hours. Hosting, domain, maintenance, and bilingual support are all included. 12-month commitment, then it's flexible.",
+        support: "Support is included in every plan. I handle site maintenance, performance, content updates, technical issues, hosting, and SEO. Higher plans get faster response times and more updates per month.",
+        default: "I'd be happy to help! You can ask me about services, pricing, portfolio, or how to get started. You can also reach me directly at luis@iberiatechsolutions.com or call (864) 365-7897."
       },
       es: {
-        greeting: "¡Hola! Estoy aquí para ayudarte con IberiaTech Solutions. ¿Qué te gustaría saber?",
-        pricing: "Ofrecemos tres paquetes con rangos claros: **Básico (1.000 – 1.800 $)** – Ideal para primer sitio. Hasta 4 páginas, SEO básico, 1 semana de entrega, 2 rondas de revisiones, inglés y español, 1 mes de soporte. **Empresarial (2.000 – 4.000 $)** – Leads por formulario, visibilidad en Google, alcance multilingüe. Hasta 7 páginas, SEO avanzado + Analytics, 2–4 semanas, 3 meses de soporte. **Personalizado (desde 4.000 $)** – eCommerce, reservas, portales de socios. Alcance a medida, 5–7 semanas, revisiones incluidas, 6 meses de soporte. Soporte mensual opcional: Básico 49 €/mes, Crecimiento 99 €/mes, Premium 199 €/mes. Todos incluyen consulta gratuita. ¿Quieres detalles de algún nivel?",
-        services: "Nos especializamos en: **Desarrollo Web Personalizado** - Sitios web modernos construidos con React/Next.js. **Diseño Mobile-First** - Optimizado para todos los dispositivos. **Sitios Web Bilingües** - Inglés y español para mercados de EE.UU./España. **Seguridad y Autenticación** - Datos seguros y sistemas de login. **Optimización de Rendimiento** - Carga rápida y optimización SEO. **Soporte Continuo** - Planes de cuidado integral con respaldos y actualizaciones. ¿Qué servicio te interesa más?",
-        contact: "Puedes contactarnos en **luis.lozoya.tech@gmail.com** o llamar al **(864) 365-7897**. Estamos ubicados en Charleston, SC y respondemos en 24 horas. ¡También puedes usar WhatsApp para preguntas rápidas!",
-        portfolio: "Echa un vistazo a nuestro proyecto destacado: **Cursor Rules Hub** - Una plataforma profesional que ayuda a los desarrolladores a trabajar más rápido y eficientemente. Puedes ver la demo en vivo en cursor-rules-virid.vercel.app y el código en GitHub. Construimos más proyectos para pequeñas y medianas empresas.",
-        bilingual: "¡Sí! Creamos **sitios web bilingües en inglés y español**, perfectos para llegar a mercados de EE.UU. y España. Nos encargamos de la traducción profesional por nuestro equipo bilingüe, optimización SEO para ambos idiomas, y adaptación cultural para comunicación auténtica. Esto te ayuda a expandir tu negocio internacionalmente.",
-        timeline: "Los tiempos de proyecto varían según la complejidad: **Sitios web simples** (2-4 semanas), **Sitios web empresariales** (2-4 semanas), **Proyectos complejos** (6-8 semanas). Proporcionamos un cronograma detallado durante nuestra consulta gratuita. También ofrecemos soporte continuo y mantenimiento después del lanzamiento.",
-        policy: "Nuestras políticas: **Consulta gratuita** para todos los proyectos. **Precios transparentes** sin tarifas ocultas. **Tiempo de respuesta de 24 horas** para todas las consultas. **Soporte continuo** disponible con planes de cuidado integral. **Hosting seguro** y respaldos regulares incluidos. **Soporte bilingüe** en inglés y español. **Enfoque mobile-first** para todos los proyectos.",
-        support: "Ofrecemos soporte continuo integral incluyendo: **Respaldos regulares**, **Monitoreo de seguridad**, **Optimización de rendimiento**, **Actualizaciones de contenido**, **Soporte técnico**, **Gestión de hosting**, y **Mantenimiento SEO**. Los planes de soporte están disponibles para todos nuestros paquetes.",
-        default: "¡Estaré encantado de ayudarte! Puedes preguntarme sobre nuestros servicios, precios, portafolio, políticas, soporte, o cómo comenzar. También puedes contactarnos directamente en luis.lozoya.tech@gmail.com o llamar al (864) 365-7897."
+        greeting: "¡Hola! Soy Luis de IberiaTech Solutions. ¿En qué puedo ayudarte?",
+        pricing: "Sin costo inicial grande. Diseño, construyo y mantengo tu sitio por una tarifa mensual fija. Inicio es 149 €/mes para un sitio simple (hasta 4 páginas). Empresarial es 249 €/mes con blog, SEO y analytics. Personalizado es 449 €/mes+ para eCommerce, apps o lo que necesites. Hosting y dominio .com estándar incluidos. Compromiso de 12 meses, después tarifa reducida o el sitio es tuyo. ¿Quieres detalles de algún plan?",
+        services: "Construyo sitios web personalizados con React y Next.js, optimizados para móvil, con inglés y español desde el primer día. También me encargo del SEO, rendimiento y mantenimiento continuo después del lanzamiento. ¿Qué necesita tu negocio?",
+        contact: "Escríbeme a luis@iberiatechsolutions.com o llámame al (864) 365-7897. Estoy en Charleston, SC y respondo en 24 horas. WhatsApp también funciona para preguntas rápidas.",
+        portfolio: "Mira Cursor Rules Hub, una plataforma que construí para desarrolladores. Puedes verla en cursor-rules-virid.vercel.app. Estoy tomando más proyectos para pequeñas y medianas empresas.",
+        bilingual: "Sí, cada sitio que construyo viene en inglés y español. Crecí en España y vivo en Charleston, así que los dos idiomas son nativos para mí. No es un plugin ni herramienta de traducción. SEO para ambos idiomas y adaptación cultural incluidos en cada plan.",
+        timeline: "Los planes Inicio están online en 1 a 2 semanas. Empresarial tarda 2 a 4 semanas. Personalizado entre 4 y 7 semanas. Te doy un cronograma detallado en una llamada estratégica gratuita. Después del lanzamiento, el mantenimiento y las actualizaciones son parte de tu plan.",
+        policy: "Llamada estratégica gratuita antes de empezar. Precio mensual transparente sin costos ocultos. Respondo en 24 horas. Hosting, dominio, mantenimiento y soporte bilingüe incluidos. Compromiso de 12 meses, después flexible.",
+        support: "El soporte está incluido en cada plan. Me encargo del mantenimiento, rendimiento, contenido, problemas técnicos, hosting y SEO. Los planes superiores tienen respuesta más rápida y más actualizaciones al mes.",
+        default: "¡Encantado de ayudarte! Puedes preguntarme sobre servicios, precios, portafolio, o cómo empezar. También puedes contactarme en luis@iberiatechsolutions.com o llamar al (864) 365-7897."
       }
     }
 
@@ -183,8 +183,8 @@ export default function AIChatbot() {
       const errorResponse: Message = {
         id: (Date.now() + 1).toString(),
         text: language === 'es' 
-          ? 'Lo siento, hubo un error. Por favor contacta directamente a luis.lozoya.tech@gmail.com o llama al (864) 365-7897.'
-          : 'Sorry, there was an error. Please contact us directly at luis.lozoya.tech@gmail.com or call (864) 365-7897.',
+          ? 'Lo siento, hubo un error. Por favor contacta directamente a luis@iberiatechsolutions.com o llama al (864) 365-7897.'
+          : 'Sorry, there was an error. Please contact us directly at luis@iberiatechsolutions.com or call (864) 365-7897.',
         isUser: false,
         timestamp: new Date()
       }
@@ -326,8 +326,8 @@ export default function AIChatbot() {
                           const errorResponse: Message = {
                             id: (Date.now() + 1).toString(),
                             text: language === 'es' 
-                              ? 'Lo siento, hubo un error. Por favor contacta directamente a luis.lozoya.tech@gmail.com o llama al (864) 365-7897.'
-                              : 'Sorry, there was an error. Please contact us directly at luis.lozoya.tech@gmail.com or call (864) 365-7897.',
+                              ? 'Lo siento, hubo un error. Por favor contacta directamente a luis@iberiatechsolutions.com o llama al (864) 365-7897.'
+                              : 'Sorry, there was an error. Please contact us directly at luis@iberiatechsolutions.com or call (864) 365-7897.',
                             isUser: false,
                             timestamp: new Date()
                           }

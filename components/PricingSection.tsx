@@ -2,12 +2,12 @@
 
 import { useLanguage } from './LanguageProvider'
 import { motion } from 'framer-motion'
-import { FiCheck, FiStar, FiArrowRight, FiSmartphone, FiSearch, FiMail, FiGlobe, FiUser, FiFileText, FiClock, FiRefreshCw, FiHeadphones, FiTrendingUp, FiSettings, FiPlusCircle, FiMessageCircle } from 'react-icons/fi'
+import { FiCheck, FiStar, FiArrowRight, FiSmartphone, FiSearch, FiMail, FiGlobe, FiUser, FiFileText, FiClock, FiRefreshCw, FiHeadphones, FiTrendingUp, FiSettings } from 'react-icons/fi'
 
 export default function PricingSection() {
   const { t, language } = useLanguage()
 
-  const pricingPlans = [
+  const plans = [
     {
       nameKey: 'pricing.starter.name',
       priceKey: 'pricing.starter.price',
@@ -16,17 +16,19 @@ export default function PricingSection() {
       features: language === 'es' ? [
         'Hasta 4 páginas (ej. Inicio, Nosotros, Servicios, Contacto)',
         'SEO básico (meta, mapa del sitio)',
-        'Entrega en 1 semana',
-        '2 rondas de revisiones',
+        'Diseño listo en 1–2 semanas',
+        'Hosting incluido, dominio .com estándar incluido',
+        'Mantenimiento y actualizaciones mensuales',
         'Inglés + Español incluido',
-        '1 mes de soporte'
+        'Soporte por email'
       ] : [
         'Up to 4 pages (e.g. Home, About, Services, Contact)',
         'Basic SEO (meta, sitemap)',
-        'Delivery in 1 week',
-        '2 rounds of revisions',
+        'Design ready in 1–2 weeks',
+        'Hosting included, standard .com domain included',
+        'Monthly maintenance & updates',
         'English & Spanish included',
-        '1 month support'
+        'Email support'
       ],
       popular: false
     },
@@ -36,19 +38,23 @@ export default function PricingSection() {
       descriptionKey: 'pricing.business.desc',
       ctaKey: 'pricing.cta.business',
       features: language === 'es' ? [
-        'Hasta 7 páginas (ej. Inicio, Nosotros, Servicios, Portafolio, Testimonios, FAQ, Contacto)',
+        'Hasta 7 páginas + blog',
         'SEO avanzado + Google Analytics',
-        'Entrega en 2–4 semanas',
-        '3 rondas de revisiones',
+        'Diseño listo en 2–4 semanas',
+        'Hosting incluido, dominio .com estándar incluido',
+        'Actualizaciones de contenido y diseño mensuales',
         'Inglés + Español (adaptación cultural)',
-        '3 meses de soporte'
+        'Revisión mensual de rendimiento',
+        'Soporte prioritario'
       ] : [
-        'Up to 7 pages (e.g. Home, About, Services, Portfolio, Testimonials, FAQ, Contact)',
+        'Up to 7 pages + blog',
         'Advanced SEO + Google Analytics',
-        'Delivery in 2–4 weeks',
-        '3 rounds of revisions',
+        'Design ready in 2–4 weeks',
+        'Hosting included, standard .com domain included',
+        'Monthly content & design updates',
         'English & Spanish (cultural adaptation)',
-        '3 months support'
+        'Monthly performance review',
+        'Priority support'
       ],
       popular: true
     },
@@ -58,19 +64,23 @@ export default function PricingSection() {
       descriptionKey: 'pricing.custom.desc',
       ctaKey: 'pricing.cta.custom',
       features: language === 'es' ? [
-        'eCommerce, reservas, portales de socios o formularios a medida',
-        'Apps o sitios complejos según necesidad',
-        'Entrega en 5–7 semanas',
-        'Revisiones incluidas',
+        'eCommerce, reservas, portales o apps a medida',
+        'SEO completo + Analytics avanzado',
+        'Diseño listo en 4–7 semanas',
+        'Hosting incluido, dominio .com estándar incluido',
+        'Desarrollo continuo y nuevas funciones',
         'Inglés + Español incluido',
-        '6 meses de soporte'
+        'Soporte mismo día',
+        'Estrategia de crecimiento mensual'
       ] : [
-        'eCommerce, booking systems, member portals, or custom forms',
-        'Custom apps or complex sites as needed',
-        'Delivery in 5–7 weeks',
-        'Revisions included',
+        'eCommerce, booking, portals, or custom apps',
+        'Full SEO + advanced analytics',
+        'Design ready in 4–7 weeks',
+        'Hosting included, standard .com domain included',
+        'Ongoing development & new features',
         'English & Spanish included',
-        '6 months support'
+        'Same-day support',
+        'Monthly growth strategy'
       ],
       popular: false,
       isCustom: true
@@ -85,20 +95,24 @@ export default function PricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             {t('pricing.title')}
           </h2>
-          <p className="text-lg font-semibold text-primary-800 dark:text-primary-300 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-2">
+            {t('pricing.subtitle')}
+          </p>
+          <p className="text-sm font-semibold text-primary-800 dark:text-primary-300 max-w-2xl mx-auto">
             {t('pricing.anchor')}
           </p>
         </motion.div>
 
+        {/* Pricing cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {pricingPlans.map((plan, index) => (
+          {plans.map((plan, index) => (
             <motion.div
-              key={`pricing-plan-${index}`}
+              key={`plan-${index}`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
@@ -120,14 +134,12 @@ export default function PricingSection() {
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                   {t(plan.nameKey)}
                 </h3>
-                <div className={`text-3xl font-bold mb-2 ${plan.isCustom ? 'text-accent-600 dark:text-accent-400' : 'text-primary-800 dark:text-primary-300'}`}>
+                <div className={`text-3xl font-bold mb-3 ${plan.isCustom ? 'text-accent-600 dark:text-accent-400' : 'text-primary-800 dark:text-primary-300'}`}>
                   {t(plan.priceKey)}
                 </div>
-                {t(plan.descriptionKey) && (
-                  <p className="text-gray-600 dark:text-gray-300">
-                    {t(plan.descriptionKey)}
-                  </p>
-                )}
+                <p className="text-gray-600 dark:text-gray-300 text-sm">
+                  {t(plan.descriptionKey)}
+                </p>
               </div>
 
               <ul className="space-y-4 mb-8">
@@ -158,7 +170,20 @@ export default function PricingSection() {
           ))}
         </div>
 
-        {/* Compare plans table: clear deliverables, side-by-side */}
+        {/* 12-month commitment note */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.15 }}
+          viewport={{ once: true }}
+          className="mt-8 text-center"
+        >
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            {t('pricing.commitment')}
+          </p>
+        </motion.div>
+
+        {/* Compare plans table */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -169,9 +194,6 @@ export default function PricingSection() {
           <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 text-center">
             {t('pricing.compare.title')}
           </h3>
-          <p className="text-base font-medium text-primary-800 dark:text-primary-300 mb-1 text-center">
-            {t('pricing.compare.why')}
-          </p>
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 text-center">
             {t('pricing.compare.whySub')}
           </p>
@@ -194,152 +216,25 @@ export default function PricingSection() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
-                <tr className="hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                  <td className="py-3 px-4 flex items-center gap-2 text-gray-700 dark:text-gray-300 bg-gray-50/50 dark:bg-transparent">
-                    <FiFileText className="w-4 h-4 text-primary-600 dark:text-primary-400 flex-shrink-0" />
-                    {t('pricing.compare.pages')}
-                  </td>
-                  <td className="py-3 px-4 text-center text-gray-600 dark:text-gray-400 bg-gray-50/30 dark:bg-gray-800/30 border-l border-gray-100 dark:border-gray-700">{t('pricing.compare.starter.pages')}</td>
-                  <td className="py-3 px-4 text-center text-gray-600 dark:text-gray-400 bg-accent-50/30 dark:bg-accent-900/10 border-l-2 border-l-accent-200 dark:border-l-accent-800">{t('pricing.compare.business.pages')}</td>
-                  <td className="py-3 px-4 text-center text-gray-600 dark:text-gray-400 bg-primary-50/30 dark:bg-primary-900/10 border-l-2 border-l-primary-200 dark:border-l-primary-800">{t('pricing.compare.custom.pages')}</td>
-                </tr>
-                <tr className="hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                  <td className="py-3 px-4 flex items-center gap-2 text-gray-700 dark:text-gray-300">
-                    <FiSearch className="w-4 h-4 text-primary-600 dark:text-primary-400 flex-shrink-0" />
-                    {t('pricing.compare.seo')}
-                  </td>
-                  <td className="py-3 px-4 text-center text-gray-600 dark:text-gray-400 bg-gray-50/30 dark:bg-gray-800/30 border-l border-gray-100 dark:border-gray-700">{t('pricing.compare.starter.seo')}</td>
-                  <td className="py-3 px-4 text-center text-gray-600 dark:text-gray-400 bg-accent-50/30 dark:bg-accent-900/10 border-l-2 border-l-accent-200 dark:border-l-accent-800">{t('pricing.compare.business.seo')}</td>
-                  <td className="py-3 px-4 text-center text-gray-600 dark:text-gray-400 bg-primary-50/30 dark:bg-primary-900/10 border-l-2 border-l-primary-200 dark:border-l-primary-800">{t('pricing.compare.custom.seo')}</td>
-                </tr>
-                <tr className="hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                  <td className="py-3 px-4 flex items-center gap-2 text-gray-700 dark:text-gray-300 bg-gray-50/50 dark:bg-transparent">
-                    <FiTrendingUp className="w-4 h-4 text-primary-600 dark:text-primary-400 flex-shrink-0" />
-                    {t('pricing.compare.analytics')}
-                  </td>
-                  <td className="py-3 px-4 text-center text-gray-600 dark:text-gray-400 bg-gray-50/30 dark:bg-gray-800/30 border-l border-gray-100 dark:border-gray-700">{t('pricing.compare.starter.analytics')}</td>
-                  <td className="py-3 px-4 text-center text-gray-600 dark:text-gray-400 bg-accent-50/30 dark:bg-accent-900/10 border-l-2 border-l-accent-200 dark:border-l-accent-800">{t('pricing.compare.business.analytics')}</td>
-                  <td className="py-3 px-4 text-center text-gray-600 dark:text-gray-400 bg-primary-50/30 dark:bg-primary-900/10 border-l-2 border-l-primary-200 dark:border-l-primary-800">{t('pricing.compare.custom.analytics')}</td>
-                </tr>
-                <tr className="hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                  <td className="py-3 px-4 flex items-center gap-2 text-gray-700 dark:text-gray-300 bg-gray-50/50 dark:bg-transparent">
-                    <FiClock className="w-4 h-4 text-primary-600 dark:text-primary-400 flex-shrink-0" />
-                    {t('pricing.compare.delivery')}
-                  </td>
-                  <td className="py-3 px-4 text-center text-gray-600 dark:text-gray-400 bg-gray-50/30 dark:bg-gray-800/30 border-l border-gray-100 dark:border-gray-700">{t('pricing.compare.starter.delivery')}</td>
-                  <td className="py-3 px-4 text-center text-gray-600 dark:text-gray-400 bg-accent-50/30 dark:bg-accent-900/10 border-l-2 border-l-accent-200 dark:border-l-accent-800">{t('pricing.compare.business.delivery')}</td>
-                  <td className="py-3 px-4 text-center text-gray-600 dark:text-gray-400 bg-primary-50/30 dark:bg-primary-900/10 border-l-2 border-l-primary-200 dark:border-l-primary-800">{t('pricing.compare.custom.delivery')}</td>
-                </tr>
-                <tr className="hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                  <td className="py-3 px-4 flex items-center gap-2 text-gray-700 dark:text-gray-300 bg-gray-50/50 dark:bg-transparent">
-                    <FiRefreshCw className="w-4 h-4 text-primary-600 dark:text-primary-400 flex-shrink-0" />
-                    {t('pricing.compare.revisions')}
-                  </td>
-                  <td className="py-3 px-4 text-center text-gray-600 dark:text-gray-400 bg-gray-50/30 dark:bg-gray-800/30 border-l border-gray-100 dark:border-gray-700">{t('pricing.compare.starter.revisions')}</td>
-                  <td className="py-3 px-4 text-center text-gray-600 dark:text-gray-400 bg-accent-50/30 dark:bg-accent-900/10 border-l-2 border-l-accent-200 dark:border-l-accent-800">{t('pricing.compare.business.revisions')}</td>
-                  <td className="py-3 px-4 text-center text-gray-600 dark:text-gray-400 bg-primary-50/30 dark:bg-primary-900/10 border-l-2 border-l-primary-200 dark:border-l-primary-800">{t('pricing.compare.custom.revisions')}</td>
-                </tr>
-                <tr className="hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                  <td className="py-3 px-4 flex items-center gap-2 text-gray-700 dark:text-gray-300 bg-gray-50/50 dark:bg-transparent">
-                    <FiHeadphones className="w-4 h-4 text-primary-600 dark:text-primary-400 flex-shrink-0" />
-                    {t('pricing.compare.support')}
-                  </td>
-                  <td className="py-3 px-4 text-center text-gray-600 dark:text-gray-400 bg-gray-50/30 dark:bg-gray-800/30 border-l border-gray-100 dark:border-gray-700">{t('pricing.compare.starter.support')}</td>
-                  <td className="py-3 px-4 text-center text-gray-600 dark:text-gray-400 bg-accent-50/30 dark:bg-accent-900/10 border-l-2 border-l-accent-200 dark:border-l-accent-800">{t('pricing.compare.business.support')}</td>
-                  <td className="py-3 px-4 text-center text-gray-600 dark:text-gray-400 bg-primary-50/30 dark:bg-primary-900/10 border-l-2 border-l-primary-200 dark:border-l-primary-800">{t('pricing.compare.custom.support')}</td>
-                </tr>
-                <tr className="hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                  <td className="py-3 px-4 flex items-center gap-2 text-gray-700 dark:text-gray-300 bg-gray-50/50 dark:bg-transparent">
-                    <FiGlobe className="w-4 h-4 text-primary-600 dark:text-primary-400 flex-shrink-0" />
-                    {t('pricing.compare.bilingual')}
-                  </td>
-                  <td className="py-3 px-4 text-center text-gray-600 dark:text-gray-400 bg-gray-50/30 dark:bg-gray-800/30 border-l border-gray-100 dark:border-gray-700">{t('pricing.compare.starter.bilingual')}</td>
-                  <td className="py-3 px-4 text-center text-gray-600 dark:text-gray-400 bg-accent-50/30 dark:bg-accent-900/10 border-l-2 border-l-accent-200 dark:border-l-accent-800">{t('pricing.compare.business.bilingual')}</td>
-                  <td className="py-3 px-4 text-center text-gray-600 dark:text-gray-400 bg-primary-50/30 dark:bg-primary-900/10 border-l-2 border-l-primary-200 dark:border-l-primary-800">{t('pricing.compare.custom.bilingual')}</td>
-                </tr>
+                {['pages', 'seo', 'analytics', 'delivery', 'revisions', 'support', 'bilingual'].map((row, rowIndex) => (
+                  <tr key={row} className="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                    <td className={`py-3 px-4 flex items-center gap-2 text-gray-700 dark:text-gray-300 ${rowIndex % 2 === 0 ? 'bg-gray-50/50 dark:bg-transparent' : ''}`}>
+                      {row === 'pages' && <FiFileText className="w-4 h-4 text-primary-600 dark:text-primary-400 flex-shrink-0" />}
+                      {row === 'seo' && <FiSearch className="w-4 h-4 text-primary-600 dark:text-primary-400 flex-shrink-0" />}
+                      {row === 'analytics' && <FiTrendingUp className="w-4 h-4 text-primary-600 dark:text-primary-400 flex-shrink-0" />}
+                      {row === 'delivery' && <FiClock className="w-4 h-4 text-primary-600 dark:text-primary-400 flex-shrink-0" />}
+                      {row === 'revisions' && <FiRefreshCw className="w-4 h-4 text-primary-600 dark:text-primary-400 flex-shrink-0" />}
+                      {row === 'support' && <FiHeadphones className="w-4 h-4 text-primary-600 dark:text-primary-400 flex-shrink-0" />}
+                      {row === 'bilingual' && <FiGlobe className="w-4 h-4 text-primary-600 dark:text-primary-400 flex-shrink-0" />}
+                      {t(`pricing.compare.${row}`)}
+                    </td>
+                    <td className="py-3 px-4 text-center text-gray-600 dark:text-gray-400 bg-gray-50/30 dark:bg-gray-800/30 border-l border-gray-100 dark:border-gray-700">{t(`pricing.compare.starter.${row}`)}</td>
+                    <td className="py-3 px-4 text-center text-gray-600 dark:text-gray-400 bg-accent-50/30 dark:bg-accent-900/10 border-l-2 border-l-accent-200 dark:border-l-accent-800">{t(`pricing.compare.business.${row}`)}</td>
+                    <td className="py-3 px-4 text-center text-gray-600 dark:text-gray-400 bg-primary-50/30 dark:bg-primary-900/10 border-l-2 border-l-primary-200 dark:border-l-primary-800">{t(`pricing.compare.custom.${row}`)}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
-          </div>
-        </motion.div>
-
-        {/* Maintenance plans: monthly support */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.25 }}
-          viewport={{ once: true }}
-          className="mt-12"
-        >
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <FiSettings className="w-6 h-6 text-primary-600 dark:text-primary-400" />
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-              {t('pricing.maintenance.title')}
-            </h3>
-          </div>
-          <p className="text-center text-gray-600 dark:text-gray-400 text-sm mb-6 max-w-2xl mx-auto">
-            {t('pricing.maintenance.subtitle')}
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-md">
-              <div className="font-semibold text-gray-900 dark:text-white mb-1">{t('pricing.maintenance.basic.name')}</div>
-              <div className="text-lg font-bold text-primary-800 dark:text-primary-400 mb-2">{t('pricing.maintenance.basic.price')}</div>
-              <p className="text-sm text-gray-600 dark:text-gray-400">{t('pricing.maintenance.basic.desc')}</p>
-            </div>
-            <div className="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-md">
-              <div className="font-semibold text-gray-900 dark:text-white mb-1">{t('pricing.maintenance.growth.name')}</div>
-              <div className="text-lg font-bold text-primary-800 dark:text-primary-400 mb-2">{t('pricing.maintenance.growth.price')}</div>
-              <p className="text-sm text-gray-600 dark:text-gray-400">{t('pricing.maintenance.growth.desc')}</p>
-            </div>
-            <div className="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-md">
-              <div className="font-semibold text-gray-900 dark:text-white mb-1">{t('pricing.maintenance.premium.name')}</div>
-              <div className="text-lg font-bold text-primary-800 dark:text-primary-400 mb-2">{t('pricing.maintenance.premium.price')}</div>
-              <p className="text-sm text-gray-600 dark:text-gray-400">{t('pricing.maintenance.premium.desc')}</p>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Optional add-ons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.28 }}
-          viewport={{ once: true }}
-          className="mt-12"
-        >
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <FiPlusCircle className="w-6 h-6 text-primary-600 dark:text-primary-400" />
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-              {t('pricing.addons.title')}
-            </h3>
-          </div>
-          <p className="text-center text-gray-600 dark:text-gray-400 text-sm mb-6 max-w-2xl mx-auto">
-            {t('pricing.addons.subtitle')}
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-md flex flex-col">
-              <div className="flex items-center gap-2 mb-2">
-                <FiMessageCircle className="w-5 h-5 text-accent-600 dark:text-accent-400" />
-                <span className="font-semibold text-gray-900 dark:text-white">{t('pricing.addons.chatbot.name')}</span>
-              </div>
-              <div className="text-xl font-bold text-primary-800 dark:text-primary-400 mb-2">{t('pricing.addons.chatbot.price')}</div>
-              <p className="text-sm text-gray-600 dark:text-gray-400 flex-1">{t('pricing.addons.chatbot.desc')}</p>
-            </div>
-            <div className="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-md flex flex-col">
-              <div className="flex items-center gap-2 mb-2">
-                <FiSearch className="w-5 h-5 text-accent-600 dark:text-accent-400" />
-                <span className="font-semibold text-gray-900 dark:text-white">{t('pricing.addons.seo.name')}</span>
-              </div>
-              <div className="text-xl font-bold text-primary-800 dark:text-primary-400 mb-2">{t('pricing.addons.seo.price')}</div>
-              <p className="text-sm text-gray-600 dark:text-gray-400 flex-1">{t('pricing.addons.seo.desc')}</p>
-            </div>
-            <div className="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-md flex flex-col">
-              <div className="flex items-center gap-2 mb-2">
-                <FiTrendingUp className="w-5 h-5 text-accent-600 dark:text-accent-400" />
-                <span className="font-semibold text-gray-900 dark:text-white">{t('pricing.addons.analytics.name')}</span>
-              </div>
-              <div className="text-xl font-bold text-primary-800 dark:text-primary-400 mb-2">{t('pricing.addons.analytics.price')}</div>
-              <p className="text-sm text-gray-600 dark:text-gray-400 flex-1">{t('pricing.addons.analytics.desc')}</p>
-            </div>
           </div>
         </motion.div>
 
@@ -353,7 +248,7 @@ export default function PricingSection() {
         >
           <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg border border-primary-200 dark:border-primary-700 max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
-              {language === 'es' ? 'Lo que siempre está incluido' : 'What\'s always included'}
+              {language === 'es' ? 'Incluido en todos los planes' : 'Included in every plan'}
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
               <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 flex flex-col items-center text-center space-y-2">
@@ -369,15 +264,15 @@ export default function PricingSection() {
                   <FiSearch className="w-4 h-4 text-green-600 dark:text-green-400" />
                 </div>
                 <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">
-                  {language === 'es' ? 'SEO básico' : 'SEO basics'}
+                  {language === 'es' ? 'Hosting + dominio .com' : 'Hosting + .com domain'}
                 </span>
               </div>
               <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 flex flex-col items-center text-center space-y-2">
                 <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/40 flex items-center justify-center mb-1">
-                  <FiMail className="w-4 h-4 text-green-600 dark:text-green-400" />
+                  <FiSettings className="w-4 h-4 text-green-600 dark:text-green-400" />
                 </div>
                 <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">
-                  {language === 'es' ? 'Configuración de formulario de contacto' : 'Contact form setup'}
+                  {language === 'es' ? 'Mantenimiento continuo' : 'Ongoing maintenance'}
                 </span>
               </div>
               <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 flex flex-col items-center text-center space-y-2">
@@ -385,7 +280,7 @@ export default function PricingSection() {
                   <FiGlobe className="w-4 h-4 text-green-600 dark:text-green-400" />
                 </div>
                 <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">
-                  {language === 'es' ? 'Inglés + Español (sin costo extra)' : 'English + Spanish (no extra fee)'}
+                  {language === 'es' ? 'Inglés + Español' : 'English + Spanish'}
                 </span>
               </div>
               <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 flex flex-col items-center text-center space-y-2">
@@ -393,14 +288,14 @@ export default function PricingSection() {
                   <FiUser className="w-4 h-4 text-green-600 dark:text-green-400" />
                 </div>
                 <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">
-                  {language === 'es' ? 'Soporte 1-a-1 después del lanzamiento' : '1-on-1 support after launch'}
+                  {language === 'es' ? 'Soporte directo conmigo' : 'Direct support from me'}
                 </span>
               </div>
             </div>
             <p className="text-center text-gray-600 dark:text-gray-400 text-sm mt-6">
-              {language === 'es' 
-                ? 'No ocultamos lo esencial detrás de costos adicionales' 
-                : 'We don\'t hide essentials behind upsells'}
+              {language === 'es'
+                ? 'Sin costos ocultos. Sin sorpresas. Todo incluido en tu tarifa mensual.'
+                : 'No hidden costs. No surprises. Everything included in your monthly fee.'}
             </p>
           </div>
         </motion.div>
