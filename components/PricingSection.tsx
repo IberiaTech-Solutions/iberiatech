@@ -153,7 +153,7 @@ export default function PricingSection() {
 
               <div className="mt-auto">
                 <a
-                  href="#contact"
+                  href="https://calendly.com/luis-lozoya-tech/30min" target="_blank" rel="noopener noreferrer"
                   className={`w-full py-3 px-6 rounded-lg font-semibold text-center transition-colors duration-200 flex items-center justify-center space-x-2 ${
                     plan.popular
                       ? 'bg-accent-500 hover:bg-accent-600 text-white'

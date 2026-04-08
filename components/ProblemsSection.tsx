@@ -169,7 +169,7 @@ export default function ProblemsSection() {
               </p>
             </div>
             <a
-              href="#contact"
+              href="https://calendly.com/luis-lozoya-tech/30min" target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 bg-accent-500 hover:bg-accent-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
             >
               <span>{t('problems.cta.button')}</span>

@@ -315,7 +315,7 @@ export default function PortfolioSection() {
                 : 'Tell me about your business and I\'ll show you exactly how a website can help you grow.'}
             </p>
             <a
-              href="#contact"
+              href="https://calendly.com/luis-lozoya-tech/30min" target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-800 hover:bg-primary-900 dark:bg-primary-600 dark:hover:bg-primary-700 transition-colors duration-200 shadow-lg"
             >
               <span>{language === 'es' ? 'Hablemos de tu proyecto' : 'Let\'s talk about your project'}</span>

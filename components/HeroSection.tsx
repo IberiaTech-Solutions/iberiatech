@@ -91,7 +91,7 @@ export default function HeroSection() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="#contact"
+                href="https://calendly.com/luis-lozoya-tech/30min" target="_blank" rel="noopener noreferrer"
                 className="bg-accent-500 hover:bg-accent-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 inline-flex items-center justify-center space-x-2 shadow-lg shadow-accent-500/30"
               >
                 <span>{t('hero.cta.start')}</span>
