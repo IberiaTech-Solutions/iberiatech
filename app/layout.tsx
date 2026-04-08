@@ -8,6 +8,7 @@ import Footer from '@/components/Footer'
 import WhatsAppChat from '@/components/WhatsAppChat'
 import AIChatbot from '@/components/AIChatbot'
 import HtmlLangUpdater from '@/components/HtmlLangUpdater'
+import StructuredData from '@/components/StructuredData'
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -15,13 +16,35 @@ const plusJakarta = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'Charleston Web Development | IberiaTech Solutions - Bilingual Websites',
-  description: 'Charleston bilingual website design for small and medium companies: construction, law firms, local businesses. Professional web development with English and Spanish support.',
-  keywords: 'Charleston web development, Charleston bilingual website design, Charleston law firm websites, Charleston construction company web development, bilingual websites, React, Next.js, Supabase, AWS',
+  metadataBase: new URL('https://iberiatech.com'),
+  title: {
+    default: 'Charleston Web Development | IberiaTech Solutions - Bilingual Websites',
+    template: '%s | IberiaTech Solutions',
+  },
+  description:
+    'Charleston bilingual website design for small and medium companies: construction, law firms, local businesses. Professional web development with English and Spanish support.',
+  keywords: [
+    'Charleston web development',
+    'Charleston bilingual website design',
+    'Charleston law firm websites',
+    'Charleston construction company web development',
+    'bilingual websites',
+    'Spanish website Charleston',
+    'small business web design',
+    'React',
+    'Next.js',
+  ],
   authors: [{ name: 'Luis Lozoya' }],
   creator: 'IberiaTech Solutions',
   publisher: 'IberiaTech Solutions',
-  robots: 'index, follow',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/',
+  },
   icons: {
     icon: [
       { url: '/images/logos/IberiaTechLogo5.png', sizes: '32x32', type: 'image/png' },
@@ -37,15 +60,31 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://iberiatech.com',
-    title: 'IberiaTech Solutions - Web Development & Digital Solutions',
-    description: 'Empowering businesses with innovative tech solutions for a digital future.',
+    title: 'IberiaTech Solutions - Charleston Bilingual Web Development',
+    description:
+      'Professional bilingual web development for Charleston small businesses. English & Spanish websites for construction, law firms, and local businesses.',
     siteName: 'IberiaTech Solutions',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'IberiaTech Solutions - Web Development & Digital Solutions',
-    description: 'Empowering businesses with innovative tech solutions for a digital future.',
+    title: 'IberiaTech Solutions - Charleston Bilingual Web Development',
+    description:
+      'Professional bilingual web development for Charleston small businesses. English & Spanish websites for construction, law firms, and local businesses.',
     creator: '@iberiatech',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: '1SYO_u8pe78j-Ye3Sp5M-tRV3lPRimKvrJaTdugusoM',
   },
 }
 
@@ -57,6 +96,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={plusJakarta.className} suppressHydrationWarning>
+        <StructuredData />
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
