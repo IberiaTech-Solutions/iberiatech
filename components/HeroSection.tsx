@@ -107,14 +107,20 @@ export default function HeroSection() {
             className="relative h-[360px] md:h-[420px]"
           >
             {/* Primary project card */}
-            <div className="absolute inset-y-4 right-0 left-6 md:left-10">
-              <div className="relative h-full rounded-3xl overflow-hidden bg-gray-900/80 border border-white/10 shadow-2xl">
+            <a
+              href="https://www.shopessentialshub.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View ShopEssentialsHub live site"
+              className="absolute inset-y-4 right-0 left-6 md:left-10 group focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 rounded-3xl"
+            >
+              <div className="relative h-full rounded-3xl overflow-hidden bg-gray-900/80 border border-white/10 shadow-2xl transition-all duration-300 group-hover:border-white/30 group-hover:shadow-accent-500/20">
                 <Image
                   src="/images/portfolio/www.shopessentialshub.com_.jpg"
                   alt="ShopEssentialsHub project preview"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover object-top opacity-60"
+                  className="object-cover object-top opacity-60 transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-primary-900/80 to-transparent" />
                 <div className="absolute bottom-5 left-5 right-5 space-y-2">
@@ -129,18 +135,24 @@ export default function HeroSection() {
                   </p>
                 </div>
               </div>
-            </div>
+            </a>
 
             {/* Secondary project card */}
-            <div className="absolute -bottom-4 left-0 md:left-6 w-40 md:w-52">
-              <div className="relative rounded-2xl overflow-hidden bg-gray-900/90 border border-white/10 shadow-xl">
-                <div className="h-28 md:h-32 relative">
+            <a
+              href="https://portfolio-hub-tawny.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View TalentAgent live site"
+              className="absolute -bottom-4 left-0 md:left-6 w-40 md:w-52 group focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 rounded-2xl"
+            >
+              <div className="relative rounded-2xl overflow-hidden bg-gray-900/90 border border-white/10 shadow-xl transition-all duration-300 group-hover:border-white/30 group-hover:shadow-accent-500/20">
+                <div className="h-28 md:h-32 relative overflow-hidden">
                   <Image
                     src="/talentagent.jpg"
                     alt="TalentAgent project preview"
                     fill
                     sizes="200px"
-                    className="object-cover object-top opacity-80"
+                    className="object-cover object-top opacity-80 transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 </div>
@@ -153,7 +165,7 @@ export default function HeroSection() {
                   </p>
                 </div>
               </div>
-            </div>
+            </a>
           </motion.div>
         </div>
       </div>
