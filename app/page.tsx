@@ -7,23 +7,15 @@ import PricingSection from '@/components/PricingSection'
 import FaqSection from '@/components/FaqSection'
 import PortfolioSection from '@/components/PortfolioSection'
 import ContactSection from '@/components/ContactSection'
-import TrustedBySection from '@/components/TrustedBySection'
-import ScreenshotStrip from '@/components/ScreenshotStrip'
-import TestimonialsSection from '@/components/TestimonialsSection'
-import ResultsStrip from '@/components/ResultsStrip'
 
 export default function HomePage() {
   return (
     <div className="min-h-screen" suppressHydrationWarning>
       <HeroSection />
-      <TrustedBySection />
-      <ScreenshotStrip />
       <ServicesSection />
       <ProblemsSection />
       <PricingSection />
       <FaqSection />
-      <TestimonialsSection />
-      <ResultsStrip />
       <PortfolioSection />
       <ContactSection />
     </div>

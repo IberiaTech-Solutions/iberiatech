@@ -8,15 +8,15 @@ import Image from 'next/image'
 export default function HeroSection() {
   const { t, language } = useLanguage()
 
-  const projectLabel = (type: 'shopessentials' | 'querri') => {
+  const projectLabel = (type: 'shopessentials' | 'talentagent') => {
     if (type === 'shopessentials') {
       return language === 'es'
         ? 'E-commerce · Plataforma de curación'
         : 'E-commerce · Curation platform'
     }
     return language === 'es'
-      ? 'Análisis de datos · Charleston, SC'
-      : 'Data analytics · Charleston, SC'
+      ? 'Plataforma de IA · Evaluación de empleos'
+      : 'AI platform · Job fit assessment'
   }
 
   return (
@@ -119,7 +119,7 @@ export default function HeroSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-primary-900/80 to-transparent" />
                 <div className="absolute bottom-5 left-5 right-5 space-y-2">
                   <p className="text-xs uppercase tracking-[0.2em] text-blue-200/80">
-                    {language === 'es' ? 'Proyecto destacado' : 'Featured project'}
+                    {language === 'es' ? 'Nuestro proyecto' : 'Our project'}
                   </p>
                   <h3 className="text-xl md:text-2xl font-semibold text-white">
                     ShopEssentialsHub
@@ -136,8 +136,8 @@ export default function HeroSection() {
               <div className="relative rounded-2xl overflow-hidden bg-gray-900/90 border border-white/10 shadow-xl">
                 <div className="h-28 md:h-32 relative">
                   <Image
-                    src="/images/portfolio/querri1.jpg"
-                    alt="Querri project preview"
+                    src="/talentagent.jpg"
+                    alt="TalentAgent project preview"
                     fill
                     sizes="200px"
                     className="object-cover object-top opacity-80"
@@ -146,10 +146,10 @@ export default function HeroSection() {
                 </div>
                 <div className="p-3">
                   <p className="text-xs font-medium text-blue-100">
-                    Querri
+                    TalentAgent
                   </p>
                   <p className="text-[11px] text-blue-200/80">
-                    {projectLabel('querri')}
+                    {projectLabel('talentagent')}
                   </p>
                 </div>
               </div>

@@ -11,7 +11,6 @@ export default function PortfolioSection() {
   const [selectedCategory, setSelectedCategory] = useState('All')
 
   const projects = [
-    // IberiaTech Solutions projects
     {
       id: 3,
       title: 'ShopEssentialsHub',
@@ -21,15 +20,12 @@ export default function PortfolioSection() {
         : 'A curated Amazon products recommendation platform. Features personally tested and reviewed products, from coffee makers and tech gadgets to home essentials. Every product is recommended because it actually works, with honest reviews and no paid promotions.',
       image: '/images/portfolio/www.shopessentialshub.com_.jpg',
       category: 'E-commerce',
-      technologies: ['Product Curation', 'E-commerce', 'Content Platform'],
-      impact: language === 'es'
-        ? 'Plataforma para descubrir productos de calidad que realmente funcionan'
-        : 'Platform for discovering quality products that actually work',
+      technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
       link: 'https://www.shopessentialshub.com/',
       ownership: 'direct',
       role: language === 'es'
-        ? 'Proyecto de IberiaTech Solutions.'
-        : 'IberiaTech Solutions project.'
+        ? 'Producto propio de IberiaTech.'
+        : 'IberiaTech in-house product.'
     },
     {
       id: 4,
@@ -40,77 +36,12 @@ export default function PortfolioSection() {
         : 'AI-powered job-matching platform that evaluates real fit between candidates and roles. Features 0-100 fit scoring, ghost job detection, interview preparation, and smart portfolios.',
       image: '/talentagent.jpg',
       category: 'AI Platform',
-      technologies: ['AI Platform', 'Job Matching', 'Chrome Extension'],
-      impact: language === 'es'
-        ? 'Plataforma inteligente para buscar empleo de forma estrategica'
-        : 'Smart platform for strategic job hunting',
+      technologies: ['Next.js 15', 'Supabase', 'OpenAI', 'Stripe', 'TypeScript'],
       link: 'https://portfolio-hub-tawny.vercel.app/',
       ownership: 'direct',
       role: language === 'es'
-        ? 'Proyecto de IberiaTech Solutions.'
-        : 'IberiaTech Solutions project.'
-    },
-    // g/d/n/a collaboration projects
-    {
-      id: 5,
-      title: 'GSeay Construction',
-      logo: '/images/logos/image.png',
-      description: language === 'es'
-        ? 'Un sitio web profesional para una empresa de construcción de Florida especializada en proyectos de hospitalidad, salud, industrial y renovación. El sitio destaca sus servicios, incluye un portafolio de proyectos, testimonios y un mapa de proyectos para demostrar credibilidad y atraer nuevos clientes.'
-        : 'A professional website for a Florida construction company specializing in hospitality, healthcare, industrial, and renovation projects. The site highlights their services, includes a project portfolio, testimonials, and a project map to demonstrate credibility and attract new clients.',
-      image: '/images/portfolio/gseay.jpg',
-      category: 'Construction',
-      technologies: ['Project Portfolio', 'Services', 'Client Testimonials'],
-      impact: language === 'es'
-        ? 'Mayor visibilidad en línea y más consultas de clientes'
-        : 'Improved online visibility and more client inquiries',
-      link: 'https://www.gseayinc.com/',
-      ownership: 'collaboration',
-      collaboration: 'g/d/n/a',
-      role: language === 'es'
-        ? 'Entregado como contratista para g/d/n/a.'
-        : 'Delivered as a contractor for g/d/n/a.'
-    },
-    {
-      id: 6,
-      title: 'LESS USA',
-      logo: '/images/logos/InfinityLogo.png',
-      description: language === 'es'
-        ? 'Una plataforma digital para una asociación de aplicación de la ley de EE. UU. para gestionar programas de entrenamiento. El sitio soporta documentar el rendimiento de reclutas, dar visibilidad a entrenadores y proporcionar a los miembros acceso a herramientas y recursos clave.'
-        : 'A digital platform for a U.S. law enforcement association to manage training programs. The site supports documenting recruit performance, giving trainers visibility, and providing members with access to key tools and resources.',
-      image: '/images/portfolio/Less1.jpg',
-      category: 'Digital Platform',
-      technologies: ['Training Platform', 'Documentation', 'Member Access'],
-      impact: language === 'es'
-        ? '30% más rendimiento y UX optimizada'
-        : '30% performance improvement and optimized UX',
-      link: 'https://www.less-usa.com/',
-      ownership: 'collaboration',
-      collaboration: 'g/d/n/a',
-      role: language === 'es'
-        ? 'Entregado como contratista para g/d/n/a.'
-        : 'Delivered as a contractor for g/d/n/a.'
-    },
-    // Contractor project
-    {
-      id: 7,
-      title: 'Querri',
-      logo: 'https://querri.com/favicon.svg',
-      tagline: 'Data analytics & business intelligence',
-      description: language === 'es'
-        ? 'Un sitio web para una startup de análisis de datos con sede en Charleston que muestra su plataforma de IA y servicios. Destaca características como tableros, limpieza de datos e integraciones de manera clara que ayuda a los clientes potenciales a entender el valor de sus soluciones.'
-        : 'A website for a Charleston-based data analytics startup that showcases their AI platform and services. It highlights features like dashboards, data cleansing, and integrations in a clear way that helps potential clients understand the value of their solutions.',
-      image: '/images/portfolio/querri1.jpg',
-      category: 'Business Services',
-      technologies: ['Custom CMS', 'Client Access', 'Data Visualization'],
-      impact: language === 'es'
-        ? 'Gestión de clientes más ágil y mejor rendimiento'
-        : 'Streamlined client management and improved performance',
-      link: 'https://querri.com/',
-      ownership: 'direct',
-      role: language === 'es'
-        ? 'Entregado como contratista para Querri.'
-        : 'Delivered as a contractor for Querri.'
+        ? 'Producto propio de IberiaTech.'
+        : 'IberiaTech in-house product.'
     }
   ]
 
@@ -133,12 +64,12 @@ export default function PortfolioSection() {
           className="text-center mb-16"
         >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                {language === 'es' ? 'Proyectos que Ayudan a Pequeñas y Medianas Empresas a Crecer' : 'Projects That Help Small & Medium Companies Grow'}
+                {language === 'es' ? 'Nuestros Proyectos' : 'Our Projects'}
               </h2>
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
                 {language === 'es'
-                  ? 'Sitios web reales para empresas reales. Cada proyecto fue diseñado para atraer clientes y hacer crecer el negocio.'
-                  : 'Real websites for real businesses. Every project was designed to attract customers and grow the business.'}
+                  ? 'Productos que hemos construido. Cada uno es un ejemplo en vivo del tipo de trabajo que hacemos.'
+                  : 'Products we have built. Each is a live example of the kind of work we do.'}
               </p>
         </motion.div>
 
@@ -269,12 +200,12 @@ export default function PortfolioSection() {
         >
           <div className="bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 rounded-2xl p-8 max-w-4xl mx-auto border border-primary-200 dark:border-primary-700">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              {language === 'es' ? '¿Quieres resultados como estos?' : 'Want results like these?'}
+              {language === 'es' ? '¿Listo para construir algo así?' : 'Ready to build something like this?'}
             </h3>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
               {language === 'es'
-                ? 'Cuéntame sobre tu negocio y te mostraré exactamente cómo un sitio web puede ayudarte a crecer.'
-                : 'Tell me about your business and I\'ll show you exactly how a website can help you grow.'}
+                ? 'Cuéntame sobre tu negocio y hablemos de cómo un sitio web puede ayudarte a crecer.'
+                : 'Tell me about your business and let\'s talk about how a website can help you grow.'}
             </p>
             <a
               href="https://calendly.com/luis-lozoya-tech/30min" target="_blank" rel="noopener noreferrer"
