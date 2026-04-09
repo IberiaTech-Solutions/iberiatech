@@ -13,44 +13,6 @@ export default function PortfolioSection() {
   const projects = [
     // IberiaTech Solutions projects
     {
-      id: 1,
-      title: 'NEVA Estudio',
-      logo: 'https://neva-estudio.vercel.app/neva-logo.svg',
-      description: language === 'es'
-        ? 'Sitio web para un estudio de arquitectura en Gijón, Asturias, con más de una década de experiencia en arquitectura cercana y humanista. Presenta sus servicios de obra residencial, comercial, urbanismo, eficiencia energética, diseño de interiores y gestión integral de proyectos llave en mano.'
-        : 'Website for an architecture firm in Gijón, Asturias, with over a decade of experience in close, humanistic architecture. Showcases their residential, commercial, urban planning, energy efficiency, interior design, and full turnkey project management services.',
-      image: '/neva.jpg',
-      category: 'Architecture',
-      technologies: ['Bilingual Site', 'Portfolio Showcase', 'Services Platform'],
-      impact: language === 'es'
-        ? 'Presencia digital profesional para atraer nuevos clientes'
-        : 'Professional digital presence to attract new clients',
-      link: 'https://neva-estudio.vercel.app/es',
-      ownership: 'direct',
-      role: language === 'es'
-        ? 'Proyecto de IberiaTech Solutions.'
-        : 'IberiaTech Solutions project.'
-    },
-    {
-      id: 2,
-      title: 'Coastal Millwork & Supply',
-      logo: 'https://coastal-millwork.vercel.app/favicon.png',
-      description: language === 'es'
-        ? 'Sitio web para un contratista de interiores arquitectónicos comerciales galardonado en Summerville, SC. Destaca sus servicios de diseño, fabricación e instalación de productos de madera y especialidades interiores premium, con certificación AWI-QCP y más de 800 proyectos completados.'
-        : 'Website for an award-winning commercial interior architectural contractor in Summerville, SC. Highlights their design, fabrication, and installation services for premium architectural wood and interior specialty products, with AWI-QCP certification and 800+ completed projects.',
-      image: '/coastal.jpg',
-      category: 'Construction',
-      technologies: ['Project Showcase', 'Services Platform', 'Client Portal'],
-      impact: language === 'es'
-        ? 'Mayor credibilidad profesional y generación de leads'
-        : 'Enhanced professional credibility and lead generation',
-      link: 'https://coastal-millwork.vercel.app/',
-      ownership: 'direct',
-      role: language === 'es'
-        ? 'Proyecto de IberiaTech Solutions.'
-        : 'IberiaTech Solutions project.'
-    },
-    {
       id: 3,
       title: 'ShopEssentialsHub',
       logo: '/images/logos/logo-SEH.png',

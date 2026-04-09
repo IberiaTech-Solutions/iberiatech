@@ -9,16 +9,6 @@ export default function TrustedBySection() {
 
   const clients = [
     {
-      name: 'NEVA Estudio',
-      logo: 'https://neva-estudio.vercel.app/neva-logo.svg',
-      url: 'https://neva-estudio.vercel.app/es'
-    },
-    {
-      name: 'Coastal Millwork & Supply',
-      logo: 'https://coastal-millwork.vercel.app/favicon.png',
-      url: 'https://coastal-millwork.vercel.app/'
-    },
-    {
       name: 'Querri',
       logo: 'https://querri.com/favicon.svg',
       url: 'https://querri.com'

@@ -8,16 +8,11 @@ import Image from 'next/image'
 export default function HeroSection() {
   const { t, language } = useLanguage()
 
-  const projectLabel = (type: 'neva' | 'coastal' | 'querri') => {
-    if (type === 'neva') {
+  const projectLabel = (type: 'shopessentials' | 'querri') => {
+    if (type === 'shopessentials') {
       return language === 'es'
-        ? 'Arquitectura · Gijón, España'
-        : 'Architecture · Gijón, Spain'
-    }
-    if (type === 'coastal') {
-      return language === 'es'
-        ? 'Construcción · Summerville, SC'
-        : 'Construction · Summerville, SC'
+        ? 'E-commerce · Plataforma de curación'
+        : 'E-commerce · Curation platform'
     }
     return language === 'es'
       ? 'Análisis de datos · Charleston, SC'
@@ -29,17 +24,8 @@ export default function HeroSection() {
       id="home"
       className="relative overflow-hidden section-padding bg-primary-900"
     >
-      {/* Background: real project with gradient overlay */}
-      <div className="absolute inset-0 -z-20">
-        <Image
-          src="/neva.jpg"
-          alt="Background preview of a real IberiaTech project"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover opacity-30 blur-[1px]"
-        />
-      </div>
+      {/* Background: gradient only */}
+      <div className="absolute inset-0 -z-20 bg-primary-900" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary-900/95 via-primary-900/85 to-black/80" />
 
       <div className="container-max relative">
@@ -124,8 +110,8 @@ export default function HeroSection() {
             <div className="absolute inset-y-4 right-0 left-6 md:left-10">
               <div className="relative h-full rounded-3xl overflow-hidden bg-gray-900/80 border border-white/10 shadow-2xl">
                 <Image
-                  src="/neva.jpg"
-                  alt="NEVA Estudio project preview"
+                  src="/images/portfolio/www.shopessentialshub.com_.jpg"
+                  alt="ShopEssentialsHub project preview"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover object-top opacity-60"
@@ -133,13 +119,13 @@ export default function HeroSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-primary-900/80 to-transparent" />
                 <div className="absolute bottom-5 left-5 right-5 space-y-2">
                   <p className="text-xs uppercase tracking-[0.2em] text-blue-200/80">
-                    {language === 'es' ? 'Trabajo real de clientes' : 'Real client project'}
+                    {language === 'es' ? 'Proyecto destacado' : 'Featured project'}
                   </p>
                   <h3 className="text-xl md:text-2xl font-semibold text-white">
-                    NEVA Estudio
+                    ShopEssentialsHub
                   </h3>
                   <p className="text-sm text-blue-100">
-                    {projectLabel('neva')}
+                    {projectLabel('shopessentials')}
                   </p>
                 </div>
               </div>
@@ -150,8 +136,8 @@ export default function HeroSection() {
               <div className="relative rounded-2xl overflow-hidden bg-gray-900/90 border border-white/10 shadow-xl">
                 <div className="h-28 md:h-32 relative">
                   <Image
-                    src="/coastal.jpg"
-                    alt="Coastal Millwork project preview"
+                    src="/images/portfolio/querri1.jpg"
+                    alt="Querri project preview"
                     fill
                     sizes="200px"
                     className="object-cover object-top opacity-80"
@@ -160,10 +146,10 @@ export default function HeroSection() {
                 </div>
                 <div className="p-3">
                   <p className="text-xs font-medium text-blue-100">
-                    Coastal Millwork
+                    Querri
                   </p>
                   <p className="text-[11px] text-blue-200/80">
-                    {projectLabel('coastal')}
+                    {projectLabel('querri')}
                   </p>
                 </div>
               </div>

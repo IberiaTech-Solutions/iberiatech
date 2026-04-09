@@ -6,8 +6,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const screenshots = [
-  { src: '/neva.jpg', label: 'NEVA Estudio', href: 'https://neva-estudio.vercel.app/es' },
-  { src: '/coastal.jpg', label: 'Coastal Millwork & Supply', href: 'https://coastal-millwork.vercel.app/' },
+  { src: '/images/portfolio/www.shopessentialshub.com_.jpg', label: 'ShopEssentialsHub', href: 'https://www.shopessentialshub.com/' },
+  { src: '/talentagent.jpg', label: 'TalentAgent', href: 'https://portfolio-hub-tawny.vercel.app/' },
   { src: '/images/portfolio/querri1.jpg', label: 'Querri', href: 'https://querri.com/' },
 ]
 
