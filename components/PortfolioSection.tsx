@@ -180,10 +180,10 @@ export default function PortfolioSection() {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 text-sm font-medium transition-colors duration-200"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium rounded-md text-white bg-primary-800 hover:bg-primary-900 dark:bg-primary-600 dark:hover:bg-primary-700 transition-colors duration-200 shadow-sm"
                 >
                   {language === 'es' ? 'Ver proyecto' : 'View Project'}
-                  <FiExternalLink className="ml-1 h-3 w-3" />
+                  <FiExternalLink className="h-3.5 w-3.5" />
                 </a>
               </div>
             </motion.div>
