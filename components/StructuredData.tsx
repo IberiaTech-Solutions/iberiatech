@@ -4,10 +4,10 @@ export default function StructuredData() {
     '@type': 'ProfessionalService',
     name: 'IberiaTech Solutions',
     description:
-      'Charleston bilingual web development for small and medium businesses. Professional websites with English and Spanish support for construction, law firms, and local businesses.',
-    url: 'https://iberiatech.com',
-    image: 'https://iberiatech.com/opengraph-image',
-    logo: 'https://iberiatech.com/images/logos/IberiaTechLogo5.png',
+      'IberiaTech Solutions builds modern websites, ecommerce, bilingual experiences, and custom business applications. Next.js, React, and modern cloud infrastructure.',
+    url: 'https://iberiatechsolutions.com',
+    image: 'https://iberiatechsolutions.com/opengraph-image',
+    logo: 'https://iberiatechsolutions.com/images/logos/IberiaTechLogo5.png',
     telephone: '+18643657897',
     founder: {
       '@type': 'Person',
@@ -27,26 +27,27 @@ export default function StructuredData() {
         '@type': 'Country',
         name: 'United States',
       },
+      {
+        '@type': 'Country',
+        name: 'Spain',
+      },
     ],
     serviceType: [
       'Web Development',
+      'Ecommerce Development',
       'Bilingual Website Design',
-      'SEO Optimization',
-      'AI Integration',
+      'Custom Business Applications',
+      'Application Security Audits',
     ],
-    knowsLanguage: ['English', 'Spanish'],
-    priceRange: '$$',
-    sameAs: [
-      'https://github.com/Javierlozo',
-      'https://www.linkedin.com/in/luisjlozoya',
-    ],
+    knowsLanguage: ['English', 'Spanish', 'German'],
+    sameAs: ['https://www.linkedin.com/company/iberiatechsolutions/'],
   }
 
   const websiteData = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'IberiaTech Solutions',
-    url: 'https://iberiatech.com',
+    url: 'https://iberiatechsolutions.com',
     inLanguage: ['en', 'es'],
   }
 

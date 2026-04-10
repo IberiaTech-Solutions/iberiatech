@@ -90,65 +90,193 @@ export default function AIChatbot() {
   }
 
   const getCommonResponse = (message: string): string | null => {
-    // Common questions and responses
     const responses = {
       en: {
-        greeting: "Hello! I'm Luis from IberiaTech Solutions. What can I help you with?",
-        pricing: "No big upfront cost. I design, build, and maintain your site for a flat monthly fee. Starter is $149/mo for a simple site (up to 4 pages). Business is $249/mo for a full site with blog, SEO, and analytics. Custom is $449/mo+ for eCommerce, apps, or anything complex. Hosting and a standard .com domain are included. 12-month commitment, then you keep it at a lower rate or own the site. Want details on a specific plan?",
-        services: "I build custom websites with React and Next.js, optimized for mobile, with English and Spanish built in from day one. I also handle SEO, performance, and ongoing maintenance after launch. What does your business need?",
-        contact: "Email me at luis@iberiatechsolutions.com or call (864) 365-7897. I'm in Charleston, SC and I respond within 24 hours. WhatsApp works too for quick questions.",
-        portfolio: "Check out Cursor Rules Hub, a platform I built for developers. You can see it live at cursor-rules-virid.vercel.app. I'm taking on more projects for small and medium businesses right now.",
-        bilingual: "Yes, every site I build comes in English and Spanish. I grew up in Spain and live in Charleston, so both languages are native to me. It's not a plugin or translation tool. SEO for both languages and cultural adaptation are included in every plan.",
-        timeline: "Starter plans are live in 1 to 2 weeks. Business plans take 2 to 4 weeks. Custom projects take 4 to 7 weeks. I'll give you a detailed timeline on a free strategy call. After launch, maintenance and updates are ongoing as part of your plan.",
-        policy: "Free strategy call before we start. Transparent monthly pricing with no hidden fees. I respond within 24 hours. Hosting, domain, maintenance, and bilingual support are all included. 12-month commitment, then it's flexible.",
-        support: "Support is included in every plan. I handle site maintenance, performance, content updates, technical issues, hosting, and SEO. Higher plans get faster response times and more updates per month.",
-        default: "I'd be happy to help! You can ask me about services, pricing, portfolio, or how to get started. You can also reach me directly at luis@iberiatechsolutions.com or call (864) 365-7897."
+        greeting:
+          "Hi, I'm the IberiaTech Solutions assistant. I can answer questions about our services, recent work, process, and how to get in touch. What would you like to know?",
+        services:
+          "We focus on four areas: Web & Ecommerce, Bilingual & Multilingual Sites (EN/ES/DE), Custom Business Applications (SaaS, dashboards, marketplaces, portals), and Security Audits & Hardening. Everything is built on Next.js, React, Supabase, and modern cloud infrastructure. Want me to go deeper on any one?",
+        web:
+          "Web & Ecommerce work covers modern websites and online stores built on Next.js — fast, SEO-ready, mobile-first, with Stripe-powered checkout when needed. We focus on performance and clean architecture from day one.",
+        bilingual:
+          "We build sites in English, Spanish, and German with proper internationalization, cultural adaptation, and SEO for every language. Luis grew up in Spain and lives in the US, so the bilingual side is native, not a plugin.",
+        apps:
+          "Custom Business Applications are our deeper engagements — full-stack SaaS platforms, admin dashboards, marketplaces, and client portals. Recent examples include Axis (a multi-role assessment platform) and CuidaMascotas (a pet-sitting marketplace for Spain).",
+        security:
+          "Security Audits & Hardening cover application security reviews for web apps and custom software: OWASP Top 10 audits, authentication and authorization hardening, database row-level security policies, secure handling of payments and third-party APIs, and security-first development practices.",
+        portfolio:
+          "Recent work includes Axis (assessment platform for business advisors), CuidaMascotas (bilingual pet-sitting marketplace for Spain), NEVA Estudio (architecture studio site in Asturias), Coastal Millwork (commercial contractor), and ShopEssentialsHub. You can see the full list at /work on this site.",
+        process:
+          "Our process has four steps: Discovery (a short call to understand your goals), Design & Planning (wireframes, architecture, timeline), Build (iterative development with regular updates), and Launch & Support (deployment, training, ongoing maintenance).",
+        contact:
+          "You can reach us by email at luis@iberiatechsolutions.com, book a 30-minute call from the Contact page, or message us on WhatsApp using the floating button. We respond to every inquiry within two business days.",
+        timeline:
+          "Timelines depend entirely on scope. A focused website project might run 2–6 weeks. A custom business application can take a few months. We give you a clear, realistic timeline after the discovery call.",
+        stack:
+          "We work primarily with Next.js, React, TypeScript, Tailwind CSS, Supabase (Postgres + Auth + RLS), Stripe, Vercel for deployment, and AWS where needed. For internationalization we use next-intl.",
+        location:
+          "We're based in Charleston, SC and work remotely with clients across the US and Europe — including Spain, where Luis grew up.",
+        default:
+          "Happy to help. You can ask about our services, recent work, process, technology stack, or how to get in touch. For anything more specific, the best way is to email luis@iberiatechsolutions.com or book a 30-minute call.",
       },
       es: {
-        greeting: "¡Hola! Soy Luis de IberiaTech Solutions. ¿En qué puedo ayudarte?",
-        pricing: "Sin costo inicial grande. Diseño, construyo y mantengo tu sitio por una tarifa mensual fija. Inicio es 149 €/mes para un sitio simple (hasta 4 páginas). Empresarial es 249 €/mes con blog, SEO y analytics. Personalizado es 449 €/mes+ para eCommerce, apps o lo que necesites. Hosting y dominio .com estándar incluidos. Compromiso de 12 meses, después tarifa reducida o el sitio es tuyo. ¿Quieres detalles de algún plan?",
-        services: "Construyo sitios web personalizados con React y Next.js, optimizados para móvil, con inglés y español desde el primer día. También me encargo del SEO, rendimiento y mantenimiento continuo después del lanzamiento. ¿Qué necesita tu negocio?",
-        contact: "Escríbeme a luis@iberiatechsolutions.com o llámame al (864) 365-7897. Estoy en Charleston, SC y respondo en 24 horas. WhatsApp también funciona para preguntas rápidas.",
-        portfolio: "Mira Cursor Rules Hub, una plataforma que construí para desarrolladores. Puedes verla en cursor-rules-virid.vercel.app. Estoy tomando más proyectos para pequeñas y medianas empresas.",
-        bilingual: "Sí, cada sitio que construyo viene en inglés y español. Crecí en España y vivo en Charleston, así que los dos idiomas son nativos para mí. No es un plugin ni herramienta de traducción. SEO para ambos idiomas y adaptación cultural incluidos en cada plan.",
-        timeline: "Los planes Inicio están online en 1 a 2 semanas. Empresarial tarda 2 a 4 semanas. Personalizado entre 4 y 7 semanas. Te doy un cronograma detallado en una llamada estratégica gratuita. Después del lanzamiento, el mantenimiento y las actualizaciones son parte de tu plan.",
-        policy: "Llamada estratégica gratuita antes de empezar. Precio mensual transparente sin costos ocultos. Respondo en 24 horas. Hosting, dominio, mantenimiento y soporte bilingüe incluidos. Compromiso de 12 meses, después flexible.",
-        support: "El soporte está incluido en cada plan. Me encargo del mantenimiento, rendimiento, contenido, problemas técnicos, hosting y SEO. Los planes superiores tienen respuesta más rápida y más actualizaciones al mes.",
-        default: "¡Encantado de ayudarte! Puedes preguntarme sobre servicios, precios, portafolio, o cómo empezar. También puedes contactarme en luis@iberiatechsolutions.com o llamar al (864) 365-7897."
-      }
+        greeting:
+          "Hola, soy el asistente de IberiaTech Solutions. Puedo responder preguntas sobre nuestros servicios, proyectos recientes, proceso de trabajo y cómo ponerte en contacto. ¿Qué te gustaría saber?",
+        services:
+          "Nos centramos en cuatro áreas: Web y Ecommerce, Sitios Bilingües y Multilingües (EN/ES/DE), Aplicaciones de Negocio a Medida (SaaS, paneles, marketplaces, portales) y Auditorías y Refuerzo de Seguridad. Todo construido con Next.js, React, Supabase y cloud moderno. ¿Quieres que profundice en alguna área?",
+        web:
+          "El área de Web y Ecommerce cubre sitios web y tiendas online modernas construidas con Next.js — rápidas, optimizadas para SEO, mobile-first, y con pago via Stripe cuando se necesita. Nos centramos en rendimiento y arquitectura limpia desde el primer día.",
+        bilingual:
+          "Construimos sitios en inglés, español y alemán con internacionalización adecuada, adaptación cultural y SEO en todos los idiomas. Luis creció en España y vive en EE. UU., así que el lado bilingüe es nativo, no un plugin.",
+        apps:
+          "Las Aplicaciones de Negocio a Medida son nuestros proyectos más profundos — plataformas SaaS full-stack, paneles de administración, marketplaces y portales para clientes. Ejemplos recientes incluyen Axis (una plataforma de evaluación multi-rol) y CuidaMascotas (un marketplace de cuidado de mascotas para España).",
+        security:
+          "Las Auditorías y Refuerzo de Seguridad cubren revisiones de seguridad para aplicaciones web y software a medida: auditorías OWASP Top 10, refuerzo de autenticación y autorización, políticas de seguridad a nivel de fila en la base de datos, manejo seguro de pagos e integraciones, y prácticas de desarrollo orientadas a la seguridad.",
+        portfolio:
+          "Proyectos recientes incluyen Axis (plataforma de evaluación para asesores de negocios), CuidaMascotas (marketplace bilingüe de cuidado de mascotas para España), NEVA Estudio (sitio de un estudio de arquitectura en Asturias), Coastal Millwork (contratista comercial) y ShopEssentialsHub. Puedes ver la lista completa en /work en este sitio.",
+        process:
+          "Nuestro proceso tiene cuatro pasos: Descubrimiento (una llamada corta para entender tus objetivos), Diseño y Planificación (wireframes, arquitectura, cronograma), Desarrollo (desarrollo iterativo con actualizaciones regulares) y Lanzamiento y Soporte (despliegue, formación y mantenimiento continuo).",
+        contact:
+          "Puedes contactarnos por email en luis@iberiatechsolutions.com, reservar una llamada de 30 minutos desde la página de Contacto, o escribirnos por WhatsApp usando el botón flotante. Respondemos a cada consulta en un máximo de dos días laborables.",
+        timeline:
+          "Los plazos dependen totalmente del alcance. Un proyecto web enfocado puede durar entre 2 y 6 semanas. Una aplicación de negocio a medida puede llevar varios meses. Te damos un cronograma claro y realista tras la llamada de descubrimiento.",
+        stack:
+          "Trabajamos principalmente con Next.js, React, TypeScript, Tailwind CSS, Supabase (Postgres + Auth + RLS), Stripe, Vercel para despliegue y AWS cuando es necesario. Para internacionalización usamos next-intl.",
+        location:
+          "Estamos basados en Charleston, SC y trabajamos en remoto con clientes en EE. UU. y Europa — incluyendo España, donde creció Luis.",
+        default:
+          "Encantado de ayudarte. Puedes preguntarme sobre nuestros servicios, proyectos recientes, proceso, stack tecnológico o cómo contactarnos. Para algo más específico, lo mejor es escribirnos a luis@iberiatechsolutions.com o reservar una llamada de 30 minutos.",
+      },
     }
 
     const langResponses = responses[language as keyof typeof responses]
 
-    if (message.includes('hello') || message.includes('hi') || message.includes('hola')) {
+    if (message.includes('hello') || message.includes('hi ') || message === 'hi' || message.includes('hola')) {
       return langResponses.greeting
     }
-    if (message.includes('price') || message.includes('cost') || message.includes('precio') || message.includes('costo') || message.includes('package') || message.includes('paquete')) {
-      return langResponses.pricing
+    if (
+      message.includes('security') ||
+      message.includes('seguridad') ||
+      message.includes('owasp') ||
+      message.includes('audit') ||
+      message.includes('auditoría') ||
+      message.includes('pentest') ||
+      message.includes('hardening')
+    ) {
+      return langResponses.security
     }
-    if (message.includes('service') || message.includes('servicio') || message.includes('what do you do') || message.includes('qué haces') || message.includes('offer') || message.includes('ofrecemos')) {
-      return langResponses.services
+    if (
+      message.includes('ecommerce') ||
+      message.includes('e-commerce') ||
+      message.includes('shop') ||
+      message.includes('store') ||
+      message.includes('tienda') ||
+      message.includes('web') ||
+      message.includes('website') ||
+      message.includes('sitio')
+    ) {
+      return langResponses.web
     }
-    if (message.includes('contact') || message.includes('email') || message.includes('phone') || message.includes('teléfono') || message.includes('reach') || message.includes('contactar')) {
-      return langResponses.contact
-    }
-    if (message.includes('portfolio') || message.includes('project') || message.includes('proyecto') || message.includes('work') || message.includes('example') || message.includes('ejemplo')) {
-      return langResponses.portfolio
-    }
-    if (message.includes('bilingual') || message.includes('spanish') || message.includes('español') || message.includes('bilingüe') || message.includes('language') || message.includes('idioma')) {
+    if (
+      message.includes('bilingual') ||
+      message.includes('spanish') ||
+      message.includes('german') ||
+      message.includes('multilingual') ||
+      message.includes('español') ||
+      message.includes('alemán') ||
+      message.includes('bilingüe') ||
+      message.includes('idioma') ||
+      message.includes('language')
+    ) {
       return langResponses.bilingual
     }
-    if (message.includes('time') || message.includes('timeline') || message.includes('tiempo') || message.includes('cuándo') || message.includes('how long') || message.includes('cuánto tiempo')) {
+    if (
+      message.includes('saas') ||
+      message.includes('app') ||
+      message.includes('platform') ||
+      message.includes('dashboard') ||
+      message.includes('marketplace') ||
+      message.includes('portal') ||
+      message.includes('aplicación') ||
+      message.includes('plataforma')
+    ) {
+      return langResponses.apps
+    }
+    if (
+      message.includes('service') ||
+      message.includes('servicio') ||
+      message.includes('what do you do') ||
+      message.includes('qué hacen') ||
+      message.includes('qué haces') ||
+      message.includes('offer') ||
+      message.includes('ofrecen')
+    ) {
+      return langResponses.services
+    }
+    if (
+      message.includes('process') ||
+      message.includes('proceso') ||
+      message.includes('how do you work') ||
+      message.includes('cómo trabajan') ||
+      message.includes('cómo trabajáis')
+    ) {
+      return langResponses.process
+    }
+    if (
+      message.includes('portfolio') ||
+      message.includes('project') ||
+      message.includes('proyecto') ||
+      message.includes('work') ||
+      message.includes('example') ||
+      message.includes('ejemplo') ||
+      message.includes('case stud')
+    ) {
+      return langResponses.portfolio
+    }
+    if (
+      message.includes('contact') ||
+      message.includes('email') ||
+      message.includes('phone') ||
+      message.includes('teléfono') ||
+      message.includes('reach') ||
+      message.includes('contactar') ||
+      message.includes('llamar') ||
+      message.includes('call')
+    ) {
+      return langResponses.contact
+    }
+    if (
+      message.includes('time') ||
+      message.includes('timeline') ||
+      message.includes('how long') ||
+      message.includes('cuánto tiempo') ||
+      message.includes('plazo') ||
+      message.includes('cuándo')
+    ) {
       return langResponses.timeline
     }
-    if (message.includes('policy') || message.includes('policies') || message.includes('política') || message.includes('políticas') || message.includes('terms') || message.includes('términos')) {
-      return langResponses.policy
+    if (
+      message.includes('stack') ||
+      message.includes('technology') ||
+      message.includes('tech') ||
+      message.includes('framework') ||
+      message.includes('tecnología') ||
+      message.includes('next.js') ||
+      message.includes('react')
+    ) {
+      return langResponses.stack
     }
-    if (message.includes('support') || message.includes('soporte') || message.includes('maintenance') || message.includes('mantenimiento') || message.includes('help') || message.includes('ayuda')) {
-      return langResponses.support
+    if (
+      message.includes('where') ||
+      message.includes('location') ||
+      message.includes('charleston') ||
+      message.includes('dónde') ||
+      message.includes('ubicación')
+    ) {
+      return langResponses.location
     }
-    
-    return null // Return null if no common response found
+
+    return null
   }
 
   const handleSendMessage = async () => {

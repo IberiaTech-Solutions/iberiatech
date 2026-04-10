@@ -1,182 +1,90 @@
 'use client'
 
-import { useLanguage } from './LanguageProvider'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { FiCode, FiGlobe, FiCpu, FiSearch, FiZap, FiClock, FiServer, FiFileText, FiLayers, FiShoppingCart, FiMessageCircle, FiTrendingUp } from 'react-icons/fi'
+import { FiArrowRight, FiCode, FiGlobe, FiLayers, FiShield } from 'react-icons/fi'
+import { useLanguage } from './LanguageProvider'
+
+const SERVICES = [
+  {
+    icon: FiCode,
+    titleKey: 'services.web.title',
+    descKey: 'services.web.desc',
+  },
+  {
+    icon: FiGlobe,
+    titleKey: 'services.bilingual.title',
+    descKey: 'services.bilingual.desc',
+  },
+  {
+    icon: FiLayers,
+    titleKey: 'services.apps.title',
+    descKey: 'services.apps.desc',
+  },
+  {
+    icon: FiShield,
+    titleKey: 'services.security.title',
+    descKey: 'services.security.desc',
+  },
+] as const
 
 export default function ServicesSection() {
-  const { t, language } = useLanguage()
-
-  const services = [
-    {
-      icon: FiCode,
-      title: language === 'es' ? 'Diseño y Desarrollo' : 'Design & Development',
-      description: language === 'es' ? 'Tu sitio, diseñado y construido desde cero.' : 'Your site, designed and built from scratch.',
-      features: [
-        { text: language === 'es' ? 'Diseño personalizado, nada de plantillas' : 'Custom design, no templates', icon: FiFileText },
-        { text: language === 'es' ? 'Rápido, seguro y mobile-first' : 'Fast, secure, and mobile-first', icon: FiLayers },
-        { text: language === 'es' ? 'eCommerce, reservas o lo que necesites' : 'eCommerce, booking, or whatever you need', icon: FiShoppingCart },
-      ],
-    },
-    {
-      icon: FiGlobe,
-      title: language === 'es' ? 'Bilingue de Verdad' : 'Truly Bilingual',
-      description: language === 'es' ? 'No es un plugin. Hablo los dos idiomas.' : 'Not a plugin. I speak both languages.',
-      features: [
-        { text: language === 'es' ? 'Crecí en España, vivo en Charleston' : 'Grew up in Spain, live in Charleston', icon: FiGlobe },
-        { text: language === 'es' ? 'SEO optimizado para ambos mercados' : 'SEO optimized for both markets', icon: FiSearch },
-        { text: language === 'es' ? 'Adaptación cultural, no solo traducción' : 'Cultural adaptation, not just translation', icon: FiMessageCircle },
-      ],
-    },
-    {
-      icon: FiCpu,
-      title: language === 'es' ? 'Mantenimiento Continuo' : 'Ongoing Maintenance',
-      description: language === 'es' ? 'Tu sitio sigue creciendo después del lanzamiento.' : 'Your site keeps growing after launch.',
-      features: [
-        { text: language === 'es' ? 'Actualizaciones de contenido y diseño' : 'Content and design updates', icon: FiCpu },
-        { text: language === 'es' ? 'SEO y rendimiento monitoreados' : 'SEO and performance monitored', icon: FiTrendingUp },
-        { text: language === 'es' ? 'Soporte directo conmigo' : 'Direct support from me', icon: FiMessageCircle },
-      ],
-    },
-  ]
+  const { t } = useLanguage()
 
   return (
-    <section id="services" className="section-padding bg-secondary-white dark:bg-gray-900">
+    <section id="services" className="section-padding bg-white dark:bg-gray-900">
       <div className="container-max">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 max-w-2xl mx-auto"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-support-dark dark:text-white mb-4">
-            {t('services.title2')}
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            {t('services.title')}
           </h2>
-          <h3 className="text-xl md:text-2xl font-semibold text-primary-800 dark:text-primary-400 mb-2">
-            {t('services.subtitle2')}
-          </h3>
-          <p className="text-xl text-support-medium dark:text-gray-300 max-w-3xl mx-auto">
-            {t('services.subtitle3')}
+          <p className="text-lg text-gray-600 dark:text-gray-300">
+            {t('services.subtitle')}
           </p>
         </motion.div>
-      </div>
 
-      {/* Services Grid */}
-      <div className="container-max">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-secondary-light dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-2xl hover:border-accent-500 hover:border-2 transition-all duration-300"
-            >
-              <div className="flex items-center space-x-4 mb-4">
-                <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/20 rounded-lg flex items-center justify-center">
-                  <service.icon className="w-6 h-6 text-primary-800" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {SERVICES.map((service, index) => {
+            const Icon = service.icon
+            return (
+              <motion.div
+                key={service.titleKey}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.08 }}
+                viewport={{ once: true }}
+                className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 hover:border-primary-400 dark:hover:border-primary-500 transition-colors duration-200"
+              >
+                <div className="w-12 h-12 rounded-xl bg-primary-100 dark:bg-primary-900/40 flex items-center justify-center mb-5">
+                  <Icon className="w-6 h-6 text-primary-700 dark:text-primary-300" />
                 </div>
-                <h3 className="text-xl font-semibold text-support-dark dark:text-white">
-                  {service.title}
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                  {t(service.titleKey)}
                 </h3>
-              </div>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {t(service.descKey)}
+                </p>
+              </motion.div>
+            )
+          })}
+        </div>
 
-              <p className="text-support-medium dark:text-gray-300 mb-4">
-                {service.description}
-              </p>
-
-              <ul className="space-y-3">
-                {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center gap-3 text-sm text-support-medium dark:text-gray-400">
-                    <div className="w-8 h-8 rounded-lg bg-accent-100 dark:bg-accent-900/30 flex items-center justify-center flex-shrink-0">
-                      <feature.icon className="w-4 h-4 text-accent-600 dark:text-accent-400" />
-                    </div>
-                    <span>{feature.text}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
+        <div className="mt-10 text-center">
+          <Link
+            href="/services"
+            className="inline-flex items-center space-x-2 text-primary-700 dark:text-primary-300 font-semibold hover:text-primary-800 dark:hover:text-primary-200 transition-colors duration-200"
+          >
+            <span>{t('services.cta')}</span>
+            <FiArrowRight className="w-5 h-5" />
+          </Link>
         </div>
       </div>
-
-      {/* What's included: specifics (SEO, AI, timeline, hosting) */}
-      <div className="container-max mt-16">
-        <h3 className="text-2xl font-bold text-support-dark dark:text-white mb-8 text-center">
-          {t('services.detail.title')}
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-100 dark:border-gray-700"
-          >
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
-                <FiSearch className="w-5 h-5 text-primary-800 dark:text-primary-400" />
-              </div>
-              <h4 className="text-lg font-semibold text-support-dark dark:text-white">{t('services.detail.seo.title')}</h4>
-            </div>
-            <p className="text-sm text-support-medium dark:text-gray-400 mb-3">{t('services.detail.seo.desc')}</p>
-            <ul className="space-y-2 text-sm text-support-medium dark:text-gray-400">
-              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-accent-500 rounded-full flex-shrink-0" />{t('services.detail.seo.1')}</li>
-              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-accent-500 rounded-full flex-shrink-0" />{t('services.detail.seo.2')}</li>
-              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-accent-500 rounded-full flex-shrink-0" />{t('services.detail.seo.3')}</li>
-              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-accent-500 rounded-full flex-shrink-0" />{t('services.detail.seo.4')}</li>
-            </ul>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-100 dark:border-gray-700"
-          >
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
-                <FiZap className="w-5 h-5 text-primary-800 dark:text-primary-400" />
-              </div>
-              <h4 className="text-lg font-semibold text-support-dark dark:text-white">{t('services.detail.ai.title')}</h4>
-            </div>
-            <p className="text-sm text-support-medium dark:text-gray-400">{t('services.detail.ai.desc')}</p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-100 dark:border-gray-700"
-          >
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
-                <FiClock className="w-5 h-5 text-primary-800 dark:text-primary-400" />
-              </div>
-              <h4 className="text-lg font-semibold text-support-dark dark:text-white">{t('services.detail.timeline.title')}</h4>
-            </div>
-            <p className="text-sm text-support-medium dark:text-gray-400">{t('services.detail.timeline.desc')}</p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-100 dark:border-gray-700"
-          >
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
-                <FiServer className="w-5 h-5 text-primary-800 dark:text-primary-400" />
-              </div>
-              <h4 className="text-lg font-semibold text-support-dark dark:text-white">{t('services.detail.hosting.title')}</h4>
-            </div>
-            <p className="text-sm text-support-medium dark:text-gray-400">{t('services.detail.hosting.desc')}</p>
-          </motion.div>
-        </div>
-      </div>
-
     </section>
   )
 }

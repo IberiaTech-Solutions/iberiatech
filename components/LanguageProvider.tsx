@@ -15,481 +15,217 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 const translations = {
   en: {
+    // Navigation
+    'nav.home': 'Home',
+    'nav.work': 'Work',
     'nav.services': 'Services',
-    'nav.problems': 'Problems We Solve',
-    'nav.pricing': 'Pricing',
-    'nav.faq': 'FAQ',
-    'nav.portfolio': 'Portfolio',
     'nav.contact': 'Contact',
-    'hero.title': 'Your website should bring you customers.',
-    'hero.promise': 'I help small businesses in Charleston and Spain get found online, get more calls, and grow. Bilingual. No upfront cost.',
-    'hero.subtitle': 'I handle the tech. You run your business.',
-    'hero.cta': 'Get Started',
-    'hero.learn': 'Learn More',
-    'about.title': 'About Us',
-    'about.subtitle': 'Your local web development team',
-    'about.description': 'I started IberiaTech in 2024 because too many small businesses were paying too much for online presence that did not work. I keep it simple: a site that brings you customers, a fair monthly price, and someone who picks up the phone.',
-    'about.mission': 'What I Do',
-    'about.mission.text': 'I help small and medium businesses in Charleston and Spain get found online. I design, build, and maintain your online presence so it actually brings in customers.',
-    'about.expertise': 'How I Work',
-    'about.expertise.text': 'You tell me what your business needs. I build it, launch it, and keep it working and growing. No jargon, no runaround.',
-    'services.title': 'What I Offer',
-    'services.subtitle': 'Everything your business needs to grow online. One monthly price, no surprises.',
-    'services.webdev.title': 'Web Development',
-    'services.webdev.desc': 'Clean, fast websites that work on every screen. No templates, no page builders.',
-    'services.mobile.title': 'Mobile-First Design',
-    'services.mobile.desc': 'Most of your visitors are on their phone. Your site will look great there first.',
-    'services.bilingual.title': 'Bilingual Websites',
-    'services.bilingual.desc': 'English and Spanish built in from day one. Not a plugin, not a translation tool.',
-    'services.security.title': 'Security & Authentication',
-    'services.security.desc': 'SSL, secure forms, proper hosting. Your data and your customers stay safe.',
-    'services.performance.title': 'SEO & Speed',
-    'services.performance.desc': 'Fast loading, clean code, and set up so Google can actually find you.',
-    'services.support.title': 'Ongoing Support',
-    'services.ai.title': 'Smart Features',
-    'services.support.desc': 'I do not disappear after launch. Updates, fixes, questions. I am here.',
-    'pricing.title': 'Simple Monthly Pricing',
-    'pricing.subtitle': 'No big upfront cost. I design, build, and maintain your site for a flat monthly fee. Cancel after 12 months.',
-    'pricing.anchor': 'Everything included: design, development, hosting, updates, and support.',
-    'pricing.subtitle.charleston': 'Fair rates for Charleston, SC and beyond.',
-    'pricing.value': 'Good work at honest prices. You will know exactly what you are paying for.',
-    'pricing.starter.name': 'Starter',
-    'pricing.starter.price': '$149/mo',
-    'pricing.starter.desc': 'Perfect for new businesses that need a professional online presence fast.',
-    'pricing.business.name': 'Business',
-    'pricing.business.price': '$249/mo',
-    'pricing.business.desc': 'For growing businesses that need SEO, analytics, and content that converts.',
-    'pricing.custom.name': 'Custom',
-    'pricing.custom.price': '$449/mo+',
-    'pricing.custom.desc': 'eCommerce, booking systems, portals — scoped to your needs.',
-    'pricing.popular': 'Most Popular',
-    'pricing.getstarted': 'Get Started',
-    'pricing.cta.starter': 'Start My Site',
-    'pricing.cta.business': 'Grow My Business',
-    'pricing.cta.custom': 'Let\'s Talk',
-    'pricing.custom': 'Ready to get started? Let\'s talk about your project →',
-    'pricing.consultation': 'All plans include a free strategy call before we start',
-    'pricing.commitment': '12-month commitment. After that, keep it at a lower rate or own your site.',
-    'problems.title': 'Sound familiar?',
-    'problems.subtitle': 'A lot of businesses in Charleston and Spain still depend on word of mouth alone. That works until it does not.',
-    'problems.without.title': 'Without a good website:',
-    'problems.with.title': 'With IberiaTech, you get:',
-    'problems.cta.title': 'Ready to fix this?',
-    'problems.cta.subtitle': '',
-    'problems.cta.button': 'Get Started Today',
-    'portfolio.title': 'My Work',
-    'portfolio.subtitle': 'Real sites I\'ve built for real businesses',
-    'contact.title': 'Let\'s talk about your project',
-    'contact.subtitle': 'Tell me what you need. I\'ll get back to you within 24 hours.',
-    'contact.name': 'Name',
-    'contact.email': 'Email',
-    'contact.company': 'Company',
-    'contact.message': 'Message',
-    'contact.send': 'Send Message',
-    'contact.phone': 'Phone',
-    'contact.location': 'Location',
-    'footer.company': 'IberiaTech Solutions',
-    'footer.description': 'Bilingual websites for small and medium businesses in Charleston and Spain.',
+
+    // Hero
+    'hero.title': 'Modern web & custom applications.',
+    'hero.subtitle':
+      'We build websites, ecommerce, bilingual experiences, and custom business software. Based in Charleston, SC. Working with clients across the US and Europe.',
+    'hero.cta.work': 'See our work',
+    'hero.cta.contact': 'Get in touch',
+    'hero.pill.bilingual': 'Bilingual by default',
+    'hero.pill.stack': 'Next.js & Modern Cloud',
+    'hero.pill.security': 'Security-aware',
+
+    // Services overview
+    'services.title': 'What we do',
+    'services.subtitle':
+      'Four service areas, one consistent standard: thoughtful, fast, secure, built to last.',
+    'services.web.title': 'Web & Ecommerce',
+    'services.web.desc':
+      'Modern websites and online stores built on Next.js. Fast, SEO-ready, mobile-first. Stripe-powered checkout, CMS-driven content, performance-first architecture.',
+    'services.bilingual.title': 'Bilingual & Multilingual Sites',
+    'services.bilingual.desc':
+      'Professionally localized sites in English, Spanish, and German. Proper internationalization, cultural adaptation, SEO for every language.',
+    'services.apps.title': 'Custom Business Applications',
+    'services.apps.desc':
+      'Full-stack custom software: SaaS platforms, admin dashboards, marketplaces, client portals. Built with Next.js, Supabase, Stripe, and the modern cloud.',
+    'services.security.title': 'Security Audits & Hardening',
+    'services.security.desc':
+      'Application security reviews for web apps and custom software. OWASP Top 10 audits, authentication and authorization hardening, database row-level security policies, secure handling of payments and third-party APIs, and security-first development practices.',
+    'services.cta': 'See all services',
+
+    // Process
+    'process.title': 'How we work',
+    'process.discovery.title': 'Discovery',
+    'process.discovery.desc':
+      'A short call to understand your goals, audience, and scope.',
+    'process.design.title': 'Design & planning',
+    'process.design.desc': 'Wireframes, architecture, and a clear timeline.',
+    'process.build.title': 'Build',
+    'process.build.desc':
+      'Iterative development with regular updates and transparent progress.',
+    'process.launch.title': 'Launch & support',
+    'process.launch.desc': 'Deployment, training, and ongoing maintenance.',
+
+    // Portfolio / Work
+    'work.title': 'Selected work',
+    'work.subtitle':
+      'A selection of recent projects across web, ecommerce, marketplaces, and custom business applications.',
+    'work.view': 'View project',
+    'work.viewLive': 'View live site',
+    'work.cta': 'See all work',
+    'work.comingSoon': 'Coming soon',
+    'work.role': 'Role',
+    'work.problem': 'The problem',
+    'work.solution': 'The solution',
+    'work.tech': 'Technologies',
+    'work.back': 'Back to all work',
+
+    // Contact
+    'contact.title': "Let's talk about your project.",
+    'contact.subtitle':
+      'We respond to every inquiry within two business days.',
+    'contact.email.label': 'Email',
+    'contact.book.label': 'Book a call',
+    'contact.book.desc': 'Schedule a 30-minute call at a time that works for you.',
+    'contact.bookCta': 'Book a 30-min call',
+
+    // About
+    'about.title': 'About',
+    'about.body':
+      'IberiaTech Solutions is a web development practice led by Luis Lozoya — a full-stack engineer specializing in Next.js, React, and modern cloud infrastructure. We design and build websites, ecommerce, bilingual experiences, and custom business software for clients across the US and Europe.',
+    'about.security':
+      'Luis is a full-stack engineer with a growing focus on application security. GFACT certified, currently completing the SANS CyberTalent Academy, with upcoming certifications in GSEC, GCIH, GWAPT, and AWS Security Specialty.',
+
+    // Footer
+    'footer.tagline': 'Modern web & custom applications.',
     'footer.services': 'Services',
-    'footer.services.webdev': 'Custom Web Development',
-    'footer.services.react': 'Modern Web Design',
-    'footer.services.supabase': 'Secure Data Management',
-    'footer.services.bilingual': 'Bilingual Websites',
-    'footer.services.translation': 'Website Translation',
-    'footer.services.seo': 'SEO Optimization',
-    'footer.services.mobile': 'Mobile-Friendly Design',
-    'hero.subtitle2': 'In English, Spanish, or both',
-    'hero.tagline': 'Modern, bilingual websites that actually work.',
-    'hero.features.ai': 'AI-Powered',
-    'hero.features.mobile': 'Mobile-First',
-    'hero.features.bilingual': 'Bilingual',
-    'hero.cta.start': 'Start Your Project',
-    'hero.cta.contact': 'Get in Touch',
-    'cta.strategy.title': 'Book a Free Strategy Call',
-    'cta.strategy.subtitle': '30 minutes. No pressure. We\'ll map out the best path for your business.',
-    'cta.strategy.button': 'Book My Call',
-    'cta.demo.title': 'See a Demo Website Sample',
-    'cta.demo.subtitle': 'View a real project we built: mobile-friendly, fast, bilingual.',
-    'cta.demo.button': 'See the Demo',
-    'cta.quote24.title': 'Get Your Project Quote in 24 Hours',
-    'cta.quote24.subtitle': 'Tell us about your project. We\'ll respond with a clear quote and next steps.',
-    'cta.quote24.button': 'Get My Quote',
-    'about.title2': 'About Us',
-    'about.description2': 'I started IberiaTech in 2024 to help small businesses get online without the headache. I work with construction companies, law offices, restaurants, and local shops in Charleston and Spain. I speak both languages, I understand both markets, and I build sites that actually bring in business.',
-    'about.stats.portfolio': 'Growing Portfolio',
-    'about.stats.countries': 'Countries Served',
-    'about.stats.satisfaction': 'Client Satisfaction',
-    'about.founder.title': 'Founder & Lead Developer',
-    'about.founder.story.title': 'The person behind IberiaTech',
-    'about.founder.story.text': 'I have been building websites for over 5 years. I grew up in Spain and live in Charleston, so I understand both markets firsthand. I started IberiaTech because I saw too many small businesses paying too much for sites that did not do anything for them. When you work with IberiaTech, you work with me directly.',
-    'about.founder.experience.us': '5+ years US market experience',
-    'about.founder.experience.spain': 'Native Spanish speaker & culture expert',
-    'about.testimonials.title': 'Testimonios de Clientes',
-    'about.testimonials.quote': 'Luis at IberiaTech does amazing work. He is a skilled developer and really great to work with.',
-    'about.testimonials.author': 'Dave Ingram',
-    'about.testimonials.company': 'Querri',
-    'services.title2': 'What We Build',
-    'services.subtitle2': 'Websites for businesses in Charleston, Spain, and beyond. Built to get you customers.',
-    'services.subtitle3': 'Sites and apps that bring in leads and pay for themselves.',
-    'services.page.title': 'Our services',
-    'services.page.subtitle': 'Websites, SEO, bilingual sites, analytics, and ongoing support. You will know exactly what you get and when.',
-    'portfolio.title2': 'About Luis Lozoya',
-    'portfolio.subtitle2': 'Founder of IberiaTech Solutions',
-    'portfolio.subtitle3': 'I help small and medium companies in Charleston and Spain grow online with modern, bilingual websites',
-    'portfolio.project.title': 'Featured Project: Cursor Rules Hub',
-    'portfolio.coming.title': 'My Experience',
-    'portfolio.cta.title': 'Ready to Start Your Project?',
-    'portfolio.cta.start': 'Start Your Project',
-    'portfolio.cta.contact': 'Get in Touch',
-    'contact.title2': 'Tell Us About Your Project',
-    'contact.subtitle2': 'Send us a message. We will get back to you within 24 hours.',
-    'contact.form.name': 'Your full name',
-    'contact.form.company': 'Your company name',
-    'contact.form.message': 'Tell me about your project...',
-    'contact.form.sending': 'Sending...',
-    'why.title': 'Why Choose IberiaTech?',
-    'why.subtitle': 'You get a senior developer who knows both your markets — not an agency with layers of middlemen.',
-    'why.bilingual.title': 'True Bilingual Expertise',
-    'why.bilingual.desc': 'I grew up in Spain and live in Charleston. Both languages and cultures are native to me — not outsourced.',
-    'why.tech.title': 'Modern Technology',
-    'why.tech.desc': 'I use modern tools like React and Next.js to create fast, secure sites that grow with your business.',
-    'why.ai.title': 'AI-Enabled Features',
-    'why.ai.desc': 'I integrate smart features like chatbots and automated tools to make your site work harder for you.',
-    'why.personal.title': 'Direct Access to Me',
-    'why.personal.desc': 'No account managers, no junior handoffs. You talk to me, the person building your site.',
-    'why.support.title': 'Ongoing Partnership',
-    'why.support.desc': 'Your monthly plan means I keep your site maintained, optimized, and growing — not just built and forgotten.',
-    'trusted.title': 'Trusted by',
-    'trusted.coming': 'More clients coming soon...',
-    'visual.sites.title': 'Recent work',
-    'visual.sites.subtitle': 'Real sites, real businesses. Click to see them live.',
-    'portfolio.disclaimer': 'Note: Projects shown include both IberiaTech Solutions\' independent clients and professional work Luis Lozoya completed as a contractor for partner agencies.',
-    'pricing.month': 'project',
-    'pricing.cta': 'Get Started',
-    'pricing.compare.title': 'Compare plans',
-    'pricing.compare.why': 'Why this price? Compare apples to apples.',
-    'pricing.compare.whySub': 'See what you get at each level.',
-    'pricing.compare.pages': 'Pages',
-    'pricing.compare.seo': 'SEO',
-    'pricing.compare.analytics': 'Analytics',
-    'pricing.compare.delivery': 'Delivery',
-    'pricing.compare.revisions': 'Ongoing updates',
-    'pricing.compare.support': 'Post-launch support',
-    'pricing.compare.bilingual': 'English + Spanish',
-    'pricing.compare.starter.pages': 'Up to 4 (e.g. Home, About, Services, Contact)',
-    'pricing.compare.starter.seo': 'Basic (meta, sitemap)',
-    'pricing.compare.starter.analytics': 'No',
-    'pricing.compare.starter.delivery': '1–2 weeks',
-    'pricing.compare.starter.revisions': 'Monthly updates',
-    'pricing.compare.starter.support': 'Email support',
-    'pricing.compare.starter.bilingual': 'Included',
-    'pricing.compare.business.pages': 'Up to 7 + blog',
-    'pricing.compare.business.seo': 'Advanced + Google Analytics',
-    'pricing.compare.business.analytics': 'Included',
-    'pricing.compare.business.delivery': '2–4 weeks',
-    'pricing.compare.business.revisions': 'Monthly content + design updates',
-    'pricing.compare.business.support': 'Priority support',
-    'pricing.compare.business.bilingual': 'Included (cultural adaptation)',
-    'pricing.compare.custom': 'Tailored',
-    'pricing.compare.feature': 'What you get',
-    'pricing.compare.custom.pages': 'Custom (eCommerce, booking, portals, apps)',
-    'pricing.compare.custom.seo': 'Full SEO + Analytics',
-    'pricing.compare.custom.analytics': 'Included',
-    'pricing.compare.custom.delivery': '4–7 weeks',
-    'pricing.compare.custom.revisions': 'Ongoing development + new features',
-    'pricing.compare.custom.support': 'Same-day support',
-    'pricing.compare.custom.bilingual': 'Included',
-
-
-    'services.detail.title': 'What\'s included',
-    'services.detail.seo.title': 'SEO deliverables',
-    'services.detail.seo.desc': 'What I include so you show up on Google:',
-    'services.detail.seo.1': 'Meta titles & descriptions (every page)',
-    'services.detail.seo.2': 'Sitemap + mobile-friendly structure',
-    'services.detail.seo.3': 'Basic schema (Business+: structured data)',
-    'services.detail.seo.4': 'Fast load times & clean URLs',
-    'services.detail.ai.title': 'What "AI powered" means',
-    'services.detail.ai.desc': 'I use AI to help your site work harder: optional chatbot that answers visitor questions, smart contact forms, and content suggestions. Included on Business and Custom plans.',
-    'services.detail.timeline.title': 'Build timeline',
-    'services.detail.timeline.desc': 'Starter: 1–2 weeks. Business: 2–4 weeks. Custom: 4–7 weeks. I confirm your dates before I start.',
-    'services.detail.hosting.title': 'Domain + hosting',
-    'services.detail.hosting.desc': 'Hosting on Vercel and a standard .com domain are included in every plan. Premium or specialty domains (like .io or .shop) are at your cost. I handle all setup.',
-    'faq.title': 'Frequently asked questions',
-    'faq.subtitle': 'Common questions before you get started.',
-    'faq.q1': 'How long until my site is live?',
-    'faq.a1': 'Starter: 1–2 weeks. Business: 2–4 weeks. Custom: 4–7 weeks. I confirm a timeline before starting.',
-    'faq.q2': 'What\'s included in the monthly price?',
-    'faq.a2': 'Everything. Design, development, hosting, a standard .com domain, maintenance, and support. No hidden fees. Premium domains are the only thing that could cost extra.',
-    'faq.q3': 'What happens after 12 months?',
-    'faq.a3': 'You can keep your plan at a lower maintenance rate, or I transfer the site to you and you own it outright. Your choice.',
-    'faq.q4': 'Do I need to buy hosting or a domain separately?',
-    'faq.a4': 'No. Hosting and a standard .com domain are included. If you want a premium domain (like .io or a branded name), that cost is on you, but I handle the setup either way.',
-    'faq.q5': 'Can I cancel early?',
-    'faq.a5': 'There\'s a 12-month commitment. If you need to cancel early, we\'ll work something out — but the commitment keeps the monthly price low for you.',
-    'faq.q6': 'Who does the work?',
-    'faq.a6': 'Me. Luis. Directly. No outsourcing, no junior handoffs. I\'m a senior developer and I do all the work myself.',
-    'results.title': 'Real results',
-    'results.metric': 'My clients see up to 30% more leads in the first 90 days.',
-    'results.subtitle': 'I care about what happens after your site goes live.',
-    'guarantee.title': 'Your peace of mind',
-    'guarantee.moneyback': 'Not happy before launch? Full refund, no questions.',
-    'guarantee.satisfaction': 'Satisfaction guarantee. I fix it until you\'re happy.',
-    'guarantee.timeline': 'Delivery timeline pledge. I stick to agreed dates.',
+    'footer.company': 'IberiaTech Solutions',
+    'footer.contact': 'Contact',
+    'footer.rights': 'All rights reserved.',
   },
   es: {
+    // Navegación
+    'nav.home': 'Inicio',
+    'nav.work': 'Proyectos',
     'nav.services': 'Servicios',
-    'nav.problems': 'Problemas que Resolvemos',
-    'nav.pricing': 'Precios',
-    'nav.faq': 'FAQ',
-    'nav.portfolio': 'Portafolio',
     'nav.contact': 'Contacto',
-    'hero.title': 'Tu web debería traerte clientes.',
-    'hero.promise': 'Ayudo a negocios en Charleston y España a crecer online. Bilingüe. Sin costo inicial.',
-    'hero.subtitle': 'Yo me encargo de la tecnología. Tú enfócate en tu negocio.',
-    'hero.subtitle2': 'En inglés, español, o ambos',
-    'hero.tagline': 'Sitios web modernos y bilingues que realmente funcionan.',
-    'hero.features.ai': 'Con IA',
-    'hero.features.mobile': 'Mobile-First',
-    'hero.features.bilingual': 'Bilingüe',
-    'hero.cta.start': 'Comienza Tu Proyecto',
-    'hero.cta.contact': 'Ponte en Contacto',
-    'cta.strategy.title': 'Reserva una llamada de estrategia gratis',
-    'cta.strategy.subtitle': '30 minutos. Sin compromiso. Definimos la mejor ruta para tu negocio.',
-    'cta.strategy.button': 'Reservar mi llamada',
-    'cta.demo.title': 'Ver una muestra de sitio web',
-    'cta.demo.subtitle': 'Mira un proyecto real que construimos: móvil, rápido, bilingüe.',
-    'cta.demo.button': 'Ver la demo',
-    'cta.quote24.title': 'Recibe tu cotización en 24 horas',
-    'cta.quote24.subtitle': 'Cuéntanos tu proyecto. Te respondemos con una cotización clara y próximos pasos.',
-    'cta.quote24.button': 'Obtener mi cotización',
-    'hero.cta': 'Comenzar',
-    'hero.learn': 'Saber Más',
+
+    // Hero
+    'hero.title': 'Web moderna y aplicaciones a medida.',
+    'hero.subtitle':
+      'Construimos sitios web, ecommerce, experiencias bilingües y software empresarial a medida. Con base en Charleston, SC. Trabajamos con clientes en EE. UU. y Europa.',
+    'hero.cta.work': 'Ver proyectos',
+    'hero.cta.contact': 'Contactar',
+    'hero.pill.bilingual': 'Bilingüe por defecto',
+    'hero.pill.stack': 'Next.js y Nube Moderna',
+    'hero.pill.security': 'Orientado a seguridad',
+
+    // Servicios overview
+    'services.title': 'Qué hacemos',
+    'services.subtitle':
+      'Cuatro áreas de servicio, un mismo estándar: cuidado, rápido, seguro y duradero.',
+    'services.web.title': 'Web y Ecommerce',
+    'services.web.desc':
+      'Sitios web y tiendas online modernas construidas con Next.js. Rápidas, optimizadas para SEO, mobile-first. Pagos con Stripe, contenido gestionado, arquitectura centrada en rendimiento.',
+    'services.bilingual.title': 'Sitios Bilingües y Multilingües',
+    'services.bilingual.desc':
+      'Sitios profesionalmente localizados en inglés, español y alemán. Internacionalización adecuada, adaptación cultural, SEO en todos los idiomas.',
+    'services.apps.title': 'Aplicaciones de Negocio a Medida',
+    'services.apps.desc':
+      'Software full-stack a medida: plataformas SaaS, paneles de administración, marketplaces, portales para clientes. Construido con Next.js, Supabase, Stripe y la nube moderna.',
+    'services.security.title': 'Auditorías y Refuerzo de Seguridad',
+    'services.security.desc':
+      'Revisiones de seguridad para aplicaciones web y software a medida. Auditorías OWASP Top 10, refuerzo de autenticación y autorización, políticas de seguridad a nivel de fila en la base de datos, manejo seguro de pagos e integraciones, y prácticas de desarrollo orientadas a la seguridad.',
+    'services.cta': 'Ver todos los servicios',
+
+    // Proceso
+    'process.title': 'Cómo trabajamos',
+    'process.discovery.title': 'Descubrimiento',
+    'process.discovery.desc':
+      'Una llamada breve para entender tus objetivos, tu audiencia y el alcance del proyecto.',
+    'process.design.title': 'Diseño y planificación',
+    'process.design.desc':
+      'Wireframes, arquitectura y un cronograma claro.',
+    'process.build.title': 'Desarrollo',
+    'process.build.desc':
+      'Desarrollo iterativo con actualizaciones regulares y progreso transparente.',
+    'process.launch.title': 'Lanzamiento y soporte',
+    'process.launch.desc':
+      'Despliegue, formación y mantenimiento continuo.',
+
+    // Portafolio / Proyectos
+    'work.title': 'Proyectos seleccionados',
+    'work.subtitle':
+      'Una selección de proyectos recientes en web, ecommerce, marketplaces y aplicaciones de negocio a medida.',
+    'work.view': 'Ver proyecto',
+    'work.viewLive': 'Ver sitio en vivo',
+    'work.cta': 'Ver todos los proyectos',
+    'work.comingSoon': 'Próximamente',
+    'work.role': 'Rol',
+    'work.problem': 'El problema',
+    'work.solution': 'La solución',
+    'work.tech': 'Tecnologías',
+    'work.back': 'Volver a todos los proyectos',
+
+    // Contacto
+    'contact.title': 'Hablemos sobre tu proyecto.',
+    'contact.subtitle':
+      'Respondemos a cada consulta en un máximo de dos días laborables.',
+    'contact.email.label': 'Email',
+    'contact.book.label': 'Reservar llamada',
+    'contact.book.desc':
+      'Agenda una llamada de 30 minutos en el horario que mejor te venga.',
+    'contact.bookCta': 'Reservar llamada de 30 min',
+
+    // Sobre nosotros
     'about.title': 'Sobre nosotros',
-    'about.subtitle': 'Tu equipo local de desarrollo web',
-    'about.description': 'Empecé IberiaTech en 2024 porque demasiados negocios estaban pagando de más por presencia online que no servía. Lo hago simple: un sitio que te trae clientes, un precio mensual justo, y alguien que contesta el teléfono.',
-    'about.description2': 'Empecé IberiaTech en 2024 para ayudar a negocios a estar online sin complicaciones. Trabajo con empresas de construcción, bufetes, restaurantes y tiendas locales en Charleston y España. Hablo los dos idiomas, entiendo los dos mercados, y construyo sitios que realmente traen negocio.',
-    'about.stats.portfolio': 'Portafolio en Crecimiento',
-    'about.stats.countries': 'Países Atendidos',
-    'about.stats.satisfaction': 'Satisfacción del Cliente',
-    'about.stats.support': 'Soporte Dedicado',
-    'about.founder.title': 'Fundador y Desarrollador Principal',
-    'about.founder.story.title': 'La persona detras de IberiaTech',
-    'about.founder.story.text': 'Llevo más de 5 años construyendo sitios web. Crecí en España y vivo en Charleston, así que conozco los dos mercados de primera mano. Empecé IberiaTech porque vi demasiados negocios pagando mucho por sitios que no les servían. Cuando trabajas con IberiaTech, trabajas conmigo directamente.',
-    'about.founder.experience.us': '5+ años de experiencia en el mercado estadounidense',
-    'about.founder.experience.spain': 'Hablante nativo de español y experto en cultura',
-    'about.mission': 'Lo que hago',
-    'about.mission.text': 'Ayudo a negocios en Charleston y España a que los encuentren online. Diseño, construyo y mantengo tu presencia digital para que realmente te traiga clientes.',
-    'about.expertise': 'Cómo trabajo',
-    'about.expertise.text': 'Me dices lo que necesita tu negocio. Lo construyo, lo lanzo, y lo mantengo funcionando y creciendo. Sin tecnicismos.',
-    'services.title': 'Lo que ofrezco',
-    'services.subtitle': 'Todo lo que tu negocio necesita para crecer online. Un precio mensual, sin sorpresas.',
-    'services.title2': 'Lo que construyo',
-    'services.subtitle2': 'Sitios web para negocios en Charleston, España y más. Hechos para traerte clientes.',
-    'services.subtitle3': 'Sitios y apps que traen clientes y se pagan solos.',
-    'services.page.title': 'Nuestros servicios',
-    'services.page.subtitle': 'Sitios web, SEO, sitios bilingues, analytics y soporte. Sabras exactamente que recibes y cuando.',
-    'services.webdev.title': 'Desarrollo Web',
-    'services.mobile.title': 'Diseño Mobile-First',
-    'services.bilingual.title': 'Sitios Web Bilingües',
-    'services.security.title': 'Seguridad y Autenticación',
-    'services.performance.title': 'SEO y Rendimiento',
-    'services.support.title': 'Soporte Continuo',
-    'services.ai.title': 'Características con IA',
-    'portfolio.title2': 'Acerca de Luis Lozoya',
-    'portfolio.subtitle2': 'Fundador de IberiaTech Solutions',
-    'portfolio.subtitle3': 'Ayudo a pequeñas y medianas empresas en Charleston y España a crecer en línea con sitios web modernos y bilingües',
-    'portfolio.project.title': 'Proyecto Destacado: Cursor Rules Hub',
-    'portfolio.coming.title': 'Mi Experiencia',
-    'portfolio.cta.title': '¿Listo para Comenzar Tu Proyecto?',
-    'portfolio.cta.start': 'Comenzar Tu Proyecto',
-    'portfolio.cta.contact': 'Ponte en Contacto',
-    'contact.title2': 'Cuentanos sobre tu proyecto',
-    'contact.subtitle2': 'Envianos un mensaje. Te respondemos en 24 horas.',
-    'contact.form.name': 'Tu nombre completo',
-    'contact.form.company': 'Nombre de tu empresa',
-    'contact.form.message': 'Cuéntame sobre tu proyecto...',
-    'contact.form.sending': 'Enviando...',
-    'pricing.title': 'Precios Mensuales Simples',
-    'pricing.subtitle': 'Sin costo inicial grande. Diseño, construyo y mantengo tu sitio por una tarifa mensual fija. Cancela después de 12 meses.',
-    'pricing.anchor': 'Todo incluido: diseño, desarrollo, hosting, actualizaciones y soporte.',
-    'pricing.subtitle.charleston': 'Precios justos para Charleston, SC y más.',
-    'pricing.value': 'Buen trabajo a precios honestos. Sabrás exactamente por lo que pagas.',
-    'pricing.starter.name': 'Inicio',
-    'pricing.starter.price': '149 €/mes',
-    'pricing.starter.desc': 'Perfecto para negocios nuevos que necesitan presencia online profesional rápido.',
-    'pricing.business.name': 'Empresarial',
-    'pricing.business.price': '249 €/mes',
-    'pricing.business.desc': 'Para negocios en crecimiento que necesitan SEO, analytics y contenido que convierte.',
-    'pricing.custom.name': 'Personalizado',
-    'pricing.custom.price': '449 €/mes+',
-    'pricing.custom.desc': 'eCommerce, reservas, portales — adaptado a tus necesidades.',
-    'pricing.popular': 'Más Popular',
-    'pricing.getstarted': 'Comenzar',
-    'pricing.cta.starter': 'Empezar Mi Sitio',
-    'pricing.cta.business': 'Hacer Crecer Mi Negocio',
-    'pricing.cta.custom': 'Hablemos',
-    'pricing.custom': '¿Listo para comenzar? Hablemos sobre tu proyecto →',
-    'pricing.consultation': 'Todos los planes incluyen una llamada estratégica gratuita antes de empezar',
-    'pricing.commitment': 'Compromiso de 12 meses. Después, mantén a tarifa reducida o quédate con tu sitio.',
-    'pricing.compare.title': 'Comparar planes',
-    'pricing.compare.why': '¿Por qué este precio? Compara manzanas con manzanas.',
-    'pricing.compare.whySub': 'Qué incluye cada nivel.',
-    'pricing.compare.pages': 'Páginas',
-    'pricing.compare.seo': 'SEO',
-    'pricing.compare.analytics': 'Analytics',
-    'pricing.compare.delivery': 'Entrega',
-    'pricing.compare.revisions': 'Actualizaciones continuas',
-    'pricing.compare.support': 'Soporte post-lanzamiento',
-    'pricing.compare.bilingual': 'Inglés + Español',
-    'pricing.compare.starter.pages': 'Hasta 4 (ej. Inicio, Nosotros, Servicios, Contacto)',
-    'pricing.compare.starter.seo': 'Básico (meta, mapa del sitio)',
-    'pricing.compare.starter.analytics': 'No',
-    'pricing.compare.starter.delivery': '1–2 semanas',
-    'pricing.compare.starter.revisions': 'Actualizaciones mensuales',
-    'pricing.compare.starter.support': 'Soporte por email',
-    'pricing.compare.starter.bilingual': 'Incluido',
-    'pricing.compare.business.pages': 'Hasta 7 + blog',
-    'pricing.compare.business.seo': 'Avanzado + Google Analytics',
-    'pricing.compare.business.analytics': 'Incluido',
-    'pricing.compare.business.delivery': '2–4 semanas',
-    'pricing.compare.business.revisions': 'Contenido + diseño mensuales',
-    'pricing.compare.business.support': 'Soporte prioritario',
-    'pricing.compare.business.bilingual': 'Incluido (adaptación cultural)',
-    'pricing.compare.custom': 'A medida',
-    'pricing.compare.feature': 'Qué incluye',
-    'pricing.compare.custom.pages': 'A medida (eCommerce, reservas, portales, apps)',
-    'pricing.compare.custom.seo': 'SEO + Analytics completo',
-    'pricing.compare.custom.analytics': 'Incluido',
-    'pricing.compare.custom.delivery': '4–7 semanas',
-    'pricing.compare.custom.revisions': 'Desarrollo continuo + nuevas funciones',
-    'pricing.compare.custom.support': 'Soporte mismo día',
-    'pricing.compare.custom.bilingual': 'Incluido',
+    'about.body':
+      'IberiaTech Solutions es una práctica de desarrollo web liderada por Luis Lozoya — ingeniero full-stack especializado en Next.js, React e infraestructura cloud moderna. Diseñamos y construimos sitios web, ecommerce, experiencias bilingües y software empresarial a medida para clientes en EE. UU. y Europa.',
+    'about.security':
+      'Luis es un ingeniero full-stack con un enfoque creciente en seguridad de aplicaciones. Certificado GFACT, actualmente cursando la SANS CyberTalent Academy, con certificaciones en proceso en GSEC, GCIH, GWAPT y AWS Security Specialty.',
 
-
-    'services.detail.title': 'Qué incluye',
-    'services.detail.seo.title': 'Entregables SEO',
-    'services.detail.seo.desc': 'Lo que incluyo para que aparezcas en Google:',
-    'services.detail.seo.1': 'Meta títulos y descripciones (cada página)',
-    'services.detail.seo.2': 'Mapa del sitio + estructura móvil',
-    'services.detail.seo.3': 'Schema básico (Empresarial+: datos estructurados)',
-    'services.detail.seo.4': 'Carga rápida y URLs limpias',
-    'services.detail.ai.title': 'Que significa "con IA"',
-    'services.detail.ai.desc': 'Uso IA para que tu sitio trabaje más: chatbot opcional que responde a visitantes, formularios inteligentes y sugerencias de contenido. Incluido en planes Empresarial y Personalizado.',
-    'services.detail.timeline.title': 'Plazo de entrega',
-    'services.detail.timeline.desc': 'Inicio: 1–2 semanas. Empresarial: 2–4 semanas. Personalizado: 4–7 semanas. Confirmo fechas antes de empezar.',
-    'services.detail.hosting.title': 'Dominio + hosting',
-    'services.detail.hosting.desc': 'Hosting en Vercel y un dominio .com estándar están incluidos en cada plan. Dominios premium o especiales (como .io o .shop) corren por tu cuenta. Yo me encargo de toda la configuración.',
-    'faq.title': 'Preguntas frecuentes',
-    'faq.subtitle': 'Preguntas habituales antes de empezar.',
-    'faq.q1': '¿Cuánto tarda en estar mi sitio online?',
-    'faq.a1': 'Inicio: 1–2 semanas. Empresarial: 2–4 semanas. Personalizado: 4–7 semanas. Confirmo un cronograma antes de empezar.',
-    'faq.q2': '¿Qué incluye el precio mensual?',
-    'faq.a2': 'Todo. Diseño, desarrollo, hosting, dominio .com estándar, mantenimiento y soporte. Sin costos ocultos. Los dominios premium son lo único que podría costar extra.',
-    'faq.q3': '¿Qué pasa después de 12 meses?',
-    'faq.a3': 'Puedes mantener tu plan a tarifa reducida de mantenimiento, o te transfiero el sitio y es tuyo. Tú decides.',
-    'faq.q4': '¿Necesito comprar hosting o dominio por separado?',
-    'faq.a4': 'No. Hosting y dominio .com estándar están incluidos. Si quieres un dominio premium (como .io o uno de marca), ese costo es tuyo, pero yo me encargo de la configuración.',
-    'faq.q5': '¿Puedo cancelar antes?',
-    'faq.a5': 'Hay un compromiso de 12 meses. Si necesitas cancelar antes, lo hablamos — pero el compromiso es lo que permite mantener el precio mensual bajo.',
-    'faq.q6': '¿Quién hace el trabajo?',
-    'faq.a6': 'Yo. Luis. Directamente. Sin subcontratación, sin juniors. Soy desarrollador senior y hago todo el trabajo personalmente.',
-    'results.title': 'Resultados reales',
-    'results.metric': 'Mis clientes ven hasta un 30% más de leads en los primeros 90 días.',
-    'results.subtitle': 'Me importa lo que pasa después de que tu sitio está online.',
-    'guarantee.title': 'Tu tranquilidad',
-    'guarantee.moneyback': '¿No estás contento antes del lanzamiento? Devolución total, sin preguntas.',
-    'guarantee.satisfaction': 'Garantía de satisfacción. Lo arreglo hasta que estés contento.',
-    'guarantee.timeline': 'Compromiso de plazo. Cumplo las fechas acordadas.',
-    'problems.title': '¿Te suena familiar?',
-    'problems.subtitle': 'Muchos negocios en Charleston y España todavia dependen solo del boca a boca. Funciona hasta que deja de funcionar.',
-    'problems.without.title': 'Sin un buen sitio web:',
-    'problems.with.title': 'Con IberiaTech:',
-    'problems.cta.title': '¿Listo para solucionarlo?',
-    'problems.cta.subtitle': '',
-    'problems.cta.button': 'Empezar hoy',
-    'portfolio.title': 'Mi trabajo',
-    'portfolio.subtitle': 'Sitios reales que he construido para negocios reales',
-    'contact.title': 'Cuéntame sobre tu proyecto',
-    'contact.subtitle': 'Dime lo que necesitas. Te respondo en 24 horas.',
-    'contact.name': 'Nombre',
-    'contact.email': 'Correo Electrónico',
-    'contact.company': 'Empresa',
-    'contact.message': 'Mensaje',
-    'contact.send': 'Enviar Mensaje',
-    'contact.phone': 'Teléfono',
-    'contact.location': 'Ubicación',
-    'footer.company': 'IberiaTech Solutions',
-    'footer.description': 'Sitios web bilingues para negocios en Charleston y España.',
+    // Footer
+    'footer.tagline': 'Web moderna y aplicaciones a medida.',
     'footer.services': 'Servicios',
-    'footer.services.webdev': 'Desarrollo Web Personalizado',
-    'footer.services.react': 'Diseño Web Moderno',
-    'footer.services.supabase': 'Gestión Segura de Datos',
-    'footer.services.bilingual': 'Sitios Web Bilingües',
-    'footer.services.translation': 'Traducción de Sitios Web',
-    'footer.services.seo': 'Optimización SEO',
-    'footer.services.mobile': 'Diseño Mobile-Friendly',
-    'visual.sites.title': 'Trabajo reciente',
-    'visual.sites.subtitle': 'Sitios reales, negocios reales. Haz clic para verlos en vivo.',
-    'portfolio.disclaimer': 'Nota: Los proyectos mostrados incluyen tanto clientes independientes de IberiaTech Solutions como trabajo profesional que Luis Lozoya completó como contratista para agencias socias.',
-  }
+    'footer.company': 'IberiaTech Solutions',
+    'footer.contact': 'Contacto',
+    'footer.rights': 'Todos los derechos reservados.',
+  },
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>('en')
+  const [language, setLanguageState] = useState<Language>('en')
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    // Detect browser language
-    const detectBrowserLanguage = (): Language => {
-      if (typeof window === 'undefined') return 'en'
-      
-      // Check localStorage first for user preference
-      const savedLanguage = localStorage.getItem('preferred-language') as Language
-      if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'es')) {
-        return savedLanguage
-      }
-      
-      // Detect browser language
-      const browserLang = navigator.language || navigator.languages?.[0] || 'en'
-      
-      // Check if browser language is Spanish
-      if (browserLang.startsWith('es')) {
-        return 'es'
-      }
-      
-      // Default to English for all other languages
-      return 'en'
-    }
-
-    const detectedLanguage = detectBrowserLanguage()
-    setLanguage(detectedLanguage)
     setMounted(true)
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('language') as Language | null
+      if (saved === 'en' || saved === 'es') {
+        setLanguageState(saved)
+      }
+    }
   }, [])
 
-  const handleLanguageChange = (newLanguage: Language) => {
-    setLanguage(newLanguage)
-    // Persist user's language choice
+  const setLanguage = (lang: Language) => {
+    setLanguageState(lang)
     if (typeof window !== 'undefined') {
-      localStorage.setItem('preferred-language', newLanguage)
+      localStorage.setItem('language', lang)
     }
   }
 
   const t = (key: string): string => {
-    const val = translations[language][key as keyof typeof translations[typeof language]]
-    return val !== undefined && val !== null ? val : key
+    const langDict = translations[language] as Record<string, string>
+    return langDict[key] ?? key
   }
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage: handleLanguageChange, t, mounted }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, mounted }}>
       {children}
     </LanguageContext.Provider>
   )
 }
 
 export function useLanguage() {
-  const context = useContext(LanguageContext)
-  if (context === undefined) {
+  const ctx = useContext(LanguageContext)
+  if (!ctx) {
     throw new Error('useLanguage must be used within a LanguageProvider')
   }
-  return context
+  return ctx
 }

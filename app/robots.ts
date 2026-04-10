@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/'],
     },
-    sitemap: 'https://iberiatech.com/sitemap.xml',
+    sitemap: 'https://iberiatechsolutions.com/sitemap.xml',
   }
 }

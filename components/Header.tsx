@@ -3,56 +3,79 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { useTheme } from 'next-themes'
 import { useLanguage } from './LanguageProvider'
-import { FiMenu, FiX, FiSun, FiMoon, FiGlobe } from 'react-icons/fi'
+import {
+  FiMenu,
+  FiX,
+  FiSun,
+  FiMoon,
+  FiGlobe,
+  FiMessageCircle,
+} from 'react-icons/fi'
+
+const WHATSAPP_URL = 'https://wa.me/18643657897'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { theme, setTheme } = useTheme()
   const { language, setLanguage, t, mounted } = useLanguage()
+  const pathname = usePathname()
 
   const toggleLanguage = () => {
     setLanguage(language === 'en' ? 'es' : 'en')
   }
 
+  const openAIChat = () => {
+    const event = new CustomEvent('openAIChat')
+    window.dispatchEvent(event)
+  }
+
   const navItems = [
-    { key: 'nav.services', href: '/#services' },
-    { key: 'nav.problems', href: '/#problems' },
-    { key: 'nav.pricing', href: '/#pricing' },
-    { key: 'nav.faq', href: '/#faq' },
-    { key: 'nav.portfolio', href: '/#portfolio' },
-    { key: 'nav.contact', href: '/#contact' },
+    { key: 'nav.home', href: '/' },
+    { key: 'nav.work', href: '/work' },
+    { key: 'nav.services', href: '/services' },
+    { key: 'nav.contact', href: '/contact' },
   ]
 
+  const isActive = (href: string) => {
+    if (href === '/') return pathname === '/'
+    return pathname.startsWith(href)
+  }
+
   return (
-    <header className="bg-white dark:bg-gray-900 shadow-sm border-b border-primary-800/10 dark:border-gray-800 sticky top-0 z-50">
+    <header className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm border-b border-primary-800/10 dark:border-gray-800 sticky top-0 z-50">
       <div className="container-max">
         <div className="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
-            <div className="w-16 h-16 relative">
+          <Link href="/" className="flex items-center space-x-3 min-w-0">
+            <div className="w-10 h-10 md:w-12 md:h-12 relative flex-shrink-0">
               <Image
                 src="/images/logos/IberiaTechLogo5.png"
                 alt="IberiaTech Solutions"
                 fill
-                sizes="64px"
+                sizes="48px"
                 className="object-contain"
                 priority
               />
             </div>
-            <span className="text-xl font-bold text-gray-900 dark:text-white">
+            <span className="text-base md:text-lg lg:text-xl font-bold text-gray-900 dark:text-white truncate">
               IberiaTech Solutions
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.key}
                 href={item.href}
-                className="text-support-medium dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+                className={`text-sm font-medium transition-colors duration-200 ${
+                  isActive(item.href)
+                    ? 'text-primary-700 dark:text-primary-300'
+                    : 'text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400'
+                }`}
               >
                 {t(item.key)}
               </Link>
@@ -60,12 +83,15 @@ export default function Header() {
           </nav>
 
           {/* Controls */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-1 md:space-x-2">
             {/* Language Toggle */}
             <button
               onClick={toggleLanguage}
               className="p-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
               aria-label="Toggle language"
+              title={
+                language === 'en' ? 'Switch to Spanish' : 'Cambiar a inglés'
+              }
             >
               <FiGlobe className="w-5 h-5" />
             </button>
@@ -76,33 +102,35 @@ export default function Header() {
               className="p-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
               aria-label="Toggle theme"
             >
-              {mounted && theme === 'dark' ? <FiSun className="w-5 h-5" /> : <FiMoon className="w-5 h-5" />}
+              {mounted && theme === 'dark' ? (
+                <FiSun className="w-5 h-5" />
+              ) : (
+                <FiMoon className="w-5 h-5" />
+              )}
             </button>
 
-            {/* AI Chat Button - Desktop Only */}
+            {/* AI Chat Button — Desktop only */}
             <button
-              onClick={() => {
-                // Trigger AI chatbot open
-                const event = new CustomEvent('openAIChat')
-                window.dispatchEvent(event)
-              }}
-              className="hidden md:block p-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+              onClick={openAIChat}
+              className="hidden md:flex p-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 items-center"
               aria-label={language === 'es' ? 'Abrir chat IA' : 'Open AI chat'}
               title={language === 'es' ? 'Chat con IA' : 'AI Chat'}
             >
-              🤖
+              <span className="text-lg" role="img" aria-hidden="true">
+                🤖
+              </span>
             </button>
 
-            {/* WhatsApp Chat Button - Desktop Only */}
+            {/* WhatsApp Button — Desktop only */}
             <a
-              href="https://wa.me/18643657897"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:block p-2 text-support-medium dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 transition-colors duration-200"
+              className="hidden md:flex p-2 text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200 items-center"
               aria-label={language === 'es' ? 'Abrir WhatsApp' : 'Open WhatsApp'}
-              title={language === 'es' ? 'Chat por WhatsApp' : 'WhatsApp Chat'}
+              title="WhatsApp"
             >
-              💬
+              <FiMessageCircle className="w-5 h-5" />
             </a>
 
             {/* Mobile Menu Button */}
@@ -111,7 +139,11 @@ export default function Header() {
               className="md:hidden p-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? <FiX className="w-6 h-6" /> : <FiMenu className="w-6 h-6" />}
+              {isMenuOpen ? (
+                <FiX className="w-6 h-6" />
+              ) : (
+                <FiMenu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
@@ -119,57 +151,48 @@ export default function Header() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden bg-white dark:bg-gray-900 border-t border-primary-800/10 dark:border-gray-700">
-            <nav className="px-4 py-2 space-y-2">
+            <nav className="px-4 py-3 space-y-1">
               {navItems.map((item) => (
                 <Link
                   key={item.key}
                   href={item.href}
-                  className="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+                  className={`block py-2 px-3 rounded-lg text-sm font-medium transition-colors duration-200 ${
+                    isActive(item.href)
+                      ? 'text-primary-700 dark:text-primary-300 bg-primary-50 dark:bg-primary-900/20'
+                      : 'text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800'
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {t(item.key)}
                 </Link>
               ))}
-              
-              {/* Mobile Chat Options */}
+
+              {/* Quick Contact in mobile menu */}
               <div className="border-t border-gray-200 dark:border-gray-700 pt-3 mt-3">
-                <div className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-2 px-2">
-                  {language === 'es' ? 'Contacto Rápido' : 'Quick Contact'}
+                <div className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2 px-3">
+                  {language === 'es' ? 'Contacto rápido' : 'Quick contact'}
                 </div>
                 <button
                   onClick={() => {
                     setIsMenuOpen(false)
-                    const event = new CustomEvent('openAIChat')
-                    window.dispatchEvent(event)
+                    openAIChat()
                   }}
-                  className="flex items-center space-x-3 w-full py-3 px-3 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-all duration-200 rounded-lg"
+                  className="flex items-center space-x-3 w-full py-2 px-3 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200"
                 >
-                  <div className="w-8 h-8 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center">
-                    <span className="text-lg">🤖</span>
-                  </div>
-                  <div className="flex-1 text-left">
-                    <div className="font-medium">{language === 'es' ? 'Chat con IA' : 'AI Chat'}</div>
-                    <div className="text-xs text-gray-500 dark:text-gray-400">
-                      {language === 'es' ? 'Asistente inteligente' : 'Smart assistant'}
-                    </div>
-                  </div>
+                  <span className="text-lg" role="img" aria-hidden="true">
+                    🤖
+                  </span>
+                  <span>{language === 'es' ? 'Chat con IA' : 'AI Chat'}</span>
                 </button>
                 <a
-                  href="https://wa.me/18643657897"
+                  href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-3 w-full py-3 px-3 text-support-medium dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 hover:bg-accent-50 dark:hover:bg-accent-900/20 transition-all duration-200 rounded-lg"
+                  className="flex items-center space-x-3 w-full py-2 px-3 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <div className="w-8 h-8 bg-accent-100 dark:bg-accent-900/30 rounded-full flex items-center justify-center">
-                    <span className="text-lg">💬</span>
-                  </div>
-                  <div className="flex-1 text-left">
-                    <div className="font-medium">{language === 'es' ? 'WhatsApp' : 'WhatsApp'}</div>
-                    <div className="text-xs text-gray-500 dark:text-gray-400">
-                      {language === 'es' ? 'Chat directo' : 'Direct chat'}
-                    </div>
-                  </div>
+                  <FiMessageCircle className="w-5 h-5" />
+                  <span>WhatsApp</span>
                 </a>
               </div>
             </nav>

@@ -16,23 +16,27 @@ const plusJakarta = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://iberiatech.com'),
+  metadataBase: new URL('https://iberiatechsolutions.com'),
   title: {
-    default: 'Charleston Web Development | IberiaTech Solutions - Bilingual Websites',
+    default: 'IberiaTech Solutions — Modern web & custom applications',
     template: '%s | IberiaTech Solutions',
   },
   description:
-    'Charleston bilingual website design for small and medium companies: construction, law firms, local businesses. Professional web development with English and Spanish support.',
+    'IberiaTech Solutions builds modern websites, ecommerce, bilingual experiences, and custom business applications. Next.js, React, and modern cloud infrastructure. Based in Charleston, SC — working with clients across the US and Europe.',
   keywords: [
-    'Charleston web development',
-    'Charleston bilingual website design',
-    'Charleston law firm websites',
-    'Charleston construction company web development',
+    'web development',
+    'Next.js development',
+    'React development',
+    'custom web applications',
     'bilingual websites',
-    'Spanish website Charleston',
-    'small business web design',
-    'React',
-    'Next.js',
+    'multilingual websites',
+    'ecommerce development',
+    'SaaS development',
+    'application security',
+    'OWASP audits',
+    'Supabase',
+    'Stripe',
+    'Charleston SC',
   ],
   authors: [{ name: 'Luis Lozoya' }],
   creator: 'IberiaTech Solutions',
@@ -59,17 +63,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://iberiatech.com',
-    title: 'IberiaTech Solutions - Charleston Bilingual Web Development',
+    url: 'https://iberiatechsolutions.com',
+    title: 'IberiaTech Solutions — Modern web & custom applications',
     description:
-      'Professional bilingual web development for Charleston small businesses. English & Spanish websites for construction, law firms, and local businesses.',
+      'We build websites, ecommerce, bilingual experiences, and custom business software. Next.js, React, and modern cloud infrastructure.',
     siteName: 'IberiaTech Solutions',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'IberiaTech Solutions - Charleston Bilingual Web Development',
+    title: 'IberiaTech Solutions — Modern web & custom applications',
     description:
-      'Professional bilingual web development for Charleston small businesses. English & Spanish websites for construction, law firms, and local businesses.',
+      'We build websites, ecommerce, bilingual experiences, and custom business software. Next.js, React, and modern cloud infrastructure.',
     creator: '@iberiatech',
   },
   robots: {
