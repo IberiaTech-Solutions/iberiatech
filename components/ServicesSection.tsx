@@ -36,7 +36,7 @@ const SERVICES = [
 ] as const
 
 export default function ServicesSection() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
 
   return (
     <section id="services" className="section-padding bg-white dark:bg-gray-900">
@@ -91,8 +91,12 @@ export default function ServicesSection() {
                         <Icon className="w-6 h-6" />
                       </div>
                       {featured && (
-                        <span className="text-[10px] uppercase tracking-[0.25em] font-semibold text-accent-300">
-                          New
+                        <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.25em] font-semibold text-accent-300">
+                          <span className="relative flex h-2 w-2">
+                            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-400 opacity-75" />
+                            <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-400" />
+                          </span>
+                          {language === 'es' ? 'Nuevo' : 'New'}
                         </span>
                       )}
                     </div>

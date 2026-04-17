@@ -58,8 +58,8 @@ export default function PortfolioSection({
               viewport={{ once: true }}
               className="h-full"
             >
-            <SpotlightCard className="rounded-2xl h-full" accent="rgba(99,102,241,0.35)">
-            <article className="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 transition-all duration-200 flex flex-col h-full">
+            <SpotlightCard className="rounded-2xl h-full" accent="rgba(0,195,137,0.4)">
+            <article className="group/card bg-white dark:bg-gray-900 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-accent-500/40 dark:hover:border-accent-500/40 transition-all duration-300 flex flex-col h-full">
               <Link href={`/work/${project.slug}`} className="block">
                 <div className="relative aspect-[16/10] bg-gray-100 dark:bg-gray-800 overflow-hidden">
                   <Image
@@ -67,7 +67,7 @@ export default function PortfolioSection({
                     alt={project.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover transition-transform duration-700 ease-out group-hover/card:scale-[1.04]"
                   />
                   {project.comingSoon && (
                     <div className="absolute top-3 right-3 bg-accent-500 text-white text-xs font-semibold px-3 py-1 rounded-full">

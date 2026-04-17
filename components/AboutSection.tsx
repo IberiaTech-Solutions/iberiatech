@@ -44,7 +44,7 @@ export default function AboutSection() {
           {stats.map((s) => (
             <div
               key={s.label}
-              className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/60 dark:bg-gray-900/40 backdrop-blur px-5 py-6 text-center"
+              className="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/60 dark:bg-gray-900/40 backdrop-blur px-5 py-6 text-center transition-all duration-300 hover:-translate-y-0.5 hover:border-accent-500/40 hover:shadow-lg hover:shadow-accent-500/5"
             >
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-primary-700 to-accent-500 bg-clip-text text-transparent">
                 {s.kind === 'count' ? (
@@ -67,14 +67,17 @@ export default function AboutSection() {
             viewport={{ once: true }}
             className="md:col-span-2"
           >
-            <div className="relative aspect-square w-full max-w-sm mx-auto md:mx-0 rounded-2xl overflow-hidden shadow-xl border border-gray-200 dark:border-gray-800">
-              <Image
-                src="/images/luis-lozoya.jpg"
-                alt={t('about.photoAlt')}
-                fill
-                sizes="(max-width: 768px) 100vw, 400px"
-                className="object-cover"
-              />
+            <div className="relative w-full max-w-sm mx-auto md:mx-0">
+              <div className="absolute -inset-2 rounded-3xl bg-gradient-to-br from-primary-500/20 via-accent-500/20 to-primary-500/20 blur-2xl" aria-hidden />
+              <div className="relative aspect-square rounded-2xl overflow-hidden shadow-xl ring-1 ring-gray-200 dark:ring-gray-800">
+                <Image
+                  src="/images/luis-lozoya.jpg"
+                  alt={t('about.photoAlt')}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 400px"
+                  className="object-cover"
+                />
+              </div>
             </div>
           </motion.div>
 

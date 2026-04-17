@@ -90,9 +90,15 @@ export default function HeroSection() {
             className="space-y-8"
           >
             <div className="space-y-6">
-              <p className="text-sm uppercase tracking-[0.25em] text-accent-300 font-medium">
-                IberiaTech Solutions
-              </p>
+              <div className="inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 backdrop-blur">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-400 opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-400" />
+                </span>
+                <span className="text-xs uppercase tracking-[0.25em] text-accent-200 font-medium">
+                  IberiaTech Solutions
+                </span>
+              </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                 {t('hero.title')}
               </h1>

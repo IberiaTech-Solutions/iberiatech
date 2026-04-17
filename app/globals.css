@@ -84,18 +84,27 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  
+
   @media (min-width: 640px) {
     .section-padding {
       padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
-  
+
+  @media (min-width: 768px) {
+    .section-padding {
+      padding-top: 5.5rem;
+      padding-bottom: 5.5rem;
+    }
+  }
+
   @media (min-width: 1024px) {
     .section-padding {
       padding-left: 2rem;
       padding-right: 2rem;
+      padding-top: 7rem;
+      padding-bottom: 7rem;
     }
   }
   
