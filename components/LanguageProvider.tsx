@@ -35,7 +35,7 @@ const translations = {
     // Services overview
     'services.title': 'What we do',
     'services.subtitle':
-      'Four service areas, one consistent standard: thoughtful, fast, secure, built to last.',
+      'Five service areas, one consistent standard: thoughtful, fast, secure, built to last.',
     'services.web.title': 'Web & Ecommerce',
     'services.web.desc':
       'Modern websites and online stores built on Next.js. Fast, SEO-ready, mobile-first. Stripe-powered checkout, CMS-driven content, performance-first architecture.',
@@ -48,6 +48,9 @@ const translations = {
     'services.security.title': 'Security Audits & Hardening',
     'services.security.desc':
       'Application security reviews for web apps and custom software. OWASP Top 10 audits, authentication and authorization hardening, database row-level security policies, secure handling of payments and third-party APIs, and security-first development practices.',
+    'services.ai.title': 'AI Integrations',
+    'services.ai.desc':
+      'Custom chatbots, WhatsApp Business automations, and AI-powered workflows for bookings, FAQs, lead capture, and follow-ups. Bilingual in English and Spanish, built on OpenAI and the modern AI stack, wired into your existing site, CRM, or calendar.',
     'services.cta': 'See all services',
 
     // Process
@@ -124,7 +127,7 @@ const translations = {
     // Servicios overview
     'services.title': 'Qué hacemos',
     'services.subtitle':
-      'Cuatro áreas de servicio, un mismo estándar: cuidado, rápido, seguro y duradero.',
+      'Cinco áreas de servicio, un mismo estándar: cuidado, rápido, seguro y duradero.',
     'services.web.title': 'Web y Ecommerce',
     'services.web.desc':
       'Sitios web y tiendas online modernas construidas con Next.js. Rápidas, optimizadas para SEO, mobile-first. Pagos con Stripe, contenido gestionado, arquitectura centrada en rendimiento.',
@@ -137,6 +140,9 @@ const translations = {
     'services.security.title': 'Auditorías y Refuerzo de Seguridad',
     'services.security.desc':
       'Revisiones de seguridad para aplicaciones web y software a medida. Auditorías OWASP Top 10, refuerzo de autenticación y autorización, políticas de seguridad a nivel de fila en la base de datos, manejo seguro de pagos e integraciones, y prácticas de desarrollo orientadas a la seguridad.',
+    'services.ai.title': 'Integraciones de IA',
+    'services.ai.desc':
+      'Chatbots a medida, automatizaciones de WhatsApp Business y flujos con IA para reservas, FAQs, captación de leads y seguimientos. Bilingüe en inglés y español, construido con OpenAI y el stack moderno de IA, conectado a tu sitio, CRM o calendario actual.',
     'services.cta': 'Ver todos los servicios',
 
     // Proceso

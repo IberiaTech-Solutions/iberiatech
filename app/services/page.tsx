@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import {
   FiCode,
+  FiCpu,
   FiGlobe,
   FiLayers,
   FiShield,
@@ -16,6 +17,11 @@ import {
 import { useLanguage } from '@/components/LanguageProvider'
 
 const SERVICES = [
+  {
+    icon: FiCpu,
+    titleKey: 'services.ai.title',
+    descKey: 'services.ai.desc',
+  },
   {
     icon: FiCode,
     titleKey: 'services.web.title',

@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { FiArrowRight, FiExternalLink } from 'react-icons/fi'
 import { useLanguage } from './LanguageProvider'
 import { PROJECTS, type Project } from '@/data/projects'
+import SpotlightCard from './SpotlightCard'
 
 interface PortfolioSectionProps {
   /** When true, show only featured projects (for the home page). When false, show all. */
@@ -49,14 +50,16 @@ export default function PortfolioSection({
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <motion.article
+            <motion.div
               key={project.slug}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.07 }}
               viewport={{ once: true }}
-              className="group bg-white dark:bg-gray-900 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-primary-400 dark:hover:border-primary-500 transition-all duration-200 flex flex-col"
+              className="h-full"
             >
+            <SpotlightCard className="rounded-2xl h-full" accent="rgba(99,102,241,0.35)">
+            <article className="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 transition-all duration-200 flex flex-col h-full">
               <Link href={`/work/${project.slug}`} className="block">
                 <div className="relative aspect-[16/10] bg-gray-100 dark:bg-gray-800 overflow-hidden">
                   <Image
@@ -117,7 +120,9 @@ export default function PortfolioSection({
                   )}
                 </div>
               </div>
-            </motion.article>
+            </article>
+            </SpotlightCard>
+            </motion.div>
           ))}
         </div>
 

@@ -2,10 +2,17 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { FiArrowRight, FiCode, FiGlobe, FiLayers, FiShield } from 'react-icons/fi'
+import { FiArrowRight, FiCode, FiCpu, FiGlobe, FiLayers, FiShield } from 'react-icons/fi'
 import { useLanguage } from './LanguageProvider'
+import SpotlightCard from './SpotlightCard'
 
 const SERVICES = [
+  {
+    icon: FiCpu,
+    titleKey: 'services.ai.title',
+    descKey: 'services.ai.desc',
+    featured: true,
+  },
   {
     icon: FiCode,
     titleKey: 'services.web.title',
@@ -52,6 +59,7 @@ export default function ServicesSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {SERVICES.map((service, index) => {
             const Icon = service.icon
+            const featured = 'featured' in service && service.featured
             return (
               <motion.div
                 key={service.titleKey}
@@ -59,17 +67,53 @@ export default function ServicesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.08 }}
                 viewport={{ once: true }}
-                className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 hover:border-primary-400 dark:hover:border-primary-500 transition-colors duration-200"
+                className={featured ? 'md:col-span-2' : ''}
               >
-                <div className="w-12 h-12 rounded-xl bg-primary-100 dark:bg-primary-900/40 flex items-center justify-center mb-5">
-                  <Icon className="w-6 h-6 text-primary-700 dark:text-primary-300" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                  {t(service.titleKey)}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                  {t(service.descKey)}
-                </p>
+                <SpotlightCard
+                  className="rounded-2xl h-full"
+                  accent={featured ? 'rgba(0,195,137,0.45)' : 'rgba(0,195,137,0.35)'}
+                >
+                  <div
+                    className={`rounded-2xl p-8 border h-full transition-colors duration-200 ${
+                      featured
+                        ? 'bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 border-accent-500/30 text-white'
+                        : 'bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700'
+                    }`}
+                  >
+                    <div className="flex items-center gap-3 mb-5">
+                      <div
+                        className={`w-12 h-12 rounded-xl flex items-center justify-center ${
+                          featured
+                            ? 'bg-accent-500/20 text-accent-300'
+                            : 'bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300'
+                        }`}
+                      >
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      {featured && (
+                        <span className="text-[10px] uppercase tracking-[0.25em] font-semibold text-accent-300">
+                          New
+                        </span>
+                      )}
+                    </div>
+                    <h3
+                      className={`text-xl font-semibold mb-3 ${
+                        featured ? 'text-white' : 'text-gray-900 dark:text-white'
+                      }`}
+                    >
+                      {t(service.titleKey)}
+                    </h3>
+                    <p
+                      className={`leading-relaxed ${
+                        featured
+                          ? 'text-blue-100/90'
+                          : 'text-gray-600 dark:text-gray-300'
+                      }`}
+                    >
+                      {t(service.descKey)}
+                    </p>
+                  </div>
+                </SpotlightCard>
               </motion.div>
             )
           })}

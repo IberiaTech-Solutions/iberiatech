@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { FiArrowRight, FiGlobe, FiCode, FiShield } from 'react-icons/fi'
 import { useLanguage } from './LanguageProvider'
+import Aurora from './Aurora'
 
 const HERO_PROJECTS = [
   {
@@ -76,11 +77,8 @@ export default function HeroSection() {
     >
       {/* Background */}
       <div className="absolute inset-0 -z-20 bg-primary-900" />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary-900/95 via-primary-900/85 to-black/80" />
-
-      {/* Decorative glow */}
-      <div className="absolute -top-40 right-0 -z-10 h-96 w-96 rounded-full bg-accent-500/10 blur-3xl" />
-      <div className="absolute -bottom-40 left-1/3 -z-10 h-96 w-96 rounded-full bg-primary-500/10 blur-3xl" />
+      <Aurora className="-z-10" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary-900/80 via-primary-900/60 to-black/70" />
 
       <div className="container-max relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
