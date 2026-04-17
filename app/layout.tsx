@@ -18,11 +18,11 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL('https://iberiatechsolutions.com'),
   title: {
-    default: 'IberiaTech Solutions — Modern web & custom applications',
+    default: 'IberiaTech Solutions: Modern web & custom applications',
     template: '%s | IberiaTech Solutions',
   },
   description:
-    'IberiaTech Solutions builds modern websites, ecommerce, bilingual experiences, and custom business applications. Next.js, React, and modern cloud infrastructure. Based in Charleston, SC — working with clients across the US and Europe.',
+    'IberiaTech Solutions builds modern websites, ecommerce, bilingual experiences, and custom business applications. Next.js, React, and modern cloud infrastructure. Based in Charleston, SC, working with clients across the US and Europe.',
   keywords: [
     'web development',
     'Next.js development',
@@ -64,14 +64,14 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://iberiatechsolutions.com',
-    title: 'IberiaTech Solutions — Modern web & custom applications',
+    title: 'IberiaTech Solutions: Modern web & custom applications',
     description:
       'We build websites, ecommerce, bilingual experiences, and custom business software. Next.js, React, and modern cloud infrastructure.',
     siteName: 'IberiaTech Solutions',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'IberiaTech Solutions — Modern web & custom applications',
+    title: 'IberiaTech Solutions: Modern web & custom applications',
     description:
       'We build websites, ecommerce, bilingual experiences, and custom business software. Next.js, React, and modern cloud infrastructure.',
     creator: '@iberiatech',

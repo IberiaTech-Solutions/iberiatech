@@ -23,6 +23,7 @@ const translations = {
 
     // Hero
     'hero.title': 'Modern web & custom applications.',
+    'hero.tagline': 'Where software engineering meets security.',
     'hero.subtitle':
       'We build websites, ecommerce, bilingual experiences, and custom business software. Based in Charleston, SC. Working with clients across the US and Europe.',
     'hero.cta.work': 'See our work',
@@ -87,10 +88,13 @@ const translations = {
 
     // About
     'about.title': 'About',
+    'about.kicker': 'Meet the founder',
+    'about.heading': "I'm Luis. I founded IberiaTech to build the kind of software clients deserve.",
     'about.body':
-      'IberiaTech Solutions is a web development practice led by Luis Lozoya — a full-stack engineer specializing in Next.js, React, and modern cloud infrastructure. We design and build websites, ecommerce, bilingual experiences, and custom business software for clients across the US and Europe.',
+      "I'm a security-focused software engineer based in the Charleston, SC area, originally from Spain. My path into software wasn't linear: an architectural engineering degree from IE University, six years in commercial construction, then a coding bootcamp in 2020. The detour matters. I think about software the way I learned to think about buildings: structure first, then everything else. Five years in, I work directly with every client, design and ship the software myself, and bring an application-security lens to everything I build.",
     'about.security':
-      'Luis is a full-stack engineer with a growing focus on application security. GFACT certified, currently completing the SANS CyberTalent Academy, with upcoming certifications in GSEC, GCIH, GWAPT, and AWS Security Specialty.',
+      "GIAC GSEC and GFACT certified, with GCIH currently in progress through the SANS CyberTalent Academy. 1st place at HackOps 2024, speaker and judge at HarborHack, and SANS Cyber Academy scholarship recipient.",
+    'about.photoAlt': 'Luis Lozoya, founder of IberiaTech Solutions',
 
     // Footer
     'footer.tagline': 'Modern web & custom applications.',
@@ -108,6 +112,7 @@ const translations = {
 
     // Hero
     'hero.title': 'Web moderna y aplicaciones a medida.',
+    'hero.tagline': 'Donde la ingeniería de software se encuentra con la seguridad.',
     'hero.subtitle':
       'Construimos sitios web, ecommerce, experiencias bilingües y software empresarial a medida. Con base en Charleston, SC. Trabajamos con clientes en EE. UU. y Europa.',
     'hero.cta.work': 'Ver proyectos',
@@ -175,10 +180,13 @@ const translations = {
 
     // Sobre nosotros
     'about.title': 'Sobre nosotros',
+    'about.kicker': 'Conoce al fundador',
+    'about.heading': 'Soy Luis. Fundé IberiaTech para construir el tipo de software que los clientes merecen.',
     'about.body':
-      'IberiaTech Solutions es una práctica de desarrollo web liderada por Luis Lozoya — ingeniero full-stack especializado en Next.js, React e infraestructura cloud moderna. Diseñamos y construimos sitios web, ecommerce, experiencias bilingües y software empresarial a medida para clientes en EE. UU. y Europa.',
+      'Soy ingeniero de software con enfoque en seguridad, basado en el área de Charleston, SC, y originario de España. Mi camino hacia el software no fue lineal: un grado en arquitectura técnica por IE University, seis años en construcción comercial y luego un bootcamp de programación en 2020. El desvío importa. Pienso en el software de la misma forma que aprendí a pensar en los edificios: primero la estructura, después todo lo demás. Cinco años después, trabajo directamente con cada cliente, diseño y entrego el software yo mismo, y aplico una mirada de seguridad a todo lo que construyo.',
     'about.security':
-      'Luis es un ingeniero full-stack con un enfoque creciente en seguridad de aplicaciones. Certificado GFACT, actualmente cursando la SANS CyberTalent Academy, con certificaciones en proceso en GSEC, GCIH, GWAPT y AWS Security Specialty.',
+      'Certificado GIAC GSEC y GFACT, con GCIH en curso a través de la SANS CyberTalent Academy. Primer puesto en HackOps 2024, ponente y jurado en HarborHack, y becario de la SANS Cyber Academy.',
+    'about.photoAlt': 'Luis Lozoya, fundador de IberiaTech Solutions',
 
     // Footer
     'footer.tagline': 'Web moderna y aplicaciones a medida.',

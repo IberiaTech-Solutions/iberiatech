@@ -97,15 +97,15 @@ export default function AIChatbot() {
         services:
           "We focus on four areas: Web & Ecommerce, Bilingual & Multilingual Sites (EN/ES/DE), Custom Business Applications (SaaS, dashboards, marketplaces, portals), and Security Audits & Hardening. Everything is built on Next.js, React, Supabase, and modern cloud infrastructure. Want me to go deeper on any one?",
         web:
-          "Web & Ecommerce work covers modern websites and online stores built on Next.js — fast, SEO-ready, mobile-first, with Stripe-powered checkout when needed. We focus on performance and clean architecture from day one.",
+          "Web & Ecommerce work covers modern websites and online stores built on Next.js. Fast, SEO-ready, mobile-first, with Stripe-powered checkout when needed. We focus on performance and clean architecture from day one.",
         bilingual:
           "We build sites in English, Spanish, and German with proper internationalization, cultural adaptation, and SEO for every language. Luis grew up in Spain and lives in the US, so the bilingual side is native, not a plugin.",
         apps:
-          "Custom Business Applications are our deeper engagements — full-stack SaaS platforms, admin dashboards, marketplaces, and client portals. Recent examples include Axis (a multi-role assessment platform) and CuidaMascotas (a pet-sitting marketplace for Spain).",
+          "Custom Business Applications are our deeper engagements: full-stack SaaS platforms, admin dashboards, marketplaces, and client portals. We currently have several in active development that we'll share more about soon.",
         security:
           "Security Audits & Hardening cover application security reviews for web apps and custom software: OWASP Top 10 audits, authentication and authorization hardening, database row-level security policies, secure handling of payments and third-party APIs, and security-first development practices.",
         portfolio:
-          "Recent work includes Axis (assessment platform for business advisors), CuidaMascotas (bilingual pet-sitting marketplace for Spain), NEVA Estudio (architecture studio site in Asturias), Coastal Millwork (commercial contractor), and ShopEssentialsHub. You can see the full list at /work on this site.",
+          "Recent work includes NEVA Estudio (architecture studio site in Asturias), Coastal Millwork (commercial contractor in South Carolina), and ShopEssentialsHub (curated affiliate platform). Several other projects are in active development. You can see the full list at /work on this site.",
         process:
           "Our process has four steps: Discovery (a short call to understand your goals), Design & Planning (wireframes, architecture, timeline), Build (iterative development with regular updates), and Launch & Support (deployment, training, ongoing maintenance).",
         contact:
@@ -115,7 +115,7 @@ export default function AIChatbot() {
         stack:
           "We work primarily with Next.js, React, TypeScript, Tailwind CSS, Supabase (Postgres + Auth + RLS), Stripe, Vercel for deployment, and AWS where needed. For internationalization we use next-intl.",
         location:
-          "We're based in Charleston, SC and work remotely with clients across the US and Europe — including Spain, where Luis grew up.",
+          "We're based in Charleston, SC and work remotely with clients across the US and Europe, including Spain, where Luis grew up.",
         default:
           "Happy to help. You can ask about our services, recent work, process, technology stack, or how to get in touch. For anything more specific, the best way is to email luis@iberiatechsolutions.com or book a 30-minute call.",
       },
@@ -125,15 +125,15 @@ export default function AIChatbot() {
         services:
           "Nos centramos en cuatro áreas: Web y Ecommerce, Sitios Bilingües y Multilingües (EN/ES/DE), Aplicaciones de Negocio a Medida (SaaS, paneles, marketplaces, portales) y Auditorías y Refuerzo de Seguridad. Todo construido con Next.js, React, Supabase y cloud moderno. ¿Quieres que profundice en alguna área?",
         web:
-          "El área de Web y Ecommerce cubre sitios web y tiendas online modernas construidas con Next.js — rápidas, optimizadas para SEO, mobile-first, y con pago via Stripe cuando se necesita. Nos centramos en rendimiento y arquitectura limpia desde el primer día.",
+          "El área de Web y Ecommerce cubre sitios web y tiendas online modernas construidas con Next.js. Rápidas, optimizadas para SEO, mobile-first, y con pago via Stripe cuando se necesita. Nos centramos en rendimiento y arquitectura limpia desde el primer día.",
         bilingual:
           "Construimos sitios en inglés, español y alemán con internacionalización adecuada, adaptación cultural y SEO en todos los idiomas. Luis creció en España y vive en EE. UU., así que el lado bilingüe es nativo, no un plugin.",
         apps:
-          "Las Aplicaciones de Negocio a Medida son nuestros proyectos más profundos — plataformas SaaS full-stack, paneles de administración, marketplaces y portales para clientes. Ejemplos recientes incluyen Axis (una plataforma de evaluación multi-rol) y CuidaMascotas (un marketplace de cuidado de mascotas para España).",
+          "Las Aplicaciones de Negocio a Medida son nuestros proyectos más profundos: plataformas SaaS full-stack, paneles de administración, marketplaces y portales para clientes. Actualmente tenemos varios en desarrollo activo de los que compartiremos más detalles próximamente.",
         security:
           "Las Auditorías y Refuerzo de Seguridad cubren revisiones de seguridad para aplicaciones web y software a medida: auditorías OWASP Top 10, refuerzo de autenticación y autorización, políticas de seguridad a nivel de fila en la base de datos, manejo seguro de pagos e integraciones, y prácticas de desarrollo orientadas a la seguridad.",
         portfolio:
-          "Proyectos recientes incluyen Axis (plataforma de evaluación para asesores de negocios), CuidaMascotas (marketplace bilingüe de cuidado de mascotas para España), NEVA Estudio (sitio de un estudio de arquitectura en Asturias), Coastal Millwork (contratista comercial) y ShopEssentialsHub. Puedes ver la lista completa en /work en este sitio.",
+          "Proyectos recientes incluyen NEVA Estudio (sitio de un estudio de arquitectura en Asturias), Coastal Millwork (contratista comercial en Carolina del Sur) y ShopEssentialsHub (plataforma de afiliados curada). Tenemos otros proyectos en desarrollo activo. Puedes ver la lista completa en /work en este sitio.",
         process:
           "Nuestro proceso tiene cuatro pasos: Descubrimiento (una llamada corta para entender tus objetivos), Diseño y Planificación (wireframes, arquitectura, cronograma), Desarrollo (desarrollo iterativo con actualizaciones regulares) y Lanzamiento y Soporte (despliegue, formación y mantenimiento continuo).",
         contact:
@@ -143,7 +143,7 @@ export default function AIChatbot() {
         stack:
           "Trabajamos principalmente con Next.js, React, TypeScript, Tailwind CSS, Supabase (Postgres + Auth + RLS), Stripe, Vercel para despliegue y AWS cuando es necesario. Para internacionalización usamos next-intl.",
         location:
-          "Estamos basados en Charleston, SC y trabajamos en remoto con clientes en EE. UU. y Europa — incluyendo España, donde creció Luis.",
+          "Estamos basados en Charleston, SC y trabajamos en remoto con clientes en EE. UU. y Europa, incluyendo España, donde creció Luis.",
         default:
           "Encantado de ayudarte. Puedes preguntarme sobre nuestros servicios, proyectos recientes, proceso, stack tecnológico o cómo contactarnos. Para algo más específico, lo mejor es escribirnos a luis@iberiatechsolutions.com o reservar una llamada de 30 minutos.",
       },

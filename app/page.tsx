@@ -3,6 +3,7 @@
 import HeroSection from '@/components/HeroSection'
 import ServicesSection from '@/components/ServicesSection'
 import PortfolioSection from '@/components/PortfolioSection'
+import AboutSection from '@/components/AboutSection'
 
 export default function HomePage() {
   return (
@@ -10,6 +11,7 @@ export default function HomePage() {
       <HeroSection />
       <ServicesSection />
       <PortfolioSection featuredOnly showCta />
+      <AboutSection />
     </div>
   )
 }
