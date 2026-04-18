@@ -23,14 +23,10 @@ const translations = {
 
     // Hero
     'hero.title': 'Modern web & custom applications.',
-    'hero.tagline': 'Where software engineering meets security.',
     'hero.subtitle':
       'We build websites, ecommerce, bilingual experiences, and custom business software. Based in Charleston, SC. Working with clients across the US and Europe.',
     'hero.cta.work': 'See our work',
     'hero.cta.contact': 'Get in touch',
-    'hero.pill.bilingual': 'Bilingual by default',
-    'hero.pill.stack': 'Next.js & Modern Cloud',
-    'hero.pill.security': 'Security-aware',
 
     // Services overview
     'services.title': 'What we do',
@@ -87,10 +83,8 @@ const translations = {
     'contact.email.label': 'Email',
     'contact.book.label': 'Book a call',
     'contact.book.desc': 'Schedule a 30-minute call at a time that works for you.',
-    'contact.bookCta': 'Book a 30-min call',
 
     // About
-    'about.title': 'About',
     'about.kicker': 'Meet the founder',
     'about.heading': "I'm Luis. I founded IberiaTech to build the kind of software clients deserve.",
     'about.body':
@@ -102,7 +96,6 @@ const translations = {
     // Footer
     'footer.tagline': 'Modern web & custom applications.',
     'footer.services': 'Services',
-    'footer.company': 'IberiaTech Solutions',
     'footer.contact': 'Contact',
     'footer.rights': 'All rights reserved.',
   },
@@ -115,14 +108,10 @@ const translations = {
 
     // Hero
     'hero.title': 'Web moderna y aplicaciones a medida.',
-    'hero.tagline': 'Donde la ingeniería de software se encuentra con la seguridad.',
     'hero.subtitle':
       'Construimos sitios web, ecommerce, experiencias bilingües y software empresarial a medida. Con base en Charleston, SC. Trabajamos con clientes en EE. UU. y Europa.',
     'hero.cta.work': 'Ver proyectos',
     'hero.cta.contact': 'Contactar',
-    'hero.pill.bilingual': 'Bilingüe por defecto',
-    'hero.pill.stack': 'Next.js y Nube Moderna',
-    'hero.pill.security': 'Orientado a seguridad',
 
     // Servicios overview
     'services.title': 'Qué hacemos',
@@ -182,10 +171,8 @@ const translations = {
     'contact.book.label': 'Reservar llamada',
     'contact.book.desc':
       'Agenda una llamada de 30 minutos en el horario que mejor te venga.',
-    'contact.bookCta': 'Reservar llamada de 30 min',
 
     // Sobre nosotros
-    'about.title': 'Sobre nosotros',
     'about.kicker': 'Conoce al fundador',
     'about.heading': 'Soy Luis. Fundé IberiaTech para construir el tipo de software que los clientes merecen.',
     'about.body':
@@ -197,7 +184,6 @@ const translations = {
     // Footer
     'footer.tagline': 'Web moderna y aplicaciones a medida.',
     'footer.services': 'Servicios',
-    'footer.company': 'IberiaTech Solutions',
     'footer.contact': 'Contacto',
     'footer.rights': 'Todos los derechos reservados.',
   },

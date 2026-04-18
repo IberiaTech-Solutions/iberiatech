@@ -5,8 +5,7 @@ import { ThemeProvider } from '@/components/ThemeProvider'
 import { LanguageProvider } from '@/components/LanguageProvider'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import WhatsAppChat from '@/components/WhatsAppChat'
-import AIChatbot from '@/components/AIChatbot'
+import FloatingChats from '@/components/FloatingChats'
 import HtmlLangUpdater from '@/components/HtmlLangUpdater'
 import StructuredData from '@/components/StructuredData'
 
@@ -124,8 +123,7 @@ export default function RootLayout({
               <Header />
               <main id="main" className="flex-1">{children}</main>
               <Footer />
-              <WhatsAppChat phoneNumber="18643657897" />
-              <AIChatbot />
+              <FloatingChats />
             </div>
           </LanguageProvider>
         </ThemeProvider>
