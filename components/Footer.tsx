@@ -10,105 +10,91 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-ink-950 text-ink-200 border-t border-ink-800">
       <div className="container-max section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand */}
-          <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-12 h-12 relative">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12">
+          <div className="md:col-span-5">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-10 h-10 relative flex-shrink-0">
                 <Image
                   src="/images/logos/IberiaTechLogo5.png"
-                  alt="IberiaTech Solutions"
+                  alt=""
                   fill
-                  sizes="48px"
+                  sizes="40px"
                   className="object-contain"
                 />
               </div>
-              <span className="text-xl font-bold">IberiaTech Solutions</span>
+              <span className="font-display text-lg font-semibold text-ink-50">
+                IberiaTech
+              </span>
             </div>
-            <p className="text-gray-300 mb-6 max-w-md leading-relaxed">
+            <p className="text-ink-300 max-w-md leading-relaxed prose-measure mb-6">
               {t('footer.tagline')}
             </p>
-            <div className="flex space-x-4">
-              <a
-                href="https://www.linkedin.com/company/iberiatechsolutions/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
-                aria-label="IberiaTech Solutions on LinkedIn"
-              >
-                <FiLinkedin className="w-5 h-5" />
-              </a>
-            </div>
+            <a
+              href="https://www.linkedin.com/company/iberiatechsolutions/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-ink-300 hover:text-ink-50 transition-colors duration-200"
+              aria-label="IberiaTech Solutions on LinkedIn"
+            >
+              <FiLinkedin className="w-4 h-4" aria-hidden />
+              <span>LinkedIn</span>
+            </a>
           </div>
 
-          {/* Contact */}
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider mb-4 text-gray-200">
+          <div className="md:col-span-4">
+            <h3 className="text-xs uppercase tracking-[0.2em] mb-5 text-ink-400 font-medium">
               {t('footer.contact')}
             </h3>
-            <div className="space-y-3">
-              <div className="flex items-start space-x-3">
-                <FiMail className="w-4 h-4 text-blue-400 mt-1 flex-shrink-0" />
+            <ul className="space-y-3 text-sm">
+              <li className="flex items-start gap-3">
+                <FiMail className="w-4 h-4 text-ink-500 mt-0.5 flex-shrink-0" aria-hidden />
                 <a
                   href="mailto:luis@iberiatechsolutions.com"
-                  className="text-sm text-gray-300 hover:text-white transition-colors duration-200 break-all"
+                  className="text-ink-200 hover:text-ink-50 transition-colors duration-200 break-all"
                 >
                   luis@iberiatechsolutions.com
                 </a>
-              </div>
-              <div className="flex items-center space-x-3">
-                <FiPhone className="w-4 h-4 text-blue-400 flex-shrink-0" />
+              </li>
+              <li className="flex items-center gap-3">
+                <FiPhone className="w-4 h-4 text-ink-500 flex-shrink-0" aria-hidden />
                 <a
                   href="tel:+18643657897"
-                  className="text-sm text-gray-300 hover:text-white transition-colors duration-200"
+                  className="text-ink-200 hover:text-ink-50 transition-colors duration-200"
                 >
                   (864) 365-7897
                 </a>
-              </div>
-              <div className="flex items-center space-x-3">
-                <FiMapPin className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                <span className="text-sm text-gray-300">Charleston, SC</span>
-              </div>
-            </div>
+              </li>
+              <li className="flex items-center gap-3">
+                <FiMapPin className="w-4 h-4 text-ink-500 flex-shrink-0" aria-hidden />
+                <span className="text-ink-300">Charleston, SC</span>
+              </li>
+            </ul>
           </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider mb-4 text-gray-200">
+          <div className="md:col-span-3">
+            <h3 className="text-xs uppercase tracking-[0.2em] mb-5 text-ink-400 font-medium">
               {t('footer.services')}
             </h3>
-            <ul className="space-y-2 text-sm text-gray-300">
+            <ul className="space-y-2.5 text-sm">
               <li>
-                <Link
-                  href="/services"
-                  className="hover:text-white transition-colors duration-200"
-                >
+                <Link href="/services" className="text-ink-200 hover:text-ink-50 transition-colors duration-200">
                   {t('services.web.title')}
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/services"
-                  className="hover:text-white transition-colors duration-200"
-                >
+                <Link href="/services" className="text-ink-200 hover:text-ink-50 transition-colors duration-200">
                   {t('services.bilingual.title')}
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/services"
-                  className="hover:text-white transition-colors duration-200"
-                >
+                <Link href="/services" className="text-ink-200 hover:text-ink-50 transition-colors duration-200">
                   {t('services.apps.title')}
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/services"
-                  className="hover:text-white transition-colors duration-200"
-                >
+                <Link href="/services" className="text-ink-200 hover:text-ink-50 transition-colors duration-200">
                   {t('services.security.title')}
                 </Link>
               </li>
@@ -116,7 +102,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center text-sm text-gray-400">
+        <div className="border-t border-ink-800 mt-16 pt-8 text-xs text-ink-500">
           <p>
             &copy; {currentYear} IberiaTech Solutions. {t('footer.rights')}
           </p>

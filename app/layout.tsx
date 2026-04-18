@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Plus_Jakarta_Sans } from 'next/font/google'
+import { Bricolage_Grotesque, Sora } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { LanguageProvider } from '@/components/LanguageProvider'
@@ -10,9 +10,16 @@ import AIChatbot from '@/components/AIChatbot'
 import HtmlLangUpdater from '@/components/HtmlLangUpdater'
 import StructuredData from '@/components/StructuredData'
 
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  variable: '--font-plus-jakarta',
+const display = Bricolage_Grotesque({
+  subsets: ['latin', 'latin-ext'],
+  variable: '--font-display',
+  display: 'swap',
+})
+
+const body = Sora({
+  subsets: ['latin', 'latin-ext'],
+  variable: '--font-body',
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
@@ -98,8 +105,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={plusJakarta.className} suppressHydrationWarning>
+    <html lang="en" className={`${display.variable} ${body.variable}`} suppressHydrationWarning>
+      <body className="font-sans antialiased">
         <StructuredData />
         <ThemeProvider
           attribute="class"
@@ -109,11 +116,9 @@ export default function RootLayout({
         >
           <LanguageProvider>
             <HtmlLangUpdater />
-            <div className="min-h-screen flex flex-col" suppressHydrationWarning>
+            <div className="min-h-screen flex flex-col">
               <Header />
-              <main className="flex-1">
-                {children}
-              </main>
+              <main className="flex-1">{children}</main>
               <Footer />
               <WhatsAppChat phoneNumber="18643657897" />
               <AIChatbot />

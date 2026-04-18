@@ -6,14 +6,10 @@ import { motion } from 'framer-motion'
 import { FiArrowRight, FiExternalLink } from 'react-icons/fi'
 import { useLanguage } from './LanguageProvider'
 import { PROJECTS, type Project } from '@/data/projects'
-import SpotlightCard from './SpotlightCard'
 
 interface PortfolioSectionProps {
-  /** When true, show only featured projects (for the home page). When false, show all. */
   featuredOnly?: boolean
-  /** Show the heading + subtitle. Defaults to true. */
   showHeading?: boolean
-  /** Show the "see all work" CTA at the bottom. Defaults to true. */
   showCta?: boolean
 }
 
@@ -29,111 +25,115 @@ export default function PortfolioSection({
     : PROJECTS
 
   return (
-    <section id="work" className="section-padding bg-gray-50 dark:bg-gray-800">
+    <section id="work" className="section-padding bg-ink-50 dark:bg-ink-950">
       <div className="container-max">
         {showHeading && (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-12 max-w-2xl mx-auto"
+            className="max-w-2xl mb-14 md:mb-20"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <p className="text-xs uppercase tracking-[0.2em] text-accent-700 dark:text-accent-400 font-medium mb-5">
+              {language === 'es' ? 'Proyectos recientes' : 'Selected work'}
+            </p>
+            <h2 className="font-display text-4xl md:text-5xl font-semibold text-ink-900 dark:text-ink-50 mb-6 leading-[1.05]">
               {t('work.title')}
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300">
+            <p className="text-lg text-ink-600 dark:text-ink-300 prose-measure">
               {t('work.subtitle')}
             </p>
           </motion.div>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-8 md:gap-y-16">
           {projects.map((project, index) => (
-            <motion.div
+            <motion.article
               key={project.slug}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.07 }}
+              transition={{ duration: 0.55, delay: index * 0.06 }}
               viewport={{ once: true }}
-              className="h-full"
+              className={`group relative ${index % 3 === 0 ? 'md:col-span-2' : ''}`}
             >
-            <SpotlightCard className="rounded-2xl h-full" accent="rgba(0,195,137,0.4)">
-            <article className="group/card bg-white dark:bg-gray-900 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-accent-500/40 dark:hover:border-accent-500/40 transition-all duration-300 flex flex-col h-full">
-              <Link href={`/work/${project.slug}`} className="block">
-                <div className="relative aspect-[16/10] bg-gray-100 dark:bg-gray-800 overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-700 ease-out group-hover/card:scale-[1.04]"
-                  />
-                  {project.comingSoon && (
-                    <div className="absolute top-3 right-3 bg-accent-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                      {t('work.comingSoon')}
-                    </div>
-                  )}
-                </div>
-              </Link>
+              <div className="relative aspect-[16/10] bg-ink-100 dark:bg-ink-900 rounded-md overflow-hidden mb-5">
+                <Image
+                  src={project.image}
+                  alt=""
+                  fill
+                  sizes={index % 3 === 0
+                    ? '(max-width: 768px) 100vw, 1200px'
+                    : '(max-width: 768px) 100vw, 600px'}
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                />
+                {project.comingSoon && (
+                  <div className="absolute top-4 left-4 bg-ink-950/80 text-ink-50 text-[11px] uppercase tracking-wider font-medium px-2.5 py-1 rounded-sm backdrop-blur-sm z-10">
+                    {t('work.comingSoon')}
+                  </div>
+                )}
+              </div>
 
-              <div className="p-6 flex flex-col flex-1">
-                <p className="text-xs uppercase tracking-wider text-primary-600 dark:text-primary-400 font-semibold mb-2">
-                  {project.category[language]}
-                </p>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                  {project.title}
+              <div>
+                <div className="flex items-baseline justify-between gap-4 mb-2">
+                  <p className="text-[11px] uppercase tracking-[0.15em] text-ink-500 font-medium">
+                    {project.category[language]}
+                  </p>
+                  <p className="text-[11px] text-ink-500 tabular-nums">
+                    {String(index + 1).padStart(2, '0')}
+                  </p>
+                </div>
+                <h3 className="font-display text-2xl md:text-3xl font-semibold text-ink-900 dark:text-ink-50 mb-3 leading-tight">
+                  <Link
+                    href={`/work/${project.slug}`}
+                    className="before:absolute before:inset-0 before:z-0 group-hover:text-accent-700 dark:group-hover:text-accent-400 transition-colors"
+                  >
+                    <span className="relative z-[1]">{project.title}</span>
+                  </Link>
                 </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-4 flex-1">
+                <p className="text-base text-ink-600 dark:text-ink-300 leading-relaxed prose-measure mb-5">
                   {project.summary[language]}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {project.technologies.slice(0, 4).map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-xs px-2 py-1 rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
-                    >
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-ink-500 mb-5">
+                  {project.technologies.slice(0, 4).map((tech, i) => (
+                    <span key={tech} className="inline-flex items-center gap-3">
+                      {i > 0 && <span aria-hidden className="text-ink-400">·</span>}
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex items-center gap-2 pt-4 border-t border-gray-100 dark:border-gray-800">
-                  <Link
-                    href={`/work/${project.slug}`}
-                    className="flex-1 inline-flex items-center justify-center space-x-1.5 text-sm font-semibold py-2 px-3 rounded-lg bg-primary-700 hover:bg-primary-800 text-white transition-colors duration-200"
-                  >
+                <div className="flex items-center gap-6 text-sm font-medium">
+                  <span className="inline-flex items-center gap-1.5 text-ink-900 dark:text-ink-50 group-hover:text-accent-700 dark:group-hover:text-accent-400 transition-colors">
                     <span>{t('work.view')}</span>
-                    <FiArrowRight className="w-4 h-4" />
-                  </Link>
+                    <FiArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden />
+                  </span>
                   {project.link && (
                     <a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 inline-flex items-center justify-center space-x-1.5 text-sm font-semibold py-2 px-3 rounded-lg bg-white dark:bg-gray-800 border border-primary-300 dark:border-primary-700 text-primary-700 dark:text-primary-300 hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-colors duration-200"
+                      className="relative z-[1] inline-flex items-center gap-1.5 text-ink-600 dark:text-ink-400 hover:text-accent-700 dark:hover:text-accent-400 transition-colors"
                     >
                       <span>{t('work.viewLive')}</span>
-                      <FiExternalLink className="w-4 h-4" />
+                      <FiExternalLink className="w-3.5 h-3.5" aria-hidden />
                     </a>
                   )}
                 </div>
               </div>
-            </article>
-            </SpotlightCard>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
 
         {showCta && featuredOnly && (
-          <div className="mt-10 text-center">
+          <div className="mt-16">
             <Link
               href="/work"
-              className="inline-flex items-center space-x-2 text-primary-700 dark:text-primary-300 font-semibold hover:text-primary-800 dark:hover:text-primary-200 transition-colors duration-200"
+              className="inline-flex items-center gap-2 text-ink-900 dark:text-ink-50 font-medium hover:text-accent-700 dark:hover:text-accent-400 transition-colors duration-200"
             >
               <span>{t('work.cta')}</span>
-              <FiArrowRight className="w-5 h-5" />
+              <FiArrowRight className="w-4 h-4" aria-hidden />
             </Link>
           </div>
         )}

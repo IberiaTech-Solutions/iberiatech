@@ -3,9 +3,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { FiArrowRight, FiGlobe, FiCode, FiShield } from 'react-icons/fi'
+import { FiArrowRight } from 'react-icons/fi'
 import { useLanguage } from './LanguageProvider'
-import Aurora from './Aurora'
 
 const HERO_PROJECTS = [
   {
@@ -30,29 +29,27 @@ function BrowserCard({
   label,
   alt,
   className,
+  priority = false,
 }: {
   src: string
   label: string
   alt: string
   className?: string
+  priority?: boolean
 }) {
   return (
     <div
-      className={`relative rounded-xl overflow-hidden bg-white/5 backdrop-blur border border-white/10 shadow-2xl shadow-black/40 ${
+      className={`relative rounded-md overflow-hidden bg-primary-900 border border-ink-50/10 shadow-2xl shadow-black/40 ${
         className ?? ''
       }`}
     >
-      <div className="flex items-center gap-2 px-3 py-2 bg-white/5 border-b border-white/10">
-        <div className="flex gap-1.5">
-          <span className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
-          <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
-          <span className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
-        </div>
-        <div className="flex-1 text-center">
-          <span className="text-[10px] text-blue-100/60 font-mono">
-            {label}
-          </span>
-        </div>
+      <div className="flex items-center justify-between px-4 py-2.5 border-b border-ink-50/10">
+        <span className="text-[10px] text-ink-300 tracking-wide tabular-nums">
+          {label}
+        </span>
+        <span className="text-[10px] text-ink-500 uppercase tracking-[0.2em]">
+          Live
+        </span>
       </div>
       <div className="relative aspect-[16/10]">
         <Image
@@ -61,6 +58,7 @@ function BrowserCard({
           fill
           sizes="(max-width: 1024px) 100vw, 600px"
           className="object-cover"
+          priority={priority}
         />
       </div>
     </div>
@@ -68,116 +66,130 @@ function BrowserCard({
 }
 
 export default function HeroSection() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
 
   return (
     <section
       id="home"
-      className="relative overflow-hidden section-padding bg-primary-900"
+      className="relative overflow-hidden section-padding bg-primary-900 text-ink-50"
     >
-      {/* Background */}
-      <div className="absolute inset-0 -z-20 bg-primary-900" />
-      <Aurora className="-z-10" />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary-900/80 via-primary-900/60 to-black/70" />
+      {/* Quiet static backdrop: radial tint + film grain. No rotating aurora. */}
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 opacity-80"
+        style={{
+          background:
+            'radial-gradient(1200px 600px at 20% 0%, oklch(35% 0.140 265 / 0.6), transparent 60%), radial-gradient(800px 500px at 90% 100%, oklch(42% 0.120 158 / 0.25), transparent 60%)',
+        }}
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 opacity-[0.05] mix-blend-overlay"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.6'/></svg>\")",
+        }}
+      />
 
       <div className="container-max relative">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left: copy */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-7 space-y-8"
           >
-            <div className="space-y-6">
-              <div className="inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 backdrop-blur">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-400 opacity-75" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-400" />
-                </span>
-                <span className="text-xs uppercase tracking-[0.25em] text-accent-200 font-medium">
-                  IberiaTech Solutions
-                </span>
-              </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                {t('hero.title')}
-              </h1>
-              <p className="text-base md:text-lg text-accent-300 font-medium italic">
-                {t('hero.tagline')}
-              </p>
-              <p className="text-lg md:text-xl text-blue-100/90 leading-relaxed">
-                {t('hero.subtitle')}
-              </p>
-            </div>
+            <p className="text-xs uppercase tracking-[0.25em] text-accent-300 font-medium">
+              {language === 'es'
+                ? 'Consultoría web bilingüe · Charleston, SC'
+                : 'Bilingual web consultancy · Charleston, SC'}
+            </p>
 
-            {/* Descriptor pills */}
-            <div className="flex flex-wrap gap-3">
-              <div className="inline-flex items-center space-x-2 rounded-full bg-white/10 px-4 py-2 backdrop-blur border border-white/10">
-                <FiGlobe className="w-4 h-4 text-accent-300 flex-shrink-0" />
-                <span className="text-sm font-medium text-blue-50">
-                  {t('hero.pill.bilingual')}
-                </span>
-              </div>
-              <div className="inline-flex items-center space-x-2 rounded-full bg-white/10 px-4 py-2 backdrop-blur border border-white/10">
-                <FiCode className="w-4 h-4 text-accent-300 flex-shrink-0" />
-                <span className="text-sm font-medium text-blue-50">
-                  {t('hero.pill.stack')}
-                </span>
-              </div>
-              <div className="inline-flex items-center space-x-2 rounded-full bg-white/10 px-4 py-2 backdrop-blur border border-white/10">
-                <FiShield className="w-4 h-4 text-accent-300 flex-shrink-0" />
-                <span className="text-sm font-medium text-blue-50">
-                  {t('hero.pill.security')}
-                </span>
-              </div>
-            </div>
+            <h1 className="font-display text-[2.5rem] sm:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight prose-measure">
+              {t('hero.title')}
+            </h1>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <p className="text-lg md:text-xl text-ink-200/90 leading-relaxed prose-measure">
+              {t('hero.subtitle')}
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <Link
                 href="/work"
-                className="bg-accent-500 hover:bg-accent-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 inline-flex items-center justify-center space-x-2 shadow-lg shadow-accent-500/30"
+                className="inline-flex items-center justify-center gap-2 bg-accent-500 hover:bg-accent-600 text-ink-950 font-semibold py-3.5 px-6 rounded-md transition-colors duration-200"
               >
                 <span>{t('hero.cta.work')}</span>
-                <FiArrowRight className="w-5 h-5" />
+                <FiArrowRight className="w-4 h-4" aria-hidden />
               </Link>
               <Link
                 href="/contact"
-                className="bg-transparent border-2 border-white/60 text-white hover:bg-white hover:text-primary-800 font-semibold py-3 px-6 rounded-lg transition-colors duration-200 inline-flex items-center justify-center"
+                className="inline-flex items-center justify-center border border-ink-50/30 hover:border-ink-50/70 text-ink-50 font-medium py-3.5 px-6 rounded-md transition-colors duration-200"
               >
                 {t('hero.cta.contact')}
               </Link>
             </div>
+
+            <dl className="flex flex-wrap items-baseline gap-x-6 gap-y-2 pt-8 border-t border-ink-50/10 sm:grid sm:grid-cols-3 sm:gap-x-8 sm:gap-y-0 max-w-xl">
+              <div className="flex items-baseline gap-2 sm:block">
+                <dt className="text-xs uppercase tracking-[0.15em] text-ink-400 sm:mb-1.5">
+                  {language === 'es' ? 'Idiomas' : 'Languages'}
+                </dt>
+                <dd className="font-display text-base md:text-lg font-medium">EN · ES</dd>
+              </div>
+              <div className="flex items-baseline gap-2 sm:block">
+                <dt className="text-xs uppercase tracking-[0.15em] text-ink-400 sm:mb-1.5">
+                  Stack
+                </dt>
+                <dd className="font-display text-base md:text-lg font-medium">Next.js</dd>
+              </div>
+              <div className="flex items-baseline gap-2 sm:block">
+                <dt className="text-xs uppercase tracking-[0.15em] text-ink-400 sm:mb-1.5">
+                  {language === 'es' ? 'Respuesta' : 'Reply'}
+                </dt>
+                <dd className="font-display text-base md:text-lg font-medium">&lt; 48h</dd>
+              </div>
+            </dl>
           </motion.div>
 
-          {/* Right: stacked browser cards */}
-          <div className="relative h-[420px] sm:h-[480px] lg:h-[520px] hidden md:block">
+          <div className="lg:col-span-5 relative">
+            {/* Mobile/tablet: single featured card */}
             <motion.div
-              initial={{ opacity: 0, x: 40, rotate: 8 }}
-              animate={{ opacity: 1, x: 0, rotate: 6 }}
-              transition={{ duration: 0.9, delay: 0.4 }}
-              className="absolute top-12 right-0 w-[78%]"
-            >
-              <BrowserCard {...HERO_PROJECTS[2]} />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: -40, rotate: -8 }}
-              animate={{ opacity: 1, x: 0, rotate: -5 }}
-              transition={{ duration: 0.9, delay: 0.25 }}
-              className="absolute top-4 left-0 w-[82%]"
-            >
-              <BrowserCard {...HERO_PROJECTS[1]} />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.5 }}
-              whileHover={{ y: -6 }}
-              className="absolute top-28 left-[8%] right-[8%]"
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="lg:hidden"
             >
-              <BrowserCard {...HERO_PROJECTS[0]} />
+              <BrowserCard {...HERO_PROJECTS[1]} priority />
             </motion.div>
+
+            {/* Desktop: stacked composition */}
+            <div className="hidden lg:block relative h-[520px]">
+              <motion.div
+                initial={{ opacity: 0, x: 40, rotate: 6 }}
+                animate={{ opacity: 1, x: 0, rotate: 4 }}
+                transition={{ duration: 0.9, delay: 0.35 }}
+                className="absolute top-16 right-0 w-[78%]"
+              >
+                <BrowserCard {...HERO_PROJECTS[2]} />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: -40, rotate: -6 }}
+                animate={{ opacity: 1, x: 0, rotate: -3 }}
+                transition={{ duration: 0.9, delay: 0.2 }}
+                className="absolute top-4 left-0 w-[80%]"
+              >
+                <BrowserCard {...HERO_PROJECTS[1]} />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.9, delay: 0.5 }}
+                whileHover={{ y: -4 }}
+                className="absolute top-32 left-[10%] right-[10%]"
+              >
+                <BrowserCard {...HERO_PROJECTS[0]} priority />
+              </motion.div>
+            </div>
           </div>
         </div>
       </div>

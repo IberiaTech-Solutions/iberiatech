@@ -1,114 +1,110 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { FiMail, FiCalendar, FiMessageCircle } from 'react-icons/fi'
+import { FiArrowUpRight, FiMail, FiCalendar, FiMessageCircle } from 'react-icons/fi'
 import { useLanguage } from '@/components/LanguageProvider'
 
-// TODO Luis: replace with your real Calendly URL when you have one
-// e.g. https://calendly.com/luis-iberiatech/20min
 const CALENDLY_URL = 'https://calendly.com/luis-lozoya-tech/30min'
 
 export default function ContactPage() {
   const { t, language } = useLanguage()
 
+  const letter = language === 'es'
+    ? `Si estás aquí, probablemente tienes un proyecto en mente. Escríbeme directamente y te contesto en un día laborable como mucho — sin formularios largos, sin embudos, sin llamadas que no lleven a nada concreto.`
+    : `If you're here, you probably have a project in mind. Write to me directly and I'll reply within one business day — no long forms, no funnels, no calls that go nowhere.`
+
+  const sig = language === 'es'
+    ? 'Luis Lozoya, fundador'
+    : 'Luis Lozoya, founder'
+
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
-      {/* Hero */}
-      <section className="section-padding bg-primary-900 text-white">
-        <div className="container-max">
+    <div className="min-h-screen section-padding">
+      <div className="container-max">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="max-w-3xl"
+            transition={{ duration: 0.6 }}
+            className="md:col-span-7"
           >
-            <p className="text-sm uppercase tracking-[0.25em] text-accent-300 font-medium mb-4">
+            <p className="text-xs uppercase tracking-[0.25em] text-accent-700 dark:text-accent-400 font-medium mb-5">
               {t('nav.contact')}
             </p>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="font-display text-4xl md:text-6xl font-semibold text-ink-900 dark:text-ink-50 leading-[1.05] mb-8">
               {t('contact.title')}
             </h1>
-            <p className="text-lg md:text-xl text-blue-100/90 leading-relaxed">
-              {t('contact.subtitle')}
+            <p className="font-display text-xl md:text-2xl text-ink-700 dark:text-ink-300 leading-snug mb-8 prose-measure">
+              {letter}
             </p>
+            <p className="text-sm text-ink-500 italic">— {sig}</p>
           </motion.div>
-        </div>
-      </section>
 
-      {/* Contact options */}
-      <section className="section-padding">
-        <div className="container-max max-w-4xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            {/* Email card */}
-            <motion.a
-              href="mailto:luis@iberiatechsolutions.com"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="group bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 hover:border-primary-400 dark:hover:border-primary-500 transition-colors duration-200"
-            >
-              <div className="w-12 h-12 rounded-xl bg-primary-100 dark:bg-primary-900/40 flex items-center justify-center mb-5">
-                <FiMail className="w-6 h-6 text-primary-700 dark:text-primary-300" />
-              </div>
-              <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                {t('contact.email.label')}
-              </h2>
-              <p className="text-primary-700 dark:text-primary-300 font-medium break-all">
-                luis@iberiatechsolutions.com
-              </p>
-            </motion.a>
-
-            {/* Calendly card */}
-            <motion.a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="group bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 hover:border-primary-400 dark:hover:border-primary-500 transition-colors duration-200"
-            >
-              <div className="w-12 h-12 rounded-xl bg-primary-100 dark:bg-primary-900/40 flex items-center justify-center mb-5">
-                <FiCalendar className="w-6 h-6 text-primary-700 dark:text-primary-300" />
-              </div>
-              <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                {t('contact.book.label')}
-              </h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-3">
-                {t('contact.book.desc')}
-              </p>
-              <span className="text-primary-700 dark:text-primary-300 font-medium">
-                {t('contact.bookCta')} →
-              </span>
-            </motion.a>
-          </div>
-
-          {/* WhatsApp note */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 flex items-start space-x-4"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="md:col-span-5"
           >
-            <div className="w-10 h-10 rounded-lg bg-green-100 dark:bg-green-900/40 flex items-center justify-center flex-shrink-0">
-              <FiMessageCircle className="w-5 h-5 text-green-600 dark:text-green-400" />
-            </div>
-            <div>
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
-                WhatsApp
-              </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300">
-                {language === 'es'
-                  ? 'También puedes escribirnos por WhatsApp usando el botón flotante en la esquina inferior derecha.'
-                  : 'You can also message us on WhatsApp using the floating button in the bottom-right corner.'}
-              </p>
+            <div className="sticky top-24 space-y-4">
+              <a
+                href="mailto:luis@iberiatechsolutions.com"
+                className="group flex items-start gap-5 p-6 bg-primary-900 text-ink-50 rounded-md hover:bg-primary-800 transition-colors"
+              >
+                <FiMail className="w-5 h-5 mt-1 text-accent-400 flex-shrink-0" aria-hidden />
+                <div className="flex-1 min-w-0">
+                  <p className="text-[11px] uppercase tracking-[0.2em] text-accent-300 mb-2 font-medium">
+                    {language === 'es' ? 'Email directo' : 'Direct email'}
+                  </p>
+                  <p className="font-display text-lg md:text-xl font-semibold break-all leading-tight">
+                    luis@iberiatechsolutions.com
+                  </p>
+                </div>
+                <FiArrowUpRight className="w-4 h-4 text-ink-300 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform flex-shrink-0 mt-1" aria-hidden />
+              </a>
+
+              <a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-start gap-5 p-6 border border-ink-200 dark:border-ink-800 rounded-md hover:border-accent-500 dark:hover:border-accent-500 transition-colors"
+              >
+                <FiCalendar className="w-5 h-5 mt-1 text-accent-700 dark:text-accent-400 flex-shrink-0" aria-hidden />
+                <div className="flex-1">
+                  <p className="text-[11px] uppercase tracking-[0.2em] text-ink-500 mb-2 font-medium">
+                    {language === 'es' ? 'Llamada de 30 min' : '30-min call'}
+                  </p>
+                  <p className="font-display text-lg md:text-xl font-semibold text-ink-900 dark:text-ink-50 leading-tight">
+                    {t('contact.book.label')}
+                  </p>
+                  <p className="text-sm text-ink-600 dark:text-ink-400 mt-2">
+                    {t('contact.book.desc')}
+                  </p>
+                </div>
+                <FiArrowUpRight className="w-4 h-4 text-ink-500 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform flex-shrink-0 mt-1" aria-hidden />
+              </a>
+
+              <div className="p-6 border border-ink-200 dark:border-ink-800 rounded-md">
+                <div className="flex items-start gap-5">
+                  <FiMessageCircle className="w-5 h-5 mt-1 text-accent-700 dark:text-accent-400 flex-shrink-0" aria-hidden />
+                  <div>
+                    <p className="text-[11px] uppercase tracking-[0.2em] text-ink-500 mb-2 font-medium">
+                      WhatsApp
+                    </p>
+                    <p className="font-display text-lg font-semibold text-ink-900 dark:text-ink-50 leading-tight mb-2">
+                      {language === 'es' ? 'Texto rápido' : 'Quick text'}
+                    </p>
+                    <p className="text-sm text-ink-600 dark:text-ink-400">
+                      {language === 'es'
+                        ? 'Usa el botón flotante abajo a la derecha.'
+                        : 'Use the floating button in the bottom-right.'}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
-      </section>
+      </div>
     </div>
   )
 }

@@ -2,194 +2,148 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import {
-  FiCode,
-  FiCpu,
-  FiGlobe,
-  FiLayers,
-  FiShield,
-  FiArrowRight,
-  FiSearch,
-  FiPenTool,
-  FiBox,
-  FiSend,
-} from 'react-icons/fi'
+import { FiArrowRight, FiArrowUpRight } from 'react-icons/fi'
 import { useLanguage } from '@/components/LanguageProvider'
 
 const SERVICES = [
-  {
-    icon: FiCpu,
-    titleKey: 'services.ai.title',
-    descKey: 'services.ai.desc',
-  },
-  {
-    icon: FiCode,
-    titleKey: 'services.web.title',
-    descKey: 'services.web.desc',
-  },
-  {
-    icon: FiGlobe,
-    titleKey: 'services.bilingual.title',
-    descKey: 'services.bilingual.desc',
-  },
-  {
-    icon: FiLayers,
-    titleKey: 'services.apps.title',
-    descKey: 'services.apps.desc',
-  },
-  {
-    icon: FiShield,
-    titleKey: 'services.security.title',
-    descKey: 'services.security.desc',
-  },
+  { titleKey: 'services.ai.title',        descKey: 'services.ai.desc' },
+  { titleKey: 'services.web.title',       descKey: 'services.web.desc' },
+  { titleKey: 'services.bilingual.title', descKey: 'services.bilingual.desc' },
+  { titleKey: 'services.apps.title',      descKey: 'services.apps.desc' },
+  { titleKey: 'services.security.title',  descKey: 'services.security.desc' },
 ] as const
 
 const PROCESS = [
-  {
-    icon: FiSearch,
-    titleKey: 'process.discovery.title',
-    descKey: 'process.discovery.desc',
-  },
-  {
-    icon: FiPenTool,
-    titleKey: 'process.design.title',
-    descKey: 'process.design.desc',
-  },
-  {
-    icon: FiBox,
-    titleKey: 'process.build.title',
-    descKey: 'process.build.desc',
-  },
-  {
-    icon: FiSend,
-    titleKey: 'process.launch.title',
-    descKey: 'process.launch.desc',
-  },
+  { titleKey: 'process.discovery.title', descKey: 'process.discovery.desc' },
+  { titleKey: 'process.design.title',    descKey: 'process.design.desc' },
+  { titleKey: 'process.build.title',     descKey: 'process.build.desc' },
+  { titleKey: 'process.launch.title',    descKey: 'process.launch.desc' },
 ] as const
 
 export default function ServicesPage() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
 
   return (
     <div className="min-h-screen">
-      {/* Hero */}
-      <section className="section-padding bg-primary-900 text-white">
+      <section className="section-padding bg-primary-900 text-ink-50">
         <div className="container-max">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <p className="text-sm uppercase tracking-[0.25em] text-accent-300 font-medium mb-4">
+            <p className="text-xs uppercase tracking-[0.25em] text-accent-300 font-medium mb-5">
               {t('nav.services')}
             </p>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="font-display text-4xl md:text-6xl font-semibold leading-[1.05] mb-6">
               {t('services.title')}
             </h1>
-            <p className="text-lg md:text-xl text-blue-100/90 leading-relaxed">
+            <p className="text-lg md:text-xl text-ink-200/90 leading-relaxed prose-measure">
               {t('services.subtitle')}
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Services grid */}
-      <section className="section-padding bg-white dark:bg-gray-900">
+      <section className="section-padding">
         <div className="container-max">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {SERVICES.map((service, index) => {
-              const Icon = service.icon
-              return (
-                <motion.div
-                  key={service.titleKey}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.08 }}
-                  viewport={{ once: true }}
-                  className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-primary-100 dark:bg-primary-900/40 flex items-center justify-center mb-5">
-                    <Icon className="w-6 h-6 text-primary-700 dark:text-primary-300" />
-                  </div>
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+          <p className="text-xs uppercase tracking-[0.2em] text-accent-700 dark:text-accent-400 font-medium mb-5">
+            {language === 'es' ? 'Servicios' : 'Services'}
+          </p>
+          <ol className="divide-y divide-ink-200 dark:divide-ink-800 border-y border-ink-200 dark:border-ink-800">
+            {SERVICES.map((service, index) => (
+              <motion.li
+                key={service.titleKey}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, delay: index * 0.04 }}
+                viewport={{ once: true }}
+                className="grid grid-cols-12 gap-4 md:gap-8 py-8 md:py-10"
+              >
+                <div className="col-span-2 md:col-span-1 font-mono text-sm text-ink-500">
+                  {String(index + 1).padStart(2, '0')}
+                </div>
+                <div className="col-span-10 md:col-span-4">
+                  <h2 className="font-display text-xl md:text-2xl font-semibold text-ink-900 dark:text-ink-50">
                     {t(service.titleKey)}
                   </h2>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    {t(service.descKey)}
-                  </p>
-                </motion.div>
-              )
-            })}
-          </div>
+                </div>
+                <p className="col-span-12 md:col-span-7 text-base text-ink-600 dark:text-ink-300 leading-relaxed">
+                  {t(service.descKey)}
+                </p>
+              </motion.li>
+            ))}
+          </ol>
         </div>
       </section>
 
-      {/* Process */}
-      <section className="section-padding bg-gray-50 dark:bg-gray-800">
+      <section className="section-padding bg-ink-50 dark:bg-ink-950">
         <div className="container-max">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="text-center mb-12 max-w-2xl mx-auto"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              {t('process.title')}
-            </h2>
-          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-start">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="md:col-span-4"
+            >
+              <p className="text-xs uppercase tracking-[0.2em] text-accent-700 dark:text-accent-400 font-medium mb-5">
+                {language === 'es' ? 'Proceso' : 'Process'}
+              </p>
+              <h2 className="font-display text-3xl md:text-5xl font-semibold text-ink-900 dark:text-ink-50 leading-[1.05]">
+                {t('process.title')}
+              </h2>
+            </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {PROCESS.map((step, index) => {
-              const Icon = step.icon
-              return (
-                <motion.div
-                  key={step.titleKey}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.08 }}
-                  viewport={{ once: true }}
-                  className="bg-white dark:bg-gray-900 rounded-2xl p-6 border border-gray-200 dark:border-gray-700"
-                >
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary-100 dark:bg-primary-900/40 flex items-center justify-center">
-                      <Icon className="w-5 h-5 text-primary-700 dark:text-primary-300" />
-                    </div>
-                    <span className="text-xs uppercase tracking-wider text-primary-600 dark:text-primary-400 font-semibold">
+            <div className="md:col-span-8">
+              <ol className="space-y-6">
+                {PROCESS.map((step, index) => (
+                  <motion.li
+                    key={step.titleKey}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.08 }}
+                    viewport={{ once: true }}
+                    className="flex gap-5 md:gap-8 py-6 border-b border-ink-200 dark:border-ink-800 last:border-b-0"
+                  >
+                    <span className="font-mono text-sm text-ink-500 flex-shrink-0 pt-1 w-8">
                       0{index + 1}
                     </span>
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
-                    {t(step.titleKey)}
-                  </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                    {t(step.descKey)}
-                  </p>
-                </motion.div>
-              )
-            })}
+                    <div>
+                      <h3 className="font-display text-xl md:text-2xl font-semibold text-ink-900 dark:text-ink-50 mb-2">
+                        {t(step.titleKey)}
+                      </h3>
+                      <p className="text-base text-ink-600 dark:text-ink-300 leading-relaxed prose-measure">
+                        {t(step.descKey)}
+                      </p>
+                    </div>
+                  </motion.li>
+                ))}
+              </ol>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA strip */}
-      <section className="section-padding bg-white dark:bg-gray-900">
+      <section className="section-padding">
         <div className="container-max">
-          <div className="bg-primary-900 rounded-2xl p-10 md:p-14 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              {t('contact.title')}
-            </h2>
-            <p className="text-blue-100/90 mb-8 max-w-xl mx-auto">
-              {t('contact.subtitle')}
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center space-x-2 bg-accent-500 hover:bg-accent-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 shadow-lg shadow-accent-500/30"
-            >
-              <span>{t('hero.cta.contact')}</span>
-              <FiArrowRight className="w-5 h-5" />
-            </Link>
+          <div className="bg-primary-900 text-ink-50 rounded-md p-10 md:p-16">
+            <div className="max-w-2xl">
+              <h2 className="font-display text-3xl md:text-5xl font-semibold leading-[1.05] mb-5">
+                {t('contact.title')}
+              </h2>
+              <p className="text-lg text-ink-200/90 mb-8 leading-relaxed prose-measure">
+                {t('contact.subtitle')}
+              </p>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-ink-950 font-semibold py-3.5 px-6 rounded-md transition-colors duration-200"
+              >
+                <span>{t('hero.cta.contact')}</span>
+                <FiArrowUpRight className="w-4 h-4" aria-hidden />
+              </Link>
+            </div>
           </div>
         </div>
       </section>

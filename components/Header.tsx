@@ -6,14 +6,7 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useTheme } from 'next-themes'
 import { useLanguage } from './LanguageProvider'
-import {
-  FiMenu,
-  FiX,
-  FiSun,
-  FiMoon,
-  FiGlobe,
-  FiMessageCircle,
-} from 'react-icons/fi'
+import { FiMenu, FiX, FiSun, FiMoon, FiMessageCircle } from 'react-icons/fi'
 
 const WHATSAPP_URL = 'https://wa.me/18643657897'
 
@@ -25,11 +18,6 @@ export default function Header() {
 
   const toggleLanguage = () => {
     setLanguage(language === 'en' ? 'es' : 'en')
-  }
-
-  const openAIChat = () => {
-    const event = new CustomEvent('openAIChat')
-    window.dispatchEvent(event)
   }
 
   const navItems = [
@@ -44,37 +32,38 @@ export default function Header() {
     return pathname.startsWith(href)
   }
 
+  const currentLangLabel = language === 'en' ? 'EN' : 'ES'
+  const otherLangLabel = language === 'en' ? 'ES' : 'EN'
+
   return (
-    <header className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm border-b border-primary-800/10 dark:border-gray-800 sticky top-0 z-50">
+    <header className="bg-[var(--surface)]/90 backdrop-blur-md border-b border-[var(--border)] sticky top-0 z-50">
       <div className="container-max">
         <div className="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 min-w-0">
-            <div className="w-10 h-10 md:w-12 md:h-12 relative flex-shrink-0">
+          <Link href="/" className="flex items-center gap-3 min-w-0 -m-2 p-2 rounded-sm">
+            <div className="w-10 h-10 md:w-11 md:h-11 relative flex-shrink-0">
               <Image
                 src="/images/logos/IberiaTechLogo5.png"
                 alt="IberiaTech Solutions"
                 fill
-                sizes="48px"
+                sizes="44px"
                 className="object-contain"
                 priority
               />
             </div>
-            <span className="text-base md:text-lg lg:text-xl font-bold text-gray-900 dark:text-white truncate">
-              IberiaTech Solutions
+            <span className="font-display text-base md:text-lg font-semibold text-ink-900 dark:text-ink-50 truncate">
+              IberiaTech
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
+          <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
               <Link
                 key={item.key}
                 href={item.href}
-                className={`text-sm font-medium transition-colors duration-200 ${
+                className={`text-sm transition-colors duration-200 py-2 ${
                   isActive(item.href)
-                    ? 'text-primary-700 dark:text-primary-300'
-                    : 'text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400'
+                    ? 'text-ink-900 dark:text-ink-50 font-semibold'
+                    : 'text-ink-600 dark:text-ink-400 hover:text-ink-900 dark:hover:text-ink-50'
                 }`}
               >
                 {t(item.key)}
@@ -82,84 +71,69 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Controls */}
-          <div className="flex items-center space-x-1 md:space-x-2">
-            {/* Language Toggle */}
+          <div className="flex items-center gap-1">
             <button
               onClick={toggleLanguage}
-              className="p-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
-              aria-label="Toggle language"
-              title={
-                language === 'en' ? 'Switch to Spanish' : 'Cambiar a inglés'
+              className="min-w-[44px] min-h-[44px] px-3 inline-flex items-center justify-center gap-1.5 text-sm font-medium text-ink-700 dark:text-ink-300 hover:text-ink-900 dark:hover:text-ink-50 transition-colors duration-200 rounded-sm"
+              aria-label={
+                language === 'en'
+                  ? 'Current language: English. Switch to Spanish.'
+                  : 'Idioma actual: Español. Cambiar a inglés.'
               }
             >
-              <FiGlobe className="w-5 h-5" />
+              <span className="font-mono">{currentLangLabel}</span>
+              <span aria-hidden className="text-ink-400">/</span>
+              <span aria-hidden className="font-mono text-ink-400">{otherLangLabel}</span>
             </button>
 
-            {/* Theme Toggle */}
             <button
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="p-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
-              aria-label="Toggle theme"
+              className="min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-ink-700 dark:text-ink-300 hover:text-ink-900 dark:hover:text-ink-50 transition-colors duration-200 rounded-sm"
+              aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
             >
               {mounted && theme === 'dark' ? (
-                <FiSun className="w-5 h-5" />
+                <FiSun className="w-5 h-5" aria-hidden />
               ) : (
-                <FiMoon className="w-5 h-5" />
+                <FiMoon className="w-5 h-5" aria-hidden />
               )}
             </button>
 
-            {/* AI Chat Button — Desktop only */}
-            <button
-              onClick={openAIChat}
-              className="hidden md:flex p-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 items-center"
-              aria-label={language === 'es' ? 'Abrir chat IA' : 'Open AI chat'}
-              title={language === 'es' ? 'Chat con IA' : 'AI Chat'}
-            >
-              <span className="text-lg" role="img" aria-hidden="true">
-                🤖
-              </span>
-            </button>
-
-            {/* WhatsApp Button — Desktop only */}
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:flex p-2 text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200 items-center"
-              aria-label={language === 'es' ? 'Abrir WhatsApp' : 'Open WhatsApp'}
-              title="WhatsApp"
+              className="hidden md:inline-flex min-w-[44px] min-h-[44px] items-center justify-center text-ink-700 dark:text-ink-300 hover:text-accent-700 dark:hover:text-accent-400 transition-colors duration-200 rounded-sm"
+              aria-label={language === 'es' ? 'Contactar por WhatsApp' : 'Contact via WhatsApp'}
             >
-              <FiMessageCircle className="w-5 h-5" />
+              <FiMessageCircle className="w-5 h-5" aria-hidden />
             </a>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
-              aria-label="Toggle menu"
+              className="md:hidden min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-ink-700 dark:text-ink-300 hover:text-ink-900 dark:hover:text-ink-50 transition-colors duration-200 rounded-sm"
+              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? (
-                <FiX className="w-6 h-6" />
+                <FiX className="w-5 h-5" aria-hidden />
               ) : (
-                <FiMenu className="w-6 h-6" />
+                <FiMenu className="w-5 h-5" aria-hidden />
               )}
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white dark:bg-gray-900 border-t border-primary-800/10 dark:border-gray-700">
-            <nav className="px-4 py-3 space-y-1">
+          <div className="md:hidden border-t border-[var(--border)]">
+            <nav className="px-4 py-4 space-y-1">
               {navItems.map((item) => (
                 <Link
                   key={item.key}
                   href={item.href}
-                  className={`block py-2 px-3 rounded-lg text-sm font-medium transition-colors duration-200 ${
+                  className={`block py-3 px-3 rounded-sm text-base transition-colors duration-200 ${
                     isActive(item.href)
-                      ? 'text-primary-700 dark:text-primary-300 bg-primary-50 dark:bg-primary-900/20'
-                      : 'text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800'
+                      ? 'text-ink-900 dark:text-ink-50 font-semibold'
+                      : 'text-ink-700 dark:text-ink-300 hover:text-ink-900 dark:hover:text-ink-50'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -167,31 +141,15 @@ export default function Header() {
                 </Link>
               ))}
 
-              {/* Quick Contact in mobile menu */}
-              <div className="border-t border-gray-200 dark:border-gray-700 pt-3 mt-3">
-                <div className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2 px-3">
-                  {language === 'es' ? 'Contacto rápido' : 'Quick contact'}
-                </div>
-                <button
-                  onClick={() => {
-                    setIsMenuOpen(false)
-                    openAIChat()
-                  }}
-                  className="flex items-center space-x-3 w-full py-2 px-3 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200"
-                >
-                  <span className="text-lg" role="img" aria-hidden="true">
-                    🤖
-                  </span>
-                  <span>{language === 'es' ? 'Chat con IA' : 'AI Chat'}</span>
-                </button>
+              <div className="border-t border-[var(--border)] pt-3 mt-3">
                 <a
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-3 w-full py-2 px-3 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200"
+                  className="flex items-center gap-3 w-full py-3 px-3 rounded-sm text-base text-ink-700 dark:text-ink-300 hover:text-accent-700 dark:hover:text-accent-400 transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <FiMessageCircle className="w-5 h-5" />
+                  <FiMessageCircle className="w-5 h-5" aria-hidden />
                   <span>WhatsApp</span>
                 </a>
               </div>

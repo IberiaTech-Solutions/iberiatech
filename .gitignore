@@ -24,6 +24,10 @@ dist/
 .idea/
 *.swp
 *.swo
+.claude/
+
+# TypeScript
+tsconfig.tsbuildinfo
 
 # OS
 .DS_Store

@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { FiArrowLeft, FiExternalLink } from 'react-icons/fi'
+import { FiArrowLeft, FiArrowUpRight } from 'react-icons/fi'
 import { useLanguage } from '@/components/LanguageProvider'
 import type { Project } from '@/data/projects'
 
@@ -15,50 +15,50 @@ export default function CaseStudyClient({ project }: CaseStudyClientProps) {
   const { t, language } = useLanguage()
 
   return (
-    <article className="min-h-screen bg-white dark:bg-gray-900">
+    <article className="min-h-screen">
       <div className="container-max section-padding">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto"
+          className="max-w-5xl mx-auto"
         >
-          {/* Back link */}
           <Link
             href="/work"
-            className="inline-flex items-center space-x-2 text-sm text-primary-700 dark:text-primary-300 hover:text-primary-800 dark:hover:text-primary-200 mb-8 transition-colors duration-200"
+            className="inline-flex items-center gap-2 text-sm text-ink-600 dark:text-ink-400 hover:text-ink-900 dark:hover:text-ink-50 mb-10 transition-colors duration-200"
           >
-            <FiArrowLeft className="w-4 h-4" />
+            <FiArrowLeft className="w-4 h-4" aria-hidden />
             <span>{t('work.back')}</span>
           </Link>
 
-          {/* Header */}
-          <header className="mb-10">
-            <p className="text-xs uppercase tracking-wider text-primary-600 dark:text-primary-400 font-semibold mb-3">
-              {project.category[language]}
-            </p>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-              {project.title}
-            </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl">
-              {project.summary[language]}
-            </p>
-
+          <header className="mb-12 grid grid-cols-1 md:grid-cols-12 gap-6 items-end">
+            <div className="md:col-span-8">
+              <p className="text-xs uppercase tracking-[0.2em] text-accent-700 dark:text-accent-400 font-medium mb-4">
+                {project.category[language]}
+              </p>
+              <h1 className="font-display text-4xl md:text-6xl font-semibold leading-[1.05] text-ink-900 dark:text-ink-50 mb-6">
+                {project.title}
+              </h1>
+              <p className="text-lg md:text-xl text-ink-600 dark:text-ink-300 leading-relaxed prose-measure">
+                {project.summary[language]}
+              </p>
+            </div>
             {project.link && (
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 mt-6 bg-primary-700 hover:bg-primary-800 text-white font-semibold py-3 px-5 rounded-lg transition-colors duration-200 shadow-md"
-              >
-                <span>{t('work.viewLive')}</span>
-                <FiExternalLink className="w-4 h-4" />
-              </a>
+              <div className="md:col-span-4 md:text-right">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-ink-900 dark:text-ink-50 font-medium hover:text-accent-700 dark:hover:text-accent-400 transition-colors duration-200"
+                >
+                  <span>{t('work.viewLive')}</span>
+                  <FiArrowUpRight className="w-4 h-4" aria-hidden />
+                </a>
+              </div>
             )}
           </header>
 
-          {/* Cover image */}
-          <div className="relative aspect-[16/9] rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800 mb-12 border border-gray-200 dark:border-gray-700">
+          <div className="relative aspect-[16/9] rounded-md overflow-hidden bg-ink-100 dark:bg-ink-900 mb-16">
             <Image
               src={project.image}
               alt={project.title}
@@ -68,54 +68,51 @@ export default function CaseStudyClient({ project }: CaseStudyClientProps) {
               priority
             />
             {project.comingSoon && (
-              <div className="absolute top-4 right-4 bg-accent-500 text-white text-sm font-semibold px-4 py-1.5 rounded-full">
+              <div className="absolute top-4 left-4 bg-ink-950/80 text-ink-50 text-[11px] uppercase tracking-wider font-medium px-2.5 py-1 rounded-sm backdrop-blur-sm">
                 {t('work.comingSoon')}
               </div>
             )}
           </div>
 
-          {/* Body grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-            <div className="md:col-span-2 space-y-10">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 mb-16">
+            <div className="md:col-span-8 space-y-12">
               <section>
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+                <p className="text-xs uppercase tracking-[0.2em] text-accent-700 dark:text-accent-400 font-medium mb-4">
                   {t('work.problem')}
-                </h2>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                </p>
+                <p className="font-display text-xl md:text-2xl text-ink-900 dark:text-ink-50 leading-snug prose-measure">
                   {project.problem[language]}
                 </p>
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+                <p className="text-xs uppercase tracking-[0.2em] text-accent-700 dark:text-accent-400 font-medium mb-4">
                   {t('work.solution')}
-                </h2>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                </p>
+                <p className="text-lg text-ink-700 dark:text-ink-300 leading-relaxed prose-measure">
                   {project.solution[language]}
                 </p>
               </section>
             </div>
 
-            <aside className="space-y-8">
+            <aside className="md:col-span-4 space-y-10 md:pt-1">
               <div>
-                <h3 className="text-xs uppercase tracking-wider font-semibold text-gray-500 dark:text-gray-400 mb-3">
+                <p className="text-xs uppercase tracking-[0.2em] text-ink-500 font-medium mb-3">
                   {t('work.role')}
-                </h3>
-                <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                </p>
+                <p className="text-base text-ink-700 dark:text-ink-300 leading-relaxed">
                   {project.role[language]}
                 </p>
               </div>
 
               <div>
-                <h3 className="text-xs uppercase tracking-wider font-semibold text-gray-500 dark:text-gray-400 mb-3">
+                <p className="text-xs uppercase tracking-[0.2em] text-ink-500 font-medium mb-3">
                   {t('work.tech')}
-                </h3>
-                <ul className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
-                    <li
-                      key={tech}
-                      className="text-xs px-2.5 py-1 rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
-                    >
+                </p>
+                <ul className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink-700 dark:text-ink-300">
+                  {project.technologies.map((tech, i) => (
+                    <li key={tech} className="inline-flex items-center gap-3">
+                      {i > 0 && <span aria-hidden className="text-ink-400">·</span>}
                       {tech}
                     </li>
                   ))}
@@ -124,13 +121,12 @@ export default function CaseStudyClient({ project }: CaseStudyClientProps) {
             </aside>
           </div>
 
-          {/* Bottom back link */}
-          <div className="pt-8 border-t border-gray-200 dark:border-gray-800">
+          <div className="pt-10 border-t border-ink-200 dark:border-ink-800">
             <Link
               href="/work"
-              className="inline-flex items-center space-x-2 text-sm text-primary-700 dark:text-primary-300 hover:text-primary-800 dark:hover:text-primary-200 transition-colors duration-200"
+              className="inline-flex items-center gap-2 text-sm text-ink-600 dark:text-ink-400 hover:text-ink-900 dark:hover:text-ink-50 transition-colors duration-200"
             >
-              <FiArrowLeft className="w-4 h-4" />
+              <FiArrowLeft className="w-4 h-4" aria-hidden />
               <span>{t('work.back')}</span>
             </Link>
           </div>

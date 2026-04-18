@@ -4,15 +4,14 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { FiArrowRight, FiCode, FiCpu, FiGlobe, FiLayers, FiShield } from 'react-icons/fi'
 import { useLanguage } from './LanguageProvider'
-import SpotlightCard from './SpotlightCard'
+
+const FEATURED = {
+  icon: FiCpu,
+  titleKey: 'services.ai.title',
+  descKey: 'services.ai.desc',
+}
 
 const SERVICES = [
-  {
-    icon: FiCpu,
-    titleKey: 'services.ai.title',
-    descKey: 'services.ai.desc',
-    featured: true,
-  },
   {
     icon: FiCode,
     titleKey: 'services.web.title',
@@ -37,99 +36,95 @@ const SERVICES = [
 
 export default function ServicesSection() {
   const { t, language } = useLanguage()
+  const FeaturedIcon = FEATURED.icon
 
   return (
-    <section id="services" className="section-padding bg-white dark:bg-gray-900">
+    <section id="services" className="section-padding">
       <div className="container-max">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-12 max-w-2xl mx-auto"
+          className="max-w-2xl mb-14 md:mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <p className="text-xs uppercase tracking-[0.2em] text-accent-700 dark:text-accent-400 font-medium mb-5">
+            {language === 'es' ? 'Qué hacemos' : 'What we do'}
+          </p>
+          <h2 className="font-display text-4xl md:text-5xl font-semibold text-ink-900 dark:text-ink-50 mb-6 leading-[1.05]">
             {t('services.title')}
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
+          <p className="text-lg text-ink-600 dark:text-ink-300 prose-measure">
             {t('services.subtitle')}
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <motion.article
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="relative mb-16 md:mb-20 rounded-md border border-primary-800/80 bg-primary-900 text-ink-50 overflow-hidden"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-5">
+            <div className="md:col-span-3 p-8 md:p-12">
+              <div className="flex items-center gap-3 mb-6">
+                <FeaturedIcon className="w-5 h-5 text-accent-400" aria-hidden />
+                <span className="text-[11px] uppercase tracking-[0.25em] font-semibold text-accent-400">
+                  {language === 'es' ? 'Destacado' : 'Featured'}
+                </span>
+              </div>
+              <h3 className="font-display text-3xl md:text-4xl font-semibold mb-5 leading-tight">
+                {t(FEATURED.titleKey)}
+              </h3>
+              <p className="text-base md:text-lg text-ink-200/90 leading-relaxed prose-measure">
+                {t(FEATURED.descKey)}
+              </p>
+            </div>
+            <div className="md:col-span-2 relative min-h-[200px] md:min-h-[320px] border-t md:border-t-0 md:border-l border-primary-800/80 p-8 md:p-12 flex items-end">
+              <p className="text-sm text-ink-300 font-mono">
+                Next.js · OpenAI · Supabase
+              </p>
+            </div>
+          </div>
+        </motion.article>
+
+        <ol className="divide-y divide-ink-200 dark:divide-ink-800 border-y border-ink-200 dark:border-ink-800">
           {SERVICES.map((service, index) => {
             const Icon = service.icon
-            const featured = 'featured' in service && service.featured
             return (
-              <motion.div
+              <motion.li
                 key={service.titleKey}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.08 }}
+                transition={{ duration: 0.45, delay: index * 0.05 }}
                 viewport={{ once: true }}
-                className={featured ? 'md:col-span-2' : ''}
+                className="group grid grid-cols-12 gap-4 md:gap-8 py-8 md:py-10"
               >
-                <SpotlightCard
-                  className="rounded-2xl h-full"
-                  accent={featured ? 'rgba(0,195,137,0.45)' : 'rgba(0,195,137,0.35)'}
-                >
-                  <div
-                    className={`rounded-2xl p-8 border h-full transition-colors duration-200 ${
-                      featured
-                        ? 'bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 border-accent-500/30 text-white'
-                        : 'bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700'
-                    }`}
-                  >
-                    <div className="flex items-center gap-3 mb-5">
-                      <div
-                        className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                          featured
-                            ? 'bg-accent-500/20 text-accent-300'
-                            : 'bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300'
-                        }`}
-                      >
-                        <Icon className="w-6 h-6" />
-                      </div>
-                      {featured && (
-                        <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.25em] font-semibold text-accent-300">
-                          <span className="relative flex h-2 w-2">
-                            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-400 opacity-75" />
-                            <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-400" />
-                          </span>
-                          {language === 'es' ? 'Nuevo' : 'New'}
-                        </span>
-                      )}
-                    </div>
-                    <h3
-                      className={`text-xl font-semibold mb-3 ${
-                        featured ? 'text-white' : 'text-gray-900 dark:text-white'
-                      }`}
-                    >
-                      {t(service.titleKey)}
-                    </h3>
-                    <p
-                      className={`leading-relaxed ${
-                        featured
-                          ? 'text-blue-100/90'
-                          : 'text-gray-600 dark:text-gray-300'
-                      }`}
-                    >
-                      {t(service.descKey)}
-                    </p>
-                  </div>
-                </SpotlightCard>
-              </motion.div>
+                <div className="col-span-2 md:col-span-1 font-mono text-sm text-ink-500">
+                  0{index + 2}
+                </div>
+                <div className="col-span-10 md:col-span-4 flex items-start gap-3">
+                  <Icon className="mt-1 w-4 h-4 text-accent-600 dark:text-accent-400 flex-shrink-0" aria-hidden />
+                  <h3 className="font-display text-xl md:text-2xl font-semibold text-ink-900 dark:text-ink-50">
+                    {t(service.titleKey)}
+                  </h3>
+                </div>
+                <p className="col-span-12 md:col-span-7 text-base text-ink-600 dark:text-ink-300 leading-relaxed">
+                  {t(service.descKey)}
+                </p>
+              </motion.li>
             )
           })}
-        </div>
+        </ol>
 
-        <div className="mt-10 text-center">
+        <div className="mt-12">
           <Link
             href="/services"
-            className="inline-flex items-center space-x-2 text-primary-700 dark:text-primary-300 font-semibold hover:text-primary-800 dark:hover:text-primary-200 transition-colors duration-200"
+            className="inline-flex items-center gap-2 text-ink-900 dark:text-ink-50 font-medium hover:text-accent-700 dark:hover:text-accent-400 transition-colors duration-200"
           >
             <span>{t('services.cta')}</span>
-            <FiArrowRight className="w-5 h-5" />
+            <FiArrowRight className="w-4 h-4" aria-hidden />
           </Link>
         </div>
       </div>
