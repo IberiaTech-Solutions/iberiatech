@@ -107,6 +107,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`} suppressHydrationWarning>
       <body className="font-sans antialiased">
+        <noscript>
+          <style>{`.reveal { opacity: 1 !important; transform: none !important; }`}</style>
+        </noscript>
         <StructuredData />
         <ThemeProvider
           attribute="class"
@@ -116,9 +119,10 @@ export default function RootLayout({
         >
           <LanguageProvider>
             <HtmlLangUpdater />
+            <a href="#main" className="skip-link">Skip to content</a>
             <div className="min-h-screen flex flex-col">
               <Header />
-              <main className="flex-1">{children}</main>
+              <main id="main" className="flex-1">{children}</main>
               <Footer />
               <WhatsAppChat phoneNumber="18643657897" />
               <AIChatbot />

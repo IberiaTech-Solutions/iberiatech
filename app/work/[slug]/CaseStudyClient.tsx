@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
 import { FiArrowLeft, FiArrowUpRight } from 'react-icons/fi'
 import { useLanguage } from '@/components/LanguageProvider'
 import type { Project } from '@/data/projects'
@@ -17,12 +16,7 @@ export default function CaseStudyClient({ project }: CaseStudyClientProps) {
   return (
     <article className="min-h-screen">
       <div className="container-max section-padding">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-5xl mx-auto"
-        >
+        <div className="max-w-5xl mx-auto fade-up">
           <Link
             href="/work"
             className="inline-flex items-center gap-2 text-sm text-ink-600 dark:text-ink-400 hover:text-ink-900 dark:hover:text-ink-50 mb-10 transition-colors duration-200"
@@ -130,7 +124,7 @@ export default function CaseStudyClient({ project }: CaseStudyClientProps) {
               <span>{t('work.back')}</span>
             </Link>
           </div>
-        </motion.div>
+        </div>
       </div>
     </article>
   )

@@ -2,10 +2,10 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
 import { FiArrowRight, FiExternalLink } from 'react-icons/fi'
 import { useLanguage } from './LanguageProvider'
 import { PROJECTS, type Project } from '@/data/projects'
+import Reveal from './Reveal'
 
 interface PortfolioSectionProps {
   featuredOnly?: boolean
@@ -28,13 +28,7 @@ export default function PortfolioSection({
     <section id="work" className="section-padding bg-ink-50 dark:bg-ink-950">
       <div className="container-max">
         {showHeading && (
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="max-w-2xl mb-14 md:mb-20"
-          >
+          <Reveal className="max-w-2xl mb-14 md:mb-20">
             <p className="text-xs uppercase tracking-[0.2em] text-accent-700 dark:text-accent-400 font-medium mb-5">
               {language === 'es' ? 'Proyectos recientes' : 'Selected work'}
             </p>
@@ -44,17 +38,15 @@ export default function PortfolioSection({
             <p className="text-lg text-ink-600 dark:text-ink-300 prose-measure">
               {t('work.subtitle')}
             </p>
-          </motion.div>
+          </Reveal>
         )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-8 md:gap-y-16">
           {projects.map((project, index) => (
-            <motion.article
+            <Reveal
               key={project.slug}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: index * 0.06 }}
-              viewport={{ once: true }}
+              as="article"
+              delay={index * 60}
               className={`group relative ${index % 3 === 0 ? 'md:col-span-2' : ''}`}
             >
               <div className="relative aspect-[16/10] bg-ink-100 dark:bg-ink-900 rounded-md overflow-hidden mb-5">
@@ -122,7 +114,7 @@ export default function PortfolioSection({
                   )}
                 </div>
               </div>
-            </motion.article>
+            </Reveal>
           ))}
         </div>
 

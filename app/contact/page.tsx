@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { FiArrowUpRight, FiMail, FiCalendar, FiMessageCircle } from 'react-icons/fi'
 import { useLanguage } from '@/components/LanguageProvider'
 
@@ -21,12 +20,7 @@ export default function ContactPage() {
     <div className="min-h-screen section-padding">
       <div className="container-max">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="md:col-span-7"
-          >
+          <div className="md:col-span-7 fade-up">
             <p className="text-xs uppercase tracking-[0.25em] text-accent-700 dark:text-accent-400 font-medium mb-5">
               {t('nav.contact')}
             </p>
@@ -37,14 +31,9 @@ export default function ContactPage() {
               {letter}
             </p>
             <p className="text-sm text-ink-500 italic">— {sig}</p>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="md:col-span-5"
-          >
+          <div className="md:col-span-5 fade-up" style={{ animationDelay: '150ms' }}>
             <div className="sticky top-24 space-y-4">
               <a
                 href="mailto:luis@iberiatechsolutions.com"
@@ -102,7 +91,7 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>

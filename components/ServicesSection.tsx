@@ -1,9 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 import { FiArrowRight, FiCode, FiCpu, FiGlobe, FiLayers, FiShield } from 'react-icons/fi'
 import { useLanguage } from './LanguageProvider'
+import Reveal from './Reveal'
 
 const FEATURED = {
   icon: FiCpu,
@@ -12,26 +12,10 @@ const FEATURED = {
 }
 
 const SERVICES = [
-  {
-    icon: FiCode,
-    titleKey: 'services.web.title',
-    descKey: 'services.web.desc',
-  },
-  {
-    icon: FiGlobe,
-    titleKey: 'services.bilingual.title',
-    descKey: 'services.bilingual.desc',
-  },
-  {
-    icon: FiLayers,
-    titleKey: 'services.apps.title',
-    descKey: 'services.apps.desc',
-  },
-  {
-    icon: FiShield,
-    titleKey: 'services.security.title',
-    descKey: 'services.security.desc',
-  },
+  { icon: FiCode,   titleKey: 'services.web.title',       descKey: 'services.web.desc' },
+  { icon: FiGlobe,  titleKey: 'services.bilingual.title', descKey: 'services.bilingual.desc' },
+  { icon: FiLayers, titleKey: 'services.apps.title',      descKey: 'services.apps.desc' },
+  { icon: FiShield, titleKey: 'services.security.title',  descKey: 'services.security.desc' },
 ] as const
 
 export default function ServicesSection() {
@@ -41,13 +25,7 @@ export default function ServicesSection() {
   return (
     <section id="services" className="section-padding">
       <div className="container-max">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="max-w-2xl mb-14 md:mb-20"
-        >
+        <Reveal className="max-w-2xl mb-14 md:mb-20">
           <p className="text-xs uppercase tracking-[0.2em] text-accent-700 dark:text-accent-400 font-medium mb-5">
             {language === 'es' ? 'Qué hacemos' : 'What we do'}
           </p>
@@ -57,15 +35,9 @@ export default function ServicesSection() {
           <p className="text-lg text-ink-600 dark:text-ink-300 prose-measure">
             {t('services.subtitle')}
           </p>
-        </motion.div>
+        </Reveal>
 
-        <motion.article
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="relative mb-16 md:mb-20 rounded-md border border-primary-800/80 bg-primary-900 text-ink-50 overflow-hidden"
-        >
+        <Reveal as="article" className="relative mb-16 md:mb-20 rounded-md border border-primary-800/80 bg-primary-900 text-ink-50 overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-5">
             <div className="md:col-span-3 p-8 md:p-12">
               <div className="flex items-center gap-3 mb-6">
@@ -82,26 +54,24 @@ export default function ServicesSection() {
               </p>
             </div>
             <div className="md:col-span-2 relative min-h-[200px] md:min-h-[320px] border-t md:border-t-0 md:border-l border-primary-800/80 p-8 md:p-12 flex items-end">
-              <p className="text-sm text-ink-300 font-mono">
+              <p className="text-sm text-ink-300 tabular-nums">
                 Next.js · OpenAI · Supabase
               </p>
             </div>
           </div>
-        </motion.article>
+        </Reveal>
 
         <ol className="divide-y divide-ink-200 dark:divide-ink-800 border-y border-ink-200 dark:border-ink-800">
           {SERVICES.map((service, index) => {
             const Icon = service.icon
             return (
-              <motion.li
+              <Reveal
                 key={service.titleKey}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45, delay: index * 0.05 }}
-                viewport={{ once: true }}
+                as="li"
+                delay={index * 50}
                 className="group grid grid-cols-12 gap-4 md:gap-8 py-8 md:py-10"
               >
-                <div className="col-span-2 md:col-span-1 font-mono text-sm text-ink-500">
+                <div className="col-span-2 md:col-span-1 text-sm text-ink-500 tabular-nums">
                   0{index + 2}
                 </div>
                 <div className="col-span-10 md:col-span-4 flex items-start gap-3">
@@ -113,7 +83,7 @@ export default function ServicesSection() {
                 <p className="col-span-12 md:col-span-7 text-base text-ink-600 dark:text-ink-300 leading-relaxed">
                   {t(service.descKey)}
                 </p>
-              </motion.li>
+              </Reveal>
             )
           })}
         </ol>

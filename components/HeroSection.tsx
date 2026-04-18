@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
 import { FiArrowRight } from 'react-icons/fi'
 import { useLanguage } from './LanguageProvider'
 
@@ -73,7 +72,6 @@ export default function HeroSection() {
       id="home"
       className="relative overflow-hidden section-padding bg-primary-900 text-ink-50"
     >
-      {/* Quiet static backdrop: radial tint + film grain. No rotating aurora. */}
       <div
         aria-hidden
         className="absolute inset-0 -z-10 opacity-80"
@@ -93,12 +91,7 @@ export default function HeroSection() {
 
       <div className="container-max relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="lg:col-span-7 space-y-8"
-          >
+          <div className="lg:col-span-7 space-y-8 fade-up">
             <p className="text-xs uppercase tracking-[0.25em] text-accent-300 font-medium">
               {language === 'es'
                 ? 'Consultoría web bilingüe · Charleston, SC'
@@ -149,46 +142,32 @@ export default function HeroSection() {
                 <dd className="font-display text-base md:text-lg font-medium">&lt; 48h</dd>
               </div>
             </dl>
-          </motion.div>
+          </div>
 
           <div className="lg:col-span-5 relative">
-            {/* Mobile/tablet: single featured card */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="lg:hidden"
-            >
+            <div className="lg:hidden fade-up" style={{ animationDelay: '120ms' }}>
               <BrowserCard {...HERO_PROJECTS[1]} priority />
-            </motion.div>
+            </div>
 
-            {/* Desktop: stacked composition */}
             <div className="hidden lg:block relative h-[520px]">
-              <motion.div
-                initial={{ opacity: 0, x: 40, rotate: 6 }}
-                animate={{ opacity: 1, x: 0, rotate: 4 }}
-                transition={{ duration: 0.9, delay: 0.35 }}
-                className="absolute top-16 right-0 w-[78%]"
+              <div
+                className="absolute top-16 right-0 w-[78%] fade-in rotate-[4deg]"
+                style={{ animationDelay: '260ms' }}
               >
                 <BrowserCard {...HERO_PROJECTS[2]} />
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: -40, rotate: -6 }}
-                animate={{ opacity: 1, x: 0, rotate: -3 }}
-                transition={{ duration: 0.9, delay: 0.2 }}
-                className="absolute top-4 left-0 w-[80%]"
+              </div>
+              <div
+                className="absolute top-4 left-0 w-[80%] fade-in -rotate-[3deg]"
+                style={{ animationDelay: '140ms' }}
               >
                 <BrowserCard {...HERO_PROJECTS[1]} />
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.9, delay: 0.5 }}
-                whileHover={{ y: -4 }}
-                className="absolute top-32 left-[10%] right-[10%]"
+              </div>
+              <div
+                className="absolute top-32 left-[10%] right-[10%] fade-up transition-transform duration-300 hover:-translate-y-1"
+                style={{ animationDelay: '360ms' }}
               >
                 <BrowserCard {...HERO_PROJECTS[0]} priority />
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>

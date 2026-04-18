@@ -1,8 +1,8 @@
 'use client'
 
 import Image from 'next/image'
-import { motion } from 'framer-motion'
 import { useLanguage } from './LanguageProvider'
+import Reveal from './Reveal'
 
 export default function AboutSection() {
   const { t, language } = useLanguage()
@@ -26,13 +26,7 @@ export default function AboutSection() {
     <section id="about" className="section-padding">
       <div className="container-max">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-start">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="md:col-span-5"
-          >
+          <Reveal className="md:col-span-5">
             <div className="relative aspect-[4/5] max-w-sm rounded-md overflow-hidden">
               <Image
                 src="/images/luis-lozoya.jpg"
@@ -42,15 +36,9 @@ export default function AboutSection() {
                 className="object-cover grayscale-[0.15]"
               />
             </div>
-          </motion.div>
+          </Reveal>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="md:col-span-7"
-          >
+          <Reveal className="md:col-span-7" delay={100}>
             <p className="text-xs uppercase tracking-[0.2em] text-accent-700 dark:text-accent-400 font-medium mb-5">
               {t('about.kicker')}
             </p>
@@ -78,7 +66,7 @@ export default function AboutSection() {
                 </div>
               ))}
             </dl>
-          </motion.div>
+          </Reveal>
         </div>
       </div>
     </section>

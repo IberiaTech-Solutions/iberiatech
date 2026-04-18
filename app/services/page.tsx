@@ -1,9 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import { motion } from 'framer-motion'
-import { FiArrowRight, FiArrowUpRight } from 'react-icons/fi'
+import { FiArrowUpRight } from 'react-icons/fi'
 import { useLanguage } from '@/components/LanguageProvider'
+import Reveal from '@/components/Reveal'
 
 const SERVICES = [
   { titleKey: 'services.ai.title',        descKey: 'services.ai.desc' },
@@ -27,12 +27,7 @@ export default function ServicesPage() {
     <div className="min-h-screen">
       <section className="section-padding bg-primary-900 text-ink-50">
         <div className="container-max">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
-          >
+          <div className="max-w-3xl fade-up">
             <p className="text-xs uppercase tracking-[0.25em] text-accent-300 font-medium mb-5">
               {t('nav.services')}
             </p>
@@ -42,7 +37,7 @@ export default function ServicesPage() {
             <p className="text-lg md:text-xl text-ink-200/90 leading-relaxed prose-measure">
               {t('services.subtitle')}
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -53,15 +48,13 @@ export default function ServicesPage() {
           </p>
           <ol className="divide-y divide-ink-200 dark:divide-ink-800 border-y border-ink-200 dark:border-ink-800">
             {SERVICES.map((service, index) => (
-              <motion.li
+              <Reveal
                 key={service.titleKey}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45, delay: index * 0.04 }}
-                viewport={{ once: true }}
+                as="li"
+                delay={index * 40}
                 className="grid grid-cols-12 gap-4 md:gap-8 py-8 md:py-10"
               >
-                <div className="col-span-2 md:col-span-1 font-mono text-sm text-ink-500">
+                <div className="col-span-2 md:col-span-1 text-sm text-ink-500 tabular-nums">
                   {String(index + 1).padStart(2, '0')}
                 </div>
                 <div className="col-span-10 md:col-span-4">
@@ -72,7 +65,7 @@ export default function ServicesPage() {
                 <p className="col-span-12 md:col-span-7 text-base text-ink-600 dark:text-ink-300 leading-relaxed">
                   {t(service.descKey)}
                 </p>
-              </motion.li>
+              </Reveal>
             ))}
           </ol>
         </div>
@@ -81,33 +74,25 @@ export default function ServicesPage() {
       <section className="section-padding bg-ink-50 dark:bg-ink-950">
         <div className="container-max">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-start">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="md:col-span-4"
-            >
+            <Reveal className="md:col-span-4">
               <p className="text-xs uppercase tracking-[0.2em] text-accent-700 dark:text-accent-400 font-medium mb-5">
                 {language === 'es' ? 'Proceso' : 'Process'}
               </p>
               <h2 className="font-display text-3xl md:text-5xl font-semibold text-ink-900 dark:text-ink-50 leading-[1.05]">
                 {t('process.title')}
               </h2>
-            </motion.div>
+            </Reveal>
 
             <div className="md:col-span-8">
               <ol className="space-y-6">
                 {PROCESS.map((step, index) => (
-                  <motion.li
+                  <Reveal
                     key={step.titleKey}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.08 }}
-                    viewport={{ once: true }}
+                    as="li"
+                    delay={index * 80}
                     className="flex gap-5 md:gap-8 py-6 border-b border-ink-200 dark:border-ink-800 last:border-b-0"
                   >
-                    <span className="font-mono text-sm text-ink-500 flex-shrink-0 pt-1 w-8">
+                    <span className="text-sm text-ink-500 flex-shrink-0 pt-1 w-8 tabular-nums">
                       0{index + 1}
                     </span>
                     <div>
@@ -118,7 +103,7 @@ export default function ServicesPage() {
                         {t(step.descKey)}
                       </p>
                     </div>
-                  </motion.li>
+                  </Reveal>
                 ))}
               </ol>
             </div>
