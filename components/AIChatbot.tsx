@@ -39,6 +39,25 @@ export default function AIChatbot() {
       if (e.key === 'Escape') {
         e.preventDefault()
         setIsOpen(false)
+        return
+      }
+      if (e.key !== 'Tab' || !dialogRef.current) return
+
+      const focusable = dialogRef.current.querySelectorAll<HTMLElement>(
+        'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      )
+      if (focusable.length === 0) return
+
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+      const active = document.activeElement
+
+      if (e.shiftKey && active === first) {
+        e.preventDefault()
+        last.focus()
+      } else if (!e.shiftKey && active === last) {
+        e.preventDefault()
+        first.focus()
       }
     }
     document.addEventListener('keydown', handleKey)
@@ -115,7 +134,7 @@ export default function AIChatbot() {
 
 
   const handleSendMessage = async () => {
-    if (!inputValue.trim()) return
+    if (!inputValue.trim() || isTyping) return
 
     const userMessage: Message = {
       id: Date.now().toString(),
@@ -261,7 +280,9 @@ export default function AIChatbot() {
                   ].map((question) => (
                     <button
                       key={question}
+                      disabled={isTyping}
                       onClick={async () => {
+                        if (isTyping) return
                         const userMessage: Message = {
                           id: Date.now().toString(),
                           text: question,
@@ -295,7 +316,7 @@ export default function AIChatbot() {
                           setIsTyping(false)
                         }
                       }}
-                      className="text-left px-3 py-2 bg-ink-100 dark:bg-ink-900 hover:bg-ink-200 dark:hover:bg-ink-800 rounded-sm text-sm text-ink-800 dark:text-ink-200 transition-colors duration-200"
+                      className="text-left px-3 py-2 bg-ink-100 dark:bg-ink-900 hover:bg-ink-200 dark:hover:bg-ink-800 disabled:opacity-40 disabled:cursor-not-allowed rounded-sm text-sm text-ink-800 dark:text-ink-200 transition-colors duration-200"
                     >
                       {question}
                     </button>
@@ -332,7 +353,7 @@ export default function AIChatbot() {
               />
               <button
                 onClick={handleSendMessage}
-                disabled={!inputValue.trim()}
+                disabled={!inputValue.trim() || isTyping}
                 className="min-w-[44px] min-h-[44px] inline-flex items-center justify-center bg-ink-900 hover:bg-ink-800 dark:bg-ink-50 dark:hover:bg-ink-100 disabled:opacity-40 disabled:cursor-not-allowed text-ink-50 dark:text-ink-950 rounded-sm transition-colors duration-200"
                 aria-label={language === 'es' ? 'Enviar' : 'Send'}
               >

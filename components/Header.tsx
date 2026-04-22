@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
@@ -15,10 +15,41 @@ export default function Header() {
   const { theme, setTheme } = useTheme()
   const { language, setLanguage, t, mounted } = useLanguage()
   const pathname = usePathname()
+  const menuRef = useRef<HTMLDivElement>(null)
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
 
   const toggleLanguage = () => {
     setLanguage(language === 'en' ? 'es' : 'en')
   }
+
+  useEffect(() => {
+    if (!isMenuOpen) return
+
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsMenuOpen(false)
+        menuButtonRef.current?.focus()
+      }
+    }
+
+    const handlePointerDown = (e: PointerEvent) => {
+      const target = e.target as Node
+      if (
+        menuRef.current?.contains(target) ||
+        menuButtonRef.current?.contains(target)
+      ) {
+        return
+      }
+      setIsMenuOpen(false)
+    }
+
+    document.addEventListener('keydown', handleKey)
+    document.addEventListener('pointerdown', handlePointerDown)
+    return () => {
+      document.removeEventListener('keydown', handleKey)
+      document.removeEventListener('pointerdown', handlePointerDown)
+    }
+  }, [isMenuOpen])
 
   const navItems = [
     { key: 'nav.home', href: '/' },
@@ -43,7 +74,7 @@ export default function Header() {
             <div className="w-10 h-10 md:w-11 md:h-11 relative flex-shrink-0">
               <Image
                 src="/images/logos/IberiaTechLogo5.png"
-                alt="IberiaTech Solutions"
+                alt=""
                 fill
                 sizes="44px"
                 className="object-contain"
@@ -109,10 +140,12 @@ export default function Header() {
             </a>
 
             <button
+              ref={menuButtonRef}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-ink-700 dark:text-ink-300 hover:text-ink-900 dark:hover:text-ink-50 transition-colors duration-200 rounded-sm"
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
             >
               {isMenuOpen ? (
                 <FiX className="w-5 h-5" aria-hidden />
@@ -124,7 +157,11 @@ export default function Header() {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden border-t border-[var(--border)]">
+          <div
+            ref={menuRef}
+            id="mobile-menu"
+            className="md:hidden border-t border-[var(--border)]"
+          >
             <nav className="px-4 py-4 space-y-1">
               {navItems.map((item) => (
                 <Link

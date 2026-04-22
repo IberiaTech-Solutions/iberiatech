@@ -1,11 +1,53 @@
 import { NextRequest, NextResponse } from 'next/server'
 
+const RATE_WINDOW_MS = 60_000
+const RATE_MAX_REQUESTS = 10
+const MAX_MESSAGE_LENGTH = 2000
+
+// In-memory per-instance rate limit. Survives warm invocations on the same
+// Vercel instance; resets on cold start. Good enough to stop casual spam from
+// a single session; upgrade to Upstash Ratelimit + Vercel KV for distributed
+// enforcement if abuse becomes an issue.
+const ipHits = new Map<string, number[]>()
+
+function getClientIp(request: NextRequest): string {
+  const forwarded = request.headers.get('x-forwarded-for')
+  if (forwarded) return forwarded.split(',')[0].trim()
+  return request.headers.get('x-real-ip') ?? 'unknown'
+}
+
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now()
+  const recent = (ipHits.get(ip) ?? []).filter((t) => now - t < RATE_WINDOW_MS)
+  if (recent.length >= RATE_MAX_REQUESTS) {
+    ipHits.set(ip, recent)
+    return false
+  }
+  recent.push(now)
+  ipHits.set(ip, recent)
+  return true
+}
+
 export async function POST(request: NextRequest) {
   try {
+    const ip = getClientIp(request)
+    if (!checkRateLimit(ip)) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please wait a minute.' },
+        { status: 429 },
+      )
+    }
+
     const { message, language = 'en' } = await request.json()
 
-    if (!message) {
+    if (typeof message !== 'string' || message.trim().length === 0) {
       return NextResponse.json({ error: 'Message is required' }, { status: 400 })
+    }
+    if (message.length > MAX_MESSAGE_LENGTH) {
+      return NextResponse.json(
+        { error: `Message too long (max ${MAX_MESSAGE_LENGTH} characters)` },
+        { status: 400 },
+      )
     }
 
     const apiKey = process.env.OPENAI_API_KEY

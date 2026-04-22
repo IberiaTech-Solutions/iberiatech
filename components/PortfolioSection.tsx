@@ -52,7 +52,11 @@ export default function PortfolioSection({
               <div className="relative aspect-[16/10] bg-ink-100 dark:bg-ink-900 rounded-md overflow-hidden mb-5">
                 <Image
                   src={project.image}
-                  alt=""
+                  alt={
+                    language === 'es'
+                      ? `Captura del sitio de ${project.title}`
+                      : `Screenshot of ${project.title}`
+                  }
                   fill
                   sizes={index % 3 === 0
                     ? '(max-width: 768px) 100vw, 1200px'

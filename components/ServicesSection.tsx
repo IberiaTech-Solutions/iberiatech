@@ -27,7 +27,7 @@ export default function ServicesSection() {
       <div className="container-max">
         <Reveal className="max-w-2xl mb-14 md:mb-20">
           <p className="text-xs uppercase tracking-[0.2em] text-accent-700 dark:text-accent-400 font-medium mb-5">
-            {language === 'es' ? 'Qué hacemos' : 'What we do'}
+            {t('nav.services')}
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-semibold text-ink-900 dark:text-ink-50 mb-6 leading-[1.05]">
             {t('services.title')}

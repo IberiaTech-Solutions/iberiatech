@@ -22,31 +22,31 @@ const translations = {
     'nav.contact': 'Contact',
 
     // Hero
-    'hero.title': 'Modern web & custom applications.',
+    'hero.title': 'We build websites that bring in customers.',
     'hero.subtitle':
-      'We build websites, ecommerce, bilingual experiences, and custom business software. Based in Charleston, SC. Working with clients across the US and Europe.',
+      'Sites, stores, and custom software for small businesses. Bilingual in English and Spanish. You work directly with me, not a rotating team.',
     'hero.cta.work': 'See our work',
     'hero.cta.contact': 'Get in touch',
 
     // Services overview
-    'services.title': 'What we do',
+    'services.title': 'Problems we solve',
     'services.subtitle':
-      'Five service areas, one consistent standard: thoughtful, fast, secure, built to last.',
+      'Five things that cost small businesses money. Here’s how we fix them.',
     'services.web.title': 'Web & Ecommerce',
     'services.web.desc':
-      'Modern websites and online stores built on Next.js. Fast, SEO-ready, mobile-first. Stripe-powered checkout, CMS-driven content, performance-first architecture.',
+      'Your site is slow, looks like a template, or loses customers at checkout. We fix all three. Fast pages, mobile-first, Stripe checkout that works.',
     'services.bilingual.title': 'Bilingual & Multilingual Sites',
     'services.bilingual.desc':
-      'Professionally localized sites in English, Spanish, and German. Proper internationalization, cultural adaptation, SEO for every language.',
+      'Your site is English-only and half your customers speak Spanish. That costs you business. We build sites in English, Spanish, and German that read naturally and rank in search for each language.',
     'services.apps.title': 'Custom Business Applications',
     'services.apps.desc':
-      'Full-stack custom software: SaaS platforms, admin dashboards, marketplaces, client portals. Built with Next.js, Supabase, Stripe, and the modern cloud.',
+      'You’re running the business on spreadsheets, email, and three SaaS tools that don’t talk to each other. We replace that with one piece of software built around your workflow: dashboards, portals, marketplaces, internal tools.',
     'services.security.title': 'Security Audits & Hardening',
     'services.security.desc':
-      'Application security reviews for web apps and custom software. OWASP Top 10 audits, authentication and authorization hardening, database row-level security policies, secure handling of payments and third-party APIs, and security-first development practices.',
+      'You take payments and store customer data, but no one has audited your app for security. That’s how breaches happen. We run OWASP Top 10 audits, harden authentication and database access, and review how your app handles payments and third-party APIs.',
     'services.ai.title': 'AI Integrations',
     'services.ai.desc':
-      'Custom chatbots, WhatsApp Business automations, and AI-powered workflows for bookings, FAQs, lead capture, and follow-ups. Bilingual in English and Spanish, built on OpenAI and the modern AI stack, wired into your existing site, CRM, or calendar.',
+      'If your staff spends half their day answering the same questions, or you’re losing money to no-shows, we can automate it. We build bilingual chatbots and WhatsApp flows that handle bookings, FAQs, lead capture, and follow-ups.',
     'services.cta': 'See all services',
 
     // Process
@@ -77,24 +77,24 @@ const translations = {
     'work.back': 'Back to all work',
 
     // Contact
-    'contact.title': "Let's talk about your project.",
+    'contact.title': 'Tell us about your project.',
     'contact.subtitle':
-      'We respond to every inquiry within two business days.',
+      'You’ll hear back within two business days, from Luis directly.',
     'contact.email.label': 'Email',
     'contact.book.label': 'Book a call',
     'contact.book.desc': 'Schedule a 30-minute call at a time that works for you.',
 
     // About
     'about.kicker': 'Meet the founder',
-    'about.heading': "I'm Luis. I founded IberiaTech to build the kind of software clients deserve.",
+    'about.heading': 'I’m Luis. I started IberiaTech because too many small businesses have been left hanging by developers who disappear or agencies that bill for every email.',
     'about.body':
-      "I'm a security-focused software engineer based in the Charleston, SC area, originally from Spain. My path into software wasn't linear: an architectural engineering degree from IE University, six years in commercial construction, then a coding bootcamp in 2020. The detour matters. I think about software the way I learned to think about buildings: structure first, then everything else. Five years in, I work directly with every client, design and ship the software myself, and bring an application-security lens to everything I build.",
+      'Security-focused software engineer based in the Charleston, SC area, originally from Spain. I studied architectural engineering at IE University and spent six years in commercial construction before switching to software in 2020. I work directly with every client, write the code myself, and think about security from day one of the project.',
     'about.security':
-      "GIAC GSEC and GFACT certified, with GCIH currently in progress through the SANS CyberTalent Academy. 1st place at HackOps 2024, speaker and judge at HarborHack, and SANS Cyber Academy scholarship recipient.",
+      'GIAC GSEC and GFACT certified, with GCIH in progress through the SANS CyberTalent Academy. 1st place at HackOps 2024, speaker and judge at HarborHack, and SANS Cyber Academy scholarship recipient.',
     'about.photoAlt': 'Luis Lozoya, founder of IberiaTech Solutions',
 
     // Footer
-    'footer.tagline': 'Modern web & custom applications.',
+    'footer.tagline': 'Websites that earn customers.',
     'footer.services': 'Services',
     'footer.contact': 'Contact',
     'footer.rights': 'All rights reserved.',
@@ -107,31 +107,31 @@ const translations = {
     'nav.contact': 'Contacto',
 
     // Hero
-    'hero.title': 'Web moderna y aplicaciones a medida.',
+    'hero.title': 'Hacemos webs que te traen clientes.',
     'hero.subtitle':
-      'Construimos sitios web, ecommerce, experiencias bilingües y software empresarial a medida. Con base en Charleston, SC. Trabajamos con clientes en EE. UU. y Europa.',
+      'Sitios, tiendas y software a medida para pequeñas empresas. Bilingüe en inglés y español. Trabajas directamente conmigo, no con un equipo rotativo.',
     'hero.cta.work': 'Ver proyectos',
     'hero.cta.contact': 'Contactar',
 
     // Servicios overview
-    'services.title': 'Qué hacemos',
+    'services.title': 'Problemas que resolvemos',
     'services.subtitle':
-      'Cinco áreas de servicio, un mismo estándar: cuidado, rápido, seguro y duradero.',
+      'Cinco cosas que le cuestan dinero a las pequeñas empresas. Así las arreglamos.',
     'services.web.title': 'Web y Ecommerce',
     'services.web.desc':
-      'Sitios web y tiendas online modernas construidas con Next.js. Rápidas, optimizadas para SEO, mobile-first. Pagos con Stripe, contenido gestionado, arquitectura centrada en rendimiento.',
+      'Tu web va lenta, parece una plantilla o pierde clientes en el checkout. Lo arreglamos: páginas rápidas, mobile-first y checkout con Stripe que funciona.',
     'services.bilingual.title': 'Sitios Bilingües y Multilingües',
     'services.bilingual.desc':
-      'Sitios profesionalmente localizados en inglés, español y alemán. Internacionalización adecuada, adaptación cultural, SEO en todos los idiomas.',
+      'Tu web es solo en inglés y la mitad de tus clientes hablan español. Eso te cuesta ventas. Hacemos webs en inglés, español y alemán que suenan naturales en cada idioma y posicionan en cada uno.',
     'services.apps.title': 'Aplicaciones de Negocio a Medida',
     'services.apps.desc':
-      'Software full-stack a medida: plataformas SaaS, paneles de administración, marketplaces, portales para clientes. Construido con Next.js, Supabase, Stripe y la nube moderna.',
+      'Llevas el negocio con hojas de cálculo, email y tres herramientas SaaS que no se hablan entre sí. Lo sustituimos por un software hecho a tu forma de trabajar: paneles, portales, marketplaces, herramientas internas.',
     'services.security.title': 'Auditorías y Refuerzo de Seguridad',
     'services.security.desc':
-      'Revisiones de seguridad para aplicaciones web y software a medida. Auditorías OWASP Top 10, refuerzo de autenticación y autorización, políticas de seguridad a nivel de fila en la base de datos, manejo seguro de pagos e integraciones, y prácticas de desarrollo orientadas a la seguridad.',
+      'Procesas pagos y guardas datos de clientes, pero nadie ha auditado la seguridad de tu aplicación. Así es como ocurren las brechas. Hacemos auditorías OWASP Top 10, reforzamos la autenticación y el acceso a la base de datos, y revisamos el manejo de pagos e integraciones.',
     'services.ai.title': 'Integraciones de IA',
     'services.ai.desc':
-      'Chatbots a medida, automatizaciones de WhatsApp Business y flujos con IA para reservas, FAQs, captación de leads y seguimientos. Bilingüe en inglés y español, construido con OpenAI y el stack moderno de IA, conectado a tu sitio, CRM o calendario actual.',
+      'Si tu equipo pasa medio día respondiendo las mismas preguntas, o pierdes dinero por no-shows, lo podemos automatizar. Construimos chatbots bilingües y flujos de WhatsApp que gestionan reservas, FAQs, captación de leads y seguimientos.',
     'services.cta': 'Ver todos los servicios',
 
     // Proceso
@@ -164,9 +164,9 @@ const translations = {
     'work.back': 'Volver a todos los proyectos',
 
     // Contacto
-    'contact.title': 'Hablemos sobre tu proyecto.',
+    'contact.title': 'Cuéntanos sobre tu proyecto.',
     'contact.subtitle':
-      'Respondemos a cada consulta en un máximo de dos días laborables.',
+      'Te respondemos en un máximo de dos días laborables. Luis te contesta directamente.',
     'contact.email.label': 'Email',
     'contact.book.label': 'Reservar llamada',
     'contact.book.desc':
@@ -174,15 +174,15 @@ const translations = {
 
     // Sobre nosotros
     'about.kicker': 'Conoce al fundador',
-    'about.heading': 'Soy Luis. Fundé IberiaTech para construir el tipo de software que los clientes merecen.',
+    'about.heading': 'Soy Luis. Fundé IberiaTech porque demasiadas pequeñas empresas se han quedado colgadas por desarrolladores que desaparecen o agencias que cobran por cada email.',
     'about.body':
-      'Soy ingeniero de software con enfoque en seguridad, basado en el área de Charleston, SC, y originario de España. Mi camino hacia el software no fue lineal: un grado en arquitectura técnica por IE University, seis años en construcción comercial y luego un bootcamp de programación en 2020. El desvío importa. Pienso en el software de la misma forma que aprendí a pensar en los edificios: primero la estructura, después todo lo demás. Cinco años después, trabajo directamente con cada cliente, diseño y entrego el software yo mismo, y aplico una mirada de seguridad a todo lo que construyo.',
+      'Ingeniero de software con enfoque en seguridad, basado en el área de Charleston, SC, originario de España. Estudié arquitectura técnica en IE University y trabajé seis años en construcción comercial antes de pasarme al software en 2020. Trabajo directamente con cada cliente, escribo el código yo mismo, y pienso en la seguridad desde el primer día del proyecto.',
     'about.security':
       'Certificado GIAC GSEC y GFACT, con GCIH en curso a través de la SANS CyberTalent Academy. Primer puesto en HackOps 2024, ponente y jurado en HarborHack, y becario de la SANS Cyber Academy.',
     'about.photoAlt': 'Luis Lozoya, fundador de IberiaTech Solutions',
 
     // Footer
-    'footer.tagline': 'Web moderna y aplicaciones a medida.',
+    'footer.tagline': 'Webs que te traen clientes.',
     'footer.services': 'Servicios',
     'footer.contact': 'Contacto',
     'footer.rights': 'Todos los derechos reservados.',

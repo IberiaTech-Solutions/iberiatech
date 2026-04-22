@@ -42,7 +42,10 @@ function BrowserCard({
         className ?? ''
       }`}
     >
-      <div className="flex items-center justify-between px-4 py-2.5 border-b border-ink-50/10">
+      <div
+        aria-hidden
+        className="flex items-center justify-between px-4 py-2.5 border-b border-ink-50/10"
+      >
         <span className="text-[10px] text-ink-300 tracking-wide tabular-nums">
           {label}
         </span>
@@ -77,7 +80,7 @@ export default function HeroSection() {
         className="absolute inset-0 -z-10 opacity-80"
         style={{
           background:
-            'radial-gradient(1200px 600px at 20% 0%, oklch(35% 0.140 265 / 0.6), transparent 60%), radial-gradient(800px 500px at 90% 100%, oklch(42% 0.120 158 / 0.25), transparent 60%)',
+            'radial-gradient(1200px 600px at 20% 0%, var(--brand-gradient-primary), transparent 60%), radial-gradient(800px 500px at 90% 100%, var(--brand-gradient-accent), transparent 60%)',
         }}
       />
       <div

@@ -5,22 +5,7 @@ import { useLanguage } from './LanguageProvider'
 import Reveal from './Reveal'
 
 export default function AboutSection() {
-  const { t, language } = useLanguage()
-
-  const facts = [
-    {
-      value: language === 'es' ? '5+ años' : '5+ years',
-      label: language === 'es' ? 'construyendo para negocios' : 'building for businesses',
-    },
-    {
-      value: 'EN · ES',
-      label: language === 'es' ? 'entrega bilingüe nativa' : 'native bilingual delivery',
-    },
-    {
-      value: '48h',
-      label: language === 'es' ? 'respuesta a cada consulta' : 'reply to every inquiry',
-    },
-  ]
+  const { t } = useLanguage()
 
   return (
     <section id="about" className="section-padding">
@@ -53,19 +38,6 @@ export default function AboutSection() {
                 {t('about.security')}
               </p>
             </div>
-
-            <dl className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-4 max-w-2xl">
-              {facts.map((f) => (
-                <div key={f.label}>
-                  <dt className="font-display text-xl font-semibold text-ink-900 dark:text-ink-50">
-                    {f.value}
-                  </dt>
-                  <dd className="mt-1 text-sm text-ink-600 dark:text-ink-400">
-                    {f.label}
-                  </dd>
-                </div>
-              ))}
-            </dl>
           </Reveal>
         </div>
       </div>
