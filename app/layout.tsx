@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     'Stripe',
     'Charleston SC',
   ],
-  authors: [{ name: 'Luis Lozoya' }],
+  authors: [{ name: 'Luis Javier Lozoya' }],
   creator: 'IberiaTech Solutions',
   publisher: 'IberiaTech Solutions',
   formatDetection: {

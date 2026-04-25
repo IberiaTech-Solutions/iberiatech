@@ -47,9 +47,9 @@ export default function PortfolioSection({
               key={project.slug}
               as="article"
               delay={index * 60}
-              className={`group relative ${index % 3 === 0 ? 'md:col-span-2' : ''}`}
+              className={`group relative ${project.wide ? 'md:col-span-2' : ''}`}
             >
-              <div className="relative aspect-[16/10] bg-ink-100 dark:bg-ink-900 rounded-md overflow-hidden mb-5">
+              <div className={`relative ${project.wide ? 'aspect-[2/1]' : 'aspect-[3/2]'} bg-ink-100 dark:bg-ink-900 rounded-md overflow-hidden mb-5`}>
                 <Image
                   src={project.image}
                   alt={
@@ -58,13 +58,13 @@ export default function PortfolioSection({
                       : `Screenshot of ${project.title}`
                   }
                   fill
-                  sizes={index % 3 === 0
+                  sizes={project.wide
                     ? '(max-width: 768px) 100vw, 1200px'
                     : '(max-width: 768px) 100vw, 600px'}
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                  className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                 />
                 {project.comingSoon && (
-                  <div className="absolute top-4 left-4 bg-ink-950/80 text-ink-50 text-[11px] uppercase tracking-wider font-medium px-2.5 py-1 rounded-sm backdrop-blur-sm z-10">
+                  <div className="absolute top-4 left-4 bg-accent-500 text-ink-950 text-xs font-semibold uppercase tracking-[0.15em] px-3 py-1.5 rounded-sm shadow-md z-10">
                     {t('work.comingSoon')}
                   </div>
                 )}
@@ -90,15 +90,6 @@ export default function PortfolioSection({
                 <p className="text-base text-ink-600 dark:text-ink-300 leading-relaxed prose-measure mb-5">
                   {project.summary[language]}
                 </p>
-
-                <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-ink-500 mb-5">
-                  {project.technologies.slice(0, 4).map((tech, i) => (
-                    <span key={tech} className="inline-flex items-center gap-3">
-                      {i > 0 && <span aria-hidden className="text-ink-400">·</span>}
-                      {tech}
-                    </span>
-                  ))}
-                </div>
 
                 <div className="flex items-center gap-6 text-sm font-medium">
                   <span className="inline-flex items-center gap-1.5 text-ink-900 dark:text-ink-50 group-hover:text-accent-700 dark:group-hover:text-accent-400 transition-colors">

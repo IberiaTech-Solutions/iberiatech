@@ -24,7 +24,7 @@ const translations = {
     // Hero
     'hero.title': 'We build websites that bring in customers.',
     'hero.subtitle':
-      'Sites, stores, and custom software for small businesses. Bilingual in English and Spanish. You work directly with me, not a rotating team.',
+      'Websites, online stores, and the occasional piece of software nobody else will sell you off the shelf. Built bilingually in English and Spanish. You work directly with me — not an account manager, not a rotating team.',
     'hero.cta.work': 'See our work',
     'hero.cta.contact': 'Get in touch',
 
@@ -34,19 +34,27 @@ const translations = {
       'Five things that cost small businesses money. Here’s how we fix them.',
     'services.web.title': 'Web & Ecommerce',
     'services.web.desc':
-      'Your site is slow, looks like a template, or loses customers at checkout. We fix all three. Fast pages, mobile-first, Stripe checkout that works.',
+      'Your site is slow, looks like a template, or loses customers at checkout. Usually all three at once. We rebuild it so pages load fast on a phone and the checkout doesn’t leak buyers.',
     'services.bilingual.title': 'Bilingual & Multilingual Sites',
     'services.bilingual.desc':
-      'Your site is English-only and half your customers speak Spanish. That costs you business. We build sites in English, Spanish, and German that read naturally and rank in search for each language.',
+      'Half your customers speak Spanish and your site is English-only. That is money walking out the door. We build sites in English, Spanish, and German where each language reads like it was written there — because it was.',
     'services.apps.title': 'Custom Business Applications',
     'services.apps.desc':
-      'You’re running the business on spreadsheets, email, and three SaaS tools that don’t talk to each other. We replace that with one piece of software built around your workflow: dashboards, portals, marketplaces, internal tools.',
+      'You run the business on spreadsheets, email, and three SaaS tools that don’t talk to each other. We replace the stack with one piece of software built around how you actually work — whether that is a dashboard, a portal, a marketplace, or an internal tool nobody else will ever see.',
     'services.security.title': 'Security Audits & Hardening',
     'services.security.desc':
-      'You take payments and store customer data, but no one has audited your app for security. That’s how breaches happen. We run OWASP Top 10 audits, harden authentication and database access, and review how your app handles payments and third-party APIs.',
+      'You take payments and store customer data, but nobody has ever looked at the app from an attacker’s point of view. That’s how breaches happen. We run OWASP Top 10 audits, harden authentication and database access, and review how the app handles payments and third-party APIs.',
     'services.ai.title': 'AI Integrations',
     'services.ai.desc':
-      'If your staff spends half their day answering the same questions, or you’re losing money to no-shows, we can automate it. We build bilingual chatbots and WhatsApp flows that handle bookings, FAQs, lead capture, and follow-ups.',
+      'If your staff spends half the day answering the same five questions, or you’re bleeding money to no-shows, automate it. We build bilingual chatbots and WhatsApp flows that take bookings, answer FAQs, capture leads, and chase follow-ups — in the language the customer actually texted in.',
+    'services.web.evidence': 'Recently shipped → Coastal Millwork & Supply',
+    'services.bilingual.evidence':
+      'Recently shipped → Tinta Gallery, NEVA Estudio',
+    'services.apps.evidence': 'In build → Axis, an advisor platform',
+    'services.security.evidence':
+      'GIAC GSEC · GFACT certified · 1st place, HackOps 2024',
+    'services.ai.evidence':
+      'In build → bilingual booking bot + WhatsApp flow',
     'services.cta': 'See all services',
 
     // Process
@@ -65,7 +73,7 @@ const translations = {
     // Portfolio / Work
     'work.title': 'Selected work',
     'work.subtitle':
-      'A selection of recent projects across web, ecommerce, marketplaces, and custom business applications.',
+      'Recent projects. Some shipped, some still in the oven. Websites, online stores, marketplaces, and the kind of custom software businesses build when the SaaS options stop fitting.',
     'work.view': 'View project',
     'work.viewLive': 'View live site',
     'work.cta': 'See all work',
@@ -79,22 +87,22 @@ const translations = {
     // Contact
     'contact.title': 'Tell us about your project.',
     'contact.subtitle':
-      'You’ll hear back within two business days, from Luis directly.',
+      'You’ll hear back within two business days, from Luis Javier directly.',
     'contact.email.label': 'Email',
     'contact.book.label': 'Book a call',
     'contact.book.desc': 'Schedule a 30-minute call at a time that works for you.',
 
     // About
     'about.kicker': 'Meet the founder',
-    'about.heading': 'I’m Luis. I started IberiaTech because too many small businesses have been left hanging by developers who disappear or agencies that bill for every email.',
+    'about.heading': 'I’m Luis Javier. I started IberiaTech because too many small businesses have been left hanging by developers who disappear or agencies that bill for every email.',
     'about.body':
       'Security-focused software engineer based in the Charleston, SC area, originally from Spain. I studied architectural engineering at IE University and spent six years in commercial construction before switching to software in 2020. I work directly with every client, write the code myself, and think about security from day one of the project.',
     'about.security':
       'GIAC GSEC and GFACT certified, with GCIH in progress through the SANS CyberTalent Academy. 1st place at HackOps 2024, speaker and judge at HarborHack, and SANS Cyber Academy scholarship recipient.',
-    'about.photoAlt': 'Luis Lozoya, founder of IberiaTech Solutions',
+    'about.photoAlt': 'Luis Javier Lozoya, founder of IberiaTech Solutions',
 
     // Footer
-    'footer.tagline': 'Websites that earn customers.',
+    'footer.tagline': 'Charleston, SC. Bilingual by design.',
     'footer.services': 'Services',
     'footer.contact': 'Contact',
     'footer.rights': 'All rights reserved.',
@@ -109,7 +117,7 @@ const translations = {
     // Hero
     'hero.title': 'Hacemos webs que te traen clientes.',
     'hero.subtitle':
-      'Sitios, tiendas y software a medida para pequeñas empresas. Bilingüe en inglés y español. Trabajas directamente conmigo, no con un equipo rotativo.',
+      'Webs, tiendas online y, de vez en cuando, algo de software que no vas a encontrar en ninguna plantilla. Construido bilingüe en inglés y español. Hablas directamente conmigo — ni gestor de cuentas, ni un equipo que va rotando.',
     'hero.cta.work': 'Ver proyectos',
     'hero.cta.contact': 'Contactar',
 
@@ -119,19 +127,27 @@ const translations = {
       'Cinco cosas que le cuestan dinero a las pequeñas empresas. Así las arreglamos.',
     'services.web.title': 'Web y Ecommerce',
     'services.web.desc':
-      'Tu web va lenta, parece una plantilla o pierde clientes en el checkout. Lo arreglamos: páginas rápidas, mobile-first y checkout con Stripe que funciona.',
+      'Tu web va lenta, parece una plantilla o pierde clientes en el checkout. Normalmente las tres cosas a la vez. La reconstruimos para que cargue rápido en móvil y que el checkout no pierda compradores por el camino.',
     'services.bilingual.title': 'Sitios Bilingües y Multilingües',
     'services.bilingual.desc':
-      'Tu web es solo en inglés y la mitad de tus clientes hablan español. Eso te cuesta ventas. Hacemos webs en inglés, español y alemán que suenan naturales en cada idioma y posicionan en cada uno.',
+      'La mitad de tus clientes hablan español y tu web es solo en inglés. Eso son ventas que se escapan. Hacemos webs en inglés, español y alemán donde cada idioma suena como si se hubiera escrito ahí — porque se ha escrito ahí.',
     'services.apps.title': 'Aplicaciones de Negocio a Medida',
     'services.apps.desc':
-      'Llevas el negocio con hojas de cálculo, email y tres herramientas SaaS que no se hablan entre sí. Lo sustituimos por un software hecho a tu forma de trabajar: paneles, portales, marketplaces, herramientas internas.',
+      'Llevas el negocio con hojas de cálculo, email y tres herramientas SaaS que no se hablan entre sí. Lo sustituimos por un software hecho a tu forma de trabajar — ya sea un panel, un portal, un marketplace o una herramienta interna que nadie más va a ver.',
     'services.security.title': 'Auditorías y Refuerzo de Seguridad',
     'services.security.desc':
-      'Procesas pagos y guardas datos de clientes, pero nadie ha auditado la seguridad de tu aplicación. Así es como ocurren las brechas. Hacemos auditorías OWASP Top 10, reforzamos la autenticación y el acceso a la base de datos, y revisamos el manejo de pagos e integraciones.',
+      'Procesas pagos y guardas datos de clientes, pero nadie ha mirado la aplicación desde el punto de vista del atacante. Así es como ocurren las brechas. Hacemos auditorías OWASP Top 10, reforzamos la autenticación y el acceso a la base de datos, y revisamos cómo la app maneja pagos e integraciones de terceros.',
     'services.ai.title': 'Integraciones de IA',
     'services.ai.desc':
-      'Si tu equipo pasa medio día respondiendo las mismas preguntas, o pierdes dinero por no-shows, lo podemos automatizar. Construimos chatbots bilingües y flujos de WhatsApp que gestionan reservas, FAQs, captación de leads y seguimientos.',
+      'Si tu equipo pasa medio día respondiendo las mismas cinco preguntas, o estás perdiendo dinero por no-shows, se automatiza. Construimos chatbots bilingües y flujos de WhatsApp que cogen reservas, responden FAQs, captan leads y persiguen seguimientos — en el idioma en el que el cliente te escribió.',
+    'services.web.evidence': 'Recién entregado → Coastal Millwork & Supply',
+    'services.bilingual.evidence':
+      'Recién entregado → Tinta Gallery, NEVA Estudio',
+    'services.apps.evidence': 'En desarrollo → Axis, plataforma para asesores',
+    'services.security.evidence':
+      'GIAC GSEC · GFACT · 1º puesto HackOps 2024',
+    'services.ai.evidence':
+      'En desarrollo → bot de reservas bilingüe + flujo WhatsApp',
     'services.cta': 'Ver todos los servicios',
 
     // Proceso
@@ -152,7 +168,7 @@ const translations = {
     // Portafolio / Proyectos
     'work.title': 'Proyectos seleccionados',
     'work.subtitle':
-      'Una selección de proyectos recientes en web, ecommerce, marketplaces y aplicaciones de negocio a medida.',
+      'Proyectos recientes. Algunos ya entregados, otros todavía en el horno. Webs, tiendas online, marketplaces y el tipo de software a medida que se construye cuando las opciones SaaS dejan de encajar.',
     'work.view': 'Ver proyecto',
     'work.viewLive': 'Ver sitio en vivo',
     'work.cta': 'Ver todos los proyectos',
@@ -166,7 +182,7 @@ const translations = {
     // Contacto
     'contact.title': 'Cuéntanos sobre tu proyecto.',
     'contact.subtitle':
-      'Te respondemos en un máximo de dos días laborables. Luis te contesta directamente.',
+      'Te respondemos en un máximo de dos días laborables. Luis Javier te contesta directamente.',
     'contact.email.label': 'Email',
     'contact.book.label': 'Reservar llamada',
     'contact.book.desc':
@@ -174,15 +190,15 @@ const translations = {
 
     // Sobre nosotros
     'about.kicker': 'Conoce al fundador',
-    'about.heading': 'Soy Luis. Fundé IberiaTech porque demasiadas pequeñas empresas se han quedado colgadas por desarrolladores que desaparecen o agencias que cobran por cada email.',
+    'about.heading': 'Soy Luis Javier. Fundé IberiaTech porque demasiadas pequeñas empresas se han quedado colgadas por desarrolladores que desaparecen o agencias que cobran por cada email.',
     'about.body':
       'Ingeniero de software con enfoque en seguridad, basado en el área de Charleston, SC, originario de España. Estudié arquitectura técnica en IE University y trabajé seis años en construcción comercial antes de pasarme al software en 2020. Trabajo directamente con cada cliente, escribo el código yo mismo, y pienso en la seguridad desde el primer día del proyecto.',
     'about.security':
       'Certificado GIAC GSEC y GFACT, con GCIH en curso a través de la SANS CyberTalent Academy. Primer puesto en HackOps 2024, ponente y jurado en HarborHack, y becario de la SANS Cyber Academy.',
-    'about.photoAlt': 'Luis Lozoya, fundador de IberiaTech Solutions',
+    'about.photoAlt': 'Luis Javier Lozoya, fundador de IberiaTech Solutions',
 
     // Footer
-    'footer.tagline': 'Webs que te traen clientes.',
+    'footer.tagline': 'Charleston, SC. Bilingüe por diseño.',
     'footer.services': 'Servicios',
     'footer.contact': 'Contacto',
     'footer.rights': 'Todos los derechos reservados.',

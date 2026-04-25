@@ -6,7 +6,7 @@ Last updated: April 8, 2026
 
 ## Who
 
-Luis Lozoya. Solo developer. Grew up in Spain, lives in Charleston, SC.
+Luis Javier Lozoya. Solo developer. Grew up in Spain, lives in Charleston, SC.
 Email: luis@iberiatechsolutions.com
 Phone: (864) 365-7897
 Domain: iberiatechsolutions.com (Namecheap, expires Sep 2026)

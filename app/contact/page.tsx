@@ -13,8 +13,8 @@ export default function ContactPage() {
     : `If you're here, you probably have a project in mind. Write to me directly and I'll reply within one business day — no long forms, no funnels, no calls that go nowhere.`
 
   const sig = language === 'es'
-    ? 'Luis Lozoya, fundador'
-    : 'Luis Lozoya, founder'
+    ? 'Luis Javier Lozoya, fundador'
+    : 'Luis Javier Lozoya, founder'
 
   return (
     <div className="min-h-screen section-padding">

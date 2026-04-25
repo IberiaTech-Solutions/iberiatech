@@ -23,7 +23,7 @@ export default function WhatsAppChat({ phoneNumber }: WhatsAppChatProps) {
   const copy = language === 'es'
     ? {
         toggle: 'Abrir WhatsApp',
-        intro: 'Hola, soy Luis de IberiaTech. ¿En qué te puedo ayudar con tu proyecto?',
+        intro: 'Hola, soy Luis Javier de IberiaTech. ¿En qué te puedo ayudar con tu proyecto?',
         header: 'WhatsApp',
         status: 'Respondo en horario laboral',
         close: 'Cerrar',
@@ -37,7 +37,7 @@ export default function WhatsAppChat({ phoneNumber }: WhatsAppChatProps) {
       }
     : {
         toggle: 'Open WhatsApp',
-        intro: "Hi, I'm Luis from IberiaTech. How can I help with your project?",
+        intro: "Hi, I'm Luis Javier from IberiaTech. How can I help with your project?",
         header: 'WhatsApp',
         status: 'Replies during business hours',
         close: 'Close',

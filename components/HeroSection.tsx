@@ -12,12 +12,12 @@ const HERO_PROJECTS = [
     alt: 'Little Bolleria bakery website',
   },
   {
-    src: '/neva.jpg',
+    src: '/images/portfolio/neva2.png',
     label: 'neva-estudio.com',
     alt: 'NEVA Estudio architecture studio website',
   },
   {
-    src: '/images/portfolio/coastal-millwork.jpg',
+    src: '/images/portfolio/coastal-millwork.png',
     label: 'coastalmillwork.com',
     alt: 'Coastal Millwork contractor website',
   },
@@ -53,13 +53,13 @@ function BrowserCard({
           Live
         </span>
       </div>
-      <div className="relative aspect-[16/10]">
+      <div className="relative aspect-[3/2]">
         <Image
           src={src}
           alt={alt}
           fill
           sizes="(max-width: 1024px) 100vw, 600px"
-          className="object-cover"
+          className="object-cover object-top"
           priority={priority}
         />
       </div>
@@ -125,26 +125,17 @@ export default function HeroSection() {
               </Link>
             </div>
 
-            <dl className="flex flex-wrap items-baseline gap-x-6 gap-y-2 pt-8 border-t border-ink-50/10 sm:grid sm:grid-cols-3 sm:gap-x-8 sm:gap-y-0 max-w-xl">
-              <div className="flex items-baseline gap-2 sm:block">
-                <dt className="text-xs uppercase tracking-[0.15em] text-ink-400 sm:mb-1.5">
-                  {language === 'es' ? 'Idiomas' : 'Languages'}
-                </dt>
-                <dd className="font-display text-base md:text-lg font-medium">EN · ES</dd>
-              </div>
-              <div className="flex items-baseline gap-2 sm:block">
-                <dt className="text-xs uppercase tracking-[0.15em] text-ink-400 sm:mb-1.5">
-                  Stack
-                </dt>
-                <dd className="font-display text-base md:text-lg font-medium">Next.js</dd>
-              </div>
-              <div className="flex items-baseline gap-2 sm:block">
-                <dt className="text-xs uppercase tracking-[0.15em] text-ink-400 sm:mb-1.5">
-                  {language === 'es' ? 'Respuesta' : 'Reply'}
-                </dt>
-                <dd className="font-display text-base md:text-lg font-medium">&lt; 48h</dd>
-              </div>
-            </dl>
+            <p className="pt-8 border-t border-ink-50/10 max-w-xl text-sm text-ink-400">
+              <span className="text-ink-500">
+                {language === 'es' ? 'Recientes:' : 'Recent:'}
+              </span>{' '}
+              <Link
+                href="/work"
+                className="text-ink-200 hover:text-accent-300 transition-colors"
+              >
+                NEVA Estudio · Tinta Gallery · Coastal Millwork
+              </Link>
+            </p>
           </div>
 
           <div className="lg:col-span-5 relative">

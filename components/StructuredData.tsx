@@ -11,7 +11,7 @@ export default function StructuredData() {
     telephone: '+18643657897',
     founder: {
       '@type': 'Person',
-      name: 'Luis Lozoya',
+      name: 'Luis Javier Lozoya',
       url: 'https://www.luislozoya.com',
     },
     areaServed: [
