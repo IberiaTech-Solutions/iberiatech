@@ -57,13 +57,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/images/logos/IberiaTechLogo5.png', sizes: '32x32', type: 'image/png' },
-      { url: '/images/logos/IberiaTechLogo5.png', sizes: '64x64', type: 'image/png' },
-      { url: '/images/logos/IberiaTechLogo5.png', sizes: '128x128', type: 'image/png' },
+      { url: '/favicon-light.png', media: '(prefers-color-scheme: light)', type: 'image/png' },
+      { url: '/favicon-dark.png', media: '(prefers-color-scheme: dark)', type: 'image/png' },
     ],
-    shortcut: '/images/logos/IberiaTechLogo5.png',
+    shortcut: '/favicon.ico',
     apple: [
-      { url: '/images/logos/IberiaTechLogo5.png', sizes: '180x180', type: 'image/png' },
+      { url: '/favicon-light.png', sizes: '180x180', type: 'image/png' },
     ],
   },
   openGraph: {

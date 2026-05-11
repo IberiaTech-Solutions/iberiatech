@@ -17,7 +17,7 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 relative flex-shrink-0">
                 <Image
-                  src="/images/logos/IberiaTechLogo5.png"
+                  src="/images/logos/dark.png"
                   alt=""
                   fill
                   sizes="40px"

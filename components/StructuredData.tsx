@@ -7,7 +7,7 @@ export default function StructuredData() {
       'IberiaTech Solutions builds modern websites, ecommerce, bilingual experiences, and custom business applications. Next.js, React, and modern cloud infrastructure.',
     url: 'https://iberiatechsolutions.com',
     image: 'https://iberiatechsolutions.com/opengraph-image',
-    logo: 'https://iberiatechsolutions.com/images/logos/IberiaTechLogo5.png',
+    logo: 'https://iberiatechsolutions.com/images/logos/light.png',
     telephone: '+18643657897',
     founder: {
       '@type': 'Person',
