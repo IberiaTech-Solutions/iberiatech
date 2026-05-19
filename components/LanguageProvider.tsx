@@ -50,7 +50,7 @@ const translations = {
     'services.web.evidence': 'Recently shipped → Coastal Millwork & Supply',
     'services.bilingual.evidence':
       'Recently shipped → Tinta Gallery, NEVA Estudio',
-    'services.apps.evidence': 'In build → Axis, an advisor platform',
+    'services.apps.evidence': 'In build → custom client platform',
     'services.security.evidence':
       'GIAC GSEC · GFACT certified · 1st place, HackOps 2024',
     'services.ai.evidence':
@@ -143,7 +143,7 @@ const translations = {
     'services.web.evidence': 'Recién entregado → Coastal Millwork & Supply',
     'services.bilingual.evidence':
       'Recién entregado → Tinta Gallery, NEVA Estudio',
-    'services.apps.evidence': 'En desarrollo → Axis, plataforma para asesores',
+    'services.apps.evidence': 'En desarrollo → plataforma a medida para clientes',
     'services.security.evidence':
       'GIAC GSEC · GFACT · 1º puesto HackOps 2024',
     'services.ai.evidence':

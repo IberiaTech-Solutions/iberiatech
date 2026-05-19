@@ -57,31 +57,6 @@ export const PROJECTS: Project[] = [
     wide: true,
   },
   {
-    slug: 'axis',
-    title: 'Axis',
-    category: { en: 'Business Application', es: 'Aplicación de Negocio' },
-    summary: {
-      en: 'A custom platform for business advisors and their clients. Currently in development.',
-      es: 'Una plataforma a medida para asesores de negocios y sus clientes. Actualmente en desarrollo.',
-    },
-    problem: {
-      en: 'Details coming soon.',
-      es: 'Detalles próximamente.',
-    },
-    solution: {
-      en: 'Details coming soon.',
-      es: 'Detalles próximamente.',
-    },
-    role: {
-      en: 'End-to-end architecture and full-stack development.',
-      es: 'Arquitectura de principio a fin y desarrollo full-stack.',
-    },
-    technologies: ['Next.js', 'TypeScript'],
-    image: '/images/portfolio/axis.png',
-    featured: true,
-    comingSoon: true,
-  },
-  {
     slug: 'cuidamascotas',
     title: 'CuidaMascotas',
     category: { en: 'Marketplace', es: 'Marketplace' },

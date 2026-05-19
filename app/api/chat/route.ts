@@ -77,7 +77,7 @@ PROYECTOS RECIENTES:
 - NEVA Estudio: sitio para un estudio de arquitectura en Asturias (bilingüe, accesible).
 - Coastal Millwork: contratista comercial de carpintería en Carolina del Sur.
 - ShopEssentialsHub: plataforma de afiliados curada.
-- Axis, CuidaMascotas y Little Bolleria Bäckerei: actualmente en desarrollo. Detalles próximamente. No compartas información técnica ni del stack sobre estos proyectos.
+- CuidaMascotas y Little Bolleria Bäckerei: actualmente en desarrollo. Detalles próximamente. No compartas información técnica ni del stack sobre estos proyectos.
 
 PROCESO:
 1. Descubrimiento. Llamada breve para entender objetivos.
@@ -112,7 +112,7 @@ RECENT WORK:
 - NEVA Estudio: architecture studio site in Asturias (bilingual, accessible).
 - Coastal Millwork: commercial millwork contractor in South Carolina.
 - ShopEssentialsHub: curated affiliate platform.
-- Axis, CuidaMascotas, and Little Bolleria Bäckerei: currently in development. Details coming soon. Do not share technical or stack details about these projects.
+- CuidaMascotas and Little Bolleria Bäckerei: currently in development. Details coming soon. Do not share technical or stack details about these projects.
 
 PROCESS:
 1. Discovery. Short call to understand goals.
