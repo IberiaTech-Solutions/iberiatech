@@ -18,19 +18,19 @@ const RESPONSES: Record<Language, Record<Intent, string>> = {
     greeting:
       "Hey. Ask about Luis Javier's work, the stack, or how to start a project.",
     services:
-      "Four things: web & ecommerce, bilingual sites (EN/ES/DE), custom business apps, and security audits. Which one's relevant?",
+      "Five: web and ecommerce, bilingual sites (EN/ES/DE), custom business apps, security audits, and AI integrations. Which one's relevant?",
     web:
       "Websites and online stores on Next.js. The goal is pages that load fast on a phone and a checkout that doesn't leak customers. Stripe when you need it.",
     bilingual:
-      "Sites in English, Spanish, and German. Luis Javier grew up in Spain and lives in the US, so the Spanish side isn't a Google Translate pass — it's written.",
+      "Sites in English, Spanish, and German. Luis Javier grew up in Spain and lives in the US, so the Spanish side isn't a Google Translate pass. It's written.",
     apps:
-      "The bigger engagements: SaaS platforms, admin dashboards, marketplaces, client portals. Several are in active development right now.",
+      "The bigger engagements: SaaS platforms, admin dashboards, marketplaces, client portals. Axis, a subscription platform for exit planning advisors, is live in production and still being built on.",
     security:
-      "Application security work: OWASP Top 10 reviews, auth hardening, row-level security on the database, locking down how the app handles payments and third-party APIs. Luis Javier is GSEC and GFACT certified, with GCIH in progress.",
+      "Application security work: OWASP Top 10 reviews, auth hardening, row level security on the database, locking down how the app handles payments and third-party APIs. Luis Javier is GSEC and GFACT certified with GCIH in progress, and wrote llm-audit, an open source scanner for the OWASP LLM Top 10.",
     portfolio:
-      "Shipped: NEVA Estudio (architecture studio in Asturias), Coastal Millwork (commercial contractor in SC), ShopEssentialsHub (affiliate platform). A few more are in build — see /work for the full list.",
+      "Shipped: Axis (subscription platform for exit planning advisors), NEVA Estudio (architecture studio in Asturias), Coastal Millwork (commercial contractor in SC), Tinta Gallery, ShopEssentialsHub. There's also llm-audit, an open source security scanner for LLM code. The full list is at /work.",
     process:
-      "Four steps. Discovery call to understand scope. Design and planning. Build, with regular updates. Then launch and support.",
+      "Four steps. A discovery call. Design and planning, which you sign off on. Then the build, on a URL you can open any time. Then launch, handover, and maintenance if you want it.",
     contact:
       "Email luis@iberiatechsolutions.com, or book a 30-minute call from the Contact page. WhatsApp button is at the bottom-right. You'll hear back within two business days.",
     timeline:
@@ -38,25 +38,25 @@ const RESPONSES: Record<Language, Record<Intent, string>> = {
     stack:
       "Next.js, React, TypeScript, Tailwind, Supabase (Postgres + Auth + RLS), Stripe, Vercel. AWS when the project calls for it. next-intl for multilingual.",
     location:
-      "Charleston, SC. Remote work with clients across the US and Europe, Spain included — that's where Luis Javier is from.",
+      "Charleston, SC. Remote work with clients across the US and Europe, Spain included, which is where Luis Javier is from.",
   },
   es: {
     greeting:
       'Hola. Pregunta sobre el trabajo de Luis Javier, el stack o cómo empezar un proyecto.',
     services:
-      'Cuatro áreas: web y ecommerce, sitios bilingües (EN/ES/DE), aplicaciones de negocio a medida y auditorías de seguridad. ¿Cuál te interesa?',
+      'Cinco: web y ecommerce, sitios bilingües (EN/ES/DE), aplicaciones de negocio a medida, auditorías de seguridad e integraciones de IA. ¿Cuál te interesa?',
     web:
       'Webs y tiendas online sobre Next.js. La idea es que carguen rápido en móvil y que el checkout no pierda clientes. Stripe cuando hace falta.',
     bilingual:
-      'Sitios en inglés, español y alemán. Luis Javier creció en España y vive en EE. UU., así que el lado español no es Google Translate — está escrito.',
+      'Sitios en inglés, español y alemán. Luis Javier creció en España y vive en EE. UU., así que el lado español no es Google Translate. Está escrito.',
     apps:
-      'Los proyectos más grandes: plataformas SaaS, paneles de administración, marketplaces, portales de cliente. Ahora mismo hay varios en desarrollo activo.',
+      'Los proyectos más grandes: plataformas SaaS, paneles de administración, marketplaces, portales de cliente. Axis, plataforma de suscripción para asesores de salida, está en producción y sigue creciendo.',
     security:
-      'Seguridad aplicada: revisiones OWASP Top 10, refuerzo de autenticación, políticas RLS en base de datos, y cómo la app maneja pagos e integraciones de terceros. Luis Javier tiene GSEC y GFACT, y está sacando GCIH.',
+      'Seguridad aplicada: revisiones OWASP Top 10, refuerzo de autenticación, políticas RLS en base de datos, y cómo la app maneja pagos e integraciones de terceros. Luis Javier tiene GSEC y GFACT, está sacando GCIH, y escribió llm-audit, un escáner open source para el OWASP LLM Top 10.',
     portfolio:
-      'Entregados: NEVA Estudio (estudio de arquitectura en Asturias), Coastal Millwork (contratista comercial en SC), ShopEssentialsHub (plataforma de afiliados). Hay varios más en desarrollo — la lista completa está en /work.',
+      'Entregados: Axis (plataforma de suscripción para asesores de salida), NEVA Estudio (estudio de arquitectura en Asturias), Coastal Millwork (contratista comercial en SC), Tinta Gallery, ShopEssentialsHub. También está llm-audit, un escáner de seguridad open source para código LLM. La lista completa está en /work.',
     process:
-      'Cuatro pasos. Llamada de descubrimiento para entender el alcance. Diseño y planificación. Desarrollo, con actualizaciones regulares. Y lanzamiento con soporte.',
+      'Cuatro pasos. Llamada de descubrimiento. Diseño y planificación, que apruebas tú. El desarrollo, en una URL que puedes abrir cuando quieras. Y lanzamiento, entrega y mantenimiento si lo quieres.',
     contact:
       'Email a luis@iberiatechsolutions.com, o reserva una llamada de 30 minutos desde la página de Contacto. El botón de WhatsApp está abajo a la derecha. Te respondemos en máximo dos días laborables.',
     timeline:
@@ -64,7 +64,7 @@ const RESPONSES: Record<Language, Record<Intent, string>> = {
     stack:
       'Next.js, React, TypeScript, Tailwind, Supabase (Postgres + Auth + RLS), Stripe, Vercel. AWS cuando el proyecto lo pide. next-intl para el multilingüe.',
     location:
-      'Charleston, SC. Trabajamos en remoto con clientes en EE. UU. y Europa, España incluida — de ahí es Luis Javier.',
+      'Charleston, SC. Trabajamos en remoto con clientes en EE. UU. y Europa, España incluida, que es de donde es Luis Javier.',
   },
 }
 

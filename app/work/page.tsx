@@ -5,7 +5,7 @@ import WorkHeader from './WorkHeader'
 export const metadata: Metadata = {
   title: 'Work',
   description:
-    'Selected work by IberiaTech Solutions: websites, ecommerce, marketplaces, and custom business applications built with Next.js, React, and modern cloud infrastructure.',
+    'Selected work by IberiaTech Solutions. Websites, online stores, marketplaces, a subscription platform, and an open source security scanner.',
   alternates: {
     canonical: '/work',
   },

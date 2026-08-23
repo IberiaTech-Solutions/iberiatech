@@ -24,7 +24,7 @@ const translations = {
     // Hero
     'hero.title': 'We build websites that bring in customers.',
     'hero.subtitle':
-      'Websites, online stores, and the occasional piece of software nobody else will sell you off the shelf. Built bilingually in English and Spanish. You work directly with me — not an account manager, not a rotating team.',
+      'Websites, online stores, and the occasional piece of software nobody else will sell you off the shelf. Built bilingually in English and Spanish. You work directly with me. Not an account manager, not a rotating team.',
     'hero.cta.work': 'See our work',
     'hero.cta.contact': 'Get in touch',
 
@@ -37,16 +37,16 @@ const translations = {
       'Your site is slow, looks like a template, or loses customers at checkout. Usually all three at once. We rebuild it so pages load fast on a phone and the checkout doesn’t leak buyers.',
     'services.bilingual.title': 'Bilingual & Multilingual Sites',
     'services.bilingual.desc':
-      'Half your customers speak Spanish and your site is English-only. That is money walking out the door. We build sites in English, Spanish, and German where each language reads like it was written there — because it was.',
+      'Half your customers speak Spanish and your site is English-only. That is money walking out the door. We build sites in English, Spanish, and German where each language reads like it was written there, because it was.',
     'services.apps.title': 'Custom Business Applications',
     'services.apps.desc':
-      'You run the business on spreadsheets, email, and three SaaS tools that don’t talk to each other. We replace the stack with one piece of software built around how you actually work — whether that is a dashboard, a portal, a marketplace, or an internal tool nobody else will ever see.',
+      'You run the business on spreadsheets, email, and three SaaS tools that don’t talk to each other. We replace the stack with one piece of software built around how you actually work. A dashboard, a portal, a marketplace, or an internal tool nobody outside the office will ever see.',
     'services.security.title': 'Security Audits & Hardening',
     'services.security.desc':
       'You take payments and store customer data, but nobody has ever looked at the app from an attacker’s point of view. That’s how breaches happen. We run OWASP Top 10 audits, harden authentication and database access, and review how the app handles payments and third-party APIs.',
     'services.ai.title': 'AI Integrations',
     'services.ai.desc':
-      'If your staff spends half the day answering the same five questions, or you’re bleeding money to no-shows, automate it. We build bilingual chatbots and WhatsApp flows that take bookings, answer FAQs, capture leads, and chase follow-ups — in the language the customer actually texted in.',
+      'If your staff spends half the day answering the same five questions, or you’re bleeding money to no-shows, automate it. We build bilingual chatbots and WhatsApp flows that take bookings, answer FAQs, capture leads, and chase follow-ups, in whatever language the customer texted in.',
     'services.web.evidence': 'Recently shipped → Coastal Millwork & Supply',
     'services.bilingual.evidence':
       'Recently shipped → Tinta Gallery, NEVA Estudio',
@@ -61,14 +61,16 @@ const translations = {
     'process.title': 'How we work',
     'process.discovery.title': 'Discovery',
     'process.discovery.desc':
-      'A short call to understand your goals, audience, and scope.',
+      'A call. What the business does, who buys from it, and what this thing has to accomplish.',
     'process.design.title': 'Design & planning',
-    'process.design.desc': 'Wireframes, architecture, and a clear timeline.',
+    'process.design.desc':
+      'Wireframes and architecture, plus a scope and a date. You approve both before I write code.',
     'process.build.title': 'Build',
     'process.build.desc':
-      'Iterative development with regular updates and transparent progress.',
+      'I build it on a real URL you can open any time. Feedback goes in as we go, not in one pile at the end.',
     'process.launch.title': 'Launch & support',
-    'process.launch.desc': 'Deployment, training, and ongoing maintenance.',
+    'process.launch.desc':
+      'Deploy, hand over the keys, walk your team through running it. I stay on for maintenance if you want me on.',
 
     // Portfolio / Work
     'work.title': 'Selected work',
@@ -117,7 +119,7 @@ const translations = {
     // Hero
     'hero.title': 'Hacemos webs que te traen clientes.',
     'hero.subtitle':
-      'Webs, tiendas online y, de vez en cuando, algo de software que no vas a encontrar en ninguna plantilla. Construido bilingüe en inglés y español. Hablas directamente conmigo — ni gestor de cuentas, ni un equipo que va rotando.',
+      'Webs, tiendas online y, de vez en cuando, algo de software que no vas a encontrar en ninguna plantilla. Construido bilingüe en inglés y español. Hablas directamente conmigo. Ni gestor de cuentas, ni un equipo que va rotando.',
     'hero.cta.work': 'Ver proyectos',
     'hero.cta.contact': 'Contactar',
 
@@ -130,16 +132,16 @@ const translations = {
       'Tu web va lenta, parece una plantilla o pierde clientes en el checkout. Normalmente las tres cosas a la vez. La reconstruimos para que cargue rápido en móvil y que el checkout no pierda compradores por el camino.',
     'services.bilingual.title': 'Sitios Bilingües y Multilingües',
     'services.bilingual.desc':
-      'La mitad de tus clientes hablan español y tu web es solo en inglés. Eso son ventas que se escapan. Hacemos webs en inglés, español y alemán donde cada idioma suena como si se hubiera escrito ahí — porque se ha escrito ahí.',
+      'La mitad de tus clientes hablan español y tu web es solo en inglés. Eso son ventas que se escapan. Hacemos webs en inglés, español y alemán donde cada idioma suena como si se hubiera escrito ahí, porque se ha escrito ahí.',
     'services.apps.title': 'Aplicaciones de Negocio a Medida',
     'services.apps.desc':
-      'Llevas el negocio con hojas de cálculo, email y tres herramientas SaaS que no se hablan entre sí. Lo sustituimos por un software hecho a tu forma de trabajar — ya sea un panel, un portal, un marketplace o una herramienta interna que nadie más va a ver.',
+      'Llevas el negocio con hojas de cálculo, email y tres herramientas SaaS que no se hablan entre sí. Lo sustituimos por un software hecho a tu forma de trabajar. Un panel, un portal, un marketplace o una herramienta interna que no va a ver nadie de fuera.',
     'services.security.title': 'Auditorías y Refuerzo de Seguridad',
     'services.security.desc':
       'Procesas pagos y guardas datos de clientes, pero nadie ha mirado la aplicación desde el punto de vista del atacante. Así es como ocurren las brechas. Hacemos auditorías OWASP Top 10, reforzamos la autenticación y el acceso a la base de datos, y revisamos cómo la app maneja pagos e integraciones de terceros.',
     'services.ai.title': 'Integraciones de IA',
     'services.ai.desc':
-      'Si tu equipo pasa medio día respondiendo las mismas cinco preguntas, o estás perdiendo dinero por no-shows, se automatiza. Construimos chatbots bilingües y flujos de WhatsApp que cogen reservas, responden FAQs, captan leads y persiguen seguimientos — en el idioma en el que el cliente te escribió.',
+      'Si tu equipo pasa medio día respondiendo las mismas cinco preguntas, o estás perdiendo dinero por no-shows, se automatiza. Construimos chatbots bilingües y flujos de WhatsApp que cogen reservas, responden FAQs, captan leads y persiguen seguimientos, en el idioma en el que el cliente te escribió.',
     'services.web.evidence': 'Recién entregado → Coastal Millwork & Supply',
     'services.bilingual.evidence':
       'Recién entregado → Tinta Gallery, NEVA Estudio',
@@ -154,16 +156,16 @@ const translations = {
     'process.title': 'Cómo trabajamos',
     'process.discovery.title': 'Descubrimiento',
     'process.discovery.desc':
-      'Una llamada breve para entender tus objetivos, tu audiencia y el alcance del proyecto.',
+      'Una llamada. Qué hace el negocio, quién le compra y qué tiene que conseguir esto.',
     'process.design.title': 'Diseño y planificación',
     'process.design.desc':
-      'Wireframes, arquitectura y un cronograma claro.',
+      'Wireframes y arquitectura, más un alcance y una fecha. Apruebas los dos antes de que escriba código.',
     'process.build.title': 'Desarrollo',
     'process.build.desc':
-      'Desarrollo iterativo con actualizaciones regulares y progreso transparente.',
+      'Lo construyo en una URL real que puedes abrir cuando quieras. El feedback entra sobre la marcha, no todo junto al final.',
     'process.launch.title': 'Lanzamiento y soporte',
     'process.launch.desc':
-      'Despliegue, formación y mantenimiento continuo.',
+      'Despliegue, te entrego las llaves y le enseño a tu equipo a manejarlo. Sigo con el mantenimiento si me quieres ahí.',
 
     // Portafolio / Proyectos
     'work.title': 'Proyectos seleccionados',

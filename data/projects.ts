@@ -61,20 +61,20 @@ export const PROJECTS: Project[] = [
     title: 'Axis',
     category: { en: 'SaaS Platform', es: 'Plataforma SaaS' },
     summary: {
-      en: 'A subscription platform for exit-planning advisors and their business-owner clients. Built end to end under contract for the platform owner, and live in production.',
-      es: 'Una plataforma de suscripci\u00f3n para asesores de planificaci\u00f3n de salida y sus clientes propietarios de negocios. Construida de principio a fin bajo contrato para el propietario de la plataforma, y en producci\u00f3n.',
+      en: 'A subscription platform for exit planning advisors and the business owners they work with. Built for Southern Exits and running in production.',
+      es: 'Una plataforma de suscripción para asesores de planificación de salida y los propietarios con los que trabajan. Construida para Southern Exits y funcionando en producción.',
     },
     problem: {
-      en: 'Exit planning conversations tend to start late, once a sale is already forcing the issue. The advisor needs a credible way to open the discussion early, and the owner needs a starting point that makes the stakes concrete.',
-      es: 'Las conversaciones sobre la salida del negocio suelen empezar tarde, cuando una venta ya obliga a afrontarlas. El asesor necesita una forma cre\u00edble de abrir la conversaci\u00f3n pronto, y el propietario necesita un punto de partida que haga tangible lo que est\u00e1 en juego.',
+      en: 'Owners start thinking about selling when a sale is already on top of them. By then the advisor is reacting instead of guiding. The opening had to come earlier, and it had to be worth an owner’s afternoon.',
+      es: 'Los propietarios empiezan a pensar en vender cuando la venta ya se les ha echado encima. Para entonces el asesor reacciona en vez de guiar. La conversación tenía que empezar antes, y tenía que merecer la tarde del propietario.',
     },
     solution: {
-      en: 'An advisor shares a personalized link, the business owner completes a readiness assessment, and the advisor reviews the results and leads the next conversation. Around that flow: subscription billing and access control, an advisor dashboard and client roster, an admin console, transactional email on a verified domain, and generated PDF reports. Error tracking, rate limiting, and row-level security throughout.',
-      es: 'El asesor comparte un enlace personalizado, el propietario completa una evaluaci\u00f3n de preparaci\u00f3n, y el asesor revisa los resultados y dirige la siguiente conversaci\u00f3n. Alrededor de ese flujo: facturaci\u00f3n por suscripci\u00f3n y control de acceso, panel del asesor y cartera de clientes, consola de administraci\u00f3n, email transaccional sobre dominio verificado e informes PDF generados. Seguimiento de errores, l\u00edmites de tasa y seguridad a nivel de fila en todo el sistema.',
+      en: 'The advisor sends a link. The owner works through a readiness assessment. The advisor gets the results back and runs the next meeting off them. Around that sits the rest of a real product: subscription billing, an advisor dashboard, an admin console, transactional email on a verified domain, and PDF reports the owner keeps. Rate limiting and row level security throughout, because the data is somebody’s business.',
+      es: 'El asesor envía un enlace. El propietario completa una evaluación de preparación. El asesor recibe los resultados y dirige con ellos la siguiente reunión. Alrededor de eso va el resto de un producto de verdad: facturación por suscripción, panel del asesor, consola de administración, email transaccional sobre dominio verificado e informes PDF que el propietario se queda. Límites de tasa y seguridad a nivel de fila en todo el sistema, porque los datos son el negocio de alguien.',
     },
     role: {
-      en: 'Sole developer. Architecture, full-stack build, production deployment, and ongoing maintenance, under contract to the platform owner. The product concept, branding, and business direction are theirs.',
-      es: '\u00danico desarrollador. Arquitectura, desarrollo full-stack, despliegue en producci\u00f3n y mantenimiento continuo, bajo contrato con el propietario de la plataforma. El concepto de producto, la marca y la direcci\u00f3n de negocio son suyos.',
+      en: 'Sole developer. Architecture, the build, the production deploy, and the maintenance since. Southern Exits owns the product, the brand, and the direction.',
+      es: 'Único desarrollador. La arquitectura, el desarrollo, el despliegue en producción y el mantenimiento desde entonces. Southern Exits es dueño del producto, de la marca y de la dirección.',
     },
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
     link: 'https://axis.southernexits.com',
@@ -87,20 +87,20 @@ export const PROJECTS: Project[] = [
     title: 'llm-audit',
     category: { en: 'Security Tooling', es: 'Herramienta de Seguridad' },
     summary: {
-      en: 'An open-source static analysis tool for LLM application code. Twelve rules mapped to the OWASP LLM Top 10, run at commit time. Published on npm.',
-      es: 'Una herramienta open source de an\u00e1lisis est\u00e1tico para c\u00f3digo de aplicaciones LLM. Doce reglas mapeadas al OWASP LLM Top 10, ejecutadas en cada commit. Publicada en npm.',
+      en: 'An open source static analysis tool for LLM application code. Twelve rules mapped to the OWASP LLM Top 10, run at commit time. Published on npm.',
+      es: 'Una herramienta open source de análisis estático para código de aplicaciones LLM. Doce reglas mapeadas al OWASP LLM Top 10, ejecutadas en cada commit. Publicada en npm.',
     },
     problem: {
-      en: 'Wiring up an LLM introduces a specific class of security bug \u2014 hardcoded provider keys, model output parsed without a schema, untrusted input reaching a tool call. AI assistants write most of them, and no linter was looking.',
-      es: 'Integrar un LLM introduce una clase concreta de fallo de seguridad \u2014 claves de proveedor incrustadas en el c\u00f3digo, salida del modelo parseada sin esquema, entrada no confiable que llega a una llamada de herramienta. Los asistentes de IA escriben la mayor\u00eda, y ning\u00fan linter los estaba mirando.',
+      en: 'Wiring up an LLM introduces a specific class of security bug. Hardcoded provider keys. Model output parsed without a schema. Untrusted input reaching a tool call. AI assistants write most of them, people write the rest, and no linter was looking for any of it.',
+      es: 'Integrar un LLM introduce una clase concreta de fallo de seguridad. Claves de proveedor incrustadas en el código. Salida del modelo parseada sin esquema. Entrada no confiable que llega a una llamada de herramienta. Los asistentes de IA escriben la mayoría, las personas escriben el resto, y ningún linter estaba mirando.',
     },
     solution: {
-      en: 'A Semgrep rule pack and CLI that catches them before the commit lands. Every finding carries its OWASP mapping, the risk, and the fix. Output as human-readable text, JSON, SARIF 2.1.0, or a standalone HTML report you can hand to someone else. Each rule ships with a vulnerable and a safe fixture, all green in CI.',
-      es: 'Un paquete de reglas Semgrep y una CLI que los detectan antes de que el commit entre. Cada hallazgo lleva su mapeo OWASP, el riesgo y la soluci\u00f3n. Salida en texto legible, JSON, SARIF 2.1.0 o un informe HTML independiente que puedes entregar a otra persona. Cada regla incluye un fixture vulnerable y uno seguro, todos en verde en CI.',
+      en: 'A Semgrep rule pack and CLI that catch them before the commit lands. Every finding carries its OWASP mapping, the risk, and the fix. Output is plain text, JSON, SARIF, or a standalone HTML report you can hand to someone who does not read terminals. Each rule ships with a vulnerable fixture and a safe one, so the rules are tested the same way the code is.',
+      es: 'Un paquete de reglas Semgrep y una CLI que los detectan antes de que el commit entre. Cada hallazgo lleva su mapeo OWASP, el riesgo y la solución. La salida es texto plano, JSON, SARIF o un informe HTML independiente para quien no lee terminales. Cada regla incluye un fixture vulnerable y otro seguro, así que las reglas se prueban igual que el código.',
     },
     role: {
-      en: 'Sole author. Rule design, CLI, test harness, and documentation. MIT licensed.',
-      es: 'Autor \u00fanico. Dise\u00f1o de reglas, CLI, arn\u00e9s de tests y documentaci\u00f3n. Licencia MIT.',
+      en: 'Sole author. The rules, the CLI, the test harness, the docs. MIT licensed.',
+      es: 'Autor único. Las reglas, la CLI, el arnés de tests, la documentación. Licencia MIT.',
     },
     technologies: ['Semgrep', 'Node.js', 'TypeScript', 'SARIF'],
     link: 'https://github.com/Javierlozo/llm-audit',
@@ -143,12 +143,12 @@ export const PROJECTS: Project[] = [
       es: 'Portafolio bilingüe para un estudio de arquitectura en Asturias. 14 proyectos, galerías a pantalla completa y una web que carga en un frame con 3G.',
     },
     problem: {
-      en: 'A respected studio with more than a decade of work behind it. The site had to be as considered as the buildings — and load fast on the phones architects actually use.',
-      es: 'Un estudio con más de una década de proyectos a la espalda. La web tenía que estar tan cuidada como los edificios — y cargar rápido en los móviles donde los arquitectos realmente la ven.',
+      en: 'A respected studio with more than a decade of work behind it. The site had to be as considered as the buildings, and load fast on the phones architects actually use.',
+      es: 'Un estudio con más de una década de proyectos a la espalda. La web tenía que estar tan cuidada como los edificios, y cargar rápido en los móviles donde los arquitectos realmente la ven.',
     },
     solution: {
-      en: 'A custom build with full English/Spanish i18n and a 14-project gallery (keyboard navigation, image carousels). WCAG AA throughout, structured data for SEO, and the Spanish legal pages required by law — privacy, cookies, accessibility, legal notice.',
-      es: 'Un build a medida con i18n completo inglés/español y una galería de 14 proyectos (teclado, carruseles). WCAG AA en toda la web, datos estructurados para SEO y las páginas legales obligatorias — privacidad, cookies, accesibilidad, aviso legal.',
+      en: 'A custom build with full English/Spanish i18n and a 14-project gallery (keyboard navigation, image carousels). WCAG AA throughout, structured data for SEO, and the Spanish legal pages required by law: privacy, cookies, accessibility, legal notice.',
+      es: 'Un build a medida con i18n completo inglés/español y una galería de 14 proyectos (teclado, carruseles). WCAG AA en toda la web, datos estructurados para SEO y las páginas legales obligatorias: privacidad, cookies, accesibilidad, aviso legal.',
     },
     role: {
       en: 'End-to-end design and development.',
@@ -164,16 +164,16 @@ export const PROJECTS: Project[] = [
     title: 'Coastal Millwork & Supply',
     category: { en: 'Contractor Website', es: 'Web de Contratista' },
     summary: {
-      en: 'A website for an award-winning commercial millwork contractor in South Carolina. The work speaks for itself — the site had to get out of its way.',
-      es: 'Web para un contratista premiado de carpintería comercial en Carolina del Sur. El trabajo habla solo — la web solo tenía que dejarlo hablar.',
+      en: 'A website for an award-winning commercial millwork contractor in South Carolina. The work speaks for itself. The site had to get out of its way.',
+      es: 'Web para un contratista premiado de carpintería comercial en Carolina del Sur. El trabajo habla solo. La web solo tenía que dejarlo hablar.',
     },
     problem: {
       en: 'AWI-QCP certified, 800+ projects shipped. Their old site didn\'t show any of that. Architects were landing on it and bouncing.',
       es: 'Certificados AWI-QCP, más de 800 proyectos entregados. Su web antigua no enseñaba nada de eso. Los arquitectos aterrizaban y se iban.',
     },
     solution: {
-      en: 'A new site with a proper project showcase, team bios, services catalog, and an interactive service-area map. Built around their photography — which turned out to be the whole pitch.',
-      es: 'Un sitio nuevo con muestra de proyectos como se debe, bios del equipo, catálogo de servicios y un mapa interactivo del área de cobertura. Construido alrededor de su fotografía — que al final era el argumento entero.',
+      en: 'A new site with a proper project showcase, team bios, services catalog, and an interactive service-area map. Built around their photography, which turned out to be the whole pitch.',
+      es: 'Un sitio nuevo con muestra de proyectos como se debe, bios del equipo, catálogo de servicios y un mapa interactivo del área de cobertura. Construido alrededor de su fotografía, que al final era el argumento entero.',
     },
     role: {
       en: 'End-to-end design and development.',

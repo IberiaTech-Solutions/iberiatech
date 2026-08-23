@@ -9,8 +9,8 @@ export default function ContactPage() {
   const { t, language } = useLanguage()
 
   const letter = language === 'es'
-    ? `Si estás aquí, probablemente tienes un proyecto en mente. Escríbeme directamente y te contesto en un día laborable como mucho — sin formularios largos, sin embudos, sin llamadas que no lleven a nada concreto.`
-    : `If you're here, you probably have a project in mind. Write to me directly and I'll reply within one business day — no long forms, no funnels, no calls that go nowhere.`
+    ? `Si estás aquí, probablemente tienes un proyecto en mente. Escríbeme directamente y te contesto en dos días laborables como mucho. Sin formularios largos, sin embudos, sin llamadas que no lleven a nada.`
+    : `If you're here, you probably have a project in mind. Write to me directly and I'll reply within two business days. No long forms, no funnels, no calls that go nowhere.`
 
   const sig = language === 'es'
     ? 'Luis Javier Lozoya, fundador'
