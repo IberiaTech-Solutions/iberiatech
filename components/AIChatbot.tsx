@@ -11,6 +11,13 @@ interface Message {
   timestamp: Date
 }
 
+// Anything the keyword matcher does not cover goes to a person rather than
+// reading as a failed request.
+const handoff = (language: 'en' | 'es'): string =>
+  language === 'es'
+    ? 'Esa te la contesta mejor Luis Javier directamente. Escríbele a luis@iberiatechsolutions.com o reserva una llamada de 30 minutos en /contact.'
+    : 'That one is better answered by Luis Javier directly. Email luis@iberiatechsolutions.com or book a 30-minute call at /contact.'
+
 export default function AIChatbot() {
   const { language } = useLanguage()
   const [isOpen, setIsOpen] = useState(false)
@@ -123,12 +130,11 @@ export default function AIChatbot() {
       }
 
       const data = await response.json()
-      return data.response || 'Sorry, I could not process your request.'
+      if (data.response) return data.response
+      return handoff(language)
     } catch (error) {
       console.error('AI API error:', error)
-      return language === 'es' 
-        ? 'Lo siento, no pude procesar tu solicitud. Por favor contacta directamente a luis@iberiatechsolutions.com o llama al (864) 365-7897.'
-        : 'Sorry, I could not process your request. Please contact us directly at luis@iberiatechsolutions.com or call (864) 365-7897.'
+      return handoff(language)
     }
   }
 
