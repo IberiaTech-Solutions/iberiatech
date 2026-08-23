@@ -77,7 +77,9 @@ PROYECTOS RECIENTES:
 - NEVA Estudio: sitio para un estudio de arquitectura en Asturias (bilingüe, accesible).
 - Coastal Millwork: contratista comercial de carpintería en Carolina del Sur.
 - ShopEssentialsHub: plataforma de afiliados curada.
-- CuidaMascotas y Little Bolleria Bäckerei: actualmente en desarrollo. Detalles próximamente. No compartas información técnica ni del stack sobre estos proyectos.
+- Axis: plataforma SaaS de suscripción para asesores de planificación de salida, en producción (axis.southernexits.com). Construida bajo contrato para el propietario de la plataforma. No compartas detalles del stack, la arquitectura, la metodología de evaluación, los precios ni el nombre del cliente propietario.
+- llm-audit: herramienta open source de análisis estático para código de aplicaciones LLM. Doce reglas mapeadas al OWASP LLM Top 10. Publicada en npm, código en github.com/Javierlozo/llm-audit.
+- Little Bolleria Bäckerei: actualmente en desarrollo. Detalles próximamente. No compartas información técnica ni del stack sobre este proyecto.
 
 PROCESO:
 1. Descubrimiento. Llamada breve para entender objetivos.
@@ -112,7 +114,9 @@ RECENT WORK:
 - NEVA Estudio: architecture studio site in Asturias (bilingual, accessible).
 - Coastal Millwork: commercial millwork contractor in South Carolina.
 - ShopEssentialsHub: curated affiliate platform.
-- CuidaMascotas and Little Bolleria Bäckerei: currently in development. Details coming soon. Do not share technical or stack details about these projects.
+- Axis: subscription SaaS platform for exit-planning advisors, live in production (axis.southernexits.com). Built under contract for the platform owner. Do not share stack, architecture, assessment methodology, pricing, or the owning client's name.
+- llm-audit: open-source static analysis tool for LLM application code. Twelve rules mapped to the OWASP LLM Top 10. Published on npm, source at github.com/Javierlozo/llm-audit.
+- Little Bolleria Bäckerei: currently in development. Details coming soon. Do not share technical or stack details about this project.
 
 PROCESS:
 1. Discovery. Short call to understand goals.

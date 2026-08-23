@@ -50,9 +50,9 @@ const translations = {
     'services.web.evidence': 'Recently shipped → Coastal Millwork & Supply',
     'services.bilingual.evidence':
       'Recently shipped → Tinta Gallery, NEVA Estudio',
-    'services.apps.evidence': 'In build → custom client platform',
+    'services.apps.evidence': 'Live → Axis, a platform for exit-planning advisors',
     'services.security.evidence':
-      'GIAC GSEC · GFACT certified · 1st place, HackOps 2024',
+      'GIAC GSEC · GFACT certified · 1st place, HackOps 2024 · author of llm-audit',
     'services.ai.evidence':
       'In build → bilingual booking bot + WhatsApp flow',
     'services.cta': 'See all services',
@@ -143,9 +143,9 @@ const translations = {
     'services.web.evidence': 'Recién entregado → Coastal Millwork & Supply',
     'services.bilingual.evidence':
       'Recién entregado → Tinta Gallery, NEVA Estudio',
-    'services.apps.evidence': 'En desarrollo → plataforma a medida para clientes',
+    'services.apps.evidence': 'En producción → Axis, plataforma para asesores de salida',
     'services.security.evidence':
-      'GIAC GSEC · GFACT · 1º puesto HackOps 2024',
+      'GIAC GSEC · GFACT · 1º puesto HackOps 2024 · autor de llm-audit',
     'services.ai.evidence':
       'En desarrollo → bot de reservas bilingüe + flujo WhatsApp',
     'services.cta': 'Ver todos los servicios',
