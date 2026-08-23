@@ -4,6 +4,37 @@ const RATE_WINDOW_MS = 60_000
 const RATE_MAX_REQUESTS = 10
 const MAX_MESSAGE_LENGTH = 2000
 
+// This endpoint spends money on every call, so it only answers requests that
+// came from our own pages. Not a security boundary on its own (a header is
+// trivially forged), but it stops the endpoint being scraped and used as a
+// free model proxy, which is the realistic abuse here.
+const ALLOWED_ORIGINS = [
+  'https://iberiatechsolutions.com',
+  'https://www.iberiatechsolutions.com',
+]
+
+function isAllowedOrigin(request: NextRequest): boolean {
+  if (process.env.NODE_ENV !== 'production') return true
+  // Preview deployments get a generated *.vercel.app origin that we cannot
+  // enumerate ahead of time, so only production is locked to the allowlist.
+  if (process.env.VERCEL_ENV && process.env.VERCEL_ENV !== 'production') return true
+
+  const origin = request.headers.get('origin')
+  if (origin) return ALLOWED_ORIGINS.includes(origin)
+
+  // Same-origin fetches from some browsers omit Origin; fall back to Referer.
+  const referer = request.headers.get('referer')
+  if (referer) {
+    try {
+      return ALLOWED_ORIGINS.includes(new URL(referer).origin)
+    } catch {
+      return false
+    }
+  }
+
+  return false
+}
+
 // In-memory per-instance rate limit. Survives warm invocations on the same
 // Vercel instance; resets on cold start. Good enough to stop casual spam from
 // a single session; upgrade to Upstash Ratelimit + Vercel KV for distributed
@@ -30,6 +61,10 @@ function checkRateLimit(ip: string): boolean {
 
 export async function POST(request: NextRequest) {
   try {
+    if (!isAllowedOrigin(request)) {
+      return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+    }
+
     const ip = getClientIp(request)
     if (!checkRateLimit(ip)) {
       return NextResponse.json(
@@ -52,8 +87,10 @@ export async function POST(request: NextRequest) {
 
     const apiKey = process.env.OPENAI_API_KEY
     if (!apiKey) {
+      // Do not tell an unauthenticated caller which env vars are missing.
+      console.error('Chat API: OPENAI_API_KEY is not set')
       return NextResponse.json(
-        { error: 'OpenAI API key not configured' },
+        { error: 'Failed to get AI response' },
         { status: 500 },
       )
     }
