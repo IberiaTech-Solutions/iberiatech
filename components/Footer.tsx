@@ -102,9 +102,17 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* The registered name, in full.
+            "IberiaTech Solutions" is what the company is called; "IberiaTech
+            Solutions LLC" is what the State of South Carolina has on file, and
+            the two should not differ on the page anybody checks. Apple's
+            Developer Program verifies legal entity name and status against the
+            organisation's own website during enrolment, and a site naming the
+            company without its ending is the kind of small mismatch that turns
+            a verification into a support thread. */}
         <div className="border-t border-ink-800 mt-16 pt-8 text-xs text-ink-500">
           <p>
-            &copy; {currentYear} IberiaTech Solutions. {t('footer.rights')}
+            &copy; {currentYear} IberiaTech Solutions LLC. {t('footer.rights')}
           </p>
         </div>
       </div>
