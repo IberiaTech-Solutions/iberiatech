@@ -86,9 +86,17 @@ export const PROJECTS: Project[] = [
     slug: 'llm-audit',
     title: 'llm-audit',
     category: { en: 'Security Tooling', es: 'Herramienta de Seguridad' },
+    // No rule count here.
+    //
+    // It said twelve, which was true and had already been five. The number
+    // lives on the llm-audit page in the portfolio repo, where the rules
+    // themselves are listed, and it moves whenever a rule is added. Repeating
+    // it in a second repo means a figure that goes stale somewhere nobody is
+    // looking, and this sentence loses nothing by describing the coverage
+    // rather than counting it.
     summary: {
-      en: 'An open source static analysis tool for LLM application code. Twelve rules mapped to the OWASP LLM Top 10, run at commit time. Published on npm.',
-      es: 'Una herramienta open source de análisis estático para código de aplicaciones LLM. Doce reglas mapeadas al OWASP LLM Top 10, ejecutadas en cada commit. Publicada en npm.',
+      en: 'An open source static analysis tool for LLM application code. Rules mapped to the OWASP LLM Top 10, run at commit time. Published on npm.',
+      es: 'Una herramienta open source de análisis estático para código de aplicaciones LLM. Reglas mapeadas al OWASP LLM Top 10, ejecutadas en cada commit. Publicada en npm.',
     },
     problem: {
       en: 'Wiring up an LLM introduces a specific class of security bug. Hardcoded provider keys. Model output parsed without a schema. Untrusted input reaching a tool call. AI assistants write most of them, people write the rest, and no linter was looking for any of it.',
@@ -124,9 +132,21 @@ export const PROJECTS: Project[] = [
       en: 'Custom i18n with /en and /es routes and locale detection in middleware (cookie, IP geo, Accept-Language). Dimensions shown in inches for English and centimeters for Spanish. Inquiry form routed through Gmail SMTP. Paintings shown one at a time.',
       es: 'i18n a medida con rutas /en y /es y detección de idioma en middleware (cookie, IP geo, Accept-Language). Dimensiones en pulgadas en inglés y en centímetros en español. Formulario de contacto enrutado por Gmail SMTP. Cuadros mostrados de uno en uno.',
     },
+    // Not a client build, and the page should not read like one.
+    //
+    // Tinta Gallery trades as a DBA of IberiaTech Solutions LLC, so "end to
+    // end design and development" described the smallest part of it and
+    // implied somebody else owned the rest. A reader who checks and finds the
+    // client is the same company under another name starts re-auditing
+    // everything else on the page, and there is nothing else here that
+    // deserves that.
+    //
+    // It is also the stronger claim. Shipping an ecommerce site is a project;
+    // running the shop, pricing the work and carrying the inventory is a
+    // business.
     role: {
-      en: 'End-to-end design and development.',
-      es: 'Diseño y desarrollo de principio a fin.',
+      en: 'Built and operated by IberiaTech Solutions LLC, which trades as Tinta Gallery. Design, development, and running the shop: pricing, listings, and the relationship with both painters.',
+      es: 'Creada y gestionada por IberiaTech Solutions LLC, que opera como Tinta Gallery. Diseño, desarrollo y el día a día de la tienda: precios, catálogo y la relación con los dos pintores.',
     },
     technologies: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS'],
     link: 'https://tinta.gallery',

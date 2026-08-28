@@ -52,7 +52,7 @@ const translations = {
       'Recently shipped → Tinta Gallery, NEVA Estudio',
     'services.apps.evidence': 'Live → Axis, a platform for exit-planning advisors',
     'services.security.evidence':
-      'GIAC GSEC · GFACT certified · 1st place, HackOps 2024 · author of llm-audit',
+      'GIAC GCIH · GSEC · GFACT certified · 1st place, HackOps 2024 · author of llm-audit',
     'services.ai.evidence':
       'In build → bilingual booking bot + WhatsApp flow',
     'services.cta': 'See all services',
@@ -100,7 +100,7 @@ const translations = {
     'about.body':
       'Security-focused software engineer based in the Charleston, SC area, originally from Spain. I studied architectural engineering at IE University and spent six years in commercial construction before switching to software in 2020. I work directly with every client, write the code myself, and think about security from day one of the project.',
     'about.security':
-      'GIAC GSEC and GFACT certified, with GCIH in progress through the SANS CyberTalent Academy. 1st place at HackOps 2024, speaker and judge at HarborHack, and SANS Cyber Academy scholarship recipient.',
+      'GIAC GCIH, GSEC and GFACT certified, the GCIH earned through the SANS CyberTalent Academy. 1st place at HackOps 2024, speaker and judge at HarborHack, and SANS Cyber Academy scholarship recipient.',
     'about.photoAlt': 'Luis Javier Lozoya, founder of IberiaTech Solutions',
 
     // Footer
@@ -147,7 +147,7 @@ const translations = {
       'Recién entregado → Tinta Gallery, NEVA Estudio',
     'services.apps.evidence': 'En producción → Axis, plataforma para asesores de salida',
     'services.security.evidence':
-      'GIAC GSEC · GFACT · 1º puesto HackOps 2024 · autor de llm-audit',
+      'GIAC GCIH · GSEC · GFACT · 1º puesto HackOps 2024 · autor de llm-audit',
     'services.ai.evidence':
       'En desarrollo → bot de reservas bilingüe + flujo WhatsApp',
     'services.cta': 'Ver todos los servicios',
@@ -196,7 +196,7 @@ const translations = {
     'about.body':
       'Ingeniero de software con enfoque en seguridad, basado en el área de Charleston, SC, originario de España. Estudié arquitectura técnica en IE University y trabajé seis años en construcción comercial antes de pasarme al software en 2020. Trabajo directamente con cada cliente, escribo el código yo mismo, y pienso en la seguridad desde el primer día del proyecto.',
     'about.security':
-      'Certificado GIAC GSEC y GFACT, con GCIH en curso a través de la SANS CyberTalent Academy. Primer puesto en HackOps 2024, ponente y jurado en HarborHack, y becario de la SANS Cyber Academy.',
+      'Certificado GIAC GCIH, GSEC y GFACT, el GCIH obtenido a través de la SANS CyberTalent Academy. Primer puesto en HackOps 2024, ponente y jurado en HarborHack, y becario de la SANS Cyber Academy.',
     'about.photoAlt': 'Luis Javier Lozoya, fundador de IberiaTech Solutions',
 
     // Footer

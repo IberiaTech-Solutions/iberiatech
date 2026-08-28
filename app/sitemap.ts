@@ -37,6 +37,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+    // Low priority and rarely changing, but present: a privacy policy nothing
+    // links to from the index is a page search engines and a curious reader
+    // both have to be told about.
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: now,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
     ...projectEntries,
   ]
 }

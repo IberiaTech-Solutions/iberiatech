@@ -26,7 +26,7 @@ const RESPONSES: Record<Language, Record<Intent, string>> = {
     apps:
       "The bigger engagements: SaaS platforms, admin dashboards, marketplaces, client portals. Axis, a subscription platform for exit planning advisors, is live in production and still being built on.",
     security:
-      "Application security work: OWASP Top 10 reviews, auth hardening, row level security on the database, locking down how the app handles payments and third-party APIs. Luis Javier is GSEC and GFACT certified with GCIH in progress, and wrote llm-audit, an open source scanner for the OWASP LLM Top 10.",
+      "Application security work: OWASP Top 10 reviews, auth hardening, row level security on the database, locking down how the app handles payments and third-party APIs. Luis Javier is GCIH, GSEC and GFACT certified, and wrote llm-audit, an open source scanner for the OWASP LLM Top 10.",
     portfolio:
       "Shipped: Axis (subscription platform for exit planning advisors), NEVA Estudio (architecture studio in Asturias), Coastal Millwork (commercial contractor in SC), Tinta Gallery, ShopEssentialsHub. There's also llm-audit, an open source security scanner for LLM code. The full list is at /work.",
     process:
@@ -52,7 +52,7 @@ const RESPONSES: Record<Language, Record<Intent, string>> = {
     apps:
       'Los proyectos más grandes: plataformas SaaS, paneles de administración, marketplaces, portales de cliente. Axis, plataforma de suscripción para asesores de salida, está en producción y sigue creciendo.',
     security:
-      'Seguridad aplicada: revisiones OWASP Top 10, refuerzo de autenticación, políticas RLS en base de datos, y cómo la app maneja pagos e integraciones de terceros. Luis Javier tiene GSEC y GFACT, está sacando GCIH, y escribió llm-audit, un escáner open source para el OWASP LLM Top 10.',
+      'Seguridad aplicada: revisiones OWASP Top 10, refuerzo de autenticación, políticas RLS en base de datos, y cómo la app maneja pagos e integraciones de terceros. Luis Javier tiene GCIH, GSEC y GFACT, y escribió llm-audit, un escáner open source para el OWASP LLM Top 10.',
     portfolio:
       'Entregados: Axis (plataforma de suscripción para asesores de salida), NEVA Estudio (estudio de arquitectura en Asturias), Coastal Millwork (contratista comercial en SC), Tinta Gallery, ShopEssentialsHub. También está llm-audit, un escáner de seguridad open source para código LLM. La lista completa está en /work.',
     process:

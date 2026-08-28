@@ -6,7 +6,7 @@ import { useLanguage } from './LanguageProvider'
 import { FiMail, FiPhone, FiMapPin, FiLinkedin } from 'react-icons/fi'
 
 export default function Footer() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const currentYear = new Date().getFullYear()
 
   return (
@@ -98,6 +98,15 @@ export default function Footer() {
                   {t('services.security.title')}
                 </Link>
               </li>
+              {/* Five services on /services, four in this list. AI Integrations
+                  was the one missing, which is the odd one to drop: it is the
+                  newest offer, the one the chat widget on this very site is a
+                  demonstration of, and the hardest to find by guessing. */}
+              <li>
+                <Link href="/services" className="text-ink-200 hover:text-ink-50 transition-colors duration-200">
+                  {t('services.ai.title')}
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -110,10 +119,20 @@ export default function Footer() {
             organisation's own website during enrolment, and a site naming the
             company without its ending is the kind of small mismatch that turns
             a verification into a support thread. */}
-        <div className="border-t border-ink-800 mt-16 pt-8 text-xs text-ink-500">
+        <div className="border-t border-ink-800 mt-16 pt-8 text-xs text-ink-500 flex flex-wrap items-center gap-x-4 gap-y-2">
           <p>
             &copy; {currentYear} IberiaTech Solutions LLC. {t('footer.rights')}
           </p>
+          {/* The footer is where a reader looks for this, and until now there
+              was nothing to find. The chat sends what a visitor types to
+              OpenAI and the site markets to Spain in Spanish, so the notice is
+              owed rather than decorative. */}
+          <Link
+            href="/privacy"
+            className="hover:text-ink-300 transition-colors duration-200 underline underline-offset-4"
+          >
+            {language === 'es' ? 'Privacidad' : 'Privacy'}
+          </Link>
         </div>
       </div>
     </footer>
