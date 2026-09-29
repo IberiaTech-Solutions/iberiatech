@@ -161,7 +161,6 @@ iberiatech/
 ### IberiaTech Solutions LLC
 
 - **Email**: luis@iberiatechsolutions.com
-- **Phone**: (864) 365-7897
 - **Location**: Charleston, SC, USA
 - **Founded**: 2024
 - **LinkedIn**: [linkedin.com/company/iberiatech](https://linkedin.com/company/iberiatech)
@@ -203,7 +202,6 @@ Visit the live website: [iberiatech.com](https://iberiatech.com) (when deployed)
 This is a proprietary project owned by IberiaTech Solutions LLC. For business inquiries or collaboration opportunities, please contact:
 
 - **Email**: luis@iberiatechsolutions.com
-- **Phone**: (864) 365-7897
 
 ## 📄 License
 
@@ -214,7 +212,6 @@ This project is proprietary software owned by IberiaTech Solutions LLC. All righ
 For technical support or business inquiries:
 
 - **Email**: luis@iberiatechsolutions.com
-- **Phone**: (864) 365-7897
 - **Business Hours**: Monday - Friday, 9 AM - 6 PM EST
 
 ## 🔗 Links

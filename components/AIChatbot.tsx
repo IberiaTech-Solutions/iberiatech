@@ -171,8 +171,8 @@ export default function AIChatbot() {
       const errorResponse: Message = {
         id: (Date.now() + 1).toString(),
         text: language === 'es' 
-          ? 'Lo siento, hubo un error. Por favor contacta directamente a luis@iberiatechsolutions.com o llama al (864) 365-7897.'
-          : 'Sorry, there was an error. Please contact us directly at luis@iberiatechsolutions.com or call (864) 365-7897.',
+          ? 'Lo siento, hubo un error. Por favor contacta directamente a luis@iberiatechsolutions.com.'
+          : 'Sorry, there was an error. Please contact us directly at luis@iberiatechsolutions.com.',
         isUser: false,
         timestamp: new Date()
       }
@@ -312,8 +312,8 @@ export default function AIChatbot() {
                           const errorResponse: Message = {
                             id: (Date.now() + 1).toString(),
                             text: language === 'es'
-                              ? 'Lo siento, hubo un error. Por favor contacta directamente a luis@iberiatechsolutions.com o llama al (864) 365-7897.'
-                              : 'Sorry, there was an error. Please contact us directly at luis@iberiatechsolutions.com or call (864) 365-7897.',
+                              ? 'Lo siento, hubo un error. Por favor contacta directamente a luis@iberiatechsolutions.com.'
+                              : 'Sorry, there was an error. Please contact us directly at luis@iberiatechsolutions.com.',
                             isUser: false,
                             timestamp: new Date(),
                           }

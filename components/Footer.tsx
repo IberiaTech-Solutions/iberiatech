@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useLanguage } from './LanguageProvider'
-import { FiMail, FiPhone, FiMapPin, FiLinkedin } from 'react-icons/fi'
+import { FiMail, FiMapPin, FiLinkedin } from 'react-icons/fi'
 
 export default function Footer() {
   const { t, language } = useLanguage()
@@ -55,15 +55,6 @@ export default function Footer() {
                   className="text-ink-200 hover:text-ink-50 transition-colors duration-200 break-all"
                 >
                   luis@iberiatechsolutions.com
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <FiPhone className="w-4 h-4 text-ink-500 flex-shrink-0" aria-hidden />
-                <a
-                  href="tel:+18643657897"
-                  className="text-ink-200 hover:text-ink-50 transition-colors duration-200"
-                >
-                  (864) 365-7897
                 </a>
               </li>
               <li className="flex items-center gap-3">

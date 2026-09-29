@@ -15,7 +15,6 @@ export default function StructuredData() {
     url: 'https://iberiatechsolutions.com',
     image: 'https://iberiatechsolutions.com/opengraph-image',
     logo: 'https://iberiatechsolutions.com/images/logos/light.png',
-    telephone: '+18643657897',
     founder: {
       '@type': 'Person',
       name: 'Luis Javier Lozoya',
