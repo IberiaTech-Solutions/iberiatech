@@ -155,6 +155,34 @@ export const PROJECTS: Project[] = [
     wide: true,
   },
   {
+    slug: 'standshot',
+    title: 'Standshot',
+    category: { en: 'Web + iOS App', es: 'Web + App iOS' },
+    summary: {
+      en: 'Self-guided tours of the places film and television were shot, starting with Charleston. Every location is free to read on the website. The iOS app carries the day.',
+      es: 'Rutas autoguiadas por los lugares donde se rodaron películas y series, empezando por Charleston. Cada localización se lee gratis en la web. La app de iOS te lleva el día.',
+    },
+    problem: {
+      en: 'Anyone can find where Outer Banks or The Notebook was filmed. What nobody sells is the day: which stops are worth the drive, in what order, how long it takes, and whether the gate will let you through.',
+      es: 'Cualquiera encuentra dónde se rodó Outer Banks o El diario de Noa. Lo que nadie vende es el día: qué paradas merecen el viaje, en qué orden, cuánto se tarda y si te van a dejar pasar la verja.',
+    },
+    solution: {
+      en: 'A Next.js site with every location, the scene shot there, and how to get in, free and indexable. An Expo and React Native app with routes ordered so they never double back, sorted by distance, and offline maps (MapLibre and PMTiles) for where there is no signal. The app is sold as an App Store in-app purchase. Supabase with row-level security behind both.',
+      es: 'Una web en Next.js con cada localización, la escena que se rodó allí y cómo entrar, gratis e indexable. Una app en Expo y React Native con rutas ordenadas para no volver sobre tus pasos, ordenadas por distancia y con mapas offline (MapLibre y PMTiles) para donde no hay cobertura. La app se vende como compra dentro de la App Store. Supabase con seguridad a nivel de fila detrás de las dos.',
+    },
+    // Same reasoning as Tinta Gallery: this is the company's own product, not
+    // a client build, and the role says so.
+    role: {
+      en: 'Built and operated by IberiaTech Solutions LLC. Product, location research, design, the website, the iOS app, and the data behind them.',
+      es: 'Creado y gestionado por IberiaTech Solutions LLC. Producto, investigación de localizaciones, diseño, la web, la app de iOS y los datos detrás de ellas.',
+    },
+    technologies: ['Next.js 16', 'React 19', 'TypeScript', 'Expo', 'React Native', 'MapLibre', 'Supabase'],
+    link: 'https://standshot.com',
+    image: '/images/portfolio/standshot.jpg',
+    featured: true,
+    wide: true,
+  },
+  {
     slug: 'neva-estudio',
     title: 'NEVA Estudio',
     category: { en: 'Studio Website', es: 'Web de Estudio' },
