@@ -7,9 +7,10 @@ import { useLanguage } from './LanguageProvider'
 
 const HERO_PROJECTS = [
   {
-    src: '/images/portfolio/little-bolleria.jpg',
-    label: 'littlebolleria.com',
-    alt: 'Little Bolleria bakery website',
+    src: '/images/portfolio/llm-audit.png',
+    label: 'github.com/Javierlozo/llm-audit',
+    alt: 'llm-audit, a Semgrep rule pack for the OWASP LLM Top 10',
+    contain: true,
   },
   {
     src: '/images/portfolio/neva2.png',
@@ -29,12 +30,14 @@ function BrowserCard({
   alt,
   className,
   priority = false,
+  contain = false,
 }: {
   src: string
   label: string
   alt: string
   className?: string
   priority?: boolean
+  contain?: boolean
 }) {
   return (
     <div
@@ -53,13 +56,13 @@ function BrowserCard({
           Live
         </span>
       </div>
-      <div className="relative aspect-[3/2]">
+      <div className={`relative ${contain ? 'aspect-[1600/633]' : 'aspect-[3/2]'}`}>
         <Image
           src={src}
           alt={alt}
           fill
           sizes="(max-width: 1024px) 100vw, 600px"
-          className="object-cover object-top"
+          className={contain ? 'object-contain' : 'object-cover object-top'}
           priority={priority}
         />
       </div>
@@ -140,7 +143,7 @@ export default function HeroSection() {
 
           <div className="lg:col-span-5 relative">
             <div className="lg:hidden fade-up" style={{ animationDelay: '120ms' }}>
-              <BrowserCard {...HERO_PROJECTS[1]} priority />
+              <BrowserCard {...HERO_PROJECTS[0]} priority />
             </div>
 
             <div className="hidden lg:block relative h-[520px]">
