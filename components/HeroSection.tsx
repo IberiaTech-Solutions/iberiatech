@@ -133,7 +133,7 @@ export default function HeroSection() {
                 href="/work"
                 className="text-ink-200 hover:text-accent-300 transition-colors"
               >
-                NEVA Estudio · Tinta Gallery · Coastal Millwork
+                llm-audit · NEVA Estudio · Tinta Gallery · Coastal Millwork
               </Link>
             </p>
           </div>

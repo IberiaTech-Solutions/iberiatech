@@ -76,7 +76,7 @@ const translations = {
     // Portfolio / Work
     'work.title': 'Selected work',
     'work.subtitle':
-      'Recent projects. Some shipped, some still in the oven. Websites, online stores, marketplaces, and the kind of custom software businesses build when the SaaS options stop fitting.',
+      'Recent projects, starting with the security side: llm-audit, the open source scanner behind our security reviews for apps built with AI. Next to it, the client builds. Websites, online stores, marketplaces, and the kind of custom software businesses build when the SaaS options stop fitting. Some shipped, some still in the oven.',
     'work.view': 'View project',
     'work.viewLive': 'View live site',
     'work.cta': 'See all work',
@@ -172,7 +172,7 @@ const translations = {
     // Portafolio / Proyectos
     'work.title': 'Proyectos seleccionados',
     'work.subtitle':
-      'Proyectos recientes. Algunos ya entregados, otros todavía en el horno. Webs, tiendas online, marketplaces y el tipo de software a medida que se construye cuando las opciones SaaS dejan de encajar.',
+      'Proyectos recientes, empezando por la parte de seguridad: llm-audit, el escáner open source que usamos en las revisiones de seguridad de apps hechas con IA. Al lado, los proyectos para clientes. Webs, tiendas online, marketplaces y el tipo de software a medida que se construye cuando las opciones SaaS dejan de encajar. Algunos ya entregados, otros todavía en el horno.',
     'work.view': 'Ver proyecto',
     'work.viewLive': 'Ver sitio en vivo',
     'work.cta': 'Ver todos los proyectos',
