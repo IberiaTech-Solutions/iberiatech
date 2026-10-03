@@ -11,6 +11,7 @@ const HERO_PROJECTS = [
     label: 'github.com/Javierlozo/llm-audit',
     alt: 'llm-audit, a Semgrep rule pack for the OWASP LLM Top 10',
     contain: true,
+    tag: 'Open source',
   },
   {
     src: '/images/portfolio/neva2.png',
@@ -31,6 +32,7 @@ function BrowserCard({
   className,
   priority = false,
   contain = false,
+  tag = 'Live',
 }: {
   src: string
   label: string
@@ -38,6 +40,7 @@ function BrowserCard({
   className?: string
   priority?: boolean
   contain?: boolean
+  tag?: string
 }) {
   return (
     <div
@@ -53,7 +56,7 @@ function BrowserCard({
           {label}
         </span>
         <span className="text-[10px] text-ink-500 uppercase tracking-[0.2em]">
-          Live
+          {tag}
         </span>
       </div>
       <div className={`relative ${contain ? 'aspect-[1600/633]' : 'aspect-[3/2]'}`}>
