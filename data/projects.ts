@@ -31,6 +31,40 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
+    slug: 'llm-audit',
+    title: 'llm-audit',
+    category: { en: 'Security Tooling', es: 'Herramienta de Seguridad' },
+    // No rule count here.
+    //
+    // It said twelve, which was true and had already been five. The number
+    // lives on the llm-audit page in the portfolio repo, where the rules
+    // themselves are listed, and it moves whenever a rule is added. Repeating
+    // it in a second repo means a figure that goes stale somewhere nobody is
+    // looking, and this sentence loses nothing by describing the coverage
+    // rather than counting it.
+    summary: {
+      en: 'An open source static analysis tool for LLM application code. Rules mapped to the OWASP LLM Top 10, run at commit time. Published on npm.',
+      es: 'Una herramienta open source de análisis estático para código de aplicaciones LLM. Reglas mapeadas al OWASP LLM Top 10, ejecutadas en cada commit. Publicada en npm.',
+    },
+    problem: {
+      en: 'Wiring up an LLM introduces a specific class of security bug. Hardcoded provider keys. Model output parsed without a schema. Untrusted input reaching a tool call. AI assistants write most of them, people write the rest, and no linter was looking for any of it.',
+      es: 'Integrar un LLM introduce una clase concreta de fallo de seguridad. Claves de proveedor incrustadas en el código. Salida del modelo parseada sin esquema. Entrada no confiable que llega a una llamada de herramienta. Los asistentes de IA escriben la mayoría, las personas escriben el resto, y ningún linter estaba mirando.',
+    },
+    solution: {
+      en: 'A Semgrep rule pack and CLI that catch them before the commit lands. Every finding carries its OWASP mapping, the risk, and the fix. Output is plain text, JSON, SARIF, or a standalone HTML report you can hand to someone who does not read terminals. Each rule ships with a vulnerable fixture and a safe one, so the rules are tested the same way the code is.',
+      es: 'Un paquete de reglas Semgrep y una CLI que los detectan antes de que el commit entre. Cada hallazgo lleva su mapeo OWASP, el riesgo y la solución. La salida es texto plano, JSON, SARIF o un informe HTML independiente para quien no lee terminales. Cada regla incluye un fixture vulnerable y otro seguro, así que las reglas se prueban igual que el código.',
+    },
+    role: {
+      en: 'Sole author. The rules, the CLI, the test harness, the docs. MIT licensed.',
+      es: 'Autor único. Las reglas, la CLI, el arnés de tests, la documentación. Licencia MIT.',
+    },
+    technologies: ['Semgrep', 'Node.js', 'TypeScript', 'SARIF'],
+    link: 'https://github.com/Javierlozo/llm-audit',
+    image: '/images/portfolio/llm-audit.png',
+    featured: true,
+    wide: true,
+  },
+  {
     slug: 'little-bolleria',
     title: 'Little Bolleria Bäckerei',
     category: { en: 'Ecommerce', es: 'Ecommerce' },
@@ -79,40 +113,6 @@ export const PROJECTS: Project[] = [
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
     link: 'https://axis.southernexits.com',
     image: '/images/portfolio/axis.png',
-    featured: true,
-    wide: true,
-  },
-  {
-    slug: 'llm-audit',
-    title: 'llm-audit',
-    category: { en: 'Security Tooling', es: 'Herramienta de Seguridad' },
-    // No rule count here.
-    //
-    // It said twelve, which was true and had already been five. The number
-    // lives on the llm-audit page in the portfolio repo, where the rules
-    // themselves are listed, and it moves whenever a rule is added. Repeating
-    // it in a second repo means a figure that goes stale somewhere nobody is
-    // looking, and this sentence loses nothing by describing the coverage
-    // rather than counting it.
-    summary: {
-      en: 'An open source static analysis tool for LLM application code. Rules mapped to the OWASP LLM Top 10, run at commit time. Published on npm.',
-      es: 'Una herramienta open source de análisis estático para código de aplicaciones LLM. Reglas mapeadas al OWASP LLM Top 10, ejecutadas en cada commit. Publicada en npm.',
-    },
-    problem: {
-      en: 'Wiring up an LLM introduces a specific class of security bug. Hardcoded provider keys. Model output parsed without a schema. Untrusted input reaching a tool call. AI assistants write most of them, people write the rest, and no linter was looking for any of it.',
-      es: 'Integrar un LLM introduce una clase concreta de fallo de seguridad. Claves de proveedor incrustadas en el código. Salida del modelo parseada sin esquema. Entrada no confiable que llega a una llamada de herramienta. Los asistentes de IA escriben la mayoría, las personas escriben el resto, y ningún linter estaba mirando.',
-    },
-    solution: {
-      en: 'A Semgrep rule pack and CLI that catch them before the commit lands. Every finding carries its OWASP mapping, the risk, and the fix. Output is plain text, JSON, SARIF, or a standalone HTML report you can hand to someone who does not read terminals. Each rule ships with a vulnerable fixture and a safe one, so the rules are tested the same way the code is.',
-      es: 'Un paquete de reglas Semgrep y una CLI que los detectan antes de que el commit entre. Cada hallazgo lleva su mapeo OWASP, el riesgo y la solución. La salida es texto plano, JSON, SARIF o un informe HTML independiente para quien no lee terminales. Cada regla incluye un fixture vulnerable y otro seguro, así que las reglas se prueban igual que el código.',
-    },
-    role: {
-      en: 'Sole author. The rules, the CLI, the test harness, the docs. MIT licensed.',
-      es: 'Autor único. Las reglas, la CLI, el arnés de tests, la documentación. Licencia MIT.',
-    },
-    technologies: ['Semgrep', 'Node.js', 'TypeScript', 'SARIF'],
-    link: 'https://github.com/Javierlozo/llm-audit',
-    image: '/images/portfolio/llm-audit.png',
     featured: true,
     wide: true,
   },

@@ -29,24 +29,24 @@ const translations = {
     'hero.cta.contact': 'Get in touch',
 
     // Services overview
-    'services.title': 'Problems we solve',
+    'services.title': 'Problems I solve',
     'services.subtitle':
       'Five things that cost small businesses money, starting with the one that can cost the most. Here’s how we fix them.',
     'services.web.title': 'Web & Ecommerce',
     'services.web.desc':
-      'Your site is slow, looks like a template, or loses customers at checkout. Usually all three at once. We rebuild it so pages load fast on a phone and the checkout doesn’t leak buyers.',
+      'Your site is slow, looks like a template, or loses customers at checkout. Usually all three at once. I rebuild it so pages load fast on a phone and the checkout doesn’t leak buyers.',
     'services.bilingual.title': 'Bilingual & Multilingual Sites',
     'services.bilingual.desc':
-      'Half your customers speak Spanish and your site is English-only. That is money walking out the door. We build sites in English, Spanish, and German where each language reads like it was written there, because it was.',
+      'Half your customers speak Spanish and your site is English-only. That is money walking out the door. I build sites in English, Spanish, and German where each language reads like it was written there, because it was.',
     'services.apps.title': 'Custom Business Applications',
     'services.apps.desc':
-      'You run the business on spreadsheets, email, and three SaaS tools that don’t talk to each other. We replace the stack with one piece of software built around how you actually work. A dashboard, a portal, a marketplace, or an internal tool nobody outside the office will ever see.',
+      'You run the business on spreadsheets, email, and three SaaS tools that don’t talk to each other. I replace the stack with one piece of software built around how you actually work. A dashboard, a portal, a marketplace, or an internal tool nobody outside the office will ever see.',
     'services.security.title': 'AI App Security Reviews',
     'services.security.desc':
       'You built the app with AI and it works. What nobody has checked is whether a stranger can read your customers’ data, get past the paywall, or run up your OpenAI bill. A review has a fixed scope and a fixed price, and you get it back in one week. I run an automated scan with llm-audit, then read the code by hand to catch what a scanner misses. You get every finding written up with a prompt you can paste into your AI tool to fix it, plus a call where I walk you through all of it.',
     'services.ai.title': 'AI Integrations',
     'services.ai.desc':
-      'If your staff spends half the day answering the same five questions, or you’re bleeding money to no-shows, automate it. We build bilingual chatbots and WhatsApp flows that take bookings, answer FAQs, capture leads, and chase follow-ups, in whatever language the customer texted in.',
+      'If your staff spends half the day answering the same five questions, or you’re bleeding money to no shows, automate it. I build bilingual chatbots and WhatsApp flows that take bookings, answer FAQs, capture leads, and chase follow-ups, in whatever language the customer texted in.',
     'services.web.evidence': 'Recently shipped → Coastal Millwork & Supply',
     'services.bilingual.evidence':
       'Recently shipped → Tinta Gallery, NEVA Estudio',
@@ -59,7 +59,7 @@ const translations = {
     'services.cta': 'See all services',
 
     // Process
-    'process.title': 'How we work',
+    'process.title': 'How I work',
     'process.discovery.title': 'Discovery',
     'process.discovery.desc':
       'A call. What the business does, who buys from it, and what this thing has to accomplish.',
@@ -97,7 +97,7 @@ const translations = {
 
     // About
     'about.kicker': 'Meet the founder',
-    'about.heading': 'I’m Luis Javier. I started IberiaTech because too many small businesses have been left hanging by developers who disappear or agencies that bill for every email.',
+    'about.heading': 'I’m Luis Javier. Founders now ship apps built with AI, and nobody checks the locks. I started IberiaTech to be the one who checks. It’s just me: I read your code myself and tell you straight what I find.',
     'about.body':
       'Security-focused software engineer based in the Charleston, SC area, originally from Spain. I studied architectural engineering at IE University and spent six years in commercial construction before switching to software in 2020. I work directly with every client, write the code myself, and think about security from day one of the project.',
     'about.security':
@@ -125,24 +125,24 @@ const translations = {
     'hero.cta.contact': 'Contactar',
 
     // Servicios overview
-    'services.title': 'Problemas que resolvemos',
+    'services.title': 'Problemas que resuelvo',
     'services.subtitle':
       'Cinco cosas que le cuestan dinero a las pequeñas empresas, empezando por la que más cara puede salir. Así las arreglamos.',
     'services.web.title': 'Web y Ecommerce',
     'services.web.desc':
-      'Tu web va lenta, parece una plantilla o pierde clientes en el checkout. Normalmente las tres cosas a la vez. La reconstruimos para que cargue rápido en móvil y que el checkout no pierda compradores por el camino.',
+      'Tu web va lenta, parece una plantilla o pierde clientes en el checkout. Normalmente las tres cosas a la vez. La reconstruyo para que cargue rápido en móvil y que el checkout no pierda compradores por el camino.',
     'services.bilingual.title': 'Sitios Bilingües y Multilingües',
     'services.bilingual.desc':
-      'La mitad de tus clientes hablan español y tu web es solo en inglés. Eso son ventas que se escapan. Hacemos webs en inglés, español y alemán donde cada idioma suena como si se hubiera escrito ahí, porque se ha escrito ahí.',
+      'La mitad de tus clientes hablan español y tu web es solo en inglés. Eso son ventas que se escapan. Hago webs en inglés, español y alemán donde cada idioma suena como si se hubiera escrito ahí, porque se ha escrito ahí.',
     'services.apps.title': 'Aplicaciones de Negocio a Medida',
     'services.apps.desc':
-      'Llevas el negocio con hojas de cálculo, email y tres herramientas SaaS que no se hablan entre sí. Lo sustituimos por un software hecho a tu forma de trabajar. Un panel, un portal, un marketplace o una herramienta interna que no va a ver nadie de fuera.',
+      'Llevas el negocio con hojas de cálculo, email y tres herramientas SaaS que no se hablan entre sí. Lo sustituyo por un software hecho a tu forma de trabajar. Un panel, un portal, un marketplace o una herramienta interna que no va a ver nadie de fuera.',
     'services.security.title': 'Revisiones de Seguridad para Apps Hechas con IA',
     'services.security.desc':
       'Has hecho la app con IA y funciona. Lo que nadie ha comprobado es si un desconocido puede ver los datos de tus clientes, saltarse el pago o dispararte la factura de OpenAI. La revisión tiene un alcance cerrado y un precio cerrado, y la tienes en una semana. Paso un escaneo automático con llm-audit y luego leo el código a mano para encontrar lo que el escáner no ve. Recibes cada fallo por escrito con un prompt que puedes pegar en tu herramienta de IA para arreglarlo, y una llamada en la que te lo explico todo.',
     'services.ai.title': 'Integraciones de IA',
     'services.ai.desc':
-      'Si tu equipo pasa medio día respondiendo las mismas cinco preguntas, o estás perdiendo dinero por no-shows, se automatiza. Construimos chatbots bilingües y flujos de WhatsApp que cogen reservas, responden FAQs, captan leads y persiguen seguimientos, en el idioma en el que el cliente te escribió.',
+      'Si tu equipo pasa medio día respondiendo las mismas cinco preguntas, o estás perdiendo dinero por no shows, se automatiza. Construyo chatbots bilingües y flujos de WhatsApp que cogen reservas, responden FAQs, captan leads y persiguen seguimientos, en el idioma en el que el cliente te escribió.',
     'services.web.evidence': 'Recién entregado → Coastal Millwork & Supply',
     'services.bilingual.evidence':
       'Recién entregado → Tinta Gallery, NEVA Estudio',
@@ -155,7 +155,7 @@ const translations = {
     'services.cta': 'Ver todos los servicios',
 
     // Proceso
-    'process.title': 'Cómo trabajamos',
+    'process.title': 'Cómo trabajo',
     'process.discovery.title': 'Descubrimiento',
     'process.discovery.desc':
       'Una llamada. Qué hace el negocio, quién le compra y qué tiene que conseguir esto.',
@@ -194,7 +194,7 @@ const translations = {
 
     // Sobre nosotros
     'about.kicker': 'Conoce al fundador',
-    'about.heading': 'Soy Luis Javier. Fundé IberiaTech porque demasiadas pequeñas empresas se han quedado colgadas por desarrolladores que desaparecen o agencias que cobran por cada email.',
+    'about.heading': 'Soy Luis Javier. Hoy los fundadores lanzan apps hechas con IA y nadie comprueba si han echado el cerrojo. Fundé IberiaTech para ser quien lo comprueba. Soy yo solo: leo tu código yo mismo y te digo sin rodeos lo que encuentro.',
     'about.body':
       'Ingeniero de software con enfoque en seguridad, basado en el área de Charleston, SC, originario de España. Estudié arquitectura técnica en IE University y trabajé seis años en construcción comercial antes de pasarme al software en 2020. Trabajo directamente con cada cliente, escribo el código yo mismo, y pienso en la seguridad desde el primer día del proyecto.',
     'about.security':

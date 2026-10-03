@@ -97,8 +97,8 @@ export default function HeroSection() {
           <div className="lg:col-span-7 space-y-8 fade-up">
             <p className="text-xs uppercase tracking-[0.25em] text-accent-300 font-medium">
               {language === 'es'
-                ? 'Consultoría web bilingüe · Charleston, SC'
-                : 'Bilingual web consultancy · Charleston, SC'}
+                ? 'Consultoría de seguridad para apps hechas con IA · Charleston, SC'
+                : 'Security consultancy for AI built apps · Charleston, SC'}
             </p>
 
             <h1 className="font-display text-[2.5rem] sm:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight prose-measure">
