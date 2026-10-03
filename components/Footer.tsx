@@ -124,6 +124,12 @@ export default function Footer() {
           >
             {language === 'es' ? 'Privacidad' : 'Privacy'}
           </Link>
+          <Link
+            href="/terms"
+            className="hover:text-ink-300 transition-colors duration-200 underline underline-offset-4"
+          >
+            {language === 'es' ? 'Aviso legal' : 'Terms'}
+          </Link>
         </div>
       </div>
     </footer>

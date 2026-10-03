@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
+import Link from 'next/link'
 import { useLanguage } from './LanguageProvider'
 import { getCommonResponse } from './ai-chat-responses'
 
@@ -369,6 +370,21 @@ export default function AIChatbot() {
                 </svg>
               </button>
             </div>
+            {/* Said where the typing happens, not only in the footer: anything
+                the keyword matcher does not answer leaves for OpenAI, and the
+                person typing should know that before they hit send. */}
+            <p className="mt-2 text-[11px] leading-snug text-ink-500">
+              {language === 'es'
+                ? 'Algunos mensajes se envían a OpenAI para generar la respuesta. No compartas nada confidencial. '
+                : 'Some messages are sent to OpenAI to generate a reply. Don’t share anything confidential. '}
+              <Link
+                href="/privacy"
+                onClick={() => setIsOpen(false)}
+                className="underline underline-offset-2 hover:text-ink-900 dark:hover:text-ink-100"
+              >
+                {language === 'es' ? 'Privacidad' : 'Privacy'}
+              </Link>
+            </p>
           </div>
         </div>
       )}

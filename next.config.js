@@ -4,28 +4,6 @@ const nextConfig = {
   poweredByHeader: false,
   images: {
     formats: ['image/avif', 'image/webp'],
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'via.placeholder.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'querri.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'gdna.io',
-      },
-      {
-        protocol: 'https',
-        hostname: 'portfolio-hub-tawny.vercel.app',
-      },
-    ],
   },
   async headers() {
     // The site loads nothing from a third-party host: fonts are self-hosted by

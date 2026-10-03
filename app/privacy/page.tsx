@@ -21,6 +21,12 @@ import { useLanguage } from '@/components/LanguageProvider'
  * policy that describes an older version of the site is worse than none: it is
  * a specific untrue statement rather than a missing one.
  *
+ * The first version said "nothing about your visit is stored", which was not
+ * true: Vercel keeps request logs, and `/api/chat` holds the caller's IP in
+ * memory for its rate limit. Both are named below now, along with the GDPR
+ * items (legal basis, the US transfer, the right to complain) that a reader in
+ * Spain is owed and the first version left out.
+ *
  * Bilingual inline rather than through translation keys. The policy is long
  * prose that exists once, and forty keys in `LanguageProvider` would put the
  * English and the Spanish in different files, which is how one of them ends up
@@ -37,14 +43,29 @@ export default function PrivacyPage() {
           body: (
             <>
               <p>
-                Esta web no tiene formularios, no carga analítica, y no hay base
-                de datos detrás de ella. No se guarda nada sobre tu visita.
+                Esta web no tiene formularios, no carga analítica, no pone
+                cookies y no hay base de datos detrás de ella.
               </p>
               <p>
-                Hay dos excepciones y las dos son cosas que tú decides usar: el
-                chat y la reserva de llamada. Están explicadas abajo.
+                Lo que sí ocurre: el servidor que aloja la web guarda registros
+                técnicos de cada visita, como cualquier servidor web, y el chat
+                y la reserva de llamada, si decides usarlos, pasan datos a otras
+                empresas. Todo está explicado abajo.
               </p>
             </>
+          ),
+        },
+        {
+          title: 'Alojamiento',
+          body: (
+            <p>
+              La web la sirve Vercel Inc., en Estados Unidos. Como cualquier
+              servidor web, Vercel registra datos técnicos de cada petición (tu
+              dirección IP, la página pedida, el navegador y la hora) para que
+              la web funcione y para protegerla de abusos. Yo tengo acceso a
+              esos registros durante un día; no los exporto ni los uso para nada
+              más. Lo que Vercel conserve aparte lo rige su propia política.
+            </p>
           ),
         },
         {
@@ -52,15 +73,25 @@ export default function PrivacyPage() {
           body: (
             <>
               <p>
-                Si escribes en el chat, tu mensaje se envía a la API de OpenAI
-                (modelo <code>gpt-4o-mini</code>) para generar la respuesta, y
-                vuelve a tu pantalla. <strong>No se guarda aquí.</strong> No hay
-                sitio donde guardarlo: este proyecto no tiene base de datos.
+                Las preguntas habituales se contestan en tu propio navegador y no
+                salen de él. Si escribes otra cosa, tu mensaje se envía a la API
+                de OpenAI (modelo <code>gpt-4o-mini</code>) para generar la
+                respuesta, y vuelve a tu pantalla. <strong>No se guarda
+                aquí.</strong> No hay sitio donde guardarlo: este proyecto no
+                tiene base de datos.
               </p>
               <p>
-                OpenAI trata ese mensaje bajo sus propias condiciones, así que
-                lo mismo que con cualquier chat: no escribas ahí nada
-                confidencial, ni tuyo ni de tu empresa. Para eso está el correo.
+                OpenAI no recibe tu IP, solo el texto del mensaje. Según sus
+                condiciones para la API, puede conservar ese texto hasta 30 días
+                para vigilar abusos y no lo usa para entrenar sus modelos. Aun
+                así, no escribas en el chat nada confidencial, ni tuyo ni de tu
+                empresa. Para eso está el correo.
+              </p>
+              <p>
+                Para limitar cada visitante a diez mensajes por minuto, el
+                servidor mantiene tu IP en memoria durante ese minuto. No se
+                escribe en ningún sitio y desaparece cuando el servidor se
+                reinicia.
               </p>
             </>
           ),
@@ -107,16 +138,51 @@ export default function PrivacyPage() {
           ),
         },
         {
-          title: 'Tus derechos',
+          title: 'Base legal',
+          body: (
+            <>
+              <p>
+                Los registros del servidor y el límite de mensajes del chat se
+                basan en el interés legítimo de mantener la web funcionando y
+                protegida (art. 6.1.f del RGPD). Responder en el chat también:
+                es la respuesta a una pregunta que tú has hecho.
+              </p>
+              <p>
+                El correo y la llamada se basan en las medidas que tú pides
+                antes de un posible contrato (art. 6.1.b del RGPD).
+              </p>
+            </>
+          ),
+        },
+        {
+          title: 'Transferencias fuera de la UE',
           body: (
             <p>
-              Si estás en la UE o en el Reino Unido, el RGPD te da derecho a
-              saber qué se tiene sobre ti, a que se corrija y a que se borre.
-              Como aquí lo único que puede existir es un hilo de correo que tú
-              has empezado, el ejercicio de esos derechos es un correo pidiendo
-              que lo borre, y lo borro. Escribe a{' '}
-              <strong>luis@iberiatechsolutions.com</strong>.
+              IberiaTech Solutions LLC, Vercel, OpenAI y Calendly están en
+              Estados Unidos, así que los datos descritos aquí se tratan allí.
+              Si visitas la web desde la UE o el Reino Unido, eso supone una
+              transferencia internacional de datos.
             </p>
+          ),
+        },
+        {
+          title: 'Tus derechos',
+          body: (
+            <>
+              <p>
+                Si estás en la UE o en el Reino Unido, el RGPD te da derecho a
+                saber qué se tiene sobre ti, a que se corrija, a que se borre, a
+                limitar su uso y a oponerte a él. Como aquí lo único que guardo
+                yo es un hilo de correo que tú has empezado, el ejercicio de
+                esos derechos es un correo pidiendo que lo borre, y lo borro.
+                Escribe a <strong>luis@iberiatechsolutions.com</strong>.
+              </p>
+              <p>
+                Si crees que no se han respetado, puedes reclamar ante la
+                autoridad de protección de datos de tu país. En España es la
+                Agencia Española de Protección de Datos (aepd.es).
+              </p>
+            </>
           ),
         },
         {
@@ -147,14 +213,29 @@ export default function PrivacyPage() {
           body: (
             <>
               <p>
-                This site has no forms, loads no analytics, and has no database
-                behind it. Nothing about your visit is stored.
+                This site has no forms, loads no analytics, sets no cookies, and
+                has no database behind it.
               </p>
               <p>
-                There are two exceptions and both are things you choose to use:
-                the chat and the call booking. Both are described below.
+                What does happen: the server hosting the site keeps technical
+                logs of each visit, as every web server does, and the chat and
+                the call booking, if you choose to use them, pass data to other
+                companies. All of it is described below.
               </p>
             </>
+          ),
+        },
+        {
+          title: 'Hosting',
+          body: (
+            <p>
+              The site is served by Vercel Inc., in the United States. Like any
+              web server, Vercel records technical details of each request (your
+              IP address, the page requested, your browser, and the time) to
+              keep the site running and protect it from abuse. I can see those
+              logs for one day; I do not export them or use them for anything
+              else. Anything Vercel keeps beyond that is under its own policy.
+            </p>
           ),
         },
         {
@@ -162,16 +243,25 @@ export default function PrivacyPage() {
           body: (
             <>
               <p>
-                If you type in the chat, your message is sent to OpenAI&apos;s
-                API (the <code>gpt-4o-mini</code> model) to generate a reply,
-                and the reply comes back to your screen.{' '}
+                Common questions are answered in your own browser and never
+                leave it. If you type anything else, your message is sent to
+                OpenAI&apos;s API (the <code>gpt-4o-mini</code> model) to
+                generate a reply, and the reply comes back to your screen.{' '}
                 <strong>It is not stored here.</strong> There is nowhere to
                 store it: this project has no database.
               </p>
               <p>
-                OpenAI handles that message under their own terms, so treat it
-                like any other chat box and do not put anything confidential in
-                it, yours or your employer&apos;s. Email is for that.
+                OpenAI receives the text of the message, not your IP. Under its
+                API terms it may keep that text for up to 30 days for abuse
+                monitoring, and it does not use it to train its models. Even so,
+                treat it like any other chat box and do not put anything
+                confidential in it, yours or your employer&apos;s. Email is for
+                that.
+              </p>
+              <p>
+                To limit each visitor to ten messages a minute, the server holds
+                your IP in memory for that minute. It is not written anywhere,
+                and it is gone when the server restarts.
               </p>
             </>
           ),
@@ -218,16 +308,51 @@ export default function PrivacyPage() {
           ),
         },
         {
-          title: 'Your rights',
+          title: 'Legal basis',
+          body: (
+            <>
+              <p>
+                Server logs and the chat&apos;s rate limit rest on the
+                legitimate interest in keeping the site running and protected
+                (GDPR Art. 6(1)(f)). So does answering in the chat: it is the
+                reply to a question you asked.
+              </p>
+              <p>
+                Email and calls rest on steps you ask for before a possible
+                contract (GDPR Art. 6(1)(b)).
+              </p>
+            </>
+          ),
+        },
+        {
+          title: 'Transfers outside the EU',
           body: (
             <p>
-              If you are in the EU or the UK, the GDPR gives you the right to
-              know what is held about you, to have it corrected, and to have it
-              deleted. Since the only thing that can exist here is an email
-              thread you started, exercising those rights is an email asking me
-              to delete it, and I delete it. Write to{' '}
-              <strong>luis@iberiatechsolutions.com</strong>.
+              IberiaTech Solutions LLC, Vercel, OpenAI and Calendly are all in
+              the United States, so the data described here is processed there.
+              If you visit from the EU or the UK, that is an international
+              transfer of your data.
             </p>
+          ),
+        },
+        {
+          title: 'Your rights',
+          body: (
+            <>
+              <p>
+                If you are in the EU or the UK, the GDPR gives you the right to
+                know what is held about you, to have it corrected or deleted, to
+                restrict its use, and to object to it. Since the only thing I
+                keep myself is an email thread you started, exercising those
+                rights is an email asking me to delete it, and I delete it.
+                Write to <strong>luis@iberiatechsolutions.com</strong>.
+              </p>
+              <p>
+                If you think they have not been respected, you can complain to
+                the data protection authority in your country. In Spain that is
+                the Agencia Española de Protección de Datos (aepd.es).
+              </p>
+            </>
           ),
         },
         {
@@ -284,7 +409,7 @@ export default function PrivacyPage() {
           </div>
 
           <p className="mt-16 pt-8 border-t border-ink-200 dark:border-ink-800 text-sm text-ink-500">
-            {es ? 'Actualizado el 28 de agosto de 2026.' : 'Last updated 28 August 2026.'}{' '}
+            {es ? 'Actualizado el 3 de octubre de 2026.' : 'Last updated 3 October 2026.'}{' '}
             <Link href="/contact" className="underline underline-offset-4 hover:text-ink-900 dark:hover:text-ink-100">
               {es ? 'Contacto' : 'Contact'}
             </Link>
