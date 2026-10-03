@@ -6,16 +6,17 @@ import { useLanguage } from './LanguageProvider'
 import Reveal from './Reveal'
 
 const FEATURED = {
-  titleKey: 'services.ai.title',
-  descKey: 'services.ai.desc',
-  evidenceKey: 'services.ai.evidence',
+  titleKey: 'services.security.title',
+  descKey: 'services.security.desc',
+  evidenceKey: 'services.security.evidence',
+  ctaKey: 'services.security.cta',
 }
 
 const SERVICES = [
+  { titleKey: 'services.ai.title',        descKey: 'services.ai.desc',        evidenceKey: 'services.ai.evidence' },
   { titleKey: 'services.web.title',       descKey: 'services.web.desc',       evidenceKey: 'services.web.evidence' },
   { titleKey: 'services.bilingual.title', descKey: 'services.bilingual.desc', evidenceKey: 'services.bilingual.evidence' },
   { titleKey: 'services.apps.title',      descKey: 'services.apps.desc',      evidenceKey: 'services.apps.evidence' },
-  { titleKey: 'services.security.title',  descKey: 'services.security.desc',  evidenceKey: 'services.security.evidence' },
 ] as const
 
 export default function ServicesSection() {
@@ -45,12 +46,24 @@ export default function ServicesSection() {
               <p className="text-base md:text-lg text-ink-200/90 leading-relaxed prose-measure">
                 {t(FEATURED.descKey)}
               </p>
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-ink-950 font-semibold py-3.5 px-6 rounded-md transition-colors duration-200"
+                >
+                  <span>{t(FEATURED.ctaKey)}</span>
+                  <FiArrowRight className="w-4 h-4" aria-hidden />
+                </Link>
+                {/* PLACEHOLDER: free scan link. Wire this to the security tutor when it
+                    launches, as a secondary link next to the primary CTA, with its label
+                    added to LanguageProvider in both languages. Nothing renders until then. */}
+              </div>
             </div>
             <div className="md:col-span-2 relative min-h-[200px] md:min-h-[320px] border-t md:border-t-0 md:border-l border-primary-800/80 p-8 md:p-12 flex flex-col justify-end">
               <p className="font-display text-2xl md:text-3xl text-ink-50 leading-tight">
                 {language === 'es'
-                  ? 'Bot bilingüe que atiende reservas y FAQs.'
-                  : 'Bilingual bot that handles bookings and FAQs.'}
+                  ? 'Tu app, leída con los ojos de un atacante.'
+                  : 'Your app, read the way an attacker reads it.'}
               </p>
               <p className="mt-3 text-sm text-accent-400">
                 {t(FEATURED.evidenceKey)}

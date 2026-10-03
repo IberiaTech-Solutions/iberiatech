@@ -22,16 +22,16 @@ const translations = {
     'nav.contact': 'Contact',
 
     // Hero
-    'hero.title': 'We build websites that bring in customers.',
+    'hero.title': 'Your AI built the app. I make sure it doesn’t get you hacked.',
     'hero.subtitle':
-      'Websites, online stores, and the occasional piece of software nobody else will sell you off the shelf. Built bilingually in English and Spanish. You work directly with me. Not an account manager, not a rotating team.',
+      'Apps built with AI tools ship fast and skip the boring parts, like checking who can read whose data. I go through yours the way an attacker would, tell you what’s broken in plain English, and hand you the fixes. I also build websites, online stores, and custom software in English and Spanish. You work directly with me. Not an account manager, not a rotating team.',
     'hero.cta.work': 'See our work',
     'hero.cta.contact': 'Get in touch',
 
     // Services overview
     'services.title': 'Problems we solve',
     'services.subtitle':
-      'Five things that cost small businesses money. Here’s how we fix them.',
+      'Five things that cost small businesses money, starting with the one that can cost the most. Here’s how we fix them.',
     'services.web.title': 'Web & Ecommerce',
     'services.web.desc':
       'Your site is slow, looks like a template, or loses customers at checkout. Usually all three at once. We rebuild it so pages load fast on a phone and the checkout doesn’t leak buyers.',
@@ -41,9 +41,9 @@ const translations = {
     'services.apps.title': 'Custom Business Applications',
     'services.apps.desc':
       'You run the business on spreadsheets, email, and three SaaS tools that don’t talk to each other. We replace the stack with one piece of software built around how you actually work. A dashboard, a portal, a marketplace, or an internal tool nobody outside the office will ever see.',
-    'services.security.title': 'Security Audits & Hardening',
+    'services.security.title': 'AI App Security Reviews',
     'services.security.desc':
-      'You take payments and store customer data, but nobody has ever looked at the app from an attacker’s point of view. That’s how breaches happen. We run OWASP Top 10 audits, harden authentication and database access, and review how the app handles payments and third-party APIs.',
+      'You built the app with AI and it works. What nobody has checked is whether a stranger can read your customers’ data, get past the paywall, or run up your OpenAI bill. A review has a fixed scope and a fixed price, and you get it back in one week. I run an automated scan with llm-audit, then read the code by hand to catch what a scanner misses. You get every finding written up with a prompt you can paste into your AI tool to fix it, plus a call where I walk you through all of it.',
     'services.ai.title': 'AI Integrations',
     'services.ai.desc':
       'If your staff spends half the day answering the same five questions, or you’re bleeding money to no-shows, automate it. We build bilingual chatbots and WhatsApp flows that take bookings, answer FAQs, capture leads, and chase follow-ups, in whatever language the customer texted in.',
@@ -55,6 +55,7 @@ const translations = {
       'GIAC GCIH · GSEC · GFACT certified · 1st place, HackOps 2024 · author of llm-audit',
     'services.ai.evidence':
       'In build → bilingual booking bot + WhatsApp flow',
+    'services.security.cta': 'Get a human review',
     'services.cta': 'See all services',
 
     // Process
@@ -117,16 +118,16 @@ const translations = {
     'nav.contact': 'Contacto',
 
     // Hero
-    'hero.title': 'Hacemos webs que te traen clientes.',
+    'hero.title': 'La IA te hizo la app. Yo me aseguro de que no te la hackeen.',
     'hero.subtitle':
-      'Webs, tiendas online y, de vez en cuando, algo de software que no vas a encontrar en ninguna plantilla. Construido bilingüe en inglés y español. Hablas directamente conmigo. Ni gestor de cuentas, ni un equipo que va rotando.',
+      'Las apps hechas con herramientas de IA salen rápido y se saltan la parte aburrida, como comprobar quién puede ver los datos de quién. Reviso la tuya como lo haría un atacante, te cuento qué falla sin tecnicismos y te doy los arreglos. También hago webs, tiendas online y software a medida, en inglés y español. Hablas directamente conmigo. Ni gestor de cuentas, ni un equipo que va rotando.',
     'hero.cta.work': 'Ver proyectos',
     'hero.cta.contact': 'Contactar',
 
     // Servicios overview
     'services.title': 'Problemas que resolvemos',
     'services.subtitle':
-      'Cinco cosas que le cuestan dinero a las pequeñas empresas. Así las arreglamos.',
+      'Cinco cosas que le cuestan dinero a las pequeñas empresas, empezando por la que más cara puede salir. Así las arreglamos.',
     'services.web.title': 'Web y Ecommerce',
     'services.web.desc':
       'Tu web va lenta, parece una plantilla o pierde clientes en el checkout. Normalmente las tres cosas a la vez. La reconstruimos para que cargue rápido en móvil y que el checkout no pierda compradores por el camino.',
@@ -136,9 +137,9 @@ const translations = {
     'services.apps.title': 'Aplicaciones de Negocio a Medida',
     'services.apps.desc':
       'Llevas el negocio con hojas de cálculo, email y tres herramientas SaaS que no se hablan entre sí. Lo sustituimos por un software hecho a tu forma de trabajar. Un panel, un portal, un marketplace o una herramienta interna que no va a ver nadie de fuera.',
-    'services.security.title': 'Auditorías y Refuerzo de Seguridad',
+    'services.security.title': 'Revisiones de Seguridad para Apps Hechas con IA',
     'services.security.desc':
-      'Procesas pagos y guardas datos de clientes, pero nadie ha mirado la aplicación desde el punto de vista del atacante. Así es como ocurren las brechas. Hacemos auditorías OWASP Top 10, reforzamos la autenticación y el acceso a la base de datos, y revisamos cómo la app maneja pagos e integraciones de terceros.',
+      'Has hecho la app con IA y funciona. Lo que nadie ha comprobado es si un desconocido puede ver los datos de tus clientes, saltarse el pago o dispararte la factura de OpenAI. La revisión tiene un alcance cerrado y un precio cerrado, y la tienes en una semana. Paso un escaneo automático con llm-audit y luego leo el código a mano para encontrar lo que el escáner no ve. Recibes cada fallo por escrito con un prompt que puedes pegar en tu herramienta de IA para arreglarlo, y una llamada en la que te lo explico todo.',
     'services.ai.title': 'Integraciones de IA',
     'services.ai.desc':
       'Si tu equipo pasa medio día respondiendo las mismas cinco preguntas, o estás perdiendo dinero por no-shows, se automatiza. Construimos chatbots bilingües y flujos de WhatsApp que cogen reservas, responden FAQs, captan leads y persiguen seguimientos, en el idioma en el que el cliente te escribió.',
@@ -150,6 +151,7 @@ const translations = {
       'GIAC GCIH · GSEC · GFACT · 1º puesto HackOps 2024 · autor de llm-audit',
     'services.ai.evidence':
       'En desarrollo → bot de reservas bilingüe + flujo WhatsApp',
+    'services.security.cta': 'Pide una revisión humana',
     'services.cta': 'Ver todos los servicios',
 
     // Proceso

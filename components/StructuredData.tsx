@@ -11,7 +11,7 @@ export default function StructuredData() {
     // the paperwork.
     legalName: 'IberiaTech Solutions LLC',
     description:
-      'IberiaTech Solutions builds modern websites, ecommerce, bilingual experiences, and custom business applications. Next.js, React, and modern cloud infrastructure.',
+      'IberiaTech Solutions reviews the security of apps built with AI. Each review has a fixed scope and a fixed price and takes one week: an automated scan with llm-audit, a human code review, written findings with fix prompts, and a walkthrough call. The firm also builds websites, online stores, bilingual sites, and custom business applications in English and Spanish.',
     url: 'https://iberiatechsolutions.com',
     image: 'https://iberiatechsolutions.com/opengraph-image',
     logo: 'https://iberiatechsolutions.com/images/logos/light.png',
@@ -39,12 +39,26 @@ export default function StructuredData() {
       },
     ],
     serviceType: [
+      'AI App Security Reviews',
+      'Application Security Audits',
+      'AI Integrations',
       'Web Development',
       'Ecommerce Development',
       'Bilingual Website Design',
       'Custom Business Applications',
-      'Application Security Audits',
     ],
+    keywords: [
+      'AI app security review',
+      'security review for apps built with AI',
+      'application security',
+      'OWASP LLM Top 10',
+      'llm-audit',
+      'web development',
+      'ecommerce development',
+      'bilingual websites',
+      'custom business applications',
+      'Charleston SC',
+    ].join(', '),
     knowsLanguage: ['English', 'Spanish', 'German'],
     sameAs: ['https://www.linkedin.com/company/iberiatechsolutions/'],
   }

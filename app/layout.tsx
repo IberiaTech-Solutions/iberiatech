@@ -24,12 +24,15 @@ const body = Sora({
 export const metadata: Metadata = {
   metadataBase: new URL('https://iberiatechsolutions.com'),
   title: {
-    default: 'IberiaTech Solutions: bilingual web development in Charleston, SC',
+    default: 'IberiaTech Solutions: security reviews for apps built with AI',
     template: '%s | IberiaTech Solutions',
   },
   description:
-    'Websites, online stores, and the custom software small businesses end up needing, built in English and Spanish. Charleston, SC, working with clients across the US and Europe. You work directly with the developer who writes the code.',
+    'Your AI built the app. We make sure it doesn’t get you hacked. Fixed scope, fixed price security reviews with an automated scan, a human code review, fix prompts, and a walkthrough call, delivered in one week. We also build websites, online stores, and custom software in English and Spanish. Charleston, SC, working with clients across the US and Europe.',
   keywords: [
+    'AI app security review',
+    'security review for AI generated code',
+    'application security',
     'web development',
     'Next.js development',
     'React development',
@@ -38,7 +41,6 @@ export const metadata: Metadata = {
     'multilingual websites',
     'ecommerce development',
     'SaaS development',
-    'application security',
     'OWASP audits',
     'Supabase',
     'Stripe',
@@ -69,16 +71,16 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://iberiatechsolutions.com',
-    title: 'IberiaTech Solutions: bilingual web development in Charleston, SC',
+    title: 'IberiaTech Solutions: security reviews for apps built with AI',
     description:
-      'Websites, online stores, and custom business software, built in English and Spanish. You work directly with the developer who writes the code.',
+      'Your AI built the app. We make sure it doesn’t get you hacked. Fixed scope, fixed price security reviews delivered in one week, from a GIAC certified engineer.',
     siteName: 'IberiaTech Solutions',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'IberiaTech Solutions: bilingual web development in Charleston, SC',
+    title: 'IberiaTech Solutions: security reviews for apps built with AI',
     description:
-      'Websites, online stores, and custom business software, built in English and Spanish. You work directly with the developer who writes the code.',
+      'Your AI built the app. We make sure it doesn’t get you hacked. Fixed scope, fixed price security reviews delivered in one week, from a GIAC certified engineer.',
     creator: '@iberiatech',
   },
   robots: {

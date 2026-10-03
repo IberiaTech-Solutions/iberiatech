@@ -6,11 +6,11 @@ import { useLanguage } from '@/components/LanguageProvider'
 import Reveal from '@/components/Reveal'
 
 const SERVICES = [
+  { titleKey: 'services.security.title',  descKey: 'services.security.desc' },
   { titleKey: 'services.ai.title',        descKey: 'services.ai.desc' },
   { titleKey: 'services.web.title',       descKey: 'services.web.desc' },
   { titleKey: 'services.bilingual.title', descKey: 'services.bilingual.desc' },
   { titleKey: 'services.apps.title',      descKey: 'services.apps.desc' },
-  { titleKey: 'services.security.title',  descKey: 'services.security.desc' },
 ] as const
 
 const PROCESS = [
@@ -62,9 +62,25 @@ export default function ServicesPage() {
                     {t(service.titleKey)}
                   </h2>
                 </div>
-                <p className="col-span-12 md:col-span-7 text-base text-ink-600 dark:text-ink-300 leading-relaxed">
-                  {t(service.descKey)}
-                </p>
+                <div className="col-span-12 md:col-span-7">
+                  <p className="text-base text-ink-600 dark:text-ink-300 leading-relaxed">
+                    {t(service.descKey)}
+                  </p>
+                  {service.titleKey === 'services.security.title' && (
+                    <div className="mt-6 flex flex-wrap items-center gap-4">
+                      <Link
+                        href="/contact"
+                        className="inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-ink-950 font-semibold py-3.5 px-6 rounded-md transition-colors duration-200"
+                      >
+                        <span>{t('services.security.cta')}</span>
+                        <FiArrowUpRight className="w-4 h-4" aria-hidden />
+                      </Link>
+                      {/* PLACEHOLDER: free scan link. Wire this to the security tutor when it
+                          launches, as a secondary link next to the primary CTA, with its label
+                          added to LanguageProvider in both languages. Nothing renders until then. */}
+                    </div>
+                  )}
+                </div>
               </Reveal>
             ))}
           </ol>
