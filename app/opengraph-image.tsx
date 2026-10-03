@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'IberiaTech Solutions: Modern web & custom applications'
+export const alt = 'IberiaTech Solutions: Security reviews for apps built with AI'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -47,7 +47,7 @@ export default function OGImage() {
               lineHeight: 1.1,
             }}
           >
-            Modern web &amp; custom applications.
+            Security reviews for apps built with AI.
           </div>
           <div
             style={{
@@ -57,8 +57,7 @@ export default function OGImage() {
               maxWidth: '900px',
             }}
           >
-            Websites, ecommerce, bilingual experiences, and custom business
-            software. Next.js, React, and modern cloud infrastructure.
+            {"Your AI built the app. We make sure it doesn't get you hacked. Fixed scope, fixed price, back in one week."}
           </div>
           <div
             style={{
@@ -69,10 +68,10 @@ export default function OGImage() {
             }}
           >
             {[
+              'AI App Security',
               'Web & Ecommerce',
               'Bilingual',
               'Custom Apps',
-              'Security Audits',
             ].map((tag) => (
               <div
                 key={tag}
