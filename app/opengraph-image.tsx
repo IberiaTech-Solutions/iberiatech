@@ -57,7 +57,7 @@ export default function OGImage() {
               maxWidth: '900px',
             }}
           >
-            {"Your AI built the app. We make sure it doesn't get you hacked. Fixed scope, fixed price, back in one week."}
+            {"Your AI built the app. I make sure it doesn't get you hacked. Fixed scope, fixed price, back in one week."}
           </div>
           <div
             style={{
