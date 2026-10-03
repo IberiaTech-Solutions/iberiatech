@@ -25,13 +25,13 @@ const translations = {
     'hero.title': 'Your AI built the app. I make sure it doesn’t get you hacked.',
     'hero.subtitle':
       'Apps built with AI tools ship fast and skip the boring parts, like checking who can read whose data. I go through yours the way an attacker would, tell you what’s broken in plain English, and hand you the fixes. I also build websites, online stores, and custom software in English and Spanish. You work directly with me. Not an account manager, not a rotating team.',
-    'hero.cta.work': 'See our work',
+    'hero.cta.work': 'See my work',
     'hero.cta.contact': 'Get in touch',
 
     // Services overview
     'services.title': 'Problems I solve',
     'services.subtitle':
-      'Five things that cost small businesses money, starting with the one that can cost the most. Here’s how we fix them.',
+      'Five things that cost small businesses money, starting with the one that can cost the most. Here’s how I fix them.',
     'services.web.title': 'Web & Ecommerce',
     'services.web.desc':
       'Your site is slow, looks like a template, or loses customers at checkout. Usually all three at once. I rebuild it so pages load fast on a phone and the checkout doesn’t leak buyers.',
@@ -76,7 +76,7 @@ const translations = {
     // Portfolio / Work
     'work.title': 'Selected work',
     'work.subtitle':
-      'Recent projects, starting with the security side: llm-audit, the open source scanner behind our security reviews for apps built with AI. Next to it, the client builds. Websites, online stores, marketplaces, and the kind of custom software businesses build when the SaaS options stop fitting. Some shipped, some still in the oven.',
+      'Recent projects, starting with the security side: llm-audit, the open source scanner behind my security reviews for apps built with AI. Next to it, the client builds. Websites, online stores, marketplaces, and the kind of custom software businesses build when the SaaS options stop fitting. Some shipped, some still in the oven.',
     'work.view': 'View project',
     'work.viewLive': 'View live site',
     'work.cta': 'See all work',
@@ -88,7 +88,7 @@ const translations = {
     'work.back': 'Back to all work',
 
     // Contact
-    'contact.title': 'Tell us about your project.',
+    'contact.title': 'Tell me about your project.',
     'contact.subtitle':
       'You’ll hear back within two business days, from Luis Javier directly.',
     'contact.email.label': 'Email',
@@ -127,7 +127,7 @@ const translations = {
     // Servicios overview
     'services.title': 'Problemas que resuelvo',
     'services.subtitle':
-      'Cinco cosas que le cuestan dinero a las pequeñas empresas, empezando por la que más cara puede salir. Así las arreglamos.',
+      'Cinco cosas que le cuestan dinero a las pequeñas empresas, empezando por la que más cara puede salir. Así las arreglo.',
     'services.web.title': 'Web y Ecommerce',
     'services.web.desc':
       'Tu web va lenta, parece una plantilla o pierde clientes en el checkout. Normalmente las tres cosas a la vez. La reconstruyo para que cargue rápido en móvil y que el checkout no pierda compradores por el camino.',
@@ -172,7 +172,7 @@ const translations = {
     // Portafolio / Proyectos
     'work.title': 'Proyectos seleccionados',
     'work.subtitle':
-      'Proyectos recientes, empezando por la parte de seguridad: llm-audit, el escáner open source que usamos en las revisiones de seguridad de apps hechas con IA. Al lado, los proyectos para clientes. Webs, tiendas online, marketplaces y el tipo de software a medida que se construye cuando las opciones SaaS dejan de encajar. Algunos ya entregados, otros todavía en el horno.',
+      'Proyectos recientes, empezando por la parte de seguridad: llm-audit, el escáner open source que uso en mis revisiones de seguridad de apps hechas con IA. Al lado, los proyectos para clientes. Webs, tiendas online, marketplaces y el tipo de software a medida que se construye cuando las opciones SaaS dejan de encajar. Algunos ya entregados, otros todavía en el horno.',
     'work.view': 'Ver proyecto',
     'work.viewLive': 'Ver sitio en vivo',
     'work.cta': 'Ver todos los proyectos',
@@ -184,9 +184,9 @@ const translations = {
     'work.back': 'Volver a todos los proyectos',
 
     // Contacto
-    'contact.title': 'Cuéntanos sobre tu proyecto.',
+    'contact.title': 'Cuéntame tu proyecto.',
     'contact.subtitle':
-      'Te respondemos en un máximo de dos días laborables. Luis Javier te contesta directamente.',
+      'Te contesto yo mismo en un máximo de dos días laborables.',
     'contact.email.label': 'Email',
     'contact.book.label': 'Reservar llamada',
     'contact.book.desc':
