@@ -1,5 +1,6 @@
 'use client'
 
+import { useCallback, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { FiArrowRight, FiArrowUpRight } from 'react-icons/fi'
@@ -121,8 +122,23 @@ function ProjectImage({
   t: (key: string) => string
   aspectClass: string
 }) {
+  const spotRef = useRef<HTMLAnchorElement>(null)
+
+  // Cursor-following spotlight. Writes the pointer position to CSS vars the
+  // overlay reads. Skipped when the viewer prefers reduced motion.
+  const onMove = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
+    const el = spotRef.current
+    if (!el) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    const r = el.getBoundingClientRect()
+    el.style.setProperty('--mx', `${e.clientX - r.left}px`)
+    el.style.setProperty('--my', `${e.clientY - r.top}px`)
+  }, [])
+
   return (
     <Link
+      ref={spotRef}
+      onMouseMove={onMove}
       href={`/work/${project.slug}`}
       aria-label={
         language === 'es'
@@ -141,6 +157,16 @@ function ProjectImage({
         fill
         sizes="(max-width: 768px) 100vw, 60vw"
         className="object-cover object-top transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
+      />
+      {/* Cursor spotlight: a soft light follows the pointer, overlay-blended
+          so it reads as a sheen on the screenshot in both themes. */}
+      <div
+        aria-hidden
+        className="absolute inset-0 z-10 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 mix-blend-overlay motion-reduce:hidden"
+        style={{
+          background:
+            'radial-gradient(240px circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,0.35), transparent 70%)',
+        }}
       />
       {/* Hover wash */}
       <div

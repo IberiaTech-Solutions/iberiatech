@@ -15,9 +15,17 @@ const nextConfig = {
     // middleware, which would force every page to render dynamically and cost
     // us the fully static build. Not worth it on a marketing site with no
     // user input rendered into the page.
+    // Dev only: Next's hot-reload (react-refresh) evaluates code via eval, which
+    // a strict script-src blocks, breaking client JS locally (the page renders
+    // blank below the fold). Allow eval in development; production stays strict.
+    const scriptSrc =
+      process.env.NODE_ENV === 'development'
+        ? "script-src 'self' 'unsafe-inline' 'unsafe-eval'"
+        : "script-src 'self' 'unsafe-inline'"
+
     const csp = [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline'",
+      scriptSrc,
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: blob:",
       "font-src 'self' data:",
