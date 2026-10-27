@@ -12,8 +12,11 @@ const WHATSAPP_URL = 'https://wa.me/18643657897'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme()
   const { language, setLanguage, t, mounted } = useLanguage()
+  // The theme is only known in the browser. Until mount, render the light
+  // label so server and client HTML match for visitors who chose dark.
+  const isDark = mounted && resolvedTheme === 'dark'
   const pathname = usePathname()
   const menuRef = useRef<HTMLDivElement>(null)
   const menuButtonRef = useRef<HTMLButtonElement>(null)
@@ -125,11 +128,11 @@ export default function Header() {
             </button>
 
             <button
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              onClick={() => setTheme(isDark ? 'light' : 'dark')}
               className="min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-ink-700 dark:text-ink-300 hover:text-ink-900 dark:hover:text-ink-50 transition-colors duration-200 rounded-sm"
-              aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+              aria-label={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
             >
-              {mounted && theme === 'dark' ? (
+              {isDark ? (
                 <FiSun className="w-5 h-5" aria-hidden />
               ) : (
                 <FiMoon className="w-5 h-5" aria-hidden />
