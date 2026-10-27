@@ -24,9 +24,11 @@ export interface Project {
   technologies: string[]
   link?: string
   image: string
+  // Pixel size of the screenshot, so it renders at its own proportions
+  // instead of being cropped into a fixed frame.
+  imageSize: { width: number; height: number }
   featured?: boolean
   comingSoon?: boolean
-  wide?: boolean
 }
 
 export const PROJECTS: Project[] = [
@@ -61,8 +63,8 @@ export const PROJECTS: Project[] = [
     technologies: ['Semgrep', 'Node.js', 'TypeScript', 'SARIF'],
     link: 'https://github.com/Javierlozo/llm-audit',
     image: '/images/portfolio/llm-audit.png',
+    imageSize: { width: 1600, height: 800 },
     featured: true,
-    wide: true,
   },
   {
     slug: 'little-bolleria',
@@ -86,9 +88,9 @@ export const PROJECTS: Project[] = [
     },
     technologies: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS', 'Stripe', 'Supabase'],
     image: '/images/portfolio/little-bolleria.jpg',
+    imageSize: { width: 1800, height: 1065 },
     featured: true,
     comingSoon: true,
-    wide: true,
   },
   {
     slug: 'axis',
@@ -113,8 +115,8 @@ export const PROJECTS: Project[] = [
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
     link: 'https://axis.southernexits.com',
     image: '/images/portfolio/axis.png',
+    imageSize: { width: 2292, height: 1362 },
     featured: true,
-    wide: true,
   },
   {
     slug: 'tinta-gallery',
@@ -151,8 +153,8 @@ export const PROJECTS: Project[] = [
     technologies: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS'],
     link: 'https://tinta.gallery',
     image: '/images/portfolio/tinta.png',
+    imageSize: { width: 2420, height: 1370 },
     featured: true,
-    wide: true,
   },
   {
     slug: 'standshot',
@@ -179,8 +181,8 @@ export const PROJECTS: Project[] = [
     technologies: ['Next.js 16', 'React 19', 'TypeScript', 'Expo', 'React Native', 'MapLibre', 'Supabase'],
     link: 'https://standshot.com',
     image: '/images/portfolio/standshot.jpg',
+    imageSize: { width: 2420, height: 1370 },
     featured: true,
-    wide: true,
   },
   {
     slug: 'neva-estudio',
@@ -205,7 +207,7 @@ export const PROJECTS: Project[] = [
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
     link: 'https://neva-estudio.vercel.app/es',
     image: '/images/portfolio/neva2.png',
-    wide: true,
+    imageSize: { width: 1887, height: 839 },
   },
   {
     slug: 'coastal-millwork',
@@ -230,6 +232,7 @@ export const PROJECTS: Project[] = [
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
     link: 'https://coastal-millwork.vercel.app/',
     image: '/images/portfolio/coastal-millwork.png',
+    imageSize: { width: 2102, height: 1348 },
   },
   {
     slug: 'shop-essentials-hub',
@@ -254,6 +257,7 @@ export const PROJECTS: Project[] = [
     technologies: ['Next.js 14', 'TypeScript', 'Tailwind CSS'],
     link: 'https://www.shopessentialshub.com/',
     image: '/images/portfolio/shop-essentials-hub.png',
+    imageSize: { width: 2212, height: 1404 },
   },
 ]
 

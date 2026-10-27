@@ -52,13 +52,14 @@ export default function CaseStudyClient({ project }: CaseStudyClientProps) {
             )}
           </header>
 
-          <div className={`relative ${project.wide ? 'aspect-[2/1]' : 'aspect-[3/2]'} rounded-md overflow-hidden bg-ink-100 dark:bg-ink-900 mb-16`}>
+          <div className="relative rounded-md overflow-hidden bg-ink-100 dark:bg-ink-900 mb-16">
             <Image
               src={project.image}
               alt={project.title}
-              fill
+              width={project.imageSize.width}
+              height={project.imageSize.height}
               sizes="(max-width: 1024px) 100vw, 1024px"
-              className="object-cover object-top"
+              className="block w-full h-auto"
               priority
             />
             {project.comingSoon && (

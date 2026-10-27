@@ -89,12 +89,7 @@ function ProjectRow({ project, index, language, t }: ProjectRowProps) {
     >
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
         <div className={`md:col-span-7 ${reversed ? 'md:order-2' : 'md:order-1'}`}>
-          <ProjectImage
-            project={project}
-            language={language}
-            t={t}
-            aspectClass="aspect-[16/10]"
-          />
+          <ProjectImage project={project} language={language} t={t} />
         </div>
 
         <div className={`md:col-span-5 ${reversed ? 'md:order-1' : 'md:order-2'}`}>
@@ -117,12 +112,10 @@ function ProjectImage({
   project,
   language,
   t,
-  aspectClass,
 }: {
   project: Project
   language: 'en' | 'es'
   t: (key: string) => string
-  aspectClass: string
 }) {
   const spotRef = useRef<HTMLAnchorElement>(null)
 
@@ -147,7 +140,7 @@ function ProjectImage({
           ? `Ver el caso de estudio de ${project.title}`
           : `View ${project.title} case study`
       }
-      className={`block relative ${aspectClass} w-full bg-ink-100 dark:bg-ink-900 rounded-lg overflow-hidden ring-1 ring-ink-200/60 dark:ring-ink-800/60 before:absolute before:inset-0 before:z-20`}
+      className={`block relative w-full bg-ink-100 dark:bg-ink-900 rounded-lg overflow-hidden ring-1 ring-ink-200/60 dark:ring-ink-800/60 before:absolute before:inset-0 before:z-20`}
     >
       <Image
         src={project.image}
@@ -156,9 +149,10 @@ function ProjectImage({
             ? `Captura del sitio de ${project.title}`
             : `Screenshot of ${project.title}`
         }
-        fill
+        width={project.imageSize.width}
+        height={project.imageSize.height}
         sizes="(max-width: 768px) 100vw, 60vw"
-        className="object-cover object-top transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
+        className="block w-full h-auto"
       />
       {/* Cursor spotlight: a soft light follows the pointer, overlay-blended
           so it reads as a sheen on the screenshot in both themes. */}
