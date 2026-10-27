@@ -70,7 +70,7 @@ export default function Header() {
   const otherLangLabel = language === 'en' ? 'ES' : 'EN'
 
   return (
-    <header className="bg-[var(--surface)]/90 backdrop-blur-md border-b border-[var(--border)] sticky top-0 z-50">
+    <header className="bg-[color-mix(in_oklch,var(--surface)_90%,transparent)] backdrop-blur-md border-b border-[var(--border)] sticky top-0 z-50">
       <div className="container-max">
         <div className="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-3 min-w-0 -m-2 p-2 rounded-sm">
