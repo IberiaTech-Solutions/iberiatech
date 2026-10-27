@@ -42,6 +42,9 @@ export default function AIChatbot() {
 
   useEffect(() => {
     if (!isOpen) return
+    // The launcher button stays mounted, so the one there now is the one to
+    // hand focus back to when the panel closes.
+    const trigger = triggerRef.current
 
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -77,7 +80,7 @@ export default function AIChatbot() {
     return () => {
       document.removeEventListener('keydown', handleKey)
       window.clearTimeout(focusTimer)
-      triggerRef.current?.focus()
+      trigger?.focus()
     }
   }, [isOpen])
 
@@ -95,6 +98,8 @@ export default function AIChatbot() {
         timestamp: new Date()
       }])
     }
+    // Only on open or a language switch: a new message must not re-trigger it.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen, language])
 
   // Listen for custom event from navbar
