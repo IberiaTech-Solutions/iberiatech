@@ -39,7 +39,7 @@ export default function HeroSection() {
       <div className="section-padding lg:sticky lg:top-16 lg:min-h-[calc(100vh-4rem)] lg:flex lg:items-center motion-reduce:lg:static">
         <div className="container-max relative w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-            <div className="lg:col-span-7 space-y-8 fade-up">
+            <div className="min-w-0 lg:col-span-7 space-y-8 fade-up">
               <p className="text-xs uppercase tracking-[0.25em] text-accent-300 font-medium">
                 {language === 'es'
                   ? 'Seguridad para apps hechas con IA y vibe coding · Charleston, SC'
@@ -83,7 +83,7 @@ export default function HeroSection() {
               </p>
             </div>
 
-            <div className="lg:col-span-5 fade-up" style={{ animationDelay: '200ms' }}>
+            <div className="min-w-0 lg:col-span-5 fade-up" style={{ animationDelay: '200ms' }}>
               <AuditScan trackRef={trackRef} />
             </div>
           </div>

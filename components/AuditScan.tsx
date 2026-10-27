@@ -156,7 +156,7 @@ export default function AuditScan({ trackRef }: { trackRef: RefObject<HTMLElemen
               <span aria-hidden className="w-9 shrink-0 pr-3 text-right text-ink-600 select-none">
                 {i + 1}
               </span>
-              <span className="overflow-hidden text-ellipsis pr-4">{line.text || ' '}</span>
+              <span className="min-w-0 overflow-hidden text-ellipsis pr-4">{line.text || ' '}</span>
             </div>
           )
         })}
