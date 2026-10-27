@@ -47,9 +47,9 @@ const translations = {
     'services.ai.title': 'AI Integrations',
     'services.ai.desc':
       'If your staff spends half the day answering the same five questions, or you’re bleeding money to no shows, automate it. I build bilingual chatbots and WhatsApp flows that take bookings, answer FAQs, capture leads, and chase follow-ups, in whatever language the customer texted in.',
-    'services.web.evidence': 'Recently shipped → Coastal Millwork & Supply',
+    'services.web.evidence': 'Concept redesign → Coastal Millwork & Supply',
     'services.bilingual.evidence':
-      'Recently shipped → Tinta Gallery, NEVA Estudio',
+      'Recently shipped → Tinta Gallery · Concept → NEVA Estudio',
     'services.apps.evidence': 'Live → Axis, a platform for exit-planning advisors',
     'services.security.evidence':
       'GIAC GCIH · GSEC · GFACT certified · 1st place, HackOps 2024 · author of llm-audit',
@@ -81,6 +81,7 @@ const translations = {
     'work.viewLive': 'View live site',
     'work.cta': 'See all work',
     'work.comingSoon': 'Coming soon',
+    'work.concept': 'Concept redesign',
     'work.role': 'Role',
     'work.problem': 'The problem',
     'work.solution': 'The solution',
@@ -143,9 +144,9 @@ const translations = {
     'services.ai.title': 'Integraciones de IA',
     'services.ai.desc':
       'Si tu equipo pasa medio día respondiendo las mismas cinco preguntas, o estás perdiendo dinero por no shows, se automatiza. Construyo chatbots bilingües y flujos de WhatsApp que cogen reservas, responden FAQs, captan leads y persiguen seguimientos, en el idioma en el que el cliente te escribió.',
-    'services.web.evidence': 'Recién entregado → Coastal Millwork & Supply',
+    'services.web.evidence': 'Rediseño conceptual → Coastal Millwork & Supply',
     'services.bilingual.evidence':
-      'Recién entregado → Tinta Gallery, NEVA Estudio',
+      'Recién entregado → Tinta Gallery · Concepto → NEVA Estudio',
     'services.apps.evidence': 'En producción → Axis, plataforma para asesores de salida',
     'services.security.evidence':
       'GIAC GCIH · GSEC · GFACT · 1º puesto HackOps 2024 · autor de llm-audit',
@@ -177,6 +178,7 @@ const translations = {
     'work.viewLive': 'Ver sitio en vivo',
     'work.cta': 'Ver todos los proyectos',
     'work.comingSoon': 'Próximamente',
+    'work.concept': 'Rediseño conceptual',
     'work.role': 'Rol',
     'work.problem': 'El problema',
     'work.solution': 'La solución',

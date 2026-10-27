@@ -11,7 +11,7 @@ import { useLanguage } from '@/components/LanguageProvider'
  * typed into the chat box to OpenAI, with no notice anywhere that either thing
  * was happening. The NEVA Estudio case study on this same site advertises
  * building "the Spanish legal pages required by law: privacy, cookies,
- * accessibility, legal notice" for a client. Not having them here was the one
+ * accessibility, legal notice". Not having them here was the one
  * gap on this site a knowledgeable reader would hold against it.
  *
  * **Every claim below is a fact about the code, not a template sentence.** No
