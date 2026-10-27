@@ -112,8 +112,8 @@ QUÉ HACEMOS (cinco áreas de servicio):
 5. Integraciones de IA. Chatbots bilingües y flujos de WhatsApp que cogen reservas, responden preguntas frecuentes y captan leads.
 
 PROYECTOS RECIENTES:
-- NEVA Estudio: sitio para un estudio de arquitectura en Asturias (bilingüe, accesible).
-- Coastal Millwork: contratista comercial de carpintería en Carolina del Sur.
+- NEVA Estudio: rediseño conceptual, hecho como pieza de portfolio, de la web de un estudio de arquitectura en Asturias (bilingüe, accesible). No es un cliente; no lo presentes como tal.
+- Coastal Millwork: rediseño conceptual, hecho como pieza de portfolio, de la web de un contratista comercial de carpintería en Carolina del Sur. No es un cliente; no lo presentes como tal.
 - Tinta Gallery: galería online bilingüe para dos acuarelistas españoles.
 - ShopEssentialsHub: plataforma de afiliados curada.
 - Axis: plataforma SaaS de suscripción para asesores de planificación de salida, en producción (axis.southernexits.com). Construida bajo contrato para Southern Exits, que es dueño del producto. Puedes decir eso. No compartas detalles del stack, la arquitectura, la metodología de evaluación ni los precios.
@@ -151,8 +151,8 @@ WHAT WE DO (five service areas):
 5. AI Integrations. Bilingual chatbots and WhatsApp flows that take bookings, answer common questions, and capture leads.
 
 RECENT WORK:
-- NEVA Estudio: architecture studio site in Asturias (bilingual, accessible).
-- Coastal Millwork: commercial millwork contractor in South Carolina.
+- NEVA Estudio: concept redesign, built as a portfolio piece, of an architecture studio's site in Asturias (bilingual, accessible). Not a client; never present it as one.
+- Coastal Millwork: concept redesign, built as a portfolio piece, of a commercial millwork contractor's site in South Carolina. Not a client; never present it as one.
 - Tinta Gallery: bilingual online gallery for two Spanish watercolorists.
 - ShopEssentialsHub: curated affiliate platform.
 - Axis: subscription SaaS platform for exit-planning advisors, live in production (axis.southernexits.com). Built under contract for Southern Exits, who own the product. That much you can say. Do not share stack, architecture, assessment methodology, or pricing.

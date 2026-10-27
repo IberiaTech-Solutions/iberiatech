@@ -62,6 +62,11 @@ export default function CaseStudyClient({ project }: CaseStudyClientProps) {
               className="block w-full h-auto"
               priority
             />
+            {project.concept && (
+              <div className="absolute top-4 left-4 z-10 bg-ink-950/85 text-ink-50 text-xs font-semibold uppercase tracking-[0.15em] px-3 py-1.5 rounded-sm shadow-md backdrop-blur">
+                {t('work.concept')}
+              </div>
+            )}
             {project.comingSoon && (
               <div className="absolute top-4 left-4 bg-accent-500 text-ink-950 text-xs font-semibold uppercase tracking-[0.15em] px-3 py-1.5 rounded-sm shadow-md">
                 {t('work.comingSoon')}

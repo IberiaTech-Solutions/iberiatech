@@ -28,7 +28,7 @@ const RESPONSES: Record<Language, Record<Intent, string>> = {
     security:
       "Application security work: OWASP Top 10 reviews, auth hardening, row level security on the database, locking down how the app handles payments and third-party APIs. Luis Javier is GCIH, GSEC and GFACT certified, and wrote llm-audit, an open source scanner for the OWASP LLM Top 10.",
     portfolio:
-      "Shipped: Axis (subscription platform for exit planning advisors), NEVA Estudio (architecture studio in Asturias), Coastal Millwork (commercial contractor in SC), Tinta Gallery, ShopEssentialsHub. There's also llm-audit, an open source security scanner for LLM code. The full list is at /work.",
+      "Shipped: Axis (subscription platform for exit planning advisors), Tinta Gallery, ShopEssentialsHub. Concept redesigns, not client work: NEVA Estudio (architecture studio in Asturias) and Coastal Millwork (commercial contractor in SC). There's also llm-audit, an open source security scanner for LLM code. The full list is at /work.",
     process:
       "Four steps. A discovery call. Design and planning, which you sign off on. Then the build, on a URL you can open any time. Then launch, handover, and maintenance if you want it.",
     contact:
@@ -54,7 +54,7 @@ const RESPONSES: Record<Language, Record<Intent, string>> = {
     security:
       'Seguridad aplicada: revisiones OWASP Top 10, refuerzo de autenticación, políticas RLS en base de datos, y cómo la app maneja pagos e integraciones de terceros. Luis Javier tiene GCIH, GSEC y GFACT, y escribió llm-audit, un escáner open source para el OWASP LLM Top 10.',
     portfolio:
-      'Entregados: Axis (plataforma de suscripción para asesores de salida), NEVA Estudio (estudio de arquitectura en Asturias), Coastal Millwork (contratista comercial en SC), Tinta Gallery, ShopEssentialsHub. También está llm-audit, un escáner de seguridad open source para código LLM. La lista completa está en /work.',
+      'Entregados: Axis (plataforma de suscripción para asesores de salida), Tinta Gallery, ShopEssentialsHub. Rediseños conceptuales, no encargos de clientes: NEVA Estudio (estudio de arquitectura en Asturias) y Coastal Millwork (contratista comercial en SC). También está llm-audit, un escáner de seguridad open source para código LLM. La lista completa está en /work.',
     process:
       'Cuatro pasos. Llamada de descubrimiento. Diseño y planificación, que apruebas tú. El desarrollo, en una URL que puedes abrir cuando quieras. Y lanzamiento, entrega y mantenimiento si lo quieres.',
     contact:

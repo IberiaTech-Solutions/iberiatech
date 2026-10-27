@@ -29,6 +29,9 @@ export interface Project {
   imageSize: { width: number; height: number }
   featured?: boolean
   comingSoon?: boolean
+  // Built unsolicited as a portfolio piece. Never a client, and the copy
+  // must not read as if it were.
+  concept?: boolean
 }
 
 export const PROJECTS: Project[] = [
@@ -189,22 +192,23 @@ export const PROJECTS: Project[] = [
     title: 'NEVA Estudio',
     category: { en: 'Studio Website', es: 'Web de Estudio' },
     summary: {
-      en: 'A bilingual portfolio for an architecture studio in Asturias. 14 projects, full-screen galleries, and a site that loads in one frame over 3G.',
-      es: 'Portafolio bilingüe para un estudio de arquitectura en Asturias. 14 proyectos, galerías a pantalla completa y una web que carga en un frame con 3G.',
+      en: 'A concept redesign for an architecture studio in Asturias, built as a portfolio piece. Bilingual, 14 projects, full-screen galleries, and a site that loads in one frame over 3G.',
+      es: 'Un rediseño conceptual para un estudio de arquitectura en Asturias, hecho como pieza de portfolio. Bilingüe, 14 proyectos, galerías a pantalla completa y una web que carga en un frame con 3G.',
     },
     problem: {
-      en: 'A respected studio with more than a decade of work behind it. The site had to be as considered as the buildings, and load fast on the phones architects actually use.',
-      es: 'Un estudio con más de una década de proyectos a la espalda. La web tenía que estar tan cuidada como los edificios, y cargar rápido en los móviles donde los arquitectos realmente la ven.',
+      en: 'A respected studio with more than a decade of work behind it. I wanted to see a site as considered as the buildings, that loads fast on the phones architects actually use.',
+      es: 'Un estudio con más de una década de proyectos a la espalda. Quería ver una web tan cuidada como los edificios, que cargue rápido en los móviles donde los arquitectos realmente la ven.',
     },
     solution: {
       en: 'A custom build with full English/Spanish i18n and a 14-project gallery (keyboard navigation, image carousels). WCAG AA throughout, structured data for SEO, and the Spanish legal pages required by law: privacy, cookies, accessibility, legal notice.',
       es: 'Un build a medida con i18n completo inglés/español y una galería de 14 proyectos (teclado, carruseles). WCAG AA en toda la web, datos estructurados para SEO y las páginas legales obligatorias: privacidad, cookies, accesibilidad, aviso legal.',
     },
     role: {
-      en: 'End-to-end design and development.',
-      es: 'Diseño y desarrollo de principio a fin.',
+      en: 'Concept, design, and development. Not commissioned by, affiliated with, or endorsed by NEVA Estudio.',
+      es: 'Concepto, diseño y desarrollo. Sin encargo, afiliación ni respaldo de NEVA Estudio.',
     },
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+    concept: true,
     link: 'https://neva-estudio.vercel.app/es',
     image: '/images/portfolio/neva2.png',
     imageSize: { width: 1887, height: 839 },
@@ -214,22 +218,23 @@ export const PROJECTS: Project[] = [
     title: 'Coastal Millwork & Supply',
     category: { en: 'Contractor Website', es: 'Web de Contratista' },
     summary: {
-      en: 'A website for an award-winning commercial millwork contractor in South Carolina. The work speaks for itself. The site had to get out of its way.',
-      es: 'Web para un contratista premiado de carpintería comercial en Carolina del Sur. El trabajo habla solo. La web solo tenía que dejarlo hablar.',
+      en: 'A concept redesign for an award-winning commercial millwork contractor in South Carolina, built as a portfolio piece. The work speaks for itself. The site gets out of its way.',
+      es: 'Un rediseño conceptual para un contratista premiado de carpintería comercial en Carolina del Sur, hecho como pieza de portfolio. El trabajo habla solo. La web lo deja hablar.',
     },
     problem: {
-      en: 'AWI-QCP certified, 800+ projects shipped. Their old site didn\'t show any of that. Architects were landing on it and bouncing.',
-      es: 'Certificados AWI-QCP, más de 800 proyectos entregados. Su web antigua no enseñaba nada de eso. Los arquitectos aterrizaban y se iban.',
+      en: 'AWI-QCP certified, 800+ projects shipped. I wanted to see what their site would look like with all of that up front.',
+      es: 'Certificados AWI-QCP, más de 800 proyectos entregados. Quería ver cómo sería su web con todo eso en primer plano.',
     },
     solution: {
-      en: 'A new site with a proper project showcase, team bios, services catalog, and an interactive service-area map. Built around their photography, which turned out to be the whole pitch.',
-      es: 'Un sitio nuevo con muestra de proyectos como se debe, bios del equipo, catálogo de servicios y un mapa interactivo del área de cobertura. Construido alrededor de su fotografía, que al final era el argumento entero.',
+      en: 'A site with a proper project showcase, team bios, services catalog, and an interactive service-area map. Built around their photography, which turned out to be the whole pitch.',
+      es: 'Un sitio con muestra de proyectos como se debe, bios del equipo, catálogo de servicios y un mapa interactivo del área de cobertura. Construido alrededor de su fotografía, que al final era el argumento entero.',
     },
     role: {
-      en: 'End-to-end design and development.',
-      es: 'Diseño y desarrollo de principio a fin.',
+      en: 'Concept, design, and development. Not commissioned by, affiliated with, or endorsed by Coastal Millwork & Supply.',
+      es: 'Concepto, diseño y desarrollo. Sin encargo, afiliación ni respaldo de Coastal Millwork & Supply.',
     },
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+    concept: true,
     link: 'https://coastal-millwork.vercel.app/',
     image: '/images/portfolio/coastal-millwork.png',
     imageSize: { width: 2102, height: 1348 },

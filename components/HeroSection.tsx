@@ -78,7 +78,7 @@ export default function HeroSection() {
                   href="/work"
                   className="text-ink-200 hover:text-accent-300 transition-colors"
                 >
-                  llm-audit · NEVA Estudio · Tinta Gallery · Coastal Millwork
+                  llm-audit · Axis · Tinta Gallery · Standshot
                 </Link>
               </p>
             </div>
