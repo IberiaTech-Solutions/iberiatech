@@ -4,14 +4,7 @@ import Link from 'next/link'
 import { FiArrowUpRight } from 'react-icons/fi'
 import { useLanguage } from '@/components/LanguageProvider'
 import Reveal from '@/components/Reveal'
-
-const SERVICES = [
-  { titleKey: 'services.security.title',  descKey: 'services.security.desc' },
-  { titleKey: 'services.ai.title',        descKey: 'services.ai.desc' },
-  { titleKey: 'services.web.title',       descKey: 'services.web.desc' },
-  { titleKey: 'services.bilingual.title', descKey: 'services.bilingual.desc' },
-  { titleKey: 'services.apps.title',      descKey: 'services.apps.desc' },
-] as const
+import ServicesSection from '@/components/ServicesSection'
 
 const PROCESS = [
   { titleKey: 'process.discovery.title', descKey: 'process.discovery.desc' },
@@ -41,51 +34,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="section-padding">
-        <div className="container-max">
-          <p className="text-xs uppercase tracking-[0.2em] text-accent-700 dark:text-accent-400 font-medium mb-5">
-            {language === 'es' ? 'Servicios' : 'Services'}
-          </p>
-          <ol className="divide-y divide-ink-200 dark:divide-ink-800 border-y border-ink-200 dark:border-ink-800">
-            {SERVICES.map((service, index) => (
-              <Reveal
-                key={service.titleKey}
-                as="li"
-                delay={index * 40}
-                className="grid grid-cols-12 gap-4 md:gap-8 py-8 md:py-10"
-              >
-                <div className="col-span-2 md:col-span-1 text-sm text-ink-500 tabular-nums">
-                  {String(index + 1).padStart(2, '0')}
-                </div>
-                <div className="col-span-10 md:col-span-4">
-                  <h2 className="font-display text-xl md:text-2xl font-semibold text-ink-900 dark:text-ink-50">
-                    {t(service.titleKey)}
-                  </h2>
-                </div>
-                <div className="col-span-12 md:col-span-7">
-                  <p className="text-base text-ink-600 dark:text-ink-300 leading-relaxed">
-                    {t(service.descKey)}
-                  </p>
-                  {service.titleKey === 'services.security.title' && (
-                    <div className="mt-6 flex flex-wrap items-center gap-4">
-                      <Link
-                        href={pathFor('/contact')}
-                        className="inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-ink-950 font-semibold py-3.5 px-6 rounded-md transition-colors duration-200"
-                      >
-                        <span>{t('services.security.cta')}</span>
-                        <FiArrowUpRight className="w-4 h-4" aria-hidden />
-                      </Link>
-                      {/* PLACEHOLDER: free scan link. Wire this to the security tutor when it
-                          launches, as a secondary link next to the primary CTA, with its label
-                          added to LanguageProvider in both languages. Nothing renders until then. */}
-                    </div>
-                  )}
-                </div>
-              </Reveal>
-            ))}
-          </ol>
-        </div>
-      </section>
+      <ServicesSection showHeading={false} showCta={false} />
 
       <section className="section-padding bg-ink-50 dark:bg-ink-950">
         <div className="container-max">

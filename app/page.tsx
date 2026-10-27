@@ -13,6 +13,7 @@ export default function HomePage() {
       <PortfolioSection
         featuredOnly
         showCta
+        layout="grid"
         className="bg-primary-100 dark:bg-primary-950"
       />
       <AboutSection />

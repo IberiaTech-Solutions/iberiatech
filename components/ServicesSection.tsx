@@ -19,20 +19,32 @@ const SERVICES = [
   { titleKey: 'services.apps.title',      descKey: 'services.apps.desc',      evidenceKey: 'services.apps.evidence' },
 ] as const
 
-export default function ServicesSection() {
+interface ServicesSectionProps {
+  // /services has its own page header and sits one link away from itself,
+  // so it turns both off.
+  showHeading?: boolean
+  showCta?: boolean
+}
+
+export default function ServicesSection({
+  showHeading = true,
+  showCta = true,
+}: ServicesSectionProps = {}) {
   const { t, language, pathFor } = useLanguage()
 
   return (
     <section id="services" className="section-padding">
       <div className="container-max">
-        <Reveal className="max-w-2xl mb-14 md:mb-20">
-          <h2 className="font-display text-4xl md:text-5xl font-semibold text-ink-900 dark:text-ink-50 mb-6 leading-[1.05]">
-            {t('services.title')}
-          </h2>
-          <p className="text-lg text-ink-600 dark:text-ink-300 prose-measure">
-            {t('services.subtitle')}
-          </p>
-        </Reveal>
+        {showHeading && (
+          <Reveal className="max-w-2xl mb-14 md:mb-20">
+            <h2 className="font-display text-4xl md:text-5xl font-semibold text-ink-900 dark:text-ink-50 mb-6 leading-[1.05]">
+              {t('services.title')}
+            </h2>
+            <p className="text-lg text-ink-600 dark:text-ink-300 prose-measure">
+              {t('services.subtitle')}
+            </p>
+          </Reveal>
+        )}
 
         <Reveal as="article" className="relative mb-16 md:mb-20 rounded-md border border-primary-800/80 bg-primary-900 text-ink-50 overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-5">
@@ -102,15 +114,17 @@ export default function ServicesSection() {
           ))}
         </ol>
 
-        <div className="mt-12">
-          <Link
-            href={pathFor('/services')}
-            className="inline-flex items-center gap-2 text-ink-900 dark:text-ink-50 font-medium hover:text-accent-700 dark:hover:text-accent-400 transition-colors duration-200"
-          >
-            <span>{t('services.cta')}</span>
-            <FiArrowRight className="w-4 h-4" aria-hidden />
-          </Link>
-        </div>
+        {showCta && (
+          <div className="mt-12">
+            <Link
+              href={pathFor('/services')}
+              className="inline-flex items-center gap-2 text-ink-900 dark:text-ink-50 font-medium hover:text-accent-700 dark:hover:text-accent-400 transition-colors duration-200"
+            >
+              <span>{t('services.cta')}</span>
+              <FiArrowRight className="w-4 h-4" aria-hidden />
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   )
