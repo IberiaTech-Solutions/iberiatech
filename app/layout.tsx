@@ -24,14 +24,20 @@ const body = Sora({
 export const metadata: Metadata = {
   metadataBase: new URL('https://iberiatechsolutions.com'),
   title: {
-    default: 'IberiaTech Solutions: security reviews for apps built with AI',
+    default: 'IberiaTech Solutions: security reviews for vibe coded and AI built apps',
     template: '%s | IberiaTech Solutions',
   },
   description:
-    'Your AI built the app. I make sure it doesn’t get you hacked. Fixed scope, fixed price security reviews with an automated scan, a human code review, fix prompts, and a walkthrough call, delivered in one week. I also build websites, online stores, and custom software in English and Spanish. Charleston, SC, working with clients across the US and Europe.',
+    'Your AI built the app. I make sure it doesn’t get you hacked. Security reviews for vibe coded apps built with Lovable, Bolt, Cursor, Replit or v0: fixed scope, fixed price, with an automated scan, a human code review, fix prompts, and a walkthrough call, delivered in one week. I also build websites, online stores, and custom software in English and Spanish. Charleston, SC, working with clients across the US and Europe.',
   keywords: [
     'AI app security review',
     'security review for AI generated code',
+    'vibe coding security',
+    'vibe coded app security review',
+    'Lovable app security',
+    'Bolt app security',
+    'Cursor app security',
+    'Supabase row level security review',
     'application security',
     'web development',
     'Next.js development',
@@ -71,14 +77,14 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://iberiatechsolutions.com',
-    title: 'IberiaTech Solutions: security reviews for apps built with AI',
+    title: 'IberiaTech Solutions: security reviews for vibe coded and AI built apps',
     description:
       'Your AI built the app. I make sure it doesn’t get you hacked. Fixed scope, fixed price security reviews delivered in one week, from a GIAC certified engineer.',
     siteName: 'IberiaTech Solutions',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'IberiaTech Solutions: security reviews for apps built with AI',
+    title: 'IberiaTech Solutions: security reviews for vibe coded and AI built apps',
     description:
       'Your AI built the app. I make sure it doesn’t get you hacked. Fixed scope, fixed price security reviews delivered in one week, from a GIAC certified engineer.',
     creator: '@iberiatech',
