@@ -13,6 +13,8 @@ interface PortfolioSectionProps {
   showHeading?: boolean
   showCta?: boolean
   className?: string
+  // rows: alternating image and text, for the homepage. grid: cards, for /work.
+  layout?: 'rows' | 'grid'
 }
 
 export default function PortfolioSection({
@@ -20,6 +22,7 @@ export default function PortfolioSection({
   showHeading = true,
   showCta = true,
   className = 'bg-ink-50 dark:bg-ink-950',
+  layout = 'rows',
 }: PortfolioSectionProps) {
   const { t, language, pathFor } = useLanguage()
 
@@ -44,17 +47,27 @@ export default function PortfolioSection({
           </Reveal>
         )}
 
-        <div className="flex flex-col">
-          {projects.map((project, index) => (
-            <ProjectRow
-              key={project.slug}
-              project={project}
-              index={index}
-              language={language}
-              t={t}
-            />
-          ))}
-        </div>
+        {layout === 'grid' ? (
+          <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-6">
+            {projects.map((project, index) => (
+              <Reveal as="li" key={project.slug} delay={(index % 3) * 80}>
+                <ProjectCard project={project} />
+              </Reveal>
+            ))}
+          </ul>
+        ) : (
+          <div className="flex flex-col">
+            {projects.map((project, index) => (
+              <ProjectRow
+                key={project.slug}
+                project={project}
+                index={index}
+                language={language}
+                t={t}
+              />
+            ))}
+          </div>
+        )}
 
         {showCta && featuredOnly && (
           <div className="mt-16 md:mt-20">
@@ -69,6 +82,89 @@ export default function PortfolioSection({
         )}
       </div>
     </section>
+  )
+}
+
+/**
+ * A card for the /work grid. When the project has a full-page capture of its
+ * live site, hovering or focusing the card scrolls through it, top to bottom,
+ * so the card is a short tour of the real site rather than one frozen frame.
+ */
+function ProjectCard({ project }: { project: Project }) {
+  const { t, language, pathFor } = useLanguage()
+  const full = project.fullImage
+  const shot = full ?? { src: project.image, ...project.imageSize }
+  // Longer pages scroll for longer, so every site moves at the same pace.
+  const scrollSeconds = full ? Math.round((full.height / full.width) * 2) : 0
+
+  return (
+    <Link
+      href={pathFor(`/work/${project.slug}`)}
+      className="group flex h-full flex-col rounded-lg overflow-hidden border border-ink-200 dark:border-ink-800 bg-white dark:bg-ink-900 transition-colors duration-300 hover:border-ink-400 dark:hover:border-ink-600"
+    >
+      <div className="relative aspect-[16/10] overflow-hidden bg-ink-100 dark:bg-ink-950 border-b border-ink-200 dark:border-ink-800">
+        {full ? (
+          // top-full with -translate-y-full puts the capture's bottom edge on
+          // the frame's bottom edge. Transitioning both together scrolls it
+          // at a steady rate; leaving snaps back quicker than it went.
+          <div
+            className="absolute inset-x-0 top-0 transition-[top,transform] duration-700 ease-in-out group-hover:top-full group-hover:-translate-y-full group-hover:ease-linear group-hover:[transition-duration:var(--scroll)] group-focus-visible:top-full group-focus-visible:-translate-y-full group-focus-visible:ease-linear group-focus-visible:[transition-duration:var(--scroll)] motion-reduce:group-hover:top-0 motion-reduce:group-hover:translate-y-0 motion-reduce:group-focus-visible:top-0 motion-reduce:group-focus-visible:translate-y-0"
+            style={{ '--scroll': `${scrollSeconds}s` } as React.CSSProperties}
+          >
+            <Image
+              src={full.src}
+              alt={
+                language === 'es'
+                  ? `Página completa del sitio de ${project.title}`
+                  : `Full page of the ${project.title} site`
+              }
+              width={full.width}
+              height={full.height}
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 420px"
+              className="block w-full h-auto"
+            />
+          </div>
+        ) : (
+          // A single screenshot is centred on dark, which reads as part of
+          // the frame whatever the image's proportions.
+          <div className="absolute inset-0 flex items-center bg-ink-950">
+            <Image
+              src={shot.src}
+              alt={
+                language === 'es'
+                  ? `Captura del sitio de ${project.title}`
+                  : `Screenshot of ${project.title}`
+              }
+              width={shot.width}
+              height={shot.height}
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 420px"
+              className="block w-full h-auto"
+            />
+          </div>
+        )}
+        {(project.concept || project.comingSoon) && (
+          <div className="absolute top-3 left-3 z-10 bg-ink-950/85 text-ink-50 text-[10px] font-semibold uppercase tracking-[0.15em] px-2.5 py-1 rounded-sm backdrop-blur">
+            {project.concept ? t('work.concept') : t('work.comingSoon')}
+          </div>
+        )}
+      </div>
+
+      <div className="flex flex-1 flex-col p-5 md:p-6">
+        <p className="text-[11px] uppercase tracking-[0.15em] text-ink-500 font-medium mb-2">
+          {project.category[language]}
+        </p>
+        <h3 className="font-display text-xl md:text-2xl font-semibold text-ink-900 dark:text-ink-50 mb-2 leading-tight">
+          {project.title}
+        </h3>
+        <p className="text-sm text-ink-600 dark:text-ink-300 leading-relaxed line-clamp-3 mb-5">
+          {project.summary[language]}
+        </p>
+        <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-medium text-ink-900 dark:text-ink-50 group-hover:text-accent-700 dark:group-hover:text-accent-400 transition-colors">
+          {language === 'es' ? 'Ver caso' : 'View case study'}
+          <FiArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden />
+        </span>
+      </div>
+    </Link>
   )
 }
 

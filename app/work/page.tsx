@@ -14,7 +14,7 @@ export default function WorkPage() {
   return (
     <div className="min-h-screen">
       <WorkHeader />
-      <PortfolioSection featuredOnly={false} showHeading={false} showCta={false} />
+      <PortfolioSection featuredOnly={false} showHeading={false} showCta={false} layout="grid" />
     </div>
   )
 }

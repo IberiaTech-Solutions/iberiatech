@@ -27,6 +27,10 @@ export interface Project {
   // Pixel size of the screenshot, so it renders at its own proportions
   // instead of being cropped into a fixed frame.
   imageSize: { width: number; height: number }
+  // Full-page capture of the live site, scrolled through on hover in the
+  // /work grid. Only for public sites: client-owned or unreleased work keeps
+  // its single screenshot.
+  fullImage?: { src: string; width: number; height: number }
   featured?: boolean
   comingSoon?: boolean
   // Built unsolicited as a portfolio piece. Never a client, and the copy
@@ -157,6 +161,7 @@ export const PROJECTS: Project[] = [
     link: 'https://tinta.gallery',
     image: '/images/portfolio/tinta.png',
     imageSize: { width: 2420, height: 1370 },
+    fullImage: { src: '/images/portfolio/full/tinta.jpg', width: 960, height: 4000 },
     featured: true,
   },
   {
@@ -185,6 +190,7 @@ export const PROJECTS: Project[] = [
     link: 'https://standshot.com',
     image: '/images/portfolio/standshot.jpg',
     imageSize: { width: 2420, height: 1370 },
+    fullImage: { src: '/images/portfolio/full/standshot.jpg', width: 960, height: 3494 },
     featured: true,
   },
   {
@@ -212,6 +218,7 @@ export const PROJECTS: Project[] = [
     link: 'https://neva-estudio.vercel.app/es',
     image: '/images/portfolio/neva2.png',
     imageSize: { width: 1887, height: 839 },
+    fullImage: { src: '/images/portfolio/full/neva.jpg', width: 960, height: 4000 },
   },
   {
     slug: 'coastal-millwork',
@@ -238,6 +245,7 @@ export const PROJECTS: Project[] = [
     link: 'https://coastal-millwork.vercel.app/',
     image: '/images/portfolio/coastal-millwork.png',
     imageSize: { width: 2102, height: 1348 },
+    fullImage: { src: '/images/portfolio/full/coastal-millwork.jpg', width: 960, height: 4000 },
   },
   {
     slug: 'shop-essentials-hub',
@@ -263,6 +271,7 @@ export const PROJECTS: Project[] = [
     link: 'https://www.shopessentialshub.com/',
     image: '/images/portfolio/shop-essentials-hub.png',
     imageSize: { width: 2212, height: 1404 },
+    fullImage: { src: '/images/portfolio/full/shop-essentials-hub.jpg', width: 960, height: 4000 },
   },
 ]
 
