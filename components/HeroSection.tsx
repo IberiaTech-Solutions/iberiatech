@@ -14,14 +14,14 @@ const HERO_PROJECTS = [
     tag: 'Open source',
   },
   {
-    src: '/images/portfolio/neva2.png',
-    label: 'neva-estudio.com',
-    alt: 'NEVA Estudio architecture studio website',
+    src: '/images/portfolio/tinta.png',
+    label: 'tinta.gallery',
+    alt: 'Tinta Gallery online watercolour gallery',
   },
   {
-    src: '/images/portfolio/coastal-millwork.png',
-    label: 'coastalmillwork.com',
-    alt: 'Coastal Millwork contractor website',
+    src: '/images/portfolio/standshot.jpg',
+    label: 'standshot.com',
+    alt: 'Standshot film location tours website',
   },
 ] as const
 
