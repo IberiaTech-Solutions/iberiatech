@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { PROJECTS, getProjectBySlug } from '@/data/projects'
+import { alternatesFor } from '@/lib/i18n'
 import CaseStudyClient from './CaseStudyClient'
 
 interface PageProps {
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: project.title,
     description: project.summary.en,
-    alternates: { canonical: `/work/${slug}` },
+    alternates: alternatesFor(`/work/${slug}`, 'en'),
   }
 }
 

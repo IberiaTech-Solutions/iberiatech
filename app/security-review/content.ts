@@ -116,3 +116,18 @@ export const CONTENT = {
     ],
   },
 } as const
+
+// FAQPage structured data, built from the same answers the page shows in that
+// language, so what search engines read never drifts from what people read.
+export function faqData(language: 'en' | 'es') {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    inLanguage: language,
+    mainEntity: CONTENT[language].faq.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+  }
+}

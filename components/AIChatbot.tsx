@@ -20,7 +20,7 @@ const handoff = (language: 'en' | 'es'): string =>
     : 'That one is better answered by Luis Javier directly. Email luis@iberiatechsolutions.com or book a 30-minute call at /contact.'
 
 export default function AIChatbot() {
-  const { language } = useLanguage()
+  const { language, pathFor } = useLanguage()
   const [isOpen, setIsOpen] = useState(false)
   const [isExpanded, setIsExpanded] = useState(false)
   const [messages, setMessages] = useState<Message[]>([])
@@ -383,7 +383,7 @@ export default function AIChatbot() {
                 ? 'Algunos mensajes se envían a OpenAI para generar la respuesta. No compartas nada confidencial. '
                 : 'Some messages are sent to OpenAI to generate a reply. Don’t share anything confidential. '}
               <Link
-                href="/privacy"
+                href={pathFor('/privacy')}
                 onClick={() => setIsOpen(false)}
                 className="underline underline-offset-2 hover:text-ink-900 dark:hover:text-ink-100"
               >

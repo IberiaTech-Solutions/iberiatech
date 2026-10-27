@@ -20,7 +20,7 @@ const SERVICES = [
 ] as const
 
 export default function ServicesSection() {
-  const { t, language } = useLanguage()
+  const { t, language, pathFor } = useLanguage()
 
   return (
     <section id="services" className="section-padding">
@@ -48,14 +48,14 @@ export default function ServicesSection() {
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <Link
-                  href="/contact"
+                  href={pathFor('/contact')}
                   className="inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-ink-950 font-semibold py-3.5 px-6 rounded-md transition-colors duration-200"
                 >
                   <span>{t(FEATURED.ctaKey)}</span>
                   <FiArrowRight className="w-4 h-4" aria-hidden />
                 </Link>
                 <Link
-                  href="/security-review"
+                  href={pathFor('/security-review')}
                   className="text-ink-200 hover:text-accent-300 font-medium transition-colors duration-200"
                 >
                   {t('services.security.more')}
@@ -104,7 +104,7 @@ export default function ServicesSection() {
 
         <div className="mt-12">
           <Link
-            href="/services"
+            href={pathFor('/services')}
             className="inline-flex items-center gap-2 text-ink-900 dark:text-ink-50 font-medium hover:text-accent-700 dark:hover:text-accent-400 transition-colors duration-200"
           >
             <span>{t('services.cta')}</span>

@@ -7,7 +7,7 @@ import Reveal from '@/components/Reveal'
 import { CONTENT, TOOLS } from './content'
 
 export default function SecurityReviewContent() {
-  const { language } = useLanguage()
+  const { language, pathFor } = useLanguage()
   const c = CONTENT[language === 'es' ? 'es' : 'en']
 
   return (
@@ -76,7 +76,7 @@ export default function SecurityReviewContent() {
           </ol>
           <p className="text-ink-600 dark:text-ink-300 mb-8">{c.terms}</p>
           <Link
-            href="/contact"
+            href={pathFor('/contact')}
             className="inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-ink-950 font-semibold py-3.5 px-6 rounded-md transition-colors duration-200"
           >
             <span>{c.cta}</span>

@@ -21,7 +21,7 @@ export default function PortfolioSection({
   showCta = true,
   className = 'bg-ink-50 dark:bg-ink-950',
 }: PortfolioSectionProps) {
-  const { t, language } = useLanguage()
+  const { t, language, pathFor } = useLanguage()
 
   const projects: Project[] = featuredOnly
     ? PROJECTS.filter((p) => p.featured)
@@ -59,7 +59,7 @@ export default function PortfolioSection({
         {showCta && featuredOnly && (
           <div className="mt-16 md:mt-20">
             <Link
-              href="/work"
+              href={pathFor('/work')}
               className="group inline-flex items-center gap-2 text-ink-900 dark:text-ink-50 font-medium hover:text-accent-700 dark:hover:text-accent-400 transition-colors duration-200"
             >
               <span>{t('work.cta')}</span>
@@ -117,6 +117,7 @@ function ProjectImage({
   language: 'en' | 'es'
   t: (key: string) => string
 }) {
+  const { pathFor } = useLanguage()
   const spotRef = useRef<HTMLAnchorElement>(null)
 
   // Cursor-following spotlight. Writes the pointer position to CSS vars the
@@ -134,7 +135,7 @@ function ProjectImage({
     <Link
       ref={spotRef}
       onMouseMove={onMove}
-      href={`/work/${project.slug}`}
+      href={pathFor(`/work/${project.slug}`)}
       aria-label={
         language === 'es'
           ? `Ver el caso de estudio de ${project.title}`
@@ -223,9 +224,10 @@ function ProjectTitleLink({
   project: Project
   children: React.ReactNode
 }) {
+  const { pathFor } = useLanguage()
   return (
     <Link
-      href={`/work/${project.slug}`}
+      href={pathFor(`/work/${project.slug}`)}
       className="bg-[length:0%_2px] bg-left-bottom bg-no-repeat bg-gradient-to-r from-accent-500 to-accent-500 transition-[background-size] duration-500 group-hover:bg-[length:100%_2px]"
     >
       {children}
@@ -258,10 +260,11 @@ function ProjectActions({
   language: 'en' | 'es'
   t: (key: string) => string
 }) {
+  const { pathFor } = useLanguage()
   return (
     <div className="flex items-center gap-6 text-sm font-medium">
       <Link
-        href={`/work/${project.slug}`}
+        href={pathFor(`/work/${project.slug}`)}
         className="relative z-10 inline-flex items-center gap-1.5 text-ink-900 dark:text-ink-50 group-hover:text-accent-700 dark:group-hover:text-accent-400 transition-colors"
       >
         <span>{language === 'es' ? 'Ver caso' : 'View case study'}</span>

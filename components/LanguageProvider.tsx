@@ -1,13 +1,15 @@
 'use client'
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react'
-
-type Language = 'en' | 'es'
+import { usePathname, useRouter } from 'next/navigation'
+import { basePath, languageFromPath, localizePath, type Language } from '@/lib/i18n'
 
 interface LanguageContextType {
   language: Language
   setLanguage: (lang: Language) => void
   t: (key: string) => string
+  /** An English path, in the current language: '/work' becomes '/es/work'. */
+  pathFor: (path: string) => string
   mounted: boolean
 }
 
@@ -214,25 +216,23 @@ const translations = {
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>('en')
+  // The language is the URL's, so the server renders the right one and each
+  // language has addresses search engines can index. /es is Spanish.
+  const pathname = usePathname() ?? '/'
+  const router = useRouter()
+  const language = languageFromPath(pathname)
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     setMounted(true)
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('language') as Language | null
-      if (saved === 'en' || saved === 'es') {
-        setLanguageState(saved)
-      }
-    }
   }, [])
 
   const setLanguage = (lang: Language) => {
-    setLanguageState(lang)
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('language', lang)
-    }
+    if (lang === language) return
+    router.push(localizePath(basePath(pathname), lang))
   }
+
+  const pathFor = (path: string) => localizePath(path, language)
 
   const t = (key: string): string => {
     const langDict = translations[language] as Record<string, string>
@@ -240,7 +240,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t, mounted }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, pathFor, mounted }}>
       {children}
     </LanguageContext.Provider>
   )

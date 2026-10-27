@@ -7,7 +7,7 @@ import { useLanguage } from './LanguageProvider'
 import AuditScan from './AuditScan'
 
 export default function HeroSection() {
-  const { t, language } = useLanguage()
+  const { t, language, pathFor } = useLanguage()
   const trackRef = useRef<HTMLElement>(null)
 
   // On large screens the section is taller than the viewport and its content
@@ -56,14 +56,14 @@ export default function HeroSection() {
 
               <div className="flex flex-col sm:flex-row gap-4 pt-2">
                 <Link
-                  href="/work"
+                  href={pathFor('/work')}
                   className="inline-flex items-center justify-center gap-2 bg-accent-500 hover:bg-accent-600 text-ink-950 font-semibold py-3.5 px-6 rounded-md transition-colors duration-200"
                 >
                   <span>{t('hero.cta.work')}</span>
                   <FiArrowRight className="w-4 h-4" aria-hidden />
                 </Link>
                 <Link
-                  href="/contact"
+                  href={pathFor('/contact')}
                   className="inline-flex items-center justify-center border border-ink-50/30 hover:border-ink-50/70 text-ink-50 font-medium py-3.5 px-6 rounded-md transition-colors duration-200"
                 >
                   {t('hero.cta.contact')}
@@ -75,7 +75,7 @@ export default function HeroSection() {
                   {language === 'es' ? 'Recientes:' : 'Recent:'}
                 </span>{' '}
                 <Link
-                  href="/work"
+                  href={pathFor('/work')}
                   className="text-ink-200 hover:text-accent-300 transition-colors"
                 >
                   llm-audit · Axis · Tinta Gallery · Standshot

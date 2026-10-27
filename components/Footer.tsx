@@ -6,7 +6,7 @@ import { useLanguage } from './LanguageProvider'
 import { FiMail, FiMapPin, FiLinkedin } from 'react-icons/fi'
 
 export default function Footer() {
-  const { t, language } = useLanguage()
+  const { t, language, pathFor } = useLanguage()
   const currentYear = new Date().getFullYear()
 
   return (
@@ -70,22 +70,22 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <Link href="/services" className="text-ink-200 hover:text-ink-50 transition-colors duration-200">
+                <Link href={pathFor('/services')} className="text-ink-200 hover:text-ink-50 transition-colors duration-200">
                   {t('services.web.title')}
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-ink-200 hover:text-ink-50 transition-colors duration-200">
+                <Link href={pathFor('/services')} className="text-ink-200 hover:text-ink-50 transition-colors duration-200">
                   {t('services.bilingual.title')}
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-ink-200 hover:text-ink-50 transition-colors duration-200">
+                <Link href={pathFor('/services')} className="text-ink-200 hover:text-ink-50 transition-colors duration-200">
                   {t('services.apps.title')}
                 </Link>
               </li>
               <li>
-                <Link href="/security-review" className="text-ink-200 hover:text-ink-50 transition-colors duration-200">
+                <Link href={pathFor('/security-review')} className="text-ink-200 hover:text-ink-50 transition-colors duration-200">
                   {t('services.security.title')}
                 </Link>
               </li>
@@ -94,7 +94,7 @@ export default function Footer() {
                   newest offer, the one the chat widget on this very site is a
                   demonstration of, and the hardest to find by guessing. */}
               <li>
-                <Link href="/services" className="text-ink-200 hover:text-ink-50 transition-colors duration-200">
+                <Link href={pathFor('/services')} className="text-ink-200 hover:text-ink-50 transition-colors duration-200">
                   {t('services.ai.title')}
                 </Link>
               </li>
@@ -119,13 +119,13 @@ export default function Footer() {
               OpenAI and the site markets to Spain in Spanish, so the notice is
               owed rather than decorative. */}
           <Link
-            href="/privacy"
+            href={pathFor('/privacy')}
             className="hover:text-ink-300 transition-colors duration-200 underline underline-offset-4"
           >
             {language === 'es' ? 'Privacidad' : 'Privacy'}
           </Link>
           <Link
-            href="/terms"
+            href={pathFor('/terms')}
             className="hover:text-ink-300 transition-colors duration-200 underline underline-offset-4"
           >
             {language === 'es' ? 'Aviso legal' : 'Terms'}

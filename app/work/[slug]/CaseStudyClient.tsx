@@ -11,14 +11,14 @@ interface CaseStudyClientProps {
 }
 
 export default function CaseStudyClient({ project }: CaseStudyClientProps) {
-  const { t, language } = useLanguage()
+  const { t, language, pathFor } = useLanguage()
 
   return (
     <article className="min-h-screen">
       <div className="container-max section-padding">
         <div className="max-w-5xl mx-auto fade-up">
           <Link
-            href="/work"
+            href={pathFor('/work')}
             className="inline-flex items-center gap-2 text-sm text-ink-600 dark:text-ink-400 hover:text-ink-900 dark:hover:text-ink-50 mb-10 transition-colors duration-200"
           >
             <FiArrowLeft className="w-4 h-4" aria-hidden />
@@ -123,7 +123,7 @@ export default function CaseStudyClient({ project }: CaseStudyClientProps) {
 
           <div className="pt-10 border-t border-ink-200 dark:border-ink-800">
             <Link
-              href="/work"
+              href={pathFor('/work')}
               className="inline-flex items-center gap-2 text-sm text-ink-600 dark:text-ink-400 hover:text-ink-900 dark:hover:text-ink-50 transition-colors duration-200"
             >
               <FiArrowLeft className="w-4 h-4" aria-hidden />

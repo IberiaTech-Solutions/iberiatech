@@ -21,7 +21,7 @@ const PROCESS = [
 ] as const
 
 export default function ServicesPage() {
-  const { t, language } = useLanguage()
+  const { t, language, pathFor } = useLanguage()
 
   return (
     <div className="min-h-screen">
@@ -69,7 +69,7 @@ export default function ServicesPage() {
                   {service.titleKey === 'services.security.title' && (
                     <div className="mt-6 flex flex-wrap items-center gap-4">
                       <Link
-                        href="/contact"
+                        href={pathFor('/contact')}
                         className="inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-ink-950 font-semibold py-3.5 px-6 rounded-md transition-colors duration-200"
                       >
                         <span>{t('services.security.cta')}</span>
@@ -138,7 +138,7 @@ export default function ServicesPage() {
                 {t('contact.subtitle')}
               </p>
               <Link
-                href="/contact"
+                href={pathFor('/contact')}
                 className="inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-ink-950 font-semibold py-3.5 px-6 rounded-md transition-colors duration-200"
               >
                 <span>{t('hero.cta.contact')}</span>

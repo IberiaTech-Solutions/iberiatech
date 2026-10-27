@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useTheme } from 'next-themes'
 import { useLanguage } from './LanguageProvider'
+import { basePath } from '@/lib/i18n'
 import { FiMenu, FiX, FiSun, FiMoon, FiMessageCircle } from 'react-icons/fi'
 
 const WHATSAPP_URL = 'https://wa.me/18643657897'
@@ -13,7 +14,7 @@ const WHATSAPP_URL = 'https://wa.me/18643657897'
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { resolvedTheme, setTheme } = useTheme()
-  const { language, setLanguage, t, mounted } = useLanguage()
+  const { language, setLanguage, t, mounted, pathFor } = useLanguage()
   // The theme is only known in the browser. Until mount, render the light
   // label so server and client HTML match for visitors who chose dark.
   const isDark = mounted && resolvedTheme === 'dark'
@@ -61,9 +62,11 @@ export default function Header() {
     { key: 'nav.contact', href: '/contact' },
   ]
 
+  // Nav hrefs are English paths; compare against the English form of the URL.
   const isActive = (href: string) => {
-    if (href === '/') return pathname === '/'
-    return pathname.startsWith(href)
+    const current = basePath(pathname)
+    if (href === '/') return current === '/'
+    return current.startsWith(href)
   }
 
   const currentLangLabel = language === 'en' ? 'EN' : 'ES'
@@ -73,7 +76,7 @@ export default function Header() {
     <header className="bg-[color-mix(in_oklch,var(--surface)_90%,transparent)] backdrop-blur-md border-b border-[var(--border)] sticky top-0 z-50">
       <div className="container-max">
         <div className="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
-          <Link href="/" className="flex items-center gap-3 min-w-0 -m-2 p-2 rounded-sm">
+          <Link href={pathFor('/')} className="flex items-center gap-3 min-w-0 -m-2 p-2 rounded-sm">
             <div className="w-10 h-10 md:w-11 md:h-11 relative flex-shrink-0">
               <Image
                 src="/images/logos/light.png"
@@ -100,7 +103,7 @@ export default function Header() {
             {navItems.map((item) => (
               <Link
                 key={item.key}
-                href={item.href}
+                href={pathFor(item.href)}
                 className={`text-sm transition-colors duration-200 py-2 ${
                   isActive(item.href)
                     ? 'text-ink-900 dark:text-ink-50 font-semibold'
@@ -176,7 +179,7 @@ export default function Header() {
               {navItems.map((item) => (
                 <Link
                   key={item.key}
-                  href={item.href}
+                  href={pathFor(item.href)}
                   className={`block py-3 px-3 rounded-sm text-base transition-colors duration-200 ${
                     isActive(item.href)
                       ? 'text-ink-900 dark:text-ink-50 font-semibold'

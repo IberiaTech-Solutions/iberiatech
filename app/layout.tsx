@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Bricolage_Grotesque, Sora } from 'next/font/google'
 import './globals.css'
+import { alternatesFor } from '@/lib/i18n'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { LanguageProvider } from '@/components/LanguageProvider'
 import Header from '@/components/Header'
@@ -60,9 +61,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  alternates: {
-    canonical: '/',
-  },
+  alternates: alternatesFor('/', 'en'),
   icons: {
     icon: [
       { url: '/favicon-light.png', media: '(prefers-color-scheme: light)', type: 'image/png' },

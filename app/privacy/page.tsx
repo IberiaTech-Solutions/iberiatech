@@ -33,7 +33,7 @@ import { useLanguage } from '@/components/LanguageProvider'
  * saying something the other does not.
  */
 export default function PrivacyPage() {
-  const { language } = useLanguage()
+  const { language, pathFor } = useLanguage()
   const es = language === 'es'
 
   const sections: { title: string; body: React.ReactNode }[] = es
@@ -410,7 +410,7 @@ export default function PrivacyPage() {
 
           <p className="mt-16 pt-8 border-t border-ink-200 dark:border-ink-800 text-sm text-ink-500">
             {es ? 'Actualizado el 3 de octubre de 2026.' : 'Last updated 3 October 2026.'}{' '}
-            <Link href="/contact" className="underline underline-offset-4 hover:text-ink-900 dark:hover:text-ink-100">
+            <Link href={pathFor('/contact')} className="underline underline-offset-4 hover:text-ink-900 dark:hover:text-ink-100">
               {es ? 'Contacto' : 'Contact'}
             </Link>
           </p>
