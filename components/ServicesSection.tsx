@@ -72,30 +72,26 @@ export default function ServicesSection() {
           </div>
         </Reveal>
 
-        <ol className="divide-y divide-ink-200 dark:divide-ink-800 border-y border-ink-200 dark:border-ink-800">
+        <ol className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-5">
           {SERVICES.map((service, index) => (
             <Reveal
               key={service.titleKey}
               as="li"
-              delay={index * 50}
-              className="group grid grid-cols-12 gap-4 md:gap-8 py-8 md:py-10"
+              delay={index * 80}
+              className="flex flex-col rounded-md border border-ink-200 dark:border-ink-800 bg-ink-50 dark:bg-ink-900 p-6 md:p-7 transition-colors duration-300 hover:border-accent-500/60"
             >
-              <div className="col-span-12 md:col-span-2 font-display text-3xl md:text-5xl font-light text-ink-400 dark:text-ink-500 tabular-nums leading-none">
+              <div className="font-display text-4xl font-light text-ink-400 dark:text-ink-500 tabular-nums leading-none mb-6">
                 {String(index + 2).padStart(2, '0')}
               </div>
-              <div className="col-span-12 md:col-span-3">
-                <h3 className="font-display text-xl md:text-2xl font-semibold text-ink-900 dark:text-ink-50">
-                  {t(service.titleKey)}
-                </h3>
-              </div>
-              <div className="col-span-12 md:col-span-7 space-y-3">
-                <p className="text-base text-ink-600 dark:text-ink-300 leading-relaxed">
-                  {t(service.descKey)}
-                </p>
-                <p className="text-sm text-accent-700 dark:text-accent-400">
-                  {t(service.evidenceKey)}
-                </p>
-              </div>
+              <h3 className="font-display text-xl font-semibold text-ink-900 dark:text-ink-50 mb-3 leading-snug">
+                {t(service.titleKey)}
+              </h3>
+              <p className="text-[15px] text-ink-600 dark:text-ink-300 leading-relaxed mb-6">
+                {t(service.descKey)}
+              </p>
+              <p className="mt-auto pt-4 border-t border-ink-200 dark:border-ink-800 text-sm text-accent-700 dark:text-accent-400">
+                {t(service.evidenceKey)}
+              </p>
             </Reveal>
           ))}
         </ol>
