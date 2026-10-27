@@ -43,7 +43,7 @@ const translations = {
       'You run the business on spreadsheets, email, and three SaaS tools that don’t talk to each other. I replace the stack with one piece of software built around how you actually work. A dashboard, a portal, a marketplace, or an internal tool nobody outside the office will ever see.',
     'services.security.title': 'AI App Security Reviews',
     'services.security.desc':
-      'You built the app with AI and it works. What nobody has checked is whether a stranger can read your customers’ data, get past the paywall, or run up your OpenAI bill. A review has a fixed scope and a fixed price, and you get it back in one week. I run an automated scan with llm-audit, then read the code by hand to catch what a scanner misses. You get every finding written up with a prompt you can paste into your AI tool to fix it, plus a call where I walk you through all of it.',
+      'You built the app with Lovable, Bolt, Cursor or another AI tool, and it works. What nobody has checked is whether a stranger can read your customers’ data, get past the paywall, or run up your OpenAI bill. A review has a fixed scope and a fixed price, and you get it back in one week. I run an automated scan with llm-audit, then read the code by hand to catch what a scanner misses. You get every finding written up with a prompt you can paste into your AI tool to fix it, plus a call where I walk you through all of it.',
     'services.ai.title': 'AI Integrations',
     'services.ai.desc':
       'If your staff spends half the day answering the same five questions, or you’re bleeding money to no shows, automate it. I build bilingual chatbots and WhatsApp flows that take bookings, answer FAQs, capture leads, and chase follow-ups, in whatever language the customer texted in.',
@@ -56,6 +56,7 @@ const translations = {
     'services.ai.evidence':
       'In build → bilingual booking bot + WhatsApp flow',
     'services.security.cta': 'Get a human review',
+    'services.security.more': 'How the review works',
     'services.cta': 'See all services',
 
     // Process
@@ -139,7 +140,7 @@ const translations = {
       'Llevas el negocio con hojas de cálculo, email y tres herramientas SaaS que no se hablan entre sí. Lo sustituyo por un software hecho a tu forma de trabajar. Un panel, un portal, un marketplace o una herramienta interna que no va a ver nadie de fuera.',
     'services.security.title': 'Revisiones de Seguridad para Apps Hechas con IA',
     'services.security.desc':
-      'Has hecho la app con IA y funciona. Lo que nadie ha comprobado es si un desconocido puede ver los datos de tus clientes, saltarse el pago o dispararte la factura de OpenAI. La revisión tiene un alcance cerrado y un precio cerrado, y la tienes en una semana. Paso un escaneo automático con llm-audit y luego leo el código a mano para encontrar lo que el escáner no ve. Recibes cada fallo por escrito con un prompt que puedes pegar en tu herramienta de IA para arreglarlo, y una llamada en la que te lo explico todo.',
+      'Has hecho la app con Lovable, Bolt, Cursor u otra herramienta de IA, y funciona. Lo que nadie ha comprobado es si un desconocido puede ver los datos de tus clientes, saltarse el pago o dispararte la factura de OpenAI. La revisión tiene un alcance cerrado y un precio cerrado, y la tienes en una semana. Paso un escaneo automático con llm-audit y luego leo el código a mano para encontrar lo que el escáner no ve. Recibes cada fallo por escrito con un prompt que puedes pegar en tu herramienta de IA para arreglarlo, y una llamada en la que te lo explico todo.',
     'services.ai.title': 'Integraciones de IA',
     'services.ai.desc':
       'Si tu equipo pasa medio día respondiendo las mismas cinco preguntas, o estás perdiendo dinero por no shows, se automatiza. Construyo chatbots bilingües y flujos de WhatsApp que cogen reservas, responden FAQs, captan leads y persiguen seguimientos, en el idioma en el que el cliente te escribió.',
@@ -152,6 +153,7 @@ const translations = {
     'services.ai.evidence':
       'En desarrollo → bot de reservas bilingüe + flujo WhatsApp',
     'services.security.cta': 'Pide una revisión humana',
+    'services.security.more': 'Cómo funciona la revisión',
     'services.cta': 'Ver todos los servicios',
 
     // Proceso

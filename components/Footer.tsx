@@ -85,7 +85,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-ink-200 hover:text-ink-50 transition-colors duration-200">
+                <Link href="/security-review" className="text-ink-200 hover:text-ink-50 transition-colors duration-200">
                   {t('services.security.title')}
                 </Link>
               </li>
