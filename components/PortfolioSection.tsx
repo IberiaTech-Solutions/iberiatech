@@ -12,12 +12,14 @@ interface PortfolioSectionProps {
   featuredOnly?: boolean
   showHeading?: boolean
   showCta?: boolean
+  className?: string
 }
 
 export default function PortfolioSection({
   featuredOnly = false,
   showHeading = true,
   showCta = true,
+  className = 'bg-ink-50 dark:bg-ink-950',
 }: PortfolioSectionProps) {
   const { t, language } = useLanguage()
 
@@ -26,7 +28,7 @@ export default function PortfolioSection({
     : PROJECTS
 
   return (
-    <section id="work" className="section-padding bg-ink-50 dark:bg-ink-950">
+    <section id="work" className={`section-padding ${className}`}>
       <div className="container-max">
         {showHeading && (
           <Reveal className="max-w-2xl mb-16 md:mb-24">

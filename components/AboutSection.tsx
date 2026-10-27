@@ -8,7 +8,7 @@ export default function AboutSection() {
   const { t } = useLanguage()
 
   return (
-    <section id="about" className="section-padding">
+    <section id="about" className="section-padding bg-accent-100 dark:bg-primary-800">
       <div className="container-max">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-start">
           <Reveal className="md:col-span-5">
