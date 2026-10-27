@@ -1,85 +1,23 @@
 'use client'
 
+import { useRef } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { FiArrowRight } from 'react-icons/fi'
 import { useLanguage } from './LanguageProvider'
-
-const HERO_PROJECTS = [
-  {
-    src: '/images/portfolio/llm-audit.png',
-    label: 'github.com/Javierlozo/llm-audit',
-    alt: 'llm-audit, a Semgrep rule pack for the OWASP LLM Top 10',
-    contain: true,
-    tag: 'Open source',
-  },
-  {
-    src: '/images/portfolio/neva2.png',
-    label: 'neva-estudio.com',
-    alt: 'NEVA Estudio architecture studio website',
-  },
-  {
-    src: '/images/portfolio/coastal-millwork.png',
-    label: 'coastalmillwork.com',
-    alt: 'Coastal Millwork contractor website',
-  },
-] as const
-
-function BrowserCard({
-  src,
-  label,
-  alt,
-  className,
-  priority = false,
-  contain = false,
-  tag = 'Live',
-}: {
-  src: string
-  label: string
-  alt: string
-  className?: string
-  priority?: boolean
-  contain?: boolean
-  tag?: string
-}) {
-  return (
-    <div
-      className={`relative rounded-md overflow-hidden bg-primary-900 border border-ink-50/10 shadow-2xl shadow-black/40 ${
-        className ?? ''
-      }`}
-    >
-      <div
-        aria-hidden
-        className="flex items-center justify-between px-4 py-2.5 border-b border-ink-50/10"
-      >
-        <span className="text-[10px] text-ink-300 tracking-wide tabular-nums">
-          {label}
-        </span>
-        <span className="text-[10px] text-ink-500 uppercase tracking-[0.2em]">
-          {tag}
-        </span>
-      </div>
-      <div className={`relative ${contain ? 'aspect-[1600/633]' : 'aspect-[3/2]'}`}>
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          sizes="(max-width: 1024px) 100vw, 600px"
-          className={contain ? 'object-contain' : 'object-cover object-top'}
-          priority={priority}
-        />
-      </div>
-    </div>
-  )
-}
+import AuditScan from './AuditScan'
 
 export default function HeroSection() {
   const { t, language } = useLanguage()
+  const trackRef = useRef<HTMLElement>(null)
 
+  // On large screens the section is taller than the viewport and its content
+  // stays pinned while the scan runs; that extra height is the scroll track.
+  // overflow-clip, not overflow-hidden: hidden would break the sticky frame.
   return (
     <section
+      ref={trackRef}
       id="home"
-      className="relative overflow-hidden section-padding bg-primary-900 text-ink-50"
+      className="relative overflow-clip bg-primary-900 text-ink-50 lg:h-[190vh] motion-reduce:lg:h-auto"
     >
       <div
         aria-hidden
@@ -98,76 +36,55 @@ export default function HeroSection() {
         }}
       />
 
-      <div className="container-max relative">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-          <div className="lg:col-span-7 space-y-8 fade-up">
-            <p className="text-xs uppercase tracking-[0.25em] text-accent-300 font-medium">
-              {language === 'es'
-                ? 'Consultoría de seguridad para apps hechas con IA · Charleston, SC'
-                : 'Security consultancy for AI built apps · Charleston, SC'}
-            </p>
+      <div className="section-padding lg:sticky lg:top-16 lg:min-h-[calc(100vh-4rem)] lg:flex lg:items-center motion-reduce:lg:static">
+        <div className="container-max relative w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            <div className="lg:col-span-7 space-y-8 fade-up">
+              <p className="text-xs uppercase tracking-[0.25em] text-accent-300 font-medium">
+                {language === 'es'
+                  ? 'Consultoría de seguridad para apps hechas con IA · Charleston, SC'
+                  : 'Security consultancy for AI built apps · Charleston, SC'}
+              </p>
 
-            <h1 className="font-display text-[2.5rem] sm:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight prose-measure">
-              {t('hero.title')}
-            </h1>
+              <h1 className="font-display text-[2.5rem] sm:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight prose-measure">
+                {t('hero.title')}
+              </h1>
 
-            <p className="text-lg md:text-xl text-ink-200/90 leading-relaxed prose-measure">
-              {t('hero.subtitle')}
-            </p>
+              <p className="text-lg md:text-xl text-ink-200/90 leading-relaxed prose-measure">
+                {t('hero.subtitle')}
+              </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-2">
-              <Link
-                href="/work"
-                className="inline-flex items-center justify-center gap-2 bg-accent-500 hover:bg-accent-600 text-ink-950 font-semibold py-3.5 px-6 rounded-md transition-colors duration-200"
-              >
-                <span>{t('hero.cta.work')}</span>
-                <FiArrowRight className="w-4 h-4" aria-hidden />
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center border border-ink-50/30 hover:border-ink-50/70 text-ink-50 font-medium py-3.5 px-6 rounded-md transition-colors duration-200"
-              >
-                {t('hero.cta.contact')}
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-4 pt-2">
+                <Link
+                  href="/work"
+                  className="inline-flex items-center justify-center gap-2 bg-accent-500 hover:bg-accent-600 text-ink-950 font-semibold py-3.5 px-6 rounded-md transition-colors duration-200"
+                >
+                  <span>{t('hero.cta.work')}</span>
+                  <FiArrowRight className="w-4 h-4" aria-hidden />
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center border border-ink-50/30 hover:border-ink-50/70 text-ink-50 font-medium py-3.5 px-6 rounded-md transition-colors duration-200"
+                >
+                  {t('hero.cta.contact')}
+                </Link>
+              </div>
+
+              <p className="pt-8 border-t border-ink-50/10 max-w-xl text-sm text-ink-400">
+                <span className="text-ink-500">
+                  {language === 'es' ? 'Recientes:' : 'Recent:'}
+                </span>{' '}
+                <Link
+                  href="/work"
+                  className="text-ink-200 hover:text-accent-300 transition-colors"
+                >
+                  llm-audit · NEVA Estudio · Tinta Gallery · Coastal Millwork
+                </Link>
+              </p>
             </div>
 
-            <p className="pt-8 border-t border-ink-50/10 max-w-xl text-sm text-ink-400">
-              <span className="text-ink-500">
-                {language === 'es' ? 'Recientes:' : 'Recent:'}
-              </span>{' '}
-              <Link
-                href="/work"
-                className="text-ink-200 hover:text-accent-300 transition-colors"
-              >
-                llm-audit · NEVA Estudio · Tinta Gallery · Coastal Millwork
-              </Link>
-            </p>
-          </div>
-
-          <div className="lg:col-span-5 relative">
-            <div className="lg:hidden fade-up" style={{ animationDelay: '120ms' }}>
-              <BrowserCard {...HERO_PROJECTS[0]} priority />
-            </div>
-
-            <div className="hidden lg:block relative h-[520px]">
-              <div
-                className="absolute top-16 right-0 w-[78%] fade-in rotate-[4deg]"
-                style={{ animationDelay: '260ms' }}
-              >
-                <BrowserCard {...HERO_PROJECTS[2]} />
-              </div>
-              <div
-                className="absolute top-4 left-0 w-[80%] fade-in -rotate-[3deg]"
-                style={{ animationDelay: '140ms' }}
-              >
-                <BrowserCard {...HERO_PROJECTS[1]} />
-              </div>
-              <div
-                className="absolute top-32 left-[10%] right-[10%] fade-up transition-transform duration-300 hover:-translate-y-1"
-                style={{ animationDelay: '360ms' }}
-              >
-                <BrowserCard {...HERO_PROJECTS[0]} priority />
-              </div>
+            <div className="lg:col-span-5 fade-up" style={{ animationDelay: '200ms' }}>
+              <AuditScan trackRef={trackRef} />
             </div>
           </div>
         </div>
