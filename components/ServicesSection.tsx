@@ -54,6 +54,12 @@ export default function ServicesSection() {
                   <span>{t(FEATURED.ctaKey)}</span>
                   <FiArrowRight className="w-4 h-4" aria-hidden />
                 </Link>
+                <Link
+                  href="/security-review"
+                  className="text-ink-200 hover:text-accent-300 font-medium transition-colors duration-200"
+                >
+                  {t('services.security.more')}
+                </Link>
                 {/* PLACEHOLDER: free scan link. Wire this to the security tutor when it
                     launches, as a secondary link next to the primary CTA, with its label
                     added to LanguageProvider in both languages. Nothing renders until then. */}

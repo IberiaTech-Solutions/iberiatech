@@ -50,6 +50,8 @@ export default function StructuredData() {
     keywords: [
       'AI app security review',
       'security review for apps built with AI',
+      'vibe coding security',
+      'security review for vibe coded apps',
       'application security',
       'OWASP LLM Top 10',
       'llm-audit',
