@@ -31,6 +31,20 @@ export interface Project {
   // /work grid. Only for public sites: client-owned or unreleased work keeps
   // its single screenshot.
   fullImage?: { src: string; width: number; height: number }
+  // Phone screenshots shown as a strip under the problem and solution, for
+  // projects with an app. Each caption says what the screen is for, not what
+  // is visible on it: the picture already shows that.
+  gallery?: {
+    heading: { en: string; es: string }
+    shots: {
+      src: string
+      width: number
+      height: number
+      caption: { en: string; es: string }
+    }[]
+  }
+  // A second destination next to the live site, e.g. the App Store listing.
+  appLink?: { href: string; label: { en: string; es: string } }
   featured?: boolean
   comingSoon?: boolean
   // Built unsolicited as a portfolio piece. Never a client, and the copy
@@ -169,16 +183,17 @@ export const PROJECTS: Project[] = [
     title: 'Standshot',
     category: { en: 'Web + iOS App', es: 'Web + App iOS' },
     summary: {
-      en: 'Self-guided tours of the places film and television were shot, starting with Charleston. Every location is free to read on the website. The iOS app carries the day.',
-      es: 'Rutas autoguiadas por los lugares donde se rodaron películas y series, empezando por Charleston. Cada localización se lee gratis en la web. La app de iOS te lleva el día.',
+      en: 'Self-guided tours of the places film and television were shot, from Charleston to Savannah, Wilmington, New Orleans and Beaufort. Every location is free to read on the website. The iOS app, live on the App Store, carries the day.',
+      es: 'Rutas autoguiadas por los lugares donde se rodaron películas y series, de Charleston a Savannah, Wilmington, Nueva Orleans y Beaufort. Cada localización se lee gratis en la web. La app de iOS, ya en la App Store, te lleva el día.',
     },
     problem: {
       en: 'Anyone can find where Outer Banks or The Notebook was filmed. What nobody sells is the day: which stops are worth the drive, in what order, how long it takes, and whether the gate will let you through.',
       es: 'Cualquiera encuentra dónde se rodó Outer Banks o El diario de Noa. Lo que nadie vende es el día: qué paradas merecen el viaje, en qué orden, cuánto se tarda y si te van a dejar pasar la verja.',
     },
+    // Paragraphs are separated by a blank line and rendered one <p> each.
     solution: {
-      en: 'A Next.js site with every location, the scene shot there, and how to get in, free and indexable. An Expo and React Native app with routes ordered so they never double back, sorted by distance, and offline maps (MapLibre and PMTiles) for where there is no signal. The app is sold as an App Store in-app purchase. Supabase with row-level security behind both.',
-      es: 'Una web en Next.js con cada localización, la escena que se rodó allí y cómo entrar, gratis e indexable. Una app en Expo y React Native con rutas ordenadas para no volver sobre tus pasos, ordenadas por distancia y con mapas offline (MapLibre y PMTiles) para donde no hay cobertura. La app se vende como compra dentro de la App Store. Supabase con seguridad a nivel de fila detrás de las dos.',
+      en: 'Two products on one database. The Next.js website lists every location, the scene shot there, the address and how to get in, free and indexable, because search is how anyone looks for a film location in the first place.\n\nThe Expo and React Native app carries the day itself. Routes are drawn in an order that never doubles back, the stops re-sort by how far away you are, the app tells you when you have arrived, and the map and the photographs download ahead of time (MapLibre and PMTiles) for the marsh roads where there is no signal.\n\nTicking a place off is free, and so is taking the same photograph where the scene was shot and sharing it from a public profile, with likes, comments and follows. The paid part is The Week: one App Store purchase that guides every route for seven days and never renews. Supabase with row-level security sits behind both, and the site and the app read their wording from one shared file, so a word cannot mean one thing on the storefront and another inside the product.',
+      es: 'Dos productos sobre una misma base de datos. La web en Next.js recoge cada localización, la escena que se rodó allí, la dirección y cómo entrar, gratis e indexable, porque buscar en Google es como cualquiera empieza a buscar una localización.\n\nLa app en Expo y React Native te lleva el día. Las rutas están dibujadas en un orden que nunca vuelve sobre sus pasos, las paradas se reordenan según lo lejos que estés, la app te avisa cuando has llegado, y el mapa y las fotos se descargan antes de salir (MapLibre y PMTiles) para las carreteras entre marismas donde no hay cobertura.\n\nMarcar un sitio como visitado es gratis, y también hacer la misma foto donde se rodó la escena y compartirla desde un perfil público, con me gusta, comentarios y seguidores. Lo que se paga es The Week: una sola compra en la App Store que guía todas las rutas durante siete días y no se renueva. Supabase con seguridad a nivel de fila detrás de las dos, y la web y la app leen sus textos de un mismo archivo, para que una palabra no signifique una cosa en el escaparate y otra dentro del producto.',
     },
     // Same reasoning as Tinta Gallery: this is the company's own product, not
     // a client build, and the role says so.
@@ -191,6 +206,69 @@ export const PROJECTS: Project[] = [
     image: '/images/portfolio/standshot.jpg',
     imageSize: { width: 2420, height: 1370 },
     fullImage: { src: '/images/portfolio/full/standshot.jpg', width: 960, height: 3494 },
+    appLink: {
+      href: 'https://apps.apple.com/us/app/standshot/id6806888742',
+      label: { en: 'View on the App Store', es: 'Ver en la App Store' },
+    },
+    gallery: {
+      heading: { en: 'Inside the app', es: 'Dentro de la app' },
+      shots: [
+        {
+          src: '/images/portfolio/standshot/01-routes.jpg',
+          width: 900,
+          height: 1948,
+          caption: {
+            en: 'Every route in town, with the time, the drive and the distance before you pick one.',
+            es: 'Todas las rutas de la ciudad, con el tiempo, el trayecto y la distancia antes de elegir una.',
+          },
+        },
+        {
+          src: '/images/portfolio/standshot/02-route-map.jpg',
+          width: 900,
+          height: 1948,
+          caption: {
+            en: 'The route drawn in the order you drive it, so nothing doubles back.',
+            es: 'La ruta dibujada en el orden en que la recorres, sin volver sobre tus pasos.',
+          },
+        },
+        {
+          src: '/images/portfolio/standshot/03-stop.jpg',
+          width: 900,
+          height: 1948,
+          caption: {
+            en: 'Each stop: the scene shot there, how to get in, and directions in one tap.',
+            es: 'Cada parada: la escena que se rodó allí, cómo entrar y cómo llegar con un toque.',
+          },
+        },
+        {
+          src: '/images/portfolio/standshot/04-near-you.jpg',
+          width: 900,
+          height: 1948,
+          caption: {
+            en: 'Every location in town, nearest first.',
+            es: 'Cada localización de la ciudad, de la más cercana a la más lejana.',
+          },
+        },
+        {
+          src: '/images/portfolio/standshot/05-offline.jpg',
+          width: 900,
+          height: 1956,
+          caption: {
+            en: 'The map and the photographs downloaded, for where there is no signal.',
+            es: 'El mapa y las fotos descargados, para donde no hay cobertura.',
+          },
+        },
+        {
+          src: '/images/portfolio/standshot/06-the-week.jpg',
+          width: 900,
+          height: 1948,
+          caption: {
+            en: 'The one purchase: seven days, every route guided, nothing renews.',
+            es: 'La única compra: siete días, todas las rutas guiadas, nada se renueva.',
+          },
+        },
+      ],
+    },
     featured: true,
   },
   {

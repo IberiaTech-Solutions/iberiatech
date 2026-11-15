@@ -37,17 +37,30 @@ export default function CaseStudyClient({ project }: CaseStudyClientProps) {
                 {project.summary[language]}
               </p>
             </div>
-            {project.link && (
-              <div className="md:col-span-4 md:text-right">
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-ink-900 dark:text-ink-50 font-medium hover:text-accent-700 dark:hover:text-accent-400 transition-colors duration-200"
-                >
-                  <span>{t('work.viewLive')}</span>
-                  <FiArrowUpRight className="w-4 h-4" aria-hidden />
-                </a>
+            {(project.link || project.appLink) && (
+              <div className="md:col-span-4 flex flex-col items-start md:items-end gap-3">
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-ink-900 dark:text-ink-50 font-medium hover:text-accent-700 dark:hover:text-accent-400 transition-colors duration-200"
+                  >
+                    <span>{t('work.viewLive')}</span>
+                    <FiArrowUpRight className="w-4 h-4" aria-hidden />
+                  </a>
+                )}
+                {project.appLink && (
+                  <a
+                    href={project.appLink.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-ink-900 dark:text-ink-50 font-medium hover:text-accent-700 dark:hover:text-accent-400 transition-colors duration-200"
+                  >
+                    <span>{project.appLink.label[language]}</span>
+                    <FiArrowUpRight className="w-4 h-4" aria-hidden />
+                  </a>
+                )}
               </div>
             )}
           </header>
@@ -89,9 +102,16 @@ export default function CaseStudyClient({ project }: CaseStudyClientProps) {
                 <p className="text-xs uppercase tracking-[0.2em] text-accent-700 dark:text-accent-400 font-medium mb-4">
                   {t('work.solution')}
                 </p>
-                <p className="text-lg text-ink-700 dark:text-ink-300 leading-relaxed prose-measure">
-                  {project.solution[language]}
-                </p>
+                <div className="space-y-5">
+                  {project.solution[language].split('\n\n').map((paragraph) => (
+                    <p
+                      key={paragraph.slice(0, 32)}
+                      className="text-lg text-ink-700 dark:text-ink-300 leading-relaxed prose-measure"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
               </section>
             </div>
 
@@ -120,6 +140,38 @@ export default function CaseStudyClient({ project }: CaseStudyClientProps) {
               </div>
             </aside>
           </div>
+
+          {project.gallery && (
+            <section className="mb-16">
+              <p className="text-xs uppercase tracking-[0.2em] text-accent-700 dark:text-accent-400 font-medium mb-6">
+                {project.gallery.heading[language]}
+              </p>
+              {/* A swipeable strip on phones, a grid from md up. The negative
+                  margin lets the strip run to the screen edge while the first
+                  shot still lines up with the text above. */}
+              <ul className="mx-[calc(-1*clamp(1rem,4vw,2rem))] px-[clamp(1rem,4vw,2rem)] scroll-px-[clamp(1rem,4vw,2rem)] md:mx-0 md:px-0 flex md:grid md:grid-cols-3 gap-5 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-2 md:pb-0">
+                {project.gallery.shots.map((shot) => (
+                  <li key={shot.src} className="snap-start shrink-0 w-[62vw] max-w-[260px] md:w-auto md:max-w-none">
+                    <figure>
+                      <div className="aspect-[900/1948] rounded-[1.75rem] overflow-hidden ring-1 ring-ink-200 dark:ring-ink-800 bg-ink-100 dark:bg-ink-900">
+                        <Image
+                          src={shot.src}
+                          alt={shot.caption[language]}
+                          width={shot.width}
+                          height={shot.height}
+                          sizes="(max-width: 768px) 62vw, 320px"
+                          className="block w-full h-full object-cover object-top"
+                        />
+                      </div>
+                      <figcaption className="mt-4 text-sm text-ink-600 dark:text-ink-400 leading-relaxed">
+                        {shot.caption[language]}
+                      </figcaption>
+                    </figure>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
           <div className="pt-10 border-t border-ink-200 dark:border-ink-800">
             <Link
