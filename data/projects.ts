@@ -272,6 +272,68 @@ export const PROJECTS: Project[] = [
     featured: true,
   },
   {
+    slug: 'five-blasts',
+    title: 'Five Blasts',
+    category: { en: 'Web + iOS App', es: 'Web + App iOS' },
+    summary: {
+      en: 'An incident feed for the water, built on the AIS signals ships broadcast. When a ship reports aground, an anchor starts to drag or two vessels pass too close, it posts a short card. The iOS app is in development, Charleston Harbor first.',
+      es: 'Un feed de incidentes en el agua, construido sobre las señales AIS que emiten los barcos. Cuando un barco declara que ha encallado, un ancla empieza a garrear o dos barcos se cruzan demasiado cerca, publica una tarjeta breve. La app de iOS está en desarrollo, empezando por el puerto de Charleston.',
+    },
+    problem: {
+      en: 'Ship trackers are maps. They show where every ship is, and they alert you about a ship you already follow. Nobody answers the question a boater actually has: what just happened on the water near me? The things worth knowing, a ship aground, an anchor dragging, a ship stopped in the channel, often never get called in.',
+      es: 'Los localizadores de barcos son mapas. Te enseñan dónde está cada barco y te avisan de uno que ya sigues. Nadie responde a la pregunta que de verdad se hace quien navega: ¿qué acaba de pasar en el agua cerca de mí? Lo que merece saberse, un barco encallado, un ancla que garrea, un barco parado en el canal, muchas veces nadie lo comunica.',
+    },
+    solution: {
+      en: 'A Python listener streams live AIS for the harbor and writes every vessel and its track to Supabase. An event engine checks each report against a few fixed rules built from the harbor’s own geometry: the federal shipping channel, the anchorages, the turning basins and the named places. A distress status only counts on two reports in a row, because one report can be a typo, and a ship that trips two rules at once becomes one story, not two cards.\n\nThe Expo and React Native app is the feed: a card for each incident with the track replayed on a chart, and a live map of every vessel in the harbor. Everything works without an account, and Sign in with Apple is optional. Push alerts for distress, dragging anchors and blocked channels come next. The website explains every rule in plain English and maps exactly what is covered and what is not.',
+      es: 'Un listener en Python recibe el AIS del puerto en directo y guarda cada barco y su trayectoria en Supabase. Un motor de eventos compara cada informe con unas pocas reglas fijas construidas a partir de la geometría del propio puerto: el canal de navegación federal, los fondeaderos, las dársenas de maniobra y los nombres de cada lugar. Un estado de emergencia solo cuenta si llega en dos informes seguidos, porque uno solo puede ser un error, y un barco que activa dos reglas a la vez se convierte en una sola historia, no en dos tarjetas.\n\nLa app en Expo y React Native es el feed: una tarjeta por incidente con la trayectoria reproducida sobre una carta náutica, y un mapa en directo con cada barco del puerto. Todo funciona sin cuenta, e iniciar sesión con Apple es opcional. Las alertas push para emergencias, anclas que garrean y canales bloqueados son lo siguiente. La web explica cada regla en lenguaje claro y muestra en un mapa exactamente qué está cubierto y qué no.',
+    },
+    // Same reasoning as Standshot: the company's own product.
+    role: {
+      en: 'Built and operated by IberiaTech Solutions LLC. Product, the detection rules, the harbor geometry, design, the website, the iOS app, and the data pipeline behind them.',
+      es: 'Creado y gestionado por IberiaTech Solutions LLC. Producto, las reglas de detección, la geometría del puerto, diseño, la web, la app de iOS y el flujo de datos detrás de ellas.',
+    },
+    technologies: ['Next.js', 'TypeScript', 'Expo', 'React Native', 'Python', 'Supabase'],
+    link: 'https://www.fiveblasts.com',
+    image: '/images/portfolio/fiveblasts.jpg',
+    imageSize: { width: 2420, height: 1370 },
+    fullImage: { src: '/images/portfolio/full/fiveblasts.jpg', width: 960, height: 4000 },
+    // The screenshots are the development build running on sample data:
+    // every vessel in them is a fictional SAMPLE one. The heading says so.
+    gallery: {
+      heading: { en: 'Inside the app, with sample data', es: 'Dentro de la app, con datos de ejemplo' },
+      shots: [
+        {
+          src: '/images/portfolio/fiveblasts/01-feed.jpg',
+          width: 900,
+          height: 1956,
+          caption: {
+            en: 'The feed: one card per incident, with where it happened and what the ship itself reported.',
+            es: 'El feed: una tarjeta por incidente, con dónde pasó y lo que declaró el propio barco.',
+          },
+        },
+        {
+          src: '/images/portfolio/fiveblasts/02-incident.jpg',
+          width: 900,
+          height: 1956,
+          caption: {
+            en: 'An incident with its track replayed, so you can see how the ship got there.',
+            es: 'Un incidente con su trayectoria reproducida, para ver cómo llegó el barco hasta allí.',
+          },
+        },
+        {
+          src: '/images/portfolio/fiveblasts/03-map.jpg',
+          width: 900,
+          height: 1956,
+          caption: {
+            en: 'The live map: every vessel in the harbor, over the buoys and channel markers.',
+            es: 'El mapa en directo: cada barco del puerto, sobre las boyas y las balizas del canal.',
+          },
+        },
+      ],
+    },
+    comingSoon: true,
+  },
+  {
     slug: 'neva-estudio',
     title: 'NEVA Estudio',
     category: { en: 'Studio Website', es: 'Web de Estudio' },
